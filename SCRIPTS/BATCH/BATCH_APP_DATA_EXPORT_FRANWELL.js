@@ -68,8 +68,8 @@ else
 /------------------------------------------------------------------------------------------------------*/
 /* test parameters 
 // elycia.juco@cdfa.ca.gov
-aa.env.setValue("lookAheadDays", "-6");
-aa.env.setValue("daySpan", "3");
+aa.env.setValue("lookAheadDays", "-30");
+aa.env.setValue("daySpan", "30");
 aa.env.setValue("emailAddress", "lwacht@trustvip.com");
 aa.env.setValue("sendToEmail", "lwacht@trustvip.com"); //ca-licensees@metrc.com
 aa.env.setValue("sysFromEmail", "calcannabislicensing@cdfa.ca.gov");
@@ -409,11 +409,11 @@ function getCapIdStatusClass(inCapId){
 
 function testForSpecialCharacter(testPhrase){
 	var testPhraseNew = "";
-	if (testPhrase.indexOf(',')!= -1) {
+	if (testPhrase.indexOf('"') != -1) {
+		testPhrase = (""+testPhrase).replace(/"/g, '""');
 		testPhrase = '"' + testPhrase + '"';
 	}else{
-		if (testPhrase.indexOf('"') != -1) {
-			testPhrase = (""+testPhrase).replace(/"/g, '""');
+		if (testPhrase.indexOf(',')!= -1) {
 			testPhrase = '"' + testPhrase + '"';
 		}
 	}
