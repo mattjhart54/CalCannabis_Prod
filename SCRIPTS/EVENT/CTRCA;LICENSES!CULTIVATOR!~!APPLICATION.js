@@ -72,7 +72,7 @@ try{
 	}
 	//lwacht: 180108: defect 5120: end
 } catch(err){
-	logDebug("An error has occurred in ASA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: " + err.message);
+	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: " + err.message);
 	logDebug(err.stack);
 }
 //lwacht: 180216: story 5177: end
