@@ -68,7 +68,6 @@ try{
 try{
 	//lwacht: 180108: defect 5120: don't run for temporary
 	if(appTypeArray[2]!="Temporary"){
-	aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Relate Temp Record: "+ startDate, capId + br + capIDString + br + currEnv);
 		runReportAttach(capId,"Completed Application", "altId",capIDString);
 	}
 	//lwacht: 180108: defect 5120: end
