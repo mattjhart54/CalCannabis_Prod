@@ -62,7 +62,8 @@ try{
 	logDebug(err.stack);
 	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Relate Temp Record: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
 }
-
+//lwacht: 180216: story 5177: adding this back in
+// mhart: Comment out report to test payment processor time out issue
 //lwacht: create submission report
 try{
 	//lwacht: 180108: defect 5120: don't run for temporary
@@ -74,6 +75,7 @@ try{
 	logDebug("An error has occurred in ASA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: " + err.message);
 	logDebug(err.stack);
 }
+//lwacht: 180216: story 5177: end
 
 //lwacht: if defer payment is used, then re-invoice the fees and turn the associated forms into real records
 //lwacht: 171108: and send email
@@ -194,6 +196,16 @@ try{
 	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Convert Assoc Forms: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
 }
 
+//lwacht 180208: story 5200: updating file date
+try{
+	editAppSpecific("Created Date", fileDate);
+	updateFileDate(null);
+} catch(err){
+	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Force file date to be submission date: " + err.message);
+	logDebug(err.stack);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Force file date to be submission date: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
+}
+//lwacht 180208: story 5200: end
 
 
 //lwacht: if defer payment is used, then re-invoice the fees and turn the associated forms into real records
