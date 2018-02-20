@@ -54,11 +54,6 @@ try{
 			if(thisDoc.docName.indexOf("CompletedApplication")>-1){
 				docFound = true;
 			}
-			//for (t in thisDoc){
-			//	if(typeof(thisDoc[t])!="function"){
-			//		logDebug(t + ": " + thisDoc[t]);
-			//	}
-			//}
 		}
 	}
 	if(!docFound){
