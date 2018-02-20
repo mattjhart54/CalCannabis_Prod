@@ -196,33 +196,33 @@ try{
 //lwacht: 180216: story 5177: adding this back in
 // mhart: Comment out report to test payment processor time out issue
 //lwacht: create submission report
+
 try{
 	//lwacht: 180108: defect 5120: don't run for temporary
 	if(appTypeArray[2]!="Temporary"){
 		var sDate = new Date();
-		var sTime = thisDate.getTime();
+		var sTime = sDate.getTime();
 		//runReportAttach(capId,"Completed Application", "altId",capIDString);
 //-----------------------
-			
 		var reportName = "Completed Application";
 		reportResult = aa.reportManager.getReportInfoModelByName(reportName);
 		if (!reportResult.getSuccess())
 			{ logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); }
 		var report = reportResult.getOutput(); 
-		var itemCap = aa.cap.getCap(itemCapId).getOutput();
+		var itemCap = aa.cap.getCap(capId).getOutput();
 		appTypeResult = itemCap.getCapType();
 		appTypeString = appTypeResult.toString(); 
 		appTypeArray = appTypeString.split("/");
 		report.setModule(appTypeArray[0]); 
-		report.setCapId(itemCapId.getID1() + "-" + itemCapId.getID2() + "-" + itemCapId.getID3()); 
-		report.getEDMSEntityIdModel().setAltId(itemCapId.getCustomID());
+		report.setCapId(capId.getID1() + "-" + capId.getID2() + "-" + capId.getID3()); 
+		report.getEDMSEntityIdModel().setAltId(capId.getCustomID());
 		var parameters = aa.util.newHashMap();              
 		parameters.put("altId",capIDString);
 		report.setReportParameters(parameters);
 		var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
 		if(permit.getOutput().booleanValue()) { 
 			var reportResult = aa.reportManager.getReportResult(report); 
-			logDebug("Report " + aaReportName + " has been run for " + itemCapId.getCustomID());
+			logDebug("Report 'Completed Application' has been run for " + capId.getCustomID());
 		}else
 			logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
 //-----------------------
