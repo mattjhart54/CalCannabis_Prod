@@ -103,7 +103,11 @@ try{
 	if(appTypeArray[2]!="Temporary"){
 		if(!publicUser){
 			runReportAttach(capId,"Completed Application", "altId", capId.getCustomID());
+		//lwacht: 180220: story 5177: trying to figure out a way around the payment adapter conflict
+		}else{
+			runReportAttach(capId,"Completed Application", "altId", capId.getCustomID());
 		}
+		//lwacht: 180220: story 5177: end
 	}
 	//lwacht: 180108: defect 5120: end
 } catch(err){

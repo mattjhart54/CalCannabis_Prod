@@ -200,10 +200,11 @@ try{
 try{
 	//lwacht: 180108: defect 5120: don't run for temporary
 	if(appTypeArray[2]!="Temporary"){
+		var eTxt = "";
 		var sDate = new Date();
 		var sTime = sDate.getTime();
 		//runReportAttach(capId,"Completed Application", "altId",capIDString);
-//-----------------------
+/*-----------------------
 		var reportName = "Completed Application";
 		reportResult = aa.reportManager.getReportInfoModelByName(reportName);
 		if (!reportResult.getSuccess())
@@ -225,7 +226,7 @@ try{
 			logDebug("Report 'Completed Application' has been run for " + capId.getCustomID());
 		}else
 			logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
-//-----------------------
+//----------------------- */
 		var thisDate = new Date();
 		var thisTime = thisDate.getTime();
 		var eTime = (thisTime - sTime) / 1000
