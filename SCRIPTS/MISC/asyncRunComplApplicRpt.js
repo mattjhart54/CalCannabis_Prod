@@ -1,6 +1,6 @@
 try{
-	aa.env.setValue("sendCap", "LCA18-0000116");
-	aa.env.setValue("currentUserID", "LWACHT");
+	//aa.env.setValue("sendCap", "LCA18-0000116");
+	//aa.env.setValue("currentUserID", "LWACHT");
 	var sendCap = "" + aa.env.getValue("sendCap");
 	var currentUserID = "" + aa.env.getValue("currentUserID");
 	var br = "<BR>";
