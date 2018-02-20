@@ -32,9 +32,10 @@ try{
 		var reportResult = aa.reportManager.getReportResult(report); 
 		aa.print("Report 'Completed Application' has been run for " + sendCap);
 		eTxt+=("Report 'Completed Application' has been run for " + sendCap);
-	}else
+	}else{
 		aa.print("No permission to report: "+ reportName + " for user: " + currentUserID);
 		eTxt+=("No permission to report: "+ reportName + " for user: " + currentUserID);
+	}
 //----------------------- 
 	var thisDate = new Date();
 	var thisTime = thisDate.getTime();
