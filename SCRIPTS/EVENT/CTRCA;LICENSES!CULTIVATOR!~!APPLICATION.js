@@ -227,6 +227,12 @@ try{
 		}else
 			logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
 //----------------------- */
+		var scriptName = "asyncRunComplApplicRpt";
+		var envParameters = aa.util.newHashMap();
+		envParameters.put("sendCap",capIDString); 
+		envParameters.put("currentUserID",myUserId);
+		logDebug(aa.runAsyncScript(scriptName, envParameters));
+
 		var thisDate = new Date();
 		var thisTime = thisDate.getTime();
 		var eTime = (thisTime - sTime) / 1000
