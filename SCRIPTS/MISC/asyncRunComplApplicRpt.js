@@ -12,7 +12,7 @@ try{
 	reportResult = aa.reportManager.getReportInfoModelByName(reportName);
 	if (!reportResult.getSuccess()){
 		aa.print("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); 
-		eTxt+=("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); 
+		eTxt+="**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage() +br; 
 	}
 	var report = reportResult.getOutput(); 
 	var tmpID = aa.cap.getCapID(sendCap).getOutput(); 
@@ -31,10 +31,10 @@ try{
 	if(permit.getOutput().booleanValue()) { 
 		var reportResult = aa.reportManager.getReportResult(report); 
 		aa.print("Report 'Completed Application' has been run for " + sendCap);
-		eTxt+=("Report 'Completed Application' has been run for " + sendCap);
+		eTxt+=("Report 'Completed Application' has been run for " + sendCap) +br;
 	}else{
 		aa.print("No permission to report: "+ reportName + " for user: " + currentUserID);
-		eTxt+=("No permission to report: "+ reportName + " for user: " + currentUserID);
+		eTxt+="No permission to report: "+ reportName + " for user: " + currentUserID;
 	}
 //----------------------- 
 	var thisDate = new Date();
