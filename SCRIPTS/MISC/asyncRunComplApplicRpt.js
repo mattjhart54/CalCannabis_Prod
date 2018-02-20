@@ -10,8 +10,10 @@ try{
 //-----------------------
 	var reportName = "Completed Application";
 	reportResult = aa.reportManager.getReportInfoModelByName(reportName);
-	if (!reportResult.getSuccess())
-		{ aa.print("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); }
+	if (!reportResult.getSuccess()){
+		aa.print("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); 
+		eTxt+=("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); 
+	}
 	var report = reportResult.getOutput(); 
 	var tmpID = aa.cap.getCapID(sendCap).getOutput(); 
 	cap = aa.cap.getCap(tmpID).getOutput();
@@ -29,15 +31,18 @@ try{
 	if(permit.getOutput().booleanValue()) { 
 		var reportResult = aa.reportManager.getReportResult(report); 
 		aa.print("Report 'Completed Application' has been run for " + sendCap);
+		eTxt+=("Report 'Completed Application' has been run for " + sendCap);
 	}else
 		aa.print("No permission to report: "+ reportName + " for user: " + currentUserID);
+		eTxt+=("No permission to report: "+ reportName + " for user: " + currentUserID);
 //----------------------- 
 	var thisDate = new Date();
 	var thisTime = thisDate.getTime();
 	var eTime = (thisTime - sTime) / 1000
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "lwacht@trustvip.com", "", "INFO ONLY RunAsync: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + sendCap + br + "avpre6");
+	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "lwacht@trustvip.com", "", "INFO ONLY RunAsync: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + sendCap + br + "avpre6" + br + eTxt);
 	//lwacht: 180108: defect 5120: end
 } catch(err){
 	aa.print("An error has occurred in RunAsync: Submission Report: " + err.message);
 	aa.print(err.stack);
+	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "lwacht@trustvip.com", "", "AN ERROR HAS OCCURRED IN RunAsync: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + sendCap + br + "avpre6" + br + eTxt);
 }
