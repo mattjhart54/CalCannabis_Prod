@@ -205,7 +205,7 @@ try{
 		var thisDate = new Date();
 		var thisTime = thisDate.getTime();
 		var eTime = (thisTime - sTime) / 1000
-		aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: "+ startDate, capId + br +"elapsed time: " + eTime + br +  currEnv);
+		aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: "+ startDate, capId + br +"elapsed time: " + eTime + " seconds. " + br + "capIDString: " + capIDString + br + currEnv);
 	}
 	//lwacht: 180108: defect 5120: end
 } catch(err){
