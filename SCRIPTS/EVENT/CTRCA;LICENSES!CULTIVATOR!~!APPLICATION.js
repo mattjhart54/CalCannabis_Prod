@@ -199,7 +199,13 @@ try{
 try{
 	//lwacht: 180108: defect 5120: don't run for temporary
 	if(appTypeArray[2]!="Temporary"){
+		var sDate = new Date();
+		var sTime = thisDate.getTime();
 		runReportAttach(capId,"Completed Application", "altId",capIDString);
+		var thisDate = new Date();
+		var thisTime = thisDate.getTime();
+		var eTime = (thisTime - sTime) / 1000
+		aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: "+ startDate, capId + br +"elapsed time: " + eTime + br +  currEnv);
 	}
 	//lwacht: 180108: defect 5120: end
 } catch(err){
