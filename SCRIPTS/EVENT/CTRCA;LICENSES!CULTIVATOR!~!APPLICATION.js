@@ -201,7 +201,31 @@ try{
 	if(appTypeArray[2]!="Temporary"){
 		var sDate = new Date();
 		var sTime = thisDate.getTime();
-		runReportAttach(capId,"Completed Application", "altId",capIDString);
+		//runReportAttach(capId,"Completed Application", "altId",capIDString);
+//-----------------------
+			
+		var reportName = "Completed Application";
+		reportResult = aa.reportManager.getReportInfoModelByName(reportName);
+		if (!reportResult.getSuccess())
+			{ logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); }
+		var report = reportResult.getOutput(); 
+		var itemCap = aa.cap.getCap(itemCapId).getOutput();
+		appTypeResult = itemCap.getCapType();
+		appTypeString = appTypeResult.toString(); 
+		appTypeArray = appTypeString.split("/");
+		report.setModule(appTypeArray[0]); 
+		report.setCapId(itemCapId.getID1() + "-" + itemCapId.getID2() + "-" + itemCapId.getID3()); 
+		report.getEDMSEntityIdModel().setAltId(itemCapId.getCustomID());
+		var parameters = aa.util.newHashMap();              
+		parameters.put("altId",capIDString);
+		report.setReportParameters(parameters);
+		var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
+		if(permit.getOutput().booleanValue()) { 
+			var reportResult = aa.reportManager.getReportResult(report); 
+			logDebug("Report " + aaReportName + " has been run for " + itemCapId.getCustomID());
+		}else
+			logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
+//-----------------------
 		var thisDate = new Date();
 		var thisTime = thisDate.getTime();
 		var eTime = (thisTime - sTime) / 1000
