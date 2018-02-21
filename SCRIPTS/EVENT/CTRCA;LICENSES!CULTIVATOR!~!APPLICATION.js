@@ -200,43 +200,20 @@ try{
 try{
 	//lwacht: 180108: defect 5120: don't run for temporary
 	if(appTypeArray[2]!="Temporary"){
+		//lwacht: 180220: story 5177: completed app report needs to run in a (un)specified amount of time
 		var eTxt = "";
 		var sDate = new Date();
 		var sTime = sDate.getTime();
-		//runReportAttach(capId,"Completed Application", "altId",capIDString);
-/*-----------------------
-		var reportName = "Completed Application";
-		reportResult = aa.reportManager.getReportInfoModelByName(reportName);
-		if (!reportResult.getSuccess())
-			{ logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); }
-		var report = reportResult.getOutput(); 
-		var itemCap = aa.cap.getCap(capId).getOutput();
-		appTypeResult = itemCap.getCapType();
-		appTypeString = appTypeResult.toString(); 
-		appTypeArray = appTypeString.split("/");
-		report.setModule(appTypeArray[0]); 
-		report.setCapId(capId.getID1() + "-" + capId.getID2() + "-" + capId.getID3()); 
-		report.getEDMSEntityIdModel().setAltId(capId.getCustomID());
-		var parameters = aa.util.newHashMap();              
-		parameters.put("altId",capIDString);
-		report.setReportParameters(parameters);
-		var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
-		if(permit.getOutput().booleanValue()) { 
-			var reportResult = aa.reportManager.getReportResult(report); 
-			logDebug("Report 'Completed Application' has been run for " + capId.getCustomID());
-		}else
-			logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
-//----------------------- */
 		var scriptName = "asyncRunComplApplicRpt";
 		var envParameters = aa.util.newHashMap();
 		envParameters.put("sendCap",capIDString); 
 		envParameters.put("currentUserID",currentUserID);
 		aa.runAsyncScript(scriptName, envParameters);
-
 		var thisDate = new Date();
 		var thisTime = thisDate.getTime();
-		var eTime = (thisTime - sTime) / 1000
-		aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: "+ startDate, capId + br +"elapsed time: " + eTime + " seconds. " + br + "capIDString: " + capIDString + br + currEnv);
+		var eTime = (thisTime - sTime) / 1000;
+		logDebug("elapsed time: " + eTime + " seconds.");
+		//aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: "+ startDate, capId + br +"elapsed time: " + eTime + " seconds. " + br + "capIDString: " + capIDString + br + currEnv);
 	}
 	//lwacht: 180108: defect 5120: end
 } catch(err){

@@ -43,29 +43,3 @@ try{
 	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/*/APPLICATION: Admin Fees Paid: " + err.message);
 	logDebug(err.stack);
 }
-
-//lwacht: 180220: story 5177: run this after the payment is processed
-try{
-	var docFound = false;
-	var docsList = getDocumentList();
-	if(docsList.length>0){
-		for (dl in docsList){
-			var thisDoc = docsList[dl];
-			if(thisDoc.docName.indexOf("CompletedApplication")>-1){
-				docFound = true;
-			}
-		}
-	}
-	if(!docFound){
-		var scriptName = "asyncRunComplApplicRpt";
-		var envParameters = aa.util.newHashMap();
-		envParameters.put("sendCap",capIDString); 
-		envParameters.put("currentUserID",myUserId);
-		aa.runAsyncScript(scriptName, envParameters);
-	}
-
-}catch(err){
-	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/*/APPLICATION: Create completed application: " + err.message);
-	logDebug(err.stack);
-}
-//lwacht: 180220: story 5177: end

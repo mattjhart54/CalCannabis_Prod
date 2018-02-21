@@ -1,3 +1,4 @@
+//lwacht: 180220: story 5177: completed application not populated when run in sync.
 try{
 	//aa.env.setValue("sendCap", "LCA18-0000116");
 	//aa.env.setValue("currentUserID", "LWACHT");
@@ -40,10 +41,11 @@ try{
 	var thisDate = new Date();
 	var thisTime = thisDate.getTime();
 	var eTime = (thisTime - sTime) / 1000
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "lwacht@trustvip.com", "", "INFO ONLY RunAsync: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + sendCap + br + "avpre6" + br + eTxt);
+	//aa.sendMail("calcannabislicensing@cdfa.ca.gov", "lwacht@trustvip.com", "", "INFO ONLY RunAsync: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + sendCap + br + "avpre6" + br + eTxt);
 	//lwacht: 180108: defect 5120: end
 } catch(err){
 	aa.print("An error has occurred in RunAsync: Submission Report: " + err.message);
 	aa.print(err.stack);
 	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "lwacht@trustvip.com", "", "AN ERROR HAS OCCURRED IN RunAsync: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + sendCap + br + "avpre6" + br + eTxt);
 }
+//lwacht: 180220: story 5177:end
