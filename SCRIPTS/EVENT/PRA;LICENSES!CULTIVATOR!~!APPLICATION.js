@@ -57,7 +57,11 @@ try{
 		}
 	}
 	if(!docFound){
-		runReportAttach(capId,"Completed Application", "altId", capId.getCustomID());
+		var scriptName = "asyncRunComplApplicRpt";
+		var envParameters = aa.util.newHashMap();
+		envParameters.put("sendCap",capIDString); 
+		envParameters.put("currentUserID",myUserId);
+		aa.runAsyncScript(scriptName, envParameters);
 	}
 
 }catch(err){

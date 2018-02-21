@@ -230,8 +230,8 @@ try{
 		var scriptName = "asyncRunComplApplicRpt";
 		var envParameters = aa.util.newHashMap();
 		envParameters.put("sendCap",capIDString); 
-		envParameters.put("currentUserID",myUserId);
-		logDebug(aa.runAsyncScript(scriptName, envParameters));
+		envParameters.put("currentUserID",currentUserID);
+		aa.runAsyncScript(scriptName, envParameters);
 
 		var thisDate = new Date();
 		var thisTime = thisDate.getTime();
@@ -242,6 +242,7 @@ try{
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: " + err.message);
 	logDebug(err.stack);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Submission Report: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
 }
 //lwacht: 180216: story 5177: end
 
