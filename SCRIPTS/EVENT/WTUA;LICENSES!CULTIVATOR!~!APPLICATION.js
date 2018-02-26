@@ -1,7 +1,7 @@
 //lwacht: send a deficiency email when the status is "Deficiency Letter Sent" 
 try{
 	if("Deficiency Letter Sent".equals(wfStatus)){
-		/* lwacht 171129: moving to WTUB to try to get report to work
+/* lwacht 171129: moving to WTUB to try to get report to work
 		var newAppName = "Deficiency: " + capName;
 		//create child amendment record
 		ctm = aa.proxyInvoker.newInstance("com.accela.aa.aamain.cap.CapTypeModel").getOutput();
@@ -54,7 +54,7 @@ try{
 				editAppSpecific("AltId", newAltId,newDefId);
 				logDebug("Deficiency record ID updated to : " + newAltId);
 			}
-			*/
+*/
 			var childAmend = getChildren("Licenses/Cultivator/Medical/Amendment");
 			var cntChild = childAmend.length;
 			logDebug("cntChild: " + cntChild);
@@ -135,6 +135,22 @@ try{
 							editAppSpecific("AltId", newOAltId,newODefId);
 							logDebug("Deficiency owner record ID updated to : " + newOAltId);
 						}
+// mhart 20180214 user story 4873 - Run deficincy report and send notification to the owner.
+						var ownerContact = getContactObj(thisOwnCapId,"Owner");
+						if(ownerContact){
+							var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ ownerContact.capContact.getPreferredChannel());
+							if(!matches(priChannel,"",null,"undefined")){
+								if(priChannel.indexOf("Email") < 0 && priChannel.indexOf("E-mail") < 0){
+									comment("<font color='purple'>Use this value for the Deficiency Record ID on the report: " + newAltId + "</font>");
+								}
+							}
+						}
+						runReportAttach(thisOwnCapId,"Deficiency Report", "p1value", thisOwnCapId.getCustomID(), "p2value",newOAltId);
+						holdCapId = capId;
+						capId = thisOwnCapId;
+						emailRptContact("", "LCA_DEFICIENCY_OWNER", "", false, capStatus, thisOwnCapId, "Owner", "p1value", thisOwnCapId.getCustomID());
+						capId = holdCapId;
+// mhart 20180214 user story 4873 
 					}
 				}
 			}
@@ -258,6 +274,111 @@ try{
 	aa.print(err.stack);
 }
 
+//lwacht: 180207: story 2896: add a generic condition when a denial is appealed and remove when denial is done
+try{
+	if(wfStatus=="Appealed" && wfTask =="Application Disposition"){
+		var drpContact = getContactObj(capId,"Designated Responsible Party");
+		if(drpContact){
+			var drpSeqNbr = drpContact.refSeqNumber;
+			addContactStdCondition_rev(drpSeqNbr,"Application Condition", "Appeal Pending",capIDString);
+		}
+		var busContact = getContactObj(capId,"Business");
+		if(busContact){
+			var busSeqNbr = busContact.refSeqNumber;
+			if(busSeqNbr!=drpSeqNbr){
+				addContactStdCondition_rev(busSeqNbr,"Application Condition", "Appeal Pending",capIDString);
+			}else{
+				logDebug("Business and DRP are the same, not adding condition again.")
+			}
+		}
+		var arrChild = getChildren("Licenses/Cultivator/*/Owner Application");
+		for(ch in arrChild){
+			var oCapId = arrChild[ch];
+			var ownContact = getContactObj(oCapId,"Owner");
+			if(ownContact){
+				var ownSeqNbr = ownContact.refSeqNumber;
+				if(ownSeqNbr!=busSeqNbr && ownSeqNbr!=drpSeqNbr){
+					addContactStdCondition_rev(ownSeqNbr,"Application Condition", "Appeal Pending",capIDString);
+				}else{
+					logDebug("Owner and (Business and/or DRP) are the same, not adding condition again.")
+				}
+			}
+		}
+	}
+}catch(err){
+	aa.print("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: Add appeal denial condition: " + err.message);
+	aa.print(err.stack);
+}
+
+try{
+	if( wfTask =="Appeal"){
+		var drpContact = getContactObj(capId,"Designated Responsible Party");
+		var drpSeqNbr = drpContact.refSeqNumber;
+		var busContact = getContactObj(capId,"Business");
+		var busSeqNbr = drpContact.refSeqNumber;
+		var arrCond = getContactConditions_rev("Application Condition", "Applied", "Appeal Pending", null);
+		if(arrCond.length>0){
+			for (con in arrCond){
+				var thisCond = arrCond[con];
+				if(thisCond.comment.indexOf(capIDString) > -1){
+					var condResult = aa.commonCondition.removeCommonCondition("CONTACT", drpSeqNbr, thisCond.condNbr);
+					if(condResult.getSuccess()){
+						logDebug("Successfully removed condition from DRP Contact " + thisCond.comment);
+					}else{
+						logDebug("Error removing condition from DRP Contact: " + condResult.getErrorMessage());
+					}
+					if(busSeqNbr!=drpSeqNbr){
+						var condResult = aa.commonCondition.removeCommonCondition("CONTACT", busSeqNbr, thisCond.condNbr);
+						if(condResult.getSuccess()){
+							logDebug("Successfully removed condition from Business Contact: " + thisCond.comment);
+						}else{
+							logDebug("Error removing condition from Business Contact: " + condResult.getErrorMessage());
+						}
+					}else{
+						logDebug("Business and DRP are the same, not removing condition again.")
+					}
+				}else{
+					logDebug("Condition is not for record " + capIDString + ": " + thisCond.comment);
+				}
+			}
+		}else{
+			logDebug("Search returned no conditions.");
+		}
+		var arrChild = getChildren("Licenses/Cultivator/*/Owner Application");
+		for(ch in arrChild){
+			var oCapId = arrChild[ch];
+			var ownContact = getContactObj(oCapId,"Owner");
+			if(ownContact){
+				var ownSeqNbr = ownContact.refSeqNumber;
+				if(ownSeqNbr!=busSeqNbr && ownSeqNbr!=drpSeqNbr){
+					var arrCondOwn = getContactConditions_rev("Application Condition", "Applied", "Appeal Pending", null, oCapId);
+					if(arrCondOwn.length>0){
+						for (con in arrCondOwn){
+							var thisCond = arrCondOwn[con];
+							if(thisCond.comment.indexOf(capIDString) > -1){
+								var condResult = aa.commonCondition.removeCommonCondition("CONTACT", ownSeqNbr, thisCond.condNbr);
+								if(condResult.getSuccess()){
+									logDebug("Successfully removed condition from Owner Contact: " + thisCond.comment);
+								}else{
+									logDebug("Error removing condition from Owner Contact: " + condResult.getErrorMessage());
+								}
+							}else{
+								logDebug("Owner and (Business and/or DRP) are the same, not removing condition again.")
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}catch(err){
+	aa.print("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: Remove appeal denial condition: " + err.message);
+	aa.print(err.stack);
+}
+
+//lwacht: 180207: story 2896: end
+
+
 //lwacht
 //if the perm application is set to denied, then close out any related temp licenses
 //MJH User Story 3556 remove this functionality
@@ -337,3 +458,4 @@ try{
 	logDebug(err.stack);
 }
 lwacht end */
+
