@@ -74,17 +74,24 @@ try{
 			var eParams = aa.util.newHashtable(); 
 			//logDebug("callingPgm: " + callingPgm);
 			if(callingPgm=="WTUA"){
-				addParameter(eParams, "$$fileDateYYYYMMDD$$", fileDateYYYYMMDD);
-				var currCapId = capId;
-				capId = acaCapId;
-				//getACARecordParam4Notification(eParams,acaUrl);
-				var acaUrlForAmend = "https://aca.supp.accela.com/CALCANNABIS/urlrouting.ashx?type=1008&Module=Licenses&capID1="+capId.ID1+"&capID2="+capId.ID2+"&capID3="+capId.ID3+"&agencyCode=CALCANNABIS&HideHeader=true";
-				addParameter(eParams, "$$acaRecordUrl$$", acaUrlForAmend);
-				capId = currCapId;
 				var staffUser = new userObj(wfStaffUserID);
 				staffUser.getEmailTemplateParams(eParams,"scientist")
 				getWorkflowParams4Notification(eParams);
 			}
+			addParameter(eParams, "$$fileDateYYYYMMDD$$", fileDateYYYYMMDD);
+			var currCapId = capId;
+			capId = acaCapId;
+			//getACARecordParam4Notification(eParams,acaUrl);
+// mhart 20180215 added if statement for notifications to use ACA deep links.
+			if(matches(notName,"LCA_XXXXX")) 
+				acaUrlForAmend = getACAlinkForEdit(acaCapId,"Licenses","1008");
+			else {
+				var acaBase = getACABaseUrl();
+				var acaUrlForAmend = acaBase;
+			}
+// mhart 20180215 							
+			addParameter(eParams, "$$acaRecordUrl$$", acaUrlForAmend);
+			capId = currCapId;	
 			var contPhone = priContact.capContact.phone1;
 			if(contPhone){
 				var fmtPhone = contPhone.substr(0,3) + "-" + contPhone.substr(3,3) +"-" + contPhone.substr(6,4);
