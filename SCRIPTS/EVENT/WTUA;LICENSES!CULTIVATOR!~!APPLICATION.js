@@ -131,7 +131,7 @@ try{
 						if(!updOAltId.getSuccess()){
 							logDebug("Error updating Owner Alt Id: " + newOAltId + ":: " +updOAltId.getErrorMessage());
 						}else{
-							logDebug("newOAltId: " + newOAltId);
+							logDebug("newOAltId: " + updOAltId);
 							editAppSpecific("AltId", newOAltId,newODefId);
 							logDebug("Deficiency owner record ID updated to : " + newOAltId);
 						}
