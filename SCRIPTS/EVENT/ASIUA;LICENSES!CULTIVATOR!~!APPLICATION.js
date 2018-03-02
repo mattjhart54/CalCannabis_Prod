@@ -1,12 +1,23 @@
 try {
 	if (typeof(DEFICIENCIES) == "object") {
-		removeASITable("DEFICIENCIES"); 
 		for(x in DEFICIENCIES) {
 			if(matches(DEFICIENCIES[x]["Deficiency Details"], null, "", undefined)) {
 				defDesc = lookup("LIC_CC_DEFICIENCY_TYPE",DEFICIENCIES[x]["Deficiency Type"]);
 				DEFICIENCIES[x]["Deficiency Details"] = defDesc;
 			}
+			//lwacht: 180215: story 4796: populated a UID so that rows can be matched to child records
+			if(matches(DEFICIENCIES[x]["UID"],"",null,"undefined")){
+				var thisDate = new Date();
+				var thisTime = ""+thisDate.getTime();
+				DEFICIENCIES[x]["UID"] = thisTime;
+				var date = new Date();
+				var curDate = null;
+				do { curDate = new Date(); } 
+					while(curDate-date < 10);
+			}
+			//lwacht: 180215: story 4796: end
 		}
+		removeASITable("DEFICIENCIES"); 
 		addASITable("DEFICIENCIES", DEFICIENCIES)
 	}
 	if (typeof(DENIALREASONS) == "object") {
@@ -19,7 +30,13 @@ try {
 		}
 		addASITable("DENIAL REASONS", DENIALREASONS)
 	}
+}catch (err){
+	logDebug("A JavaScript Error occurred: ASIUA: Licenses/Cultivation/*/Application: Send Local Auth: " + err.message);
+	logDebug(err.stack);
+	aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ASIUA:Licenses/Cultivation/*/Application: Update deficiency table: " + startDate, "capId: " + capId + ": " + err.message + ": " + err.stack);
+}
 
+try{
 	editAppName(AInfo["License Type"]);
 	updateShortNotes(AInfo["Premise County"]);
 	if(appTypeArray[2] == "Temporary") {
