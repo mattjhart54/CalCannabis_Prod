@@ -428,7 +428,7 @@ try{
 					//lwacht: 171122: emailing all contacts, regardless of preferred channel
 					currentUserID = "ADMIN";
 					runReportAttach(capId,rptName, "altId", capId.getCustomID()); 
-					emailRptContact("BATCH", emailTemplate, "", false, "Deficiency Letter Sent", capId, conTypeArray[thisType]);
+					emailRptContact("BATCH", emailTemplate, "", false, "", capId, conTypeArray[thisType]);
 					logDebug(altId + ": Sent Email template " + emailTemplate + " to " + conTypeArray[thisType] + " : " + email);
 					//lwacht: 171122: end
 				}
