@@ -267,6 +267,9 @@ try{
 			var cap = capResult.getOutput();
 		}
 		var capStatus = cap.getCapStatus();
+		fileDateObj = cap.getFileDate();
+		fileDate = "" + fileDateObj.getMonth() + "/" + fileDateObj.getDayOfMonth() + "/" + fileDateObj.getYear();
+		fileDateYYYYMMDD = dateFormatted(fileDateObj.getMonth(),fileDateObj.getDayOfMonth(),fileDateObj.getYear(),"YYYY-MM-DD");
 		appTypeResult = cap.getCapType(); //create CapTypeModel object
 		appTypeString = appTypeResult.toString();
 		appTypeArray = appTypeString.split("/");
