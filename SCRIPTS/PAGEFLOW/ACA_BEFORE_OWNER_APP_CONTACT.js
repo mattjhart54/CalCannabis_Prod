@@ -76,36 +76,41 @@ var cap = aa.env.getValue("CapModel");
 // page flow custom code begin
 
 try{
-	var capId = cap.getCapID();
-	var appName = cap.getSpecialText();
-	if(appName!=null){
-		if(appName.indexOf("(")>-1){
-			var parenLoc = appName.indexOf("(");
-			var ownerName = appName.substring(0,parseInt(parenLoc));
-			var appNameLen = 0
-			appNameLen = appName.length();
-			var ownerEmail = appName.substring(parseInt(parenLoc)+1, appNameLen-1);
-			//var resCurUser = aa.person.getUser(publicUserID);
-			var resCurUser = aa.people.getPublicUserByUserName(publicUserID);
-			if(resCurUser.getSuccess()){
-				var currUser = resCurUser.getOutput();
-				var currEmail = currUser.email;
-				if(!matches(ownerEmail,"",null,"undefined")){
-					if(ownerEmail.toUpperCase() != currEmail.toUpperCase()){
-						showMessage = true;
-						cancel = true;
-						comment("Error: Only " + ownerName + " can submit this application.");
+	//lwacht: 180306: story 5302: don't allow script to run against completed records
+	var capIdStatusClass = getCapIdStatusClass(capId);
+	if(!matches(capIdStatusClass, "COMPLETE")){
+	//lwacht: 180306: story 5302: end
+		var capId = cap.getCapID();
+		var appName = cap.getSpecialText();
+		if(appName!=null){
+			if(appName.indexOf("(")>-1){
+				var parenLoc = appName.indexOf("(");
+				var ownerName = appName.substring(0,parseInt(parenLoc));
+				var appNameLen = 0
+				appNameLen = appName.length();
+				var ownerEmail = appName.substring(parseInt(parenLoc)+1, appNameLen-1);
+				//var resCurUser = aa.person.getUser(publicUserID);
+				var resCurUser = aa.people.getPublicUserByUserName(publicUserID);
+				if(resCurUser.getSuccess()){
+					var currUser = resCurUser.getOutput();
+					var currEmail = currUser.email;
+					if(!matches(ownerEmail,"",null,"undefined")){
+						if(ownerEmail.toUpperCase() != currEmail.toUpperCase()){
+							showMessage = true;
+							cancel = true;
+							comment("Error: Only " + ownerName + " can submit this application.");
+						}
 					}
+				}else{
+					logDebug("An error occurred retrieving the current user: " + resCurUser.getErrorMessage());
+					aa.sendMail(sysFromEmail, debugEmail, "", "An error occurred retrieving the current user: ACA_BEFORE_OWNER_APP_CONTACT: " + startDate, "capId: " + capId + ": " + resCurUser.getErrorMessage());
 				}
 			}else{
-				logDebug("An error occurred retrieving the current user: " + resCurUser.getErrorMessage());
-				aa.sendMail(sysFromEmail, debugEmail, "", "An error occurred retrieving the current user: ACA_BEFORE_OWNER_APP_CONTACT: " + startDate, "capId: " + capId + ": " + resCurUser.getErrorMessage());
+				logDebug("Error with appName: " + appName);
 			}
 		}else{
-			logDebug("Error with appName: " + appName);
+				logDebug("Error with null appName: " + appName);
 		}
-	}else{
-			logDebug("Error with null appName: " + appName);
 	}
 } catch (err) {
 	showDebug =true;
@@ -114,6 +119,16 @@ try{
 	aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ACA_BEFORE_OWNER_APP_CONTACT: Correct contact  " + startDate, "capId: " + capId + br + err.message + br + err.stack + br + currEnv);
 }
 
+function getCapIdStatusClass(inCapId){
+    var inCapScriptModel = aa.cap.getCap(inCapId).getOutput();
+    var retClass = null;
+    if(inCapScriptModel){
+        var tempCapModel = inCapScriptModel.getCapModel();
+        retClass = tempCapModel.getCapClass();
+    }
+   
+    return retClass;
+}
 
 // page flow custom code end
 
