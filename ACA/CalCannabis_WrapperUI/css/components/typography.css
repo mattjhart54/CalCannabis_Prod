@@ -1,0 +1,61 @@
+a,
+span,
+font,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+td,
+tr,
+table,
+tbody,
+thead,
+tfoot {
+  font-family: MuseoSans, Sans-Serif, CalciteWebCoreIcons !important;
+}
+.ACA_Title_Bar,
+.ACA_InfoTitle {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #1F2F45;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  padding-left: 0;
+}
+.ACA_Title_Bar h1 > span,
+.ACA_InfoTitle h1 > span {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #1E2F46;
+}
+.ACA_Title_Bar h1 > span > font,
+.ACA_InfoTitle h1 > span > font {
+  font-size: 1.4em;
+}
+.ACA_SectionBody h1 span {
+  color: #1E2F46;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+.ACA_Body_Text,
+.ACA_Body_Text p {
+  color: #464646;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+.ACA_Content h1 > span,
+.Welcome_Label > span,
+.RegisterLicense_Title > span {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #1E2F46;
+}
+.ACA_Content h1 > span > font,
+.Welcome_Label > span > font,
+.RegisterLicense_Title > span > font {
+  font-size: 1.4em;
+}

@@ -1,0 +1,214 @@
+﻿@font-face {
+  font-family: MuseoSans;
+  font-weight: 100;
+  font-style: normal;
+  src: url('../../css/fonts/MuseoSans-100.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 100;
+  font-style: italic;
+  src: url('../../css/fonts/MuseoSans-100Italic.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 300;
+  font-style: normal;
+  src: url('../../css/fonts/MuseoSans-300.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 300;
+  font-style: italic;
+  src: url('../../css/fonts/MuseoSans-300Italic.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 500;
+  font-style: normal;
+  src: url('../../css/fonts/MuseoSans-500.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 500;
+  font-style: italic;
+  src: url('../../css/fonts/MuseoSans-500_Italic.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 700;
+  font-style: normal;
+  src: url('../../css/fonts/MuseoSans-700.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 700;
+  font-style: italic;
+  src: url('../../css/fonts/MuseoSans-700Italic.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 900;
+  font-style: normal;
+  src: url('../../css/fonts/MuseoSans-900.otf') format('opentype');
+}
+@font-face {
+  font-family: MuseoSans;
+  font-weight: 900;
+  font-style: italic;
+  src: url('../../css/fonts/MuseoSans-900Italic.otf') format('opentype');
+}
+body {
+  background-color: #fff;
+}
+.header {
+  background-color: #1fafed;
+  height: 200px;
+  position: relative;
+  display: table;
+  text-align: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.header .container {
+  width: 800px;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.header .container .logo {
+  position: absolute;
+  margin: 0 auto;
+  width: 50%;
+  top: 0;
+  z-index: 100;
+  height: 180px;
+  background-image: url('../images/logo.jpeg');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+.header .container .contact {
+  color: #fff;
+  width: 100%;
+  height: 100px;
+  text-align: right;
+  padding-top: 5px;
+  font-family: MuseoSans;
+  font-weight: 300;
+}
+.header .container .return {
+  position: absolute;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 5px 0 0 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 250px;
+  height: 25px;
+  background-color: #e7f6fd;
+}
+.header .container .return a {
+  color: #1F2F45;
+  font-family: MuseoSans;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+.aca {
+  margin: 0 auto;
+  width: 960px;
+}
+.footer {
+  margin: 0 auto;
+  border-top: solid 2px #ebebeb;
+  display: block;
+  background-color: #f6f6f7;
+  color: #464646;
+  font-family: MuseoSans;
+  font-size: 1.1em;
+  font-weight: 400;
+  height: 100%;
+  padding-top: 10px;
+}
+/*New Design*/
+.banner-header {
+  background-color: #1fafed;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 200px;
+  font-size: initial;
+}
+.banner-container {
+  display: table;
+  width: 800px;
+  margin: 0 auto;
+}
+.agency-logo {
+  text-align: left;
+  width: 25%;
+}
+.agency-logo img {
+  width: auto;
+  height: 150px;
+  margin-top: 22px;
+}
+.agency-banner-text {
+  color: #fff;
+  text-align: right;
+  width: 75%;
+}
+.agency-banner-text h2 {
+  font-size: 1.5em;
+  margin-top: 17px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+.agency-logo,
+.agency-banner-text {
+  display: table-cell;
+  vertical-align: top;
+}
+.agency-title,
+.agency-contact {
+  font-family: MuseoSans;
+}
+.rta {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.rta-container {
+  margin: auto 0;
+  display: inline-block;
+  width: 800px;
+  text-align: right;
+}
+.rta-tittle {
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 5px 10px 0px 10px;
+  margin: 0 auto;
+  min-width: 50px;
+  height: 25px;
+  background-color: #e7f6fd;
+  text-align: center;
+  display: inline-block;
+}
+.rta-tittle a {
+  color: #1F2F45;
+  font-family: MuseoSans;
+  font-weight: 700;
+  text-decoration: none !important;
+}

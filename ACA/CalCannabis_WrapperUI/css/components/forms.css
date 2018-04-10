@@ -1,0 +1,137 @@
+﻿.ACA_SmLabel {
+  font-family: MuseoSans, Sans-Serif !important;
+  font-size: 1.2em !important;
+  font-weight: 400 !important;
+}
+.ACA_Form label {
+  color: #464646;
+  font-family: MuseoSans, Sans-Serif !important;
+  font-size: 1.1em !important;
+  font-weight: 400 !important;
+}
+.ACA_Form .aca_checkbox,
+.ACA_Form .aca_checkboxlist {
+  padding-bottom: 10px;
+}
+.ACA_Form .aca_checkbox label,
+.ACA_Form .aca_checkboxlist label {
+  color: #464646 !important;
+  font-family: MuseoSans, Sans-Serif !important;
+  font-size: 1.1em !important;
+  font-weight: 400 !important;
+}
+.ACA_Form textarea,
+.ACA_Form input[type=text],
+.ACA_Form input[type=password],
+.ACA_Form select {
+  border: 1px solid #E6E6E6;
+  padding-left: 6px;
+  color: #464646;
+  margin-bottom: 8px;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.ACA_Form textarea:focus,
+.ACA_Form input[type=text]:focus,
+.ACA_Form input[type=password]:focus,
+.ACA_Form select:focus {
+  border-color: #24BFFB;
+  color: #464646;
+  -webkit-box-shadow: 1px 1px 2px 2px #e5e5e5;
+  -moz-box-shadow: 1px 1px 2px 2px #e5e5e5;
+  box-shadow: 1px 1px 2px 2px #e5e5e5;
+}
+.ACA_Form select {
+  -webkit-appearance: none;
+  -moz-appearance: window;
+  background-image: url(../../css/images/dropdown-arrow.png);
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: .8em;
+  padding-right: 12px !important;
+}
+.ACA_Form select::-ms-expand {
+  display: none;
+}
+.ACA_Form select:active,
+.ACA_Form select:hover {
+  outline-color: #139EDF;
+}
+.ACA_Form .ACA_ReadOnly {
+  cursor: not-allowed;
+}
+.ACA_Form input[readonly]:focus {
+  box-shadow: none !important;
+  border: 1px solid #E6E6E6 !important;
+}
+.ACA_Form textarea[readonly]:focus {
+  box-shadow: none !important;
+  border: 1px solid #E6E6E6 !important;
+  outline-color: #E6E6E6 !important;
+}
+.ACA_Form input[disabled]:focus {
+  box-shadow: none !important;
+  border: 1px solid #E6E6E6 !important;
+  color: none;
+}
+.ACA_Form .ACA_LgButtonDisable a:hover {
+  background: #C7C7C7 !important;
+}
+.ACA_Form .ReadOnlyPosition {
+  background: none;
+  cursor: not-allowed;
+}
+.ACA_Form .ReadOnlyPosition > input,
+.ACA_Form .ReadOnlyPosition > select {
+  background-color: #eee;
+}
+.ACA_Form .RangeNumberText_SubControl1_Layout,
+.ACA_Form .RangeNumberText_SubControl2_Layout {
+  width: 44%;
+}
+.ACA_Form .ACA_PhoneNumberLTR {
+  line-height: 2.5em;
+  vertical-align: middle;
+}
+.ACA_Form input[type=text],
+.ACA_Form input[type=password],
+.ACA_Form select {
+  height: 28px;
+}
+.ACA_Title_Bar .ACA_FRight select,
+.ACA_InfoTitle .ACA_FRight select {
+  margin-top: -10px;
+  margin-right: -18px;
+}
+.calendar_button > img {
+  margin-top: 4px;
+}
+.RangeNumberText_Split_Layout {
+  margin-top: 7px;
+}
+.ACA_Line_Content {
+  background: #e5e5e5;
+  margin: 10px 0 15px;
+}
+.ACA_Help_Icon {
+  background: url(../../css/images/help.png);
+  background-size: 16px;
+}
+.ACA_Help_Icon > img {
+  display: none;
+}
+#ctl00_PlaceHolderMain_lblGSLoadASI {
+  font-size: 1.2em !important;
+}
+.permit_typelist {
+  display: inline-block;
+  padding: 2px 0;
+}

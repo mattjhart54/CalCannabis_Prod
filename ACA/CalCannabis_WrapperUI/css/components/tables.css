@@ -1,0 +1,151 @@
+.ACA_Grid_OverFlow {
+  margin-bottom: 10px;
+  padding-bottom: 0 !important;
+}
+.ACA_GridView {
+  /*width: 100%;*/
+  width: 99.8%;
+}
+.ACA_GridView .ACA_TabRow_SmallEven,
+.ACA_GridView .ACA_TabRow_SmallEven2,
+.ACA_GridView .ACA_TabRow_SmallOdd {
+  border-spacing: 0 !important;
+  padding: 0 !important;
+}
+.ACA_GridView .ACA_TabRow_SmallEven,
+.ACA_GridView .ACA_TabRow_SmallOdd {
+  background: none !important;
+}
+.ACA_GridView .ACA_Line_Content {
+  display: none !important;
+}
+.ACA_GridView .ACA_TabRow {
+  padding-top: 10px;
+}
+.ACA_GridView .ACA_TabRow_Header > td,
+.ACA_GridView .ACA_TabTitle > td,
+.ACA_GridView .ACA_TabRow_Odd > td,
+.ACA_GridView .ACA_TabRow_Even > td,
+.ACA_GridView .ACA_TabRow_Header > th,
+.ACA_GridView .ACA_TabTitle > th,
+.ACA_GridView .ACA_TabRow_Odd > th,
+.ACA_GridView .ACA_TabRow_Even > th {
+  border: none;
+  padding: 5px 6px !important;
+  vertical-align: middle !important;
+}
+.ACA_GridView .ACA_TabRow_SmallEven > td,
+.ACA_GridView .ACA_TabRow_SmallEven2 > td,
+.ACA_GridView .ACA_TabRow_SmallOdd > td,
+.ACA_GridView .ACA_TabRow_SmallEven > th,
+.ACA_GridView .ACA_TabRow_SmallEven2 > th,
+.ACA_GridView .ACA_TabRow_SmallOdd > th {
+  border: none;
+  padding: 5px 15px !important;
+  vertical-align: middle !important;
+}
+.ACA_GridView .ACA_TabRow_Header > td,
+.ACA_GridView .ACA_TabTitle > td,
+.ACA_GridView .ACA_TabRow_Even > td,
+.ACA_GridView .ACA_TabRow_SmallEven > td,
+.ACA_GridView .ACA_TabRow_Header > th,
+.ACA_GridView .ACA_TabTitle > th,
+.ACA_GridView .ACA_TabRow_Even > th,
+.ACA_GridView .ACA_TabRow_SmallEven > th {
+  background: #fff !important;
+}
+.ACA_GridView .ACA_TabRow_Odd td,
+.ACA_GridView .ACA_TabRow_SmallOdd td,
+.ACA_GridView .ACA_TabRow_Odd th,
+.ACA_GridView .ACA_TabRow_SmallOdd th {
+  background: #f5f5f5;
+}
+.ACA_GridView .ACA_TabRow_Header > th,
+.ACA_GridView .ACA_TabTitle > th {
+  border: 1px solid #c6c6c6 !important;
+  background-color: #ccc !important;
+}
+.ACA_GridView .ACA_TabRow_Header > th a > span,
+.ACA_GridView .ACA_TabTitle > th a > span {
+  color: #666 !important;
+}
+.ACA_GridView .ACA_TabRow_Header > th a:hover > span,
+.ACA_GridView .ACA_TabTitle > th a:hover > span {
+  color: #222 !important;
+}
+.ACA_GridView .ACA_TabRow_Odd > td > div > span,
+.ACA_GridView .ACA_TabRow_Even > td > div > span,
+.ACA_GridView .ACA_TabRow_SmallEven > td > div > span,
+.ACA_GridView .ACA_TabRow_SmallEven2 > td > div > span,
+.ACA_GridView .ACA_TabRow_SmallOdd > td > div > span {
+  color: #000000 !important;
+}
+.ACA_GridView .ACA_TabRow_Odd:hover > td,
+.ACA_GridView .ACA_TabRow_Even:hover > td,
+.ACA_GridView .ACA_TabRow_SmallEven:hover > td,
+.ACA_GridView .ACA_TabRow_SmallEven2:hover > td,
+.ACA_GridView .ACA_TabRow_SmallOdd:hover > td {
+  background: #eee !important;
+}
+.ACA_GridView > tbody .ACA_TabRow_Header,
+.ACA_GridView > tbody .ACA_TabTitle > th span {
+  color: #000000;
+  font-weight: 500 !important;
+  text-decoration: none;
+}
+.ACA_GridView > tbody > tr > td a,
+.ACA_GridView > tbody > tr > td span {
+  font-size: 1em;
+}
+.ACA_GridView > tbody > tr:last-child {
+  border: none;
+}
+.ACA_GridView tr.ACA_SmLabel td {
+  padding: 5px 10px;
+  border: 2px solid #eee;
+}
+tr.ACA_Table_Pages {
+  border-bottom: none !important;
+}
+.ACA_Table_Pages td {
+  padding-top: 4px;
+  background-color: #fdfdfd;
+}
+.ACA_Table_Pages span,
+.ACA_Table_Pages a {
+  font-size: 1.3em;
+}
+.ACA_BkTit {
+  background: none !important;
+}
+.ACA_TabTitle {
+  border-bottom: 2px solid #eee;
+}
+.ACA_TabTitle th {
+  background: #fff !important;
+  border: none !important;
+  padding: 5px 3px;
+}
+.ACA_TabTitle th span {
+  color: #000000 !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+}
+.aca_gridview_caption > table > tbody > tr > td a {
+  color: #21BCFF !important;
+  font-size: 1.0em !important;
+  font-weight: 500 !important;
+}
+#divProcessInfo > #divProcessingTable .ACA_TabRow_Even,
+#divProcessInfo > #divProcessingTable .ACA_TabRow_Odd {
+  background: none !important;
+}
+#divProcessInfo > #divProcessingTable .ACA_TabRow_Even td,
+#divProcessInfo > #divProcessingTable .ACA_TabRow_Odd td {
+  color: #000000;
+  font-weight: 500 !important;
+  text-decoration: none;
+}
+#divProcessInfo > #divProcessingTable .ACA_TabRow_Even td {
+  background: #f5f5f5 !important;
+}

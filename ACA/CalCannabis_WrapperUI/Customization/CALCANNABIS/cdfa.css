@@ -1,0 +1,372 @@
+body {
+	background: white;
+	padding: 0;
+	font-size: 100% !important;
+	overflow-y: hidden !important;
+	margin: 0 !important;
+}
+body, h1, h2, h3, h4, p, li {
+	font-family: arial, helvetica, sans-serif !important;
+}
+a, a span {
+	color: #3e6506;
+	text-decoration: none;
+}
+a:hover, a:focus, a:active, a:hover span, a:focus span, a:active span {
+	color: #599600;
+}
+::placeholder {
+	color: #ddd;
+	opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder {
+	color: #ddd;
+}
+::-ms-input-placeholder {
+	color: #ddd;
+}
+/* this was hiding the login-button 	position: fixed; */
+.header {
+	background-color: #fff;
+	height: auto;
+	box-shadow: 0 2px 5px rgba(0,0,0,.25);
+	z-index: 1000;
+}
+.header .container img {
+	margin: 0;
+	float: none;
+}
+.masthead-table {
+	width: 100%;
+	background: #fff;
+}
+.masthead-table .cdfa-logo {
+	width: 57%;
+	padding: 20px 30px 21px 31px;
+}
+.masthead-table .calcan-logo {
+	background: #454545;
+	padding: 45px 20px 0 50px;
+}
+.navbar-table {
+	background: #1a2c00;
+	width: 100%;
+	border-bottom: 1px solid #3d4c29;
+}
+.navbar-table td {
+	padding: 13px 20px;
+}
+.navbar-table .right {
+	text-align: right;
+	padding-right: 30px;
+}
+.navbar-table a, .navbar-table a:visited  {
+	color: #83af3f;
+	font-size: 15px;
+}
+.navbar-table a:hover, .navbar-table a:focus, .navbar-table a:active {
+	color: #cee5aa;
+}
+.navbar-table a i {
+	color: #cee5aa;
+}
+.navbar-table a:hover i, .navbar-table a:focus i, .navbar-table a:active i {
+	color: #fff;
+}
+.navbar-table ul {
+	list-style: none;
+}
+.navbar-table ul li {
+	display: block;
+	float: left;
+	margin: 0 15px;
+}
+.top-spacer {
+	height: 25px;
+}
+.content-area {
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom:10px;
+	padding: 10px;
+	background: white;
+}
+.content-wrapper {
+	background: #f3f4f2;
+	border-radius: 8px;
+	margin: 0 auto;
+	max-width: 800px;
+	box-shadow: 0 3px 12px rgba(0,0,0,0.5);
+}
+.content-section {
+	padding: 10px 10px;
+}
+.content-area h1 {
+	color: #1a2c00;
+	line-height: 1.0;
+	font-size: 40px;
+	font-weight: normal;
+	margin: 0 0 10px;
+}
+.welcome-to {
+	display: block;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 3px;
+	line-height: 1.5;
+	font-weight: bold;
+	color: #000;
+}
+.content-area p {
+	color: #333;
+	font-size: 15px;
+	line-height: 1.5;
+	margin: 0 0 15px 0;
+}
+.content-area hr {
+	background: none;
+	border: none;
+	border-top: 1px solid #dadbd9;
+	border-bottom: 1px solid #fff;
+}
+.content-area h2 {
+	margin: 32px 0 4px;
+	color: #000;
+}
+.content-area h3 {
+	margin: 24px 0 4px;
+	color: #000;
+}
+.content-area h4 {
+	margin: 20px 0 4px;
+	color: #000;
+}
+.form-table {
+	margin: 0 auto 15px auto;
+}
+.form-table td {
+	padding: 0 5px;
+}
+.form-table .input {
+	padding-bottom: 15px;
+}
+.form-table .label {
+	padding-bottom: 5px;
+}
+.login-button {
+	display: block;
+	background: #253e00;
+	color: #a5d54a;
+	text-align: center;
+	border: 1px solid #6eb100;
+	border-radius: 4px;
+	padding: 6px 8px;
+	font-size: 20px;
+	width: 120px;
+	margin-left: 20px;
+	box-shadow: 0px 2px 6px rgba(0,0,0,.15);
+}
+.login-button:hover, .login-button:focus, .login-button:active {
+	color: #fff;
+}
+.form-table .input input {
+	font-size: 20px;
+	border-radius: 4px;
+	padding: 6px 8px;
+	background: #fff;
+	border: 1px solid #b7b7b7;
+	width: 220px;
+}
+.button-table {
+	margin: 0 auto 10px;
+}
+.button-table .button-td {
+	width: 250px;
+}
+.button-table .or-td {
+	width: 80px;
+	text-align: center;
+	color: #666;
+}
+.button-table a {
+	display: block;
+	background: #253e00;
+	text-align: center;
+	border: 2px solid #6eb100;
+	border-radius: 8px;
+	padding: 6px 8px;
+	font-size: 20px;
+	width: 250px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,.15);
+}
+.button-table a span, .button-table a i {
+	color: #a5d54a;
+}
+.button-table a:hover span, .button-table a:hover i, .button-table a:focus span, .button-table a:focus i, .button-table a:active span, .button-table a:active i {
+	color: #fff;
+}
+.button-table table {
+	height: 100px;
+	margin: 0 auto;
+}
+.button-table i {
+	display: block;
+	font-size: 50px;
+	margin-right: 15px;
+}
+.button-table span {
+	font-size: 20px;
+	line-height: 1.4;
+}
+.warning {
+	color: #C00 !important;
+}
+.footer-top {
+	background: #fff;
+	padding: 10px 0;
+}
+.feature-table {
+	max-width: 800px;
+	margin: 0 auto;
+	float: none;
+}
+.feature-table .feature-td {
+	width: 33%;
+	padding: 10px 15px 0;
+}
+.feature-icon {
+	vertical-align: top;
+	padding: 0 16px 16px 0 !important;
+}
+.feature-icon img {
+	border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
+}
+.feature-desc {
+	display: table-cell;
+	vertical-align: top;
+	width: 100%;
+	padding: 0 !important;
+}
+.feature-desc h3 {
+	font-size: 17px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0 0 3px 0;
+	color: #3e6506;
+}
+.feature-desc p {
+	font-size: 12px;
+	line-height: 1.4;
+	margin: 0 0 16px 0;
+	color: #666;
+	text-decoration: none;
+}
+.font-icon {
+	position: relative;
+	display: inline-block;	
+	width: 50px;
+	height: 50px;
+	border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
+	background: #666;
+	color: #fff;
+	overflow: hidden;
+}
+.font-icon i {
+	position: absolute;
+}
+/* footer icons */
+.icon-voterreg {
+	background: #009f5b;
+	font-size: 28px;
+}
+.icon-voterreg i {
+	left: 12px;
+	top: 10px;
+}
+.icon-saveourwater {
+	background: #176ced;
+	font-size: 28px;
+}
+.icon-saveourwater i {
+	left: 17px;
+	top: 12px;
+}
+.icon-flexalert {
+	background: #ffb900;
+	font-size: 32px;
+}
+.icon-flexalert i {
+	left: 18px;
+	top: 8px;
+}
+.footer-bottom {
+	color: #fff;
+	background: #363636;
+	background: -moz-linear-gradient(top, #363636 0%, #181818 100%);
+	background: -webkit-linear-gradient(top, #363636 0%,#181818 100%);
+	background: linear-gradient(to bottom, #363636 0%,#181818 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#363636', endColorstr='#181818',GradientType=0 );
+}
+.footer-table {
+	max-width: 1000px;
+	margin: 0 auto 20px auto;
+}
+.footer-table .cdfa-td {
+	padding-top: 25px;
+	padding-left: 20px;
+}
+.footer-table .calcan-td {
+	text-align: right;
+	padding-top: 36px;
+	padding-right: 20px;
+}
+.footer-table .calcan-td table {
+	float: none;
+	display: inline;
+}
+.footer-table .calcan-td table td {
+	padding: 0 3px;
+}
+.footer-links {
+	text-align: center;
+}
+.footer-links a {
+	margin: 0 6px;
+	font-size: 13px;
+	line-height: 2;
+	color: #96c74a;
+}
+.footer-links a:hover, .footer-links a:focus, .footer-links a:active {
+	color: #fff;
+}
+.footer-copyright {
+	text-align: center;
+	font-size: 13px;
+	color: #999;
+	margin-bottom: 3px;
+}
+//*-- JVM background-color = white (overridden in ACA Admin) --*//
+.ACA_RightContent {
+	background-color: #FFFFFF !important;
+}
+
+/*
+.ACA_RightContent > div {
+	background-color: #FFFFFF !important;
+}
+*/
+
+.ACA_RightItem {
+	width:100%;
+	padding-left: 0px;
+	background-color: #FFFFFF !important;
+}
+
+.header img, .footer img {
+	border: none !important;
+}
+

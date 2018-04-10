@@ -1,0 +1,101 @@
+﻿.ACA_Welcome_Block {
+  border: none !important;
+  border-spacing: 2px;
+}
+.ACA_Welcome_Block td {
+  background-color: white !important;
+}
+.ACA_Welcome_Block a > span {
+  color: #2997c5 !important;
+}
+.aca_wrapper {
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.aca_wrapper .welcome-page.ACA_Content {
+  border: 1px solid #eee;
+  -webkit-box-shadow: 0 0 3px 1px #eeeeee;
+  -moz-box-shadow: 0 0 3px 1px #eeeeee;
+  box-shadow: 0 0 3px 1px #eeeeee;
+}
+.aca_wrapper .welcome-page.ACA_Content > table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.aca_wrapper .welcome-page.ACA_Content > table > tbody > tr > td:first-child {
+  background-color: white;
+  padding: 15px !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.aca_wrapper .welcome-page.ACA_Content > table > tbody > tr > td:last-child {
+  background-color: #e7f6fd;
+  padding: 7px;
+  border-left: 2px solid #eee;
+}
+.aca_wrapper .welcome-page.ACA_Content > table > tbody > tr > td:last-child .ACA_Form input[type=text],
+.aca_wrapper .welcome-page.ACA_Content > table > tbody > tr > td:last-child .ACA_Form input[type=password] {
+  border: 1px solid #959a9f;
+}
+.aca_wrapper .welcome-page.ACA_Content > table > tbody > tr > td:last-child .welcome_instruction {
+  width: auto !important;
+}
+.aca_wrapper .ACA-CustomComponent {
+  border: 1px solid #eee;
+  -webkit-box-shadow: 0 0 3px 1px #eeeeee;
+  -moz-box-shadow: 0 0 3px 1px #eeeeee;
+  box-shadow: 0 0 3px 1px #eeeeee;
+  margin: 15px;
+  padding: 15px;
+}
+.aca_wrapper .ACA-CustomComponent > table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.aca_wrapper #ctl00_PlaceHolderMain_divContentLink {
+  margin-left: -10px;
+}
+.aca_wrapper #ctl00_PlaceHolderMain_divContentLink .Header_h2 {
+  font-family: MuseoSans, Sans-Serif !important;
+  font-weight: 700;
+  font-size: 1.6em;
+  font-style: normal;
+  line-height: 18px;
+  text-align: left;
+  border-bottom: 2px solid #2997c5;
+  padding-bottom: 3px;
+  margin-bottom: 5px !important;
+}
+.ACA_LoginBox {
+  border: none !important;
+  background-color: #e7f6fd;
+  float: none !important;
+  padding: 7px;
+}
+.ACA_LoginBox .ACA_LgButton {
+  float: right;
+}
+.ACA_LoginBox .ACA_FRight {
+  float: left;
+}
+.ACA_LoginBox #ctl00_PlaceHolderMain_LoginBox_txtUserId_element_group,
+.ACA_LoginBox #ctl00_PlaceHolderMain_LoginBox_txtPassword_element_group,
+.ACA_LoginBox #ctl00_PlaceHolderMain_LoginBox_txtUserId,
+.ACA_LoginBox #ctl00_PlaceHolderMain_LoginBox_txtPassword {
+  width: 100%;
+}
+.ACA_LoginBox #ctl00_PlaceHolderMain_LoginBox_acc_sign_label_rememberMe {
+  font-family: MuseoSans, Sans-Serif !important;
+  font-size: 1.1em !important;
+  font-weight: 400 !important;
+}
+#ctl00_PlaceHolderMain_divTopShoppingCartItems {
+  margin-top: 10px;
+}
+.welcome_cartlist {
+  margin: 0 !important;
+  border: none;
+}

@@ -1,0 +1,158 @@
+﻿.ACA_Message_Success,
+.ACA_Message_Notice,
+.ACA_Message_Error,
+.message_error_contact {
+  padding: 10px 20px;
+  margin: 1em 0 2em 0;
+  border: none;
+}
+.ACA_Message_Success a,
+.ACA_Message_Notice a,
+.ACA_Message_Error a,
+.message_error_contact a {
+  text-decoration: none;
+}
+.ACA_Message_Success .ACA_Message_Content > div,
+.ACA_Message_Notice .ACA_Message_Content > div,
+.ACA_Message_Error .ACA_Message_Content > div,
+.message_error_contact .ACA_Message_Content > div,
+.ACA_Message_Success .ACA_Message_Content > span,
+.ACA_Message_Notice .ACA_Message_Content > span,
+.ACA_Message_Error .ACA_Message_Content > span,
+.message_error_contact .ACA_Message_Content > span,
+.ACA_Message_Success td a,
+.ACA_Message_Notice td a,
+.ACA_Message_Error td a,
+.message_error_contact td a {
+  display: block;
+  color: #1f2f45;
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 1.25em;
+}
+.ACA_Message_Success .ACA_Message_Content > div::first-line,
+.ACA_Message_Notice .ACA_Message_Content > div::first-line,
+.ACA_Message_Error .ACA_Message_Content > div::first-line,
+.message_error_contact .ACA_Message_Content > div::first-line,
+.ACA_Message_Success .ACA_Message_Content > span::first-line,
+.ACA_Message_Notice .ACA_Message_Content > span::first-line,
+.ACA_Message_Error .ACA_Message_Content > span::first-line,
+.message_error_contact .ACA_Message_Content > span::first-line,
+.ACA_Message_Success td a::first-line,
+.ACA_Message_Notice td a::first-line,
+.ACA_Message_Error td a::first-line,
+.message_error_contact td a::first-line {
+  font-weight: 800;
+}
+.ACA_Message_Success td:nth-child(1),
+.ACA_Message_Notice td:nth-child(1),
+.ACA_Message_Error td:nth-child(1),
+.message_error_contact td:nth-child(1) {
+  display: none;
+}
+.ACA_Message_Success td:nth-child(2),
+.ACA_Message_Notice td:nth-child(2),
+.ACA_Message_Error td:nth-child(2),
+.message_error_contact td:nth-child(2) {
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.ACA_Message_Success td,
+.ACA_Message_Notice td,
+.ACA_Message_Error td,
+.message_error_contact td {
+  vertical-align: top;
+}
+.ACA_Message_Success td:nth-child(3),
+.ACA_Message_Notice td:nth-child(3),
+.ACA_Message_Error td:nth-child(3),
+.message_error_contact td:nth-child(3) {
+  padding-left: 20px;
+}
+.ACA_Message_Success td:nth-child(3) a,
+.ACA_Message_Notice td:nth-child(3) a,
+.ACA_Message_Error td:nth-child(3) a,
+.message_error_contact td:nth-child(3) a {
+  color: #1f2f45;
+}
+.ACA_Custom_Alert_Message {
+  background: #fbf5d9\9;
+  background-color: #fbf5d9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbf5d9), to(#fbf5d9));
+  background: -webkit-linear-gradient(top, #fbf5d9, #fbf5d9);
+  background: -moz-linear-gradient(top, #fbf5d9, #fbf5d9);
+  background: -ms-linear-gradient(top, #fbf5d9, #fbf5d9);
+  background: -o-linear-gradient(top, #fbf5d9, #fbf5d9);
+  border-bottom: 2px solid #ed4639;
+}
+.ACA_Message_Success {
+  background: #e6f3d0\9;
+  background-color: #f3fae8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f3fae8), to(#e6f3d0));
+  background: -webkit-linear-gradient(top, #f3fae8, #e6f3d0);
+  background: -moz-linear-gradient(top, #f3fae8, #e6f3d0);
+  background: -ms-linear-gradient(top, #f3fae8, #e6f3d0);
+  background: -o-linear-gradient(top, #f3fae8, #e6f3d0);
+  border-bottom: 4px solid #83c716;
+}
+.ACA_Message_Success td:nth-child(2) {
+  background-image: url('../../css/images/success.png');
+}
+.ACA_Message_Notice {
+  background: #cfebf8\9;
+  background-color: #e7f5fd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e7f5fd), to(#cfebf8));
+  background: -webkit-linear-gradient(top, #e7f5fd, #cfebf8);
+  background: -moz-linear-gradient(top, #e7f5fd, #cfebf8);
+  background: -ms-linear-gradient(top, #e7f5fd, #cfebf8);
+  background: -o-linear-gradient(top, #e7f5fd, #cfebf8);
+  border-bottom: 4px solid #139edf;
+}
+.ACA_Message_Notice td:nth-child(2) {
+  background-image: url('../../css/images/info.png');
+}
+.ACA_Message_Error,
+.message_error_contact {
+  background: #f7d8d1\9;
+  background-color: #fbebe7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbebe7), to(#f7d8d1));
+  background: -webkit-linear-gradient(top, #fbebe7, #f7d8d1);
+  background: -moz-linear-gradient(top, #fbebe7, #f7d8d1);
+  background: -ms-linear-gradient(top, #fbebe7, #f7d8d1);
+  background: -o-linear-gradient(top, #fbebe7, #f7d8d1);
+  border-bottom: 4px solid #d63911;
+}
+.ACA_Message_Error td:nth-child(2),
+.message_error_contact td:nth-child(2) {
+  background-image: url('../../css/images/error.png');
+}
+.ACA_Message_Note {
+  padding: 10px 20px;
+  margin: 1em 0;
+  color: #1f2f45;
+  font-weight: 400;
+  font-size: 1.2em;
+  background: #cfebf8\9;
+  background-color: #e7f5fd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e7f5fd), to(#cfebf8));
+  background: -webkit-linear-gradient(top, #e7f5fd, #cfebf8);
+  background: -moz-linear-gradient(top, #e7f5fd, #cfebf8);
+  background: -ms-linear-gradient(top, #e7f5fd, #cfebf8);
+  background: -o-linear-gradient(top, #e7f5fd, #cfebf8);
+  border: none;
+  border-bottom: 4px solid #139edf;
+}
+.ACA_Message_Note .ACA_Note_Icon {
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url('../../css/images/info.png');
+}
+.ACA_Message_Note .ACA_Note_Icon img {
+  display: none;
+}

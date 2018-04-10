@@ -1,0 +1,288 @@
+﻿.tab_bar_table td {
+  background: none;
+}
+.ACA_NaviMenu {
+  background: none;
+  height: auto;
+  padding: 0;
+  margin-bottom: 9px;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter {
+  padding: 4px 9px;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter > div > a font {
+  color: #1F2F45 !important;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter > div > a font:hover {
+  text-decoration: none !important;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter > div a {
+  font-size: 1.4em !important;
+  font-weight: 700 !important;
+  color: #1F2F45;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter > div a:hover {
+  text-decoration: none;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter:hover {
+  background-color: #1F2F45;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter:hover > div a {
+  color: #fff;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter:hover > div > a font {
+  color: #fff !important;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemLeft,
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemRight {
+  display: none;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_CenterOn {
+  background-color: #1F2F45;
+  position: relative;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_CenterOn > div a,
+.ACA_NaviMenu #tab_item_place_holder .ACA_CenterOn > div a font {
+  color: #fff !important;
+}
+.ACA_NaviMenu #tab_item_place_holder .ACA_CenterOn::after {
+  position: absolute;
+  bottom: -5px;
+  left: 45%;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #1F2F45;
+}
+.ACA_NaviMenu #more_tab_place_holder:hover {
+  background-color: #1F2F45;
+}
+.ACA_NaviMenu #more_tab_place_holder:hover a span {
+  color: #fff;
+}
+.ACA_NaviMenu #more_tab_place_holder .ACA_MoreItemLeft,
+.ACA_NaviMenu #more_tab_place_holder .ACA_MoreItemRight {
+  display: none;
+}
+.ACA_NaviMenu #more_tab_place_holder .ACA_MoreItemCenter,
+.ACA_NaviMenu #more_tab_place_holder .ACA_CenterOff {
+  background: none;
+}
+.ACA_NaviMenu #more_tab_place_holder .ACA_MoreItemCenter {
+  padding: 4px 9px;
+}
+.ACA_NaviMenu #more_tab_place_holder .ACA_MoreItemCenter span {
+  font-size: 1.4em !important;
+  font-weight: 700 !important;
+  color: #1F2F45;
+}
+.ACA_NaviMenu #divNavMenu {
+  z-index: 10;
+}
+.ACA_NaviMenu #divNavMenu .submenu ul {
+  background-color: #fff;
+}
+.ACA_NaviMenu #divNavMenu font {
+  color: #1F2F45;
+}
+.ACA_SubMenuList {
+  border: none;
+  /*text-align: left;*/
+  height: auto;
+  border-top: 1px solid #CAD7DC;
+  border-bottom: 2px solid #23A8E5;
+  background-color: #E7F5FD;
+  padding: 0;
+}
+.ACA_SubMenuList #nav_span_links {
+  padding-left: 10px;
+}
+.ACA_SubMenuList #nav_span_links:empty {
+  display: none;
+}
+.ACA_SubMenuList #nav_span_links > span {
+  padding: 10px 0;
+  margin-right: 30px;
+  display: inline-block;
+}
+.ACA_SubMenuList #nav_span_links > span a {
+  font-size: 1.2em !important;
+  font-weight: 500 !important;
+  color: #1F2F45;
+  text-decoration: none;
+}
+.ACA_SubMenuList #nav_span_links > span.active a {
+  font-weight: 900 !important;
+}
+.ACA_SubMenuList #nav_span_links .tab_tar_separator {
+  display: none;
+}
+.ACA_SubMenuList #nav_span_more_link a {
+  line-height: 3.1em;
+  font-size: 1.1em !important;
+}
+.ACA_SubMenuList #nav_span_more_link a > span {
+  /*font-size: 1.2em !important;*/
+  font-weight: 500 !important;
+  color: #1F2F45;
+}
+.ACA_SubMenuList #divLinkMenu {
+  padding: 5px 10px;
+}
+.ACA_SubMenuList #divLinkMenu ul {
+  line-height: 2em;
+  font-size: 1.2em;
+}
+.ACA_SubMenuList #divLinkMenu ul a {
+  font-weight: 500 !important;
+  color: #1F2F45;
+}
+.ACA_SubMenuList #divLinkMenu ul a:hover {
+  text-decoration: underline;
+}
+/*Advanced search options*/
+.search-sub-menu {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.1em;
+}
+.search-sub-menu img {
+  border: none;
+}
+.search-sub-menu a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1em;
+  font-weight: lighter;
+  padding: 10px;
+  white-space: pre-line;
+}
+.search-sub-menu ul {
+  z-index: 1099;
+}
+.search-sub-menu ul > li {
+  position: relative;
+  margin: 0;
+}
+.search-sub-menu ul > li > a {
+  padding: 5px 10px 10px 10px;
+}
+.search-sub-menu ul > li:hover {
+  background-color: #d4edfb;
+}
+.search-sub-menu ul > li:hover > ul {
+  display: block;
+}
+.search-sub-menu ul > li > ul {
+  z-index: 1099;
+  display: none;
+  position: absolute;
+  top: 100%;
+  /*left: 0;*/
+  padding: 0;
+  border-bottom: 2px solid #23A8E5;
+  background-color: #d4edfb;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+.search-sub-menu ul > li > ul > li {
+  /*float: none;*/
+  width: 250px;
+  position: relative;
+}
+.search-sub-menu ul > li > ul > li:hover {
+  background-color: #E7F5FD;
+}
+.search-sub-menu ul > li > ul > li:hover > ul {
+  display: block;
+}
+.search-sub-menu ul > li > ul > li > a {
+  padding: 10px;
+}
+.search-sub-menu ul > li > ul > li > ul {
+  top: 0;
+  left: 100%;
+  display: none;
+  z-index: 1099;
+  position: absolute;
+}
+.search-sub-menu ul > li > ul > li > ul > li {
+  width: 250px;
+  position: relative;
+}
+.search-sub-menu ul > li > ul > li > ul > li > a {
+  padding: 10px;
+}
+.ACA_Button_Text {
+  text-align: left !important;
+}
+/*Action-based menu*/
+.actions-menu-container {
+  margin: 10px auto;
+}
+.actions-menu-container ul {
+  position: relative;
+  float: left;
+}
+.actions-menu-container ul a {
+  display: block;
+  font-weight: 700;
+  line-height: 36px;
+  font-size: 12px;
+  padding: 0 15px;
+  text-decoration: none;
+}
+.actions-menu-container ul li {
+  position: relative;
+  float: left;
+  height: 36px;
+}
+.actions-menu-container ul li:hover {
+  background: #d4edfb;
+}
+.actions-menu-container ul li:hover > ul {
+  display: block;
+  background-color: #E7F5FD;
+  z-index: 10;
+}
+.actions-menu-container ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #E7F5FD;
+  border: solid 1px #CFEBF8;
+  border-bottom: 2px solid #23A8E5;
+}
+.actions-menu-container ul ul li {
+  float: none;
+  min-width: 150px;
+}
+.actions-menu-container ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.actions-menu-container ul ul a > span {
+  color: #000;
+  font-weight: lighter;
+}
+.actions-menu-container ul ul ul {
+  top: 0;
+  left: 100%;
+}
+.actions-menu-container > ul > li:hover {
+  background-color: #062f46;
+}
+.actions-menu-container > ul > li:hover > a > span {
+  color: #FFF;
+}
+.actions-menu-container > ul > li > a > span {
+  font-size: 1.4em;
+  color: #1F2F45;
+}
+.actions-menu-container > ul > li > a.ACA_Control_HighLight > span {
+  color: #1F2F45;
+}
+/*End of action-based menu*/

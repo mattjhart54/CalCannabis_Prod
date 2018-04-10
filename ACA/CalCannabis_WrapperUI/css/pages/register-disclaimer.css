@@ -1,0 +1,11 @@
+﻿.ACA_RightContent .ACA_SmallError_Icon {
+  margin-right: 6px;
+  /* on the registration page the error icon bumped into the checkbox */
+}
+form[action^="RegisterLicense.aspx"] .ACA_RightContent {
+  width: auto;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

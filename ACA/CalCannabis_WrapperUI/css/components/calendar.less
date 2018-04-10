@@ -1,0 +1,60 @@
+﻿.ajax__calendar_container {
+    padding: 0;
+    background-color: #fff;
+    border-left: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+
+    .ajax__calendar_header {
+        background-color: #43B1E5;
+        color: #fff;
+        padding: 5px 0 0;
+
+        .ajax__calendar_title {
+            font-size: 1.2em;
+        }
+
+        .ajax__calendar_prev,
+        .ajax__calendar_next {
+            background: none;
+            width: auto;
+            height: auto;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        .ajax__calendar_prev {
+            float: left;
+            border-right: 5px solid #fff;
+            margin-left: 6px;
+        }
+
+        .ajax__calendar_next {
+            float: right;
+            border-left: 5px solid #fff;
+            margin-right: 6px;
+        }
+    }
+
+    .ajax__calendar_body {
+        .ajax__calendar_days {
+            .ajax__calendar_dayname {
+                font-weight: 600;
+            }
+
+            .ajax__calendar_other > div {
+                color: #E6E6E6 !important;
+            }
+
+            .ajax__calendar_day {
+                font-weight: 300;
+            }
+        }
+
+        .ajax__calendar_hover > div,
+        .ajax__calendar_active > div {
+            color: #fff;
+            background-color: #139EE0 !important;
+        }
+    }
+}

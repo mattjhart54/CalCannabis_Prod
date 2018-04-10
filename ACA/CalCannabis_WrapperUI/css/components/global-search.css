@@ -1,0 +1,94 @@
+﻿.ACA_NaviTitle {
+  position: relative;
+  height: 60px;
+}
+.gs_nowidth {
+  width: 0 !important;
+}
+.gs_container {
+  /*clear: both;*/
+  float: left;
+  /*bottom: 0;
+    right: 0;*/
+  width: 35%;
+  /*position: absolute;*/
+  padding: 0;
+}
+.gs_container td {
+  border: none;
+}
+.gs_container .gs_top_table #tdSpace {
+  display: none;
+}
+.gs_container .gs_top_table .gs_border {
+  /*position: absolute;
+            right: 0;
+            bottom: 0;*/
+  width: auto;
+}
+.gs_container .gs_top_table .section_search_border {
+  border-radius: 3px !important;
+}
+.gs_container .gs_top_table .gs_search_box {
+  margin: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #ACACAC;
+  height: 30px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  color: #BFBFBF;
+  padding: 4px;
+  font-size: 1.3em;
+  font-weight: 500 !important;
+}
+.gs_container .gs_top_table .gs_go_img {
+  position: absolute;
+  /*right: 20px;*/
+  margin-top: -10px;
+  /*bottom: 5px;
+            right: 17px;*/
+  /*content: url(../../css/images/search-icon.png);*/
+}
+.gs_container .gs_top_table td:nth-child(2) {
+  width: 260px !important;
+}
+.gs_container .gs_top_table #tdSearchHistory a {
+  position: absolute;
+  /*right: 8px;*/
+  margin-top: -10px;
+  /*bottom: 5px;
+            right: 6px;*/
+  border: none;
+  /*img {
+                content: url(../../css/images/search-icon-dropdown.png);
+            }*/
+}
+#divHistoryList {
+  top: 63px !important;
+  /*left: auto !important;
+    right: 0 !important;*/
+  width: 250px;
+  border: 1px solid #eee;
+  padding: 4px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 2px 3px 3px 0px #cccccc;
+  -moz-box-shadow: 2px 3px 3px 0px #cccccc;
+  box-shadow: 2px 3px 3px 0px #cccccc;
+}
+#divHistoryList p {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin: 0 5px 5px;
+}

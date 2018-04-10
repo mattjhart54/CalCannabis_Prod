@@ -1,0 +1,372 @@
+﻿.ACA_SmButtonForRight a,
+.ACA_SmButtonDisable a,
+.ACA_LgButton a,
+.ACA_LgButtonForRight a,
+.ACA_SmButtonForRight a > span,
+.ACA_SmButtonDisable a > span,
+.ACA_LgButton a > span,
+.ACA_LgButtonForRight a > span {
+  float: none;
+}
+.ACA_SmButton a,
+.ACA_SmButtonForRight a,
+.ACA_SmButtonDisable a,
+.ACA_LgButton a,
+.ACA_LgButtonForRight a {
+  background: #0D97FF\9 !important;
+  background-color: #39b9ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#39b9ff), to(#0d97ff));
+  background: -webkit-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -moz-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -ms-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -o-linear-gradient(top, #39b9ff, #0d97ff);
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.ACA_SmButton a span,
+.ACA_SmButtonForRight a span,
+.ACA_SmButtonDisable a span,
+.ACA_LgButton a span,
+.ACA_LgButtonForRight a span {
+  background-image: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  color: #fff !important;
+  font-size: 1.4em !important;
+  font-weight: 700 !important;
+}
+.ACA_SmButton a:hover,
+.ACA_SmButtonForRight a:hover,
+.ACA_SmButtonDisable a:hover,
+.ACA_LgButton a:hover,
+.ACA_LgButtonForRight a:hover {
+  background: #048Bff !important;
+}
+.ACA_SmButton a:hover:hover,
+.ACA_SmButtonForRight a:hover:hover,
+.ACA_SmButtonDisable a:hover:hover,
+.ACA_LgButton a:hover:hover,
+.ACA_LgButtonForRight a:hover:hover {
+  background: #048Bff !important;
+}
+.ACA_SmButton a:active,
+.ACA_SmButtonForRight a:active,
+.ACA_SmButtonDisable a:active,
+.ACA_LgButton a:active,
+.ACA_LgButtonForRight a:active {
+  background: #0167FF\9 !important;
+  background-color: #048BFF;
+  background-color: #0167ff !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0167ff), to(#048bff)) !important;
+  background: -webkit-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -moz-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -ms-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -o-linear-gradient(top, #0167ff, #048bff) !important;
+}
+.ACA_LgButtonDisable a,
+.ACA_LgButtonDisable a > span {
+  float: none;
+}
+.ACA_LgButtonDisable a {
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.ACA_LgButtonDisable a span {
+  background-image: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  color: #fff !important;
+  font-size: 1.4em !important;
+  font-weight: 700 !important;
+}
+.ACA_SmButton a,
+.ACA_SmButtonForRight a,
+.ACA_SmButtonDisable a {
+  padding: 2px 12px !important;
+}
+.ACA_SmButton a span,
+.ACA_SmButtonForRight a span,
+.ACA_SmButtonDisable a span {
+  font-size: 1.2em !important;
+}
+.ACA_LgButton a,
+.ACA_LgButtonForRight a,
+.ACA_LgButtonDisable a {
+  padding: 5px 16px !important;
+}
+.ACA_LgButton a span,
+.ACA_LgButtonForRight a span,
+.ACA_LgButtonDisable a span {
+  font-size: 1.4em !important;
+}
+.ACA_SmButtonDisable a,
+.ACA_LgButtonDisable a,
+.ACA_SmButtonDisable a:hover,
+.ACA_LgButtonDisable a:hover {
+  background: #C7C7C7 !important;
+  cursor: not-allowed;
+}
+a {
+  text-decoration: none;
+}
+a font,
+a span {
+  color: #21BCFF;
+}
+a:hover {
+  text-decoration: none;
+}
+a:hover font,
+a:hover span {
+  color: #0D9AFF;
+}
+a:active font,
+a:active span {
+  color: #464646;
+}
+.add2collectionlink,
+.ACA_LinkButton {
+  text-decoration: none;
+}
+.add2collectionlink a,
+.ACA_LinkButton a {
+  text-decoration: none;
+}
+.add2collectionlink:hover,
+.ACA_LinkButton:hover {
+  text-decoration: none;
+}
+.add2collectionlink:hover span,
+.ACA_LinkButton:hover span {
+  color: #0D9AFF;
+}
+.add2collectionlink:active span,
+.ACA_LinkButton:active span {
+  color: #464646;
+}
+.add2collectionlink span,
+.ACA_LinkButton span {
+  font-size: 1.2em !important;
+  font-weight: 700 !important;
+  color: #21BCFF;
+}
+a {
+  text-decoration: none;
+  color: #21BCFF;
+}
+a:hover {
+  text-decoration: none;
+}
+a:hover > span {
+  color: #0D9AFF;
+}
+a:active > span {
+  color: #464646;
+}
+a > span {
+  color: #21BCFF;
+}
+.splitbutton {
+  padding: 2px 12px 2px 0 !important;
+  background: #0D97FF\9 !important;
+  background-color: #39b9ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#39b9ff), to(#0d97ff));
+  background: -webkit-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -moz-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -ms-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -o-linear-gradient(top, #39b9ff, #0d97ff);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.splitbutton:hover {
+  background: #048Bff !important;
+}
+.splitbutton:hover:hover {
+  background: #048Bff !important;
+}
+.splitbutton:active {
+  background: #0167FF\9 !important;
+  background-color: #048BFF;
+  background-color: #0167ff !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0167ff), to(#048bff)) !important;
+  background: -webkit-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -moz-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -ms-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -o-linear-gradient(top, #0167ff, #048bff) !important;
+}
+.splitbutton .mainbtn > a,
+.splitbutton .dropbtn > a {
+  background: none !important;
+}
+.splitbutton .mainbtn > a span,
+.splitbutton .dropbtn > a span {
+  color: #fff !important;
+  font-size: 1.4em !important;
+  font-weight: 700 !important;
+  font-size: 1.2em !important;
+}
+.splitbutton .dropbtn > a {
+  position: relative;
+}
+.splitbutton .dropbtn > a:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+}
+.splitbutton_menu {
+  background-color: #fff;
+  border: 1px solid #eee;
+  width: 160px;
+  padding: 6px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 2px 3px 3px 0px #cccccc;
+  -moz-box-shadow: 2px 3px 3px 0px #cccccc;
+  box-shadow: 2px 3px 3px 0px #cccccc;
+}
+.splitbutton_menu .splitbutton_menuitem:first-child {
+  border-top: none;
+}
+.splitbutton_menu .splitbutton_menuitem {
+  border-top: 1px solid #eee;
+  line-height: 2em;
+}
+.splitbutton_menu .splitbutton_menuitem a {
+  text-decoration: none;
+  font-size: 1.1em !important;
+  font-weight: 500 !important;
+  color: #21BCFF;
+}
+.splitbutton_menu .splitbutton_menuitem:hover {
+  background-color: #e8f7fe !important;
+}
+.ACA_Title_Bar .ACA_FRight .ACA_SmButton {
+  margin-top: -2px;
+  margin-right: -7px;
+}
+[id$="_divShowSaveandResume"] {
+  padding: 10px 16px !important;
+  display: inline-block;
+  position: relative;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #0D97FF\9 !important;
+  background-color: #39b9ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#39b9ff), to(#0d97ff));
+  background: -webkit-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -moz-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -ms-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -o-linear-gradient(top, #39b9ff, #0d97ff);
+}
+[id$="_divShowSaveandResume"] span {
+  color: #fff !important;
+  font-size: 1.4em !important;
+  font-weight: 700 !important;
+}
+[id$="_divShowSaveandResume"] .ACA_SaveAndResumeLater_Icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 177px;
+  display: inline-block;
+  height: 37px;
+}
+[id$="_divShowSaveandResume"] .ACA_SaveAndResumeLater_Icon > a > img {
+  opacity: 0;
+  width: 100%;
+  height: 37px;
+}
+[id$="_divShowSaveandResume"]:hover {
+  background: #048Bff !important;
+}
+[id$="_divShowSaveandResume"]:hover:hover {
+  background: #048Bff !important;
+}
+[id$="_divShowSaveandResume"]:active {
+  background: #0167FF\9 !important;
+  background-color: #048BFF;
+  background-color: #0167ff !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0167ff), to(#048bff)) !important;
+  background: -webkit-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -moz-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -ms-linear-gradient(top, #0167ff, #048bff) !important;
+  background: -o-linear-gradient(top, #0167ff, #048bff) !important;
+}
+.Map_Bottom .aca_imagebutton_label {
+  padding: 2px 12px !important;
+  margin-right: 0;
+  background: #0D97FF\9 !important;
+  background-color: #39b9ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#39b9ff), to(#0d97ff));
+  background: -webkit-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -moz-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -ms-linear-gradient(top, #39b9ff, #0d97ff);
+  background: -o-linear-gradient(top, #39b9ff, #0d97ff);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.Map_Bottom .aca_imagebutton_label label {
+  cursor: pointer;
+  color: #fff !important;
+  font-size: 1.4em !important;
+  font-weight: 700 !important;
+  font-size: 1.2em !important;
+}
+.Map_Bottom .aca_imagebutton_label:hover {
+  background: #048Bff !important;
+}
+.Map_Bottom .aca_imagebutton_label:hover:hover {
+  background: #048Bff !important;
+}
+.ACA_SaveAndResumeLater_Icon {
+  display: none;
+}
+.collection_dropmenu,
+.ActionMenus > div {
+  padding: 6px 10px;
+  -webkit-box-shadow: 2px 2px 5px 1px #eeeeee;
+  -moz-box-shadow: 2px 2px 5px 1px #eeeeee;
+  box-shadow: 2px 2px 5px 1px #eeeeee;
+}
+.ActionMenus > div table {
+  margin: 0;
+  width: 100%;
+}
+.ActionMenus > div table .ActionMenu_Line {
+  margin-top: 5px;
+  margin-bottom: 3px;
+}

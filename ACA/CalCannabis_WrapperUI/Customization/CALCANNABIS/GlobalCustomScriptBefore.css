@@ -1,0 +1,130 @@
+
+@import url("main.css");
+
+@import url("theme1.css");
+
+@import url("no_wrapper.css");
+
+@import url("adaptive.css");
+
+@import url("green.css");
+
+@import url("cdfa.css");
+
+@import url("font-awesome.css");
+
+@import url("welcome.css");
+
+body, html {
+    overflow: auto !important;
+}
+
+#divctl00_hlSkipNavigation {
+	height: 0px !important;
+}
+#divctl00_hlSkipToolBar {
+	height: 0px !important;
+}
+//* -- JVM background-color = Pine --*//
+.aca_wrapper .welcome-page.ACA_Content > table > tbody > tr > td:first-child {
+	background-color: #162500 !important;;
+}
+/* AirBNB stuff */
+#ctl00_PlaceHolderMain_PermitList_gdvPermitList_gdvPermitListtop4btnAddCollection {
+	display: none;
+}
+.ACA_Title_Bar, .ACA_InfoTitle {
+    padding: 14px;
+}
+/*
+#ctl00_HeaderNavigation_divNavigation {
+	display: none;
+}
+*/
+
+//* -- JVM background-color = Pine --*//
+.ACA_Welcome_Block {
+	display: none;
+	background-color: #162500 !important;;
+}
+
+/* Civic Insight Stuff */
+#civicInsight {
+	position: absolute;
+    left: 50%;
+    top: 50%; 
+    margin-left: -400px;
+    margin-top: -300px;
+	width: 800px;
+	height: 600px;
+	overflow: hidden;
+}
+#insightIframe {
+	position: relative;
+    top: -61px;
+	overflow:hidden;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.7);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay .closebtn {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay .closebtn:hover, .overlay .closebtn:focus {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px !important;
+}
+
+@media screen and (min-width: 1400px) {
+	#civicInsight {
+    margin-left: -500px;
+    margin-top: -450px;
+	width: 1200px;
+	height: 900px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+  .overlay{z-index: 9999;}
+  .overlay a {font-size: 20px}
+  .closebtn {
+    font-size: 40px !important;
+    top: 15px;
+    right: 35px;
+  }
+  #civicInsight {
+	position: absolute;
+    left: 0%;
+    top: 78px; 
+	overflow: hidden;
+	margin-left: 0px;
+    margin-top: 0px;
+	width: 100%;
+	height: 100%;
+	max-height: 800px;
+}
+
+}

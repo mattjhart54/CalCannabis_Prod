@@ -1,0 +1,79 @@
+﻿@import "../lib/utils";
+
+.ACA_Welcome_Block {
+    border: none !important;
+    border-spacing: 2px;
+
+    td {
+        background-color: white !important;
+    }
+
+    a > span {
+        color: #2997c5 !important;
+    }
+}
+
+.aca_wrapper {
+    padding: 0 10px;
+    .box-sizing(border-box);
+
+    .welcome-page.ACA_Content {
+        border: 1px solid #eee;
+        .box-shadow(0 0 3px 1px #eee);
+
+        & > table {
+            border-collapse: collapse;
+            width: 100%;
+
+            & > tbody > tr > td {
+                &:first-child {
+                    background-color: white;
+                    padding: 15px !important;
+                    .box-sizing(border-box);
+                }
+
+                &:last-child {
+                    background-color: #e7f6fd;
+                    padding: 7px;
+                    border-left: 2px solid #eee;
+
+                    .ACA_Form input[type=text], .ACA_Form input[type=password] {
+                        border: 1px solid #959a9f;
+                    }
+
+                    .welcome_instruction {
+                        width: auto !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .ACA-CustomComponent {
+        border: 1px solid #eee;
+        .box-shadow(0 0 3px 1px #eee);
+        margin: 15px;
+        padding: 15px;
+
+        & > table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    }
+
+    #ctl00_PlaceHolderMain_divContentLink {
+        margin-left: -10px;
+
+        .Header_h2 {
+            font-family: MuseoSans, Sans-Serif !important;
+            font-weight: 700;
+            font-size: 1.6em;
+            font-style: normal;
+            line-height: 18px;
+            text-align: left;
+            border-bottom: 2px solid #2997c5;
+            padding-bottom: 3px;
+            margin-bottom: 5px !important;
+        }
+    }
+}

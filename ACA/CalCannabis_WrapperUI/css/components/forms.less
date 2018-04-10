@@ -1,0 +1,151 @@
+﻿@import "../lib/utils";
+
+.ACA_SmLabel {
+    font-family: MuseoSans, Sans-Serif !important;
+    font-size: 1.2em !important;
+    font-weight: 400 !important;
+}
+
+.ACA_Form {
+    label {
+        color: #464646;
+        font-family: MuseoSans, Sans-Serif !important;
+        font-size: 1.1em !important;
+        font-weight: 400 !important;
+    }
+
+    .aca_checkbox, .aca_checkboxlist {
+        padding-bottom: 10px;
+
+        label {
+            color: #464646 !important;
+            font-family: MuseoSans, Sans-Serif !important;
+            font-size: 1.1em !important;
+            font-weight: 400 !important;
+        }
+    }
+
+    textarea,
+    input[type=text],
+    input[type=password],
+    select {
+        border: 1px solid #E6E6E6;
+        padding-left: 6px;
+        color: #464646;
+        margin-bottom: 8px;
+        background-color: #fff;
+        .box-sizing(border-box);
+        .border-radius(2px);
+
+        &:focus {
+            border-color: #24BFFB;
+            color: #464646;
+            .box-shadow(1px 1px 2px 2px #e5e5e5);
+        }
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: window;
+        background-image: url(../../css/images/dropdown-arrow.png);
+        background-repeat: no-repeat;
+        background-position: right 6px center;
+        background-size: .8em;
+        padding-right: 12px !important;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+
+        select:active, select:hover {
+            outline-color: #139EDF;
+        }
+
+    .ACA_ReadOnly {
+        cursor: not-allowed;
+    }
+ input[readonly]:focus {
+    box-shadow: none !important;
+    border: 1px solid #E6E6E6 !important;
+}
+
+ textarea[readonly]:focus {
+    box-shadow: none !important;
+    border: 1px solid #E6E6E6 !important;
+    outline-color: #E6E6E6 !important;
+}
+ input[disabled]:focus {
+    box-shadow: none !important;
+    border: 1px solid #E6E6E6 !important;
+    color: none;
+}
+
+.ACA_LgButtonDisable a:hover {
+    background: #C7C7C7 !important;
+}
+
+    .ReadOnlyPosition {
+        background: none;
+        cursor: not-allowed;
+
+        & > input,
+        & > select {
+            background-color: #eee;
+        }
+    }
+
+    .RangeNumberText_SubControl1_Layout,
+    .RangeNumberText_SubControl2_Layout {
+        width: 44%;
+    }
+
+    .ACA_PhoneNumberLTR {
+        line-height: 2.5em;
+        vertical-align: middle;
+    }
+
+    input[type=text],
+    input[type=password],
+    select {
+        height: 28px;
+    }
+}
+
+.ACA_Title_Bar .ACA_FRight select,
+.ACA_InfoTitle .ACA_FRight select {
+    margin-top: -10px;
+    margin-right: -18px;
+}
+
+.calendar_button > img {
+    margin-top: 4px;
+}
+
+.RangeNumberText_Split_Layout {
+    margin-top: 7px;
+}
+
+.ACA_Line_Content {
+    background: #e5e5e5;
+    margin: 10px 0 15px;
+}
+
+.ACA_Help_Icon {
+    background: url(../../css/images/help.png);
+    background-size: 16px;
+
+    & > img {
+        display: none;
+    }
+}
+
+#ctl00_PlaceHolderMain_lblGSLoadASI {
+    font-size: 1.2em !important;
+}
+
+.permit_typelist {
+    display: inline-block;
+    padding: 2px 0;
+}

@@ -1,0 +1,352 @@
+﻿@import "../lib/utils";
+
+.ACA_SmButtonForRight,
+.ACA_SmButtonDisable,
+.ACA_LgButton,
+.ACA_LgButtonForRight {
+    a,
+    a > span {
+        float: none;
+    }
+
+}
+.ACA_SmButton,
+.ACA_SmButtonForRight,
+.ACA_SmButtonDisable,
+.ACA_LgButton,
+.ACA_LgButtonForRight {
+    a {
+        .button-background();
+        display: inline-block;
+        .border-radius(3px);
+
+        span {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            white-space: nowrap !important;
+            .button-font();
+        }
+
+        &:hover {
+            .button-hover();
+        }
+
+        &:active {
+            .button-active();
+        }
+    }
+}
+
+.ACA_LgButtonDisable {
+    a,
+    a > span {
+        float: none;
+    }
+
+    a {
+        display: inline-block;
+        .border-radius(3px);
+
+        span {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            white-space: nowrap !important;
+            .button-font();
+        }
+    }
+}
+
+.ACA_SmButton,
+.ACA_SmButtonForRight,
+.ACA_SmButtonDisable {
+    a {
+        padding: 2px 12px !important;
+
+        span {
+            font-size: 1.2em !important;
+        }
+    }
+}
+
+.ACA_LgButton,
+.ACA_LgButtonForRight,
+.ACA_LgButtonDisable {
+    a {
+        padding: 5px 16px !important;
+
+        span {
+            font-size: 1.4em !important;
+        }
+    }
+}
+
+.ACA_SmButtonDisable,
+.ACA_LgButtonDisable {
+    a, a:hover {
+        background: #C7C7C7 !important;
+        cursor: not-allowed;
+    }
+}
+
+a {
+    text-decoration: none;
+
+    font, span {
+        color: #21BCFF;
+    }
+
+    &:hover {
+        text-decoration: none;
+
+        font, span {
+            color: #0D9AFF;
+        }
+    }
+
+    &:active {
+        font, span {
+            color: #464646;
+        }
+    }
+}
+
+
+.add2collectionlink,
+.ACA_LinkButton {
+    text-decoration: none;
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+
+        span {
+            color: #0D9AFF;
+        }
+    }
+
+    &:active {
+        span {
+            color: #464646;
+        }
+    }
+
+    span {
+        font-size: 1.2em !important;
+        font-weight: 700 !important;
+        color: #21BCFF;
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+
+        & > span {
+            color: #0D9AFF;
+        }
+    }
+
+    &:active {
+        & > span {
+            color: #464646;
+        }
+    }
+
+    color: #21BCFF;
+
+    & > span {
+        color: #21BCFF;
+    }
+}
+
+.splitbutton {
+    padding: 2px 12px 2px 0 !important;
+    .button-background();
+    .border-radius(3px);
+
+    &:hover {
+        .button-hover();
+    }
+
+    &:active {
+        .button-active();
+    }
+
+    .mainbtn > a,
+    .dropbtn > a {
+        background: none !important;
+
+        span {
+            .button-font();
+            font-size: 1.2em !important;
+        }
+    }
+
+    .dropbtn > a {
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #fff;
+        }
+    }
+}
+
+.splitbutton_menu {
+    background-color: #fff;
+    border: 1px solid #eee;
+    width: 160px;
+    padding: 6px;
+    .border-radius(5px);
+    .box-shadow( 2px 3px 3px 0px #ccc);
+
+    .splitbutton_menuitem:first-child {
+        border-top: none;
+    }
+
+    .splitbutton_menuitem {
+        border-top: 1px solid #eee;
+        line-height: 2em;
+
+        a {
+            text-decoration: none;
+            font-size: 1.1em !important;
+            font-weight: 500 !important;
+            color: #21BCFF;
+        }
+
+        &:hover {
+            background-color: #e8f7fe !important;
+        }
+    }
+}
+
+// placing the buttons properly in the title bar
+.ACA_Title_Bar {
+    .ACA_FRight .ACA_SmButton {
+        margin-top: -2px;
+        margin-right: -7px;
+    }
+}
+
+[id$="_divShowSaveandResume"] {
+    padding: 10px 16px !important;
+    display: inline-block;
+    position: relative;
+    .border-radius(3px);
+    .button-background();
+
+    span {
+        .button-font();
+    }
+
+    .ACA_SaveAndResumeLater_Icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 177px;
+        display: inline-block;
+        height: 37px;
+
+        & > a > img {
+            opacity: 0;
+            width: 100%;
+            height: 37px;
+        }
+    }
+
+    &:hover {
+        .button-hover();
+    }
+
+    &:active {
+        .button-active();
+    }
+}
+
+
+.button-hover() {
+    background: #048Bff !important;
+
+    &:hover {
+        background: #048Bff !important;
+    }
+}
+
+.button-active() {
+    background: #0167FF\9 !important;
+    background-color: #048BFF;
+    .gradient(#0167FF,#048BFF) !important;
+}
+
+
+
+.button-font() {
+    color: #fff !important;
+    font-size: 1.4em !important;
+    font-weight: 700 !important;
+}
+
+.button-background() {
+    background: #0D97FF\9 !important;
+    .gradient( #39B9FF,#0D97FF);
+}
+
+
+// show on map
+.Map_Bottom {
+
+    .aca_imagebutton_label {
+        padding: 2px 12px !important;
+        margin-right: 0;
+        .button-background();
+        .border-radius(3px);
+
+        label {
+            cursor: pointer;
+            .button-font();
+            font-size: 1.2em !important;
+        }
+
+        &:hover {
+            .button-hover();
+        }
+    }
+}
+
+.ACA_SaveAndResumeLater_Icon {
+    display: none;
+}
+
+
+.collection_dropmenu,
+.ActionMenus > div {
+    padding: 6px 10px;
+    .box-shadow(2px 2px 5px 1px #eee);
+}
+
+.ActionMenus > div {
+    table {
+        margin: 0;
+        width: 100%;
+
+        .ActionMenu_Line {
+            margin-top: 5px;
+            margin-bottom: 3px;
+        }
+    }
+}

@@ -1,0 +1,388 @@
+﻿.tab_bar_table {
+    td {
+        background: none;
+    }
+}
+
+.ACA_NaviMenu {
+    background: none;
+    height: auto;
+    padding: 0;
+    margin-bottom: 9px;
+
+    #tab_item_place_holder {
+        .ACA_ItemCenter {
+            padding: 4px 9px;
+
+
+            & > div > a font {
+                color: #1F2F45 !important;
+
+                &:hover {
+                    text-decoration: none !important;
+                }
+            }
+
+
+            & > div a {
+                font-size: 1.4em !important;
+                font-weight: 700 !important;
+                color: #1F2F45;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            &:hover {
+                background-color: #1F2F45;
+
+                & > div a {
+                    color: #fff;
+                }
+
+                & > div > a font {
+                    color: #fff !important;
+                }
+            }
+        }
+
+        .ACA_ItemLeft,
+        .ACA_ItemRight {
+            display: none;
+        }
+
+        .ACA_CenterOn {
+            background-color: #1F2F45;
+            position: relative;
+
+            & > div a,
+            & > div a font {
+                color: #fff !important;
+            }
+
+            &::after {
+                position: absolute;
+                bottom: -5px;
+                left: 45%;
+                content: "";
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #1F2F45;
+            }
+        }
+    }
+
+    #more_tab_place_holder {
+
+        &:hover {
+            background-color: #1F2F45;
+
+            & a span {
+                color: #fff;
+            }
+        }
+
+        .ACA_MoreItemLeft,
+        .ACA_MoreItemRight {
+            display: none;
+        }
+
+        .ACA_MoreItemCenter,
+        .ACA_CenterOff {
+            background: none;
+        } 
+
+        .ACA_MoreItemCenter {
+            padding: 4px 9px;
+
+            span {
+                font-size: 1.4em !important;
+                font-weight: 700 !important;
+                color: #1F2F45;
+            }
+        }
+    }
+
+    #divNavMenu {
+        z-index: 10;
+        .submenu ul {
+            background-color: #fff;
+        }
+
+        font {
+            color: #1F2F45;
+        }
+    }
+}
+
+@color-menu-tabs: #1F2F45;
+@color-menu-tabs-bg-hover: darken(#E7F5FD, 80%);
+@color-menu-tabs-hover: #FFF;
+
+@color-menu-bg: #E7F5FD;
+@color-menu-bg-hover: darken(#E7F5FD, 4%);
+
+@color-menu-border-bottom: #23A8E5;
+@color-menu-border-top: #CAD7DC;
+
+@color-menu-actions-menu-border: #CFEBF8;
+@color-menu-actions-menu-link: #000;
+
+.ACA_SubMenuList {
+    border: none;
+    /*text-align: left;*/
+    height: auto;
+    border-top: 1px solid @color-menu-border-top;
+    border-bottom: 2px solid @color-menu-border-bottom;
+    background-color: @color-menu-bg;
+    padding: 0;
+
+    #nav_span_links {
+        padding-left: 10px;
+
+        &:empty {
+            display: none;
+        }
+
+        & > span {
+            padding: 10px 0;
+            margin-right: 30px;
+            display: inline-block;
+
+            a {
+                font-size: 1.2em !important;
+                font-weight: 500 !important;
+                color: #1F2F45;
+                text-decoration: none;
+            }
+
+            &.active a {
+                font-weight: 900 !important;
+            }
+        }
+
+        .tab_tar_separator {
+            display: none;
+        }
+    }
+
+    #nav_span_more_link {
+        a {
+            line-height: 3.1em;
+            font-size: 1.1em !important;            
+
+            > span {
+                /*font-size: 1.2em !important;*/
+                font-weight: 500 !important;
+                color: #1F2F45;
+            }
+        }
+    }
+
+    #divLinkMenu {
+        padding: 5px 10px;
+
+        ul {
+            line-height: 2em;
+            font-size: 1.2em;
+
+            a {
+                font-weight: 500 !important;
+                color: #1F2F45;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+
+/*Advanced search options*/
+
+.search-sub-menu {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.1em;
+
+    img {
+        border: none;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        font-size: 1.1em;
+        font-weight: lighter;
+        padding: 10px;
+        white-space: pre-line;
+    }
+
+
+
+
+    ul {
+        z-index: 1099;
+
+        > li {
+            position: relative;
+            margin: 0;
+
+            > a {
+                padding: 5px 10px 10px 10px;
+            }
+
+            &:hover {
+                background-color: @color-menu-bg-hover;
+
+                > ul {
+                    display: block;
+                }
+            }
+
+            > ul {
+                z-index: 1099;
+                display: none;
+                position: absolute;
+                top: 100%;
+                /*left: 0;*/
+                padding: 0;
+                border-bottom: 2px solid @color-menu-border-bottom;
+                background-color: @color-menu-bg-hover;
+                box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+
+                > li {
+                    /*float: none;*/
+                    width: 250px;
+                    position: relative;
+
+                    &:hover {
+                        background-color: @color-menu-bg;
+
+                        > ul {
+                            display: block;
+                        }
+                    }
+
+
+                    > a {
+                        padding: 10px;
+                    }
+
+                    > ul {
+                        top: 0;
+                        left: 100%;
+                        display: none;
+                        z-index: 1099;
+                        position: absolute;
+
+                        > li {
+                            width: 250px;
+                            position: relative;
+
+                            > a {
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ACA_Button_Text {
+    text-align: left !important;
+}
+
+/*Action-based menu*/
+.actions-menu-container {
+    margin: 10px auto;
+
+    ul {
+        position: relative;
+        float: left;
+
+        a {
+            display: block;
+            font-weight: 700;
+            line-height: 36px;
+            font-size: 12px;
+            padding: 0 15px;
+            text-decoration: none;
+        }
+
+        li {
+            position: relative;
+            float: left;
+            height: 36px;
+        }
+
+        li:hover {
+            background: @color-menu-bg-hover;
+        }
+
+        li:hover > ul {
+            display: block;
+            background-color: @color-menu-bg;
+            z-index: 10;
+        }
+
+        ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: @color-menu-bg;
+            border: solid 1px @color-menu-actions-menu-border;
+            border-bottom: 2px solid @color-menu-border-bottom;
+
+            li {
+                float: none;
+                min-width: 150px
+            }
+
+            a {
+                line-height: 120%;
+                padding: 10px 15px;
+                white-space: nowrap;
+                text-decoration: none;
+
+                > span {
+                    color: @color-menu-actions-menu-link;
+                    font-weight: lighter;
+                }
+            }
+
+            ul {
+                top: 0;
+                left: 100%
+            }
+        }
+    }
+
+    > ul {
+        > li:hover {
+            background-color: @color-menu-tabs-bg-hover;
+
+            > a > span {
+                color: @color-menu-tabs-hover;
+            }
+        }
+
+        > li > a {
+            > span {
+                font-size: 1.4em;
+                color: @color-menu-tabs;
+            }
+        }
+
+        > li > a.ACA_Control_HighLight > span {
+            color: @color-menu-tabs;
+        }
+    }
+}
+/*End of action-based menu*/
