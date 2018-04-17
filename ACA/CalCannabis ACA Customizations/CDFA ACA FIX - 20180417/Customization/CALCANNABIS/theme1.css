@@ -1,0 +1,1118 @@
+﻿/* zeplin "jrich@trustvip.comâ€ */
+/* Color palette */
+
+/* Basic Color Scheme */
+:root {
+  --light-green: #f0f6ea;
+  --charcoal-grey: #414042;
+  --dark-green: #627737;
+  --navy: #16588c;
+  --grey-white: #f8f8f8;
+  --white: #ffffff;
+  --green: #93c950;
+  --black: #000000;
+}
+
+/* Buttons */
+.ACA_SmButton a, .ACA_SmButtonForRight a, .ACA_SmButtonDisable a, .ACA_LgButton a, .ACA_LgButtonForRight a {
+    /* background: #388E3C !important; CURRENT*/
+    /* background-color: #66BB6A; CURRENT*/
+	/*ZEPELIN*/
+	background-color: #165888;
+	background-position: 0% 0%;
+	background-color: var(--navy);
+    background-image: none !important;
+	background-repeat: repeat !important;
+	background-attachment: scroll !important;
+}
+
+/* Icons */
+.ACA_Welcome_Block .material-icons {
+	font-size: 70px !important;
+	display: block !important;
+}
+.material-icons {
+	vertical-align: middle;
+}
+
+.header {
+    box-shadow: 0px 2px 5px #888888;
+    background: #ffffff;
+    /*background: #E5E1D6;*/
+    /*background: #22BDFF;*/
+}
+
+/* Welcome Page */
+.ACA_Welcome_Block td {
+    background-color: white !important;
+    padding: 0px;
+	display: block !important;
+    width: 100%;
+    text-align: center;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_NaviMenu {
+	margin-bottom: 0px;
+				/* THIS MAY BE duplicate*/
+}
+
+.aca_wrapper #ctl00_PlaceHolderMain_divContentLink .Header_h2 {
+	text-align: center;
+	width: 100%;
+	padding: 10px 0px;
+				/* THIS MAY BE duplicate*/
+}
+
+.welcome-page>table>tbody>tr>td {
+	width: 100%;
+	display: block;
+	margin: 0px;
+	padding: 0px !important;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_Welcome_Block {
+    border: none !important;
+    border-spacing: 0px;
+				/* THIS MAY BE duplicate*/
+}
+//*--  JVM background-color = Pine --*//
+.aca_wrapper .welcome-page.ACA_Content > table > tbody > tr > td:first-child {
+	background-color: 162500#;
+    padding: 15px !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+			/* did no modify */
+}
+
+.ACA_Welcome_Block span a {
+    float: none;
+    display: inline-block;
+    /* font-size: 14px; CURRENT*/
+	font-size: 24px;/* ZEPELIN*/
+    vertical-align: middle;
+    margin: 10px 30px;
+	min-width: 200px;
+}
+
+.dsh-section-top {
+    background: #FFFFFF;
+			/* did no modify */
+}
+
+.ACA_Welcome_Block tr td {
+	min-height: 150px;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 30px 20px 0px 0px;
+			/* did no modify */
+}
+
+.ACA_Welcome_Block tr td:nth-child(odd) {
+	background: #004A7F !important;
+			/* THIS MAY BE duplicate*/
+}
+
+.ACA_Welcome_Block tr td:nth-child(odd) .Header_h2{
+	color: #FFFFFF;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_Welcome_Block tr td:nth-child(odd) a > span{
+	color: #FFFFFF !important;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_Welcome_Block tr td:nth-child(odd) a > span:hover{
+	color: #2997C5 !important;
+			/* THIS MAY BE duplicate*/
+}
+
+.ACA_Welcome_Block tr td:nth-child(even) a > span:hover{
+	color: #004A7F !important;
+			/* THIS MAY BE duplicate*/
+}
+
+.ACA_Welcome_Block span br {
+	display: none;
+			/* THIS MAY BE duplicate*/
+}
+
+/*Record Review*/
+#ctl00_PlaceHolderMain_lblPermitType {
+	font-size: 30px;
+	/* NO equivalent ZEPELIN*/
+}
+
+/* Account Management */
+#ctl00_PlaceHolderMain_lblAccountType {
+	line-height: 30px;
+	/* NO equivalent ZEPELIN*/
+}
+
+/* Body - new to match ZEPELIN*/
+body {
+  font-family: HelveticaNeue, arial;
+  	/* did no modify */
+}
+
+.ACA_Content h1 > span > font, .Welcome_Label > span > font, .RegisterLicense_Title > span > font {
+	font-family: HelveticaNeue, arial;	/*ZEPELIN*/
+    /*font-size: 1.0em; CURRENT*/
+	/*font-size: 1.3em; ZEPELIN*/
+	font-size: 24px; /*pixels from ZEPELIN*/
+	font-weight: bold; /*ZEPELIN*/
+	text-align: left; /*ZEPELIN*/
+	color: #ffffff; /*ZEPELIN*/
+	color: var(--white); /*ZEPELIN*/
+	/*h1 from ZEPELIN*/
+}
+
+#ctl00_PlaceHolderMain_accountView_accountViewPanel {
+	height: 113px;
+		/* did no modify */
+}
+
+/* Login Box */
+.welcome-page>table>tbody>tr {
+    display:-webkit-flex;
+    display:-webkit-box;
+    display:-moz-flex;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:flex;
+	flex-direction: column;
+    -webkit-flex:1;
+    -webkit-box-flex:1;
+    -moz-flex:1;
+    -moz-box-flex:1;
+    -ms-flex:1;
+    flex:1;
+		/* did no modify */
+}
+.welcome-page>table>tbody>tr>td:first-child {
+    order: 2;
+    width: 100%;
+    display: table;
+    float: left;
+	max-width: 1200px;
+		/* did no modify */
+}
+.welcome-page>table>tbody>tr>td:last-child {
+    order: 1;
+    width: 100%;
+    display: inherit;
+    float: left;
+	max-width: 1200px;
+		/* did no modify */
+}
+.ACA_LoginBox div {
+	display: inline-block;
+	padding-left: 10px;
+		/* did no modify */
+}
+
+.aca_wrapper .welcome-page.ACA_Content > table > tbody > tr > td:last-child {
+    border-left: 0px;
+    display: block;
+    background: none;
+		/* did no modify */
+}
+#ctl00_PlaceHolderMain_divLogin {
+	background-color: #FFFFFF;
+	/* did not modify */
+}
+.welcome_instruction {
+	display:none;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_LoginBox div:nth-child(4) {
+	width: 100px;
+	vertical-align: top;
+	margin-top: 11px;
+		/* did no modify */
+}
+
+.ACA_LoginBox .aca_checkbox{
+	vertical-align:bottom;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_LoginBox .ACA_TabRow.ACA_Line_Content {
+	width:98%;
+	margin: 0px;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_LoginBox {
+    width: 100%;
+    padding: 0px;
+	padding-top:0px;
+    max-width: 1200px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.2s ease-in-out;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_LoginBox:hover {
+  box-shadow: 0 10px 11px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  			/* THIS MAY BE duplicate*/
+}
+
+.ACA_LoginBox .subTable tr td:nth-child(2) {
+	display: none;
+				/* THIS MAY BE duplicate*/
+}
+
+.ACA_LoginBox .ACA_LabelHeight {
+	line-height: 43px;
+	margin-right: 5px;			
+	/* THIS MAY BE duplicate*/
+}
+
+.ACA_LoginBox .ACA_TabRow {
+	width: auto;
+	margin: 5px;
+				/* THIS MAY BE duplicate*/
+}
+.ACA_LoginBox .ACA_LoginBoxTitle {
+	display:none;
+				/* THIS MAY BE duplicate*/
+}
+.aca_wrapper #ctl00_PlaceHolderMain_divContentLink {
+    margin-left: 0px;
+				/* THIS MAY BE duplicate*/
+}
+
+#ctl00_PlaceHolderMain_divWelcomeText {
+    margin: 12px 0px 0px 0px;
+    padding: 10px;
+    -webkit-box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	/* did no modify */
+}
+
+/* remove chrome yellow */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+/* Remove border */
+.aca_wrapper .welcome-page.ACA_Content {
+    border: 0px solid #eee;
+    -webkit-box-shadow: 0 0 0px 0px #eeeeee;
+    -moz-box-shadow: 0 0 0px 0px #eeeeee;
+    box-shadow: 0 0 0px 0px #eeeeee;
+		/* did no modify */
+}
+
+#ctl00_PlaceHolderMain_lblPageInstruction {
+	line-height: 6;
+}
+
+#ctl00_PlaceHolderMain_lblPermitType {
+	display: block;
+	margin: 25px;
+}
+
+/* Record Select */
+
+.permit_typelist {
+    display: inline-block;
+    padding: 2px 0;
+    -webkit-columns: 3 140px;
+    -moz-columns: 3 140px;
+    columns: 300px;
+    max-height: 461px;
+    column-gap: 20px;
+    -webkit-column-gap: 37px;
+    -moz-column-gap: 4em;
+    column-gap: 4em;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+		/* did no modify */
+}
+
+.permit_typelist br {
+	display: none;
+		/* did no modify */
+}
+
+@media screen and ( max-width: 825px ) {
+	.permit_typelist {
+		max-height: 100%;
+		-webkit-columns: 1;
+		-moz-columns: 1;
+		columns: 1;	
+			/* did no modify */
+	}
+}
+
+.permit_typelist .aca_checkbox {
+    padding: 7px;
+    line-height: 23px;
+    width: 100%;
+    background: #E1F5FF;
+    display: block;
+	margin-bottom: 15px;
+    -webkit-box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		/* did no modify */
+}
+
+.permit_typelist .aca_checkbox:hover {
+    -webkit-box-shadow:  0 10px 11px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow:  0 10px 11px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow:  0 10px 11px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);	
+		/* did no modify */
+}
+
+/* Breadcrumbs */
+.breadcrump-table .breadcrump-selected {
+    background: #FFEE9E;
+    border: 0px;
+    border-bottom: 3px solid #E0B300;
+	border-style: dashed;
+	/* did no modify */
+}
+
+.breadcrump-table .breadcrump-selected td, .breadcrump-table .breadcrump-selected span.breadcrump-number {
+	color: #E0B300 !important;
+	/* did no modify */
+}
+
+.breadcrump-table .breadcrump-collapsed-disable-end, .breadcrump-table .breadcrump-collapsed-disable, .breadcrump-table .breadcrump-disable, .breadcrump-table .breadcrump-disable-end {
+    background: #f3f3f3;
+    border: 0px;
+    border-bottom: 3px solid #e5e5e5;
+	/* did no modify */
+}
+
+.breadcrump-table .breadcrumb_number_padding span, .breadcrump-table .numbercolumn span, .breadcrump-table .namecolumn a, .breadcrump-table .namecolumn {
+    color: darkgray !important;
+	/* did no modify */
+}
+
+.breadcrump-table .breadcrump, .breadcrump-table .breadcrump-collapsed {
+    border: 0px;
+    border-bottom: 3px solid #58AD60;
+    background: #A5D1A8;
+	/* did no modify */
+}
+
+.breadcrump-table .breadcrump a, .breadcrump-table .breadcrump span.breadcrump-number {
+    color: #58AD60 !important;
+	/* did no modify */
+}
+
+.breadcrump-table .breadcrump-collapsed a, .breadcrump-table .breadcrump-collapsed span.breadcrump-number {
+    color: #58AD60 !important;
+	/* did no modify */
+}
+
+.breadcrump-table {
+    width: 100%;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0;
+	/* did no modify */
+	}
+
+.ACA_Title_Bar, .ACA_InfoTitle {
+    /*background: #1fafed; CURRENT*/
+	background: #93c850; /* ZEPELIN*/
+}
+
+.SectionTextDecoration + div {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background: rgb(232, 232, 232);
+	border-radius: 10px;
+		/* did no modify */
+}
+
+.ACA_Area_CapEdit .ACA_Title_Bar {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	margin-top: -20px;
+	margin-left: -20px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-right: -20px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);	
+	border-radius: 8px 8px 0px 0px;
+    padding: 12px;
+	border: 0px;
+    margin-bottom: 20px;
+		/* did no modify */
+}
+.ACA_Title_Bar {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 0px;
+	background: #1fafed;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    border-radius: 0px 0px 0px 0px;
+    padding: 12px;
+    border: 0px;
+    margin-bottom: 20px;
+		/* did no modify */
+}
+
+.ACA_InfoTitle h1 {
+	margin-left: 15px;
+		/* did no modify */
+}
+
+.ACA_Title_Bar h1 {
+    /*color: white; CURRENT*/
+	color: #ffffff; /* ZEPELIN*/
+	color: var(--white); /* ZEPELIN*/
+}
+.ACA_Title_Bar h1 > span, .ACA_InfoTitle h1 > span {
+    /*color: white; CURRENT*/
+	color: #ffffff; /* ZEPELIN*/
+	color: var(--white); /* ZEPELIN*/
+}
+
+.actionbar_bottom .ACA_LiLeft {
+	float: right;
+		/* did no modify */
+}
+
+.actionbar_bottom .ACA_FRight {
+	float: left;
+		/* did no modify */
+}
+
+.actionbar_top .ACA_LiLeft {
+	float: right;
+		/* did no modify */
+}
+
+.actionbar_top .ACA_FRight {
+	float: left;
+		/* did no modify */
+}
+
+.ACA_SmButton a, .ACA_SmButtonForRight a, .ACA_SmButtonDisable a, .ACA_LgButton a, .ACA_LgButtonForRight a {
+    background: #388E3C !important;
+    background-color: #66BB6A;
+    background: -webkit-gradient(linear, left top, left bottom, from(#66BB6A), to(#388E3C));
+    background: -webkit-linear-gradient(top, #66BB6A, #388E3C);
+    background: -moz-linear-gradient(top, #66BB6A, #388E3C);
+    background: -ms-linear-gradient(top, #66BB6A, #388E3C);
+    background: -o-linear-gradient(top, #66BB6A, #388E3C);
+}
+
+.ACA_SmButton a:hover,
+.ACA_SmButtonForRight a:hover,
+.ACA_SmButtonDisable a:hover,
+.ACA_LgButton a:hover,
+.ACA_LgButtonForRight a:hover {
+  background: #4CAF50 !important;
+}
+
+.ACA_SmButton a:hover:hover,
+.ACA_SmButtonForRight a:hover:hover,
+.ACA_SmButtonDisable a:hover:hover,
+.ACA_LgButton a:hover:hover,
+.ACA_LgButtonForRight a:hover:hover {
+  background: #4CAF50 !important;
+}
+.ACA_SmButton a:active,
+.ACA_SmButtonForRight a:active,
+.ACA_SmButtonDisable a:active,
+.ACA_LgButton a:active,
+.ACA_LgButtonForRight a:active {
+  background: #388E3C !important;
+  background-color: #4CAF50;
+  background-color: #388E3C !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#388E3C), to(#4CAF50)) !important;
+  background: -webkit-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -moz-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -ms-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -o-linear-gradient(top, #388E3C, #4CAF50) !important;
+}
+
+a {
+  color: #16588c;
+}
+
+a font {
+  color: #16588c;
+}
+a span {
+  color: #16588c;
+}
+a:hover font {
+  color: #16588c;
+}
+a:hover {
+    color: #16588c;
+}
+a:hover > span {
+  color: #16588c;
+}
+
+.add2collectionlink:hover span,
+.ACA_LinkButton:hover span {
+  color: #4CAF50;
+}
+
+.add2collectionlink span,
+.ACA_LinkButton span {
+  color: #66BB6A;
+}
+
+
+.search-sub-menu a {
+  color: #1B5E20;
+}
+a:hover > span {
+  color: #4CAF50;
+}
+
+a > span {
+  color: #66BB6A;
+}
+.splitbutton {
+  background: #4CAF50 !important;
+  background-color: #66BB6A;
+  background: -webkit-gradient(linear, left top, left bottom, from(#66BB6A), to(#4CAF50));
+  background: -webkit-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -moz-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -ms-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -o-linear-gradient(top, #66BB6A, #4CAF50);
+}
+.splitbutton:hover {
+  background: #4CAF50 !important;
+}
+.splitbutton:hover:hover {
+  background: #4CAF50 !important;
+}
+.splitbutton:active {
+  background: #388E3C !important;
+  background-color: #4CAF50;
+  background-color: #388E3C !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#388E3C), to(#4CAF50)) !important;
+  background: -webkit-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -moz-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -ms-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -o-linear-gradient(top, #388E3C, #4CAF50) !important;
+}
+
+.splitbutton_menu .splitbutton_menuitem a {
+  color: #66BB6A;
+}
+.splitbutton_menu .splitbutton_menuitem:hover {
+  background-color: #E8F5E9 !important;
+}
+
+[id$="_divShowSaveandResume"] {
+  background: #4CAF50 !important;
+  background-color: #66BB6A;
+  background: -webkit-gradient(linear, left top, left bottom, from(#66BB6A), to(#4CAF50));
+  background: -webkit-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -moz-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -ms-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -o-linear-gradient(top, #66BB6A, #4CAF50);
+}
+
+[id$="_divShowSaveandResume"]:hover {
+  background: #4CAF50 !important;
+}
+[id$="_divShowSaveandResume"]:hover:hover {
+  background: #4CAF50 !important;
+}
+[id$="_divShowSaveandResume"]:active {
+  background: #388E3C !important;
+  background-color: #4CAF50;
+  background-color: #388E3C !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#388E3C), to(#4CAF50)) !important;
+  background: -webkit-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -moz-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -ms-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -o-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: #388E3C !important;
+  background-color: #4CAF50;
+  background-color: #388E3C !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#388E3C), to(#4CAF50)) !important;
+  background: -webkit-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -moz-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -ms-linear-gradient(top, #388E3C, #4CAF50) !important;
+  background: -o-linear-gradient(top, #388E3C, #4CAF50) !important;  
+}
+.Map_Bottom .aca_imagebutton_label {
+  /* background: #4CAF50 !important;
+  background-color: #66BB6A;
+  background: -webkit-gradient(linear, left top, left bottom, from(#66BB6A), to(#4CAF50));
+  background: -webkit-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -moz-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -ms-linear-gradient(top, #66BB6A, #4CAF50);
+  background: -o-linear-gradient(top, #66BB6A, #4CAF50); CURRENT*/
+  background: #000000 !important; /* --black ZEPELIN*/
+  background-color: #414042; /* --navy ZEPELIN*/
+  background: -webkit-gradient(linear, left top, left bottom, from(#414042), to(#4CAF50));
+  background: -webkit-linear-gradient(top, #414042, #000000);
+  background: -moz-linear-gradient(top, #414042, #000000);
+  background: -ms-linear-gradient(top, #414042, #000000);
+  background: -o-linear-gradient(top, #414042, #000000);
+  /* gradient --charcoal-grey 414042 to --black 000000 ZEPELIN*/ 
+}
+
+.Map_Bottom .aca_imagebutton_label:hover {
+	/* background: #4CAF50 !important; CURRENT*/
+    background: #000000 !important; /* --black ZEPELIN*/
+}
+
+.Map_Bottom .aca_imagebutton_label:hover:hover {
+	/* background: #4CAF50 !important; CURRENT*/
+	background: #414042 !important;  /* --charcoal-grey 414042 ZEPELIN*/
+}
+
+.ACA_Message_Success .ACA_Message_Content > div,
+.ACA_Message_Notice .ACA_Message_Content > div,
+.ACA_Message_Error .ACA_Message_Content > div,
+.message_error_contact .ACA_Message_Content > div,
+.ACA_Message_Success .ACA_Message_Content > span,
+.ACA_Message_Notice .ACA_Message_Content > span,
+.ACA_Message_Error .ACA_Message_Content > span,
+.message_error_contact .ACA_Message_Content > span,
+.ACA_Message_Success td a,
+.ACA_Message_Notice td a,
+.ACA_Message_Error td a,
+.message_error_contact td a {
+  /* color: #1B5E20; CURRENT*/
+  color: #165888; /* --navy ZEPELIN*/ 
+}
+
+.ACA_Message_Success td:nth-child(3) a,
+.ACA_Message_Notice td:nth-child(3) a,
+.ACA_Message_Error td:nth-child(3) a,
+.message_error_contact td:nth-child(3) a {
+  /* color: #1B5E20; CURRENT*/
+  color: #165888; /* --navy ZEPELIN*/
+}
+
+.ACA_Message_Notice {
+  /* background: #A5D6A7;
+  background-color: #E8F5E9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E8F5E9), to(#A5D6A7));
+  background: -webkit-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -moz-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -ms-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -o-linear-gradient(top, #E8F5E9, #A5D6A7);
+  border-bottom: 4px solid #388E3C; CURRENT*/
+  background: #627737; /* --dark-green: #627737; ZEPELIN*/
+  background-color: #165888;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E8F5E9), to(#627737));
+  background: -webkit-linear-gradient(top, #F0F6EA, #627737);
+  background: -moz-linear-gradient(top, #F0F6EA, #627737);
+  background: -ms-linear-gradient(top, #F0F6EA, #627737);
+  background: -o-linear-gradient(top, #F0F6EA, #627737);
+  border-bottom: 4px solid #165888;  /*  gradient  --light-green: #F0F6EA;  --dark-green: #627737;  ZEPELIN*/  
+}
+
+.ACA_Message_Note {
+  /* color: #1B5E20;
+  background: #A5D6A7;
+  background-color: #E8F5E9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E8F5E9), to(#A5D6A7));
+  background: -webkit-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -moz-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -ms-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -o-linear-gradient(top, #E8F5E9, #A5D6A7);
+  border-bottom: 4px solid #388E3C; CURRENT*/
+  color: #165888;
+  background: #627737;
+  background-color: #F0F6EA;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F0F6EA), to(#627737));
+  background: -webkit-linear-gradient(top, #F0F6EA, #627737);
+  background: -moz-linear-gradient(top, #F0F6EA, #627737);
+  background: -ms-linear-gradient(top, #F0F6EA, #627737);
+  background: -o-linear-gradient(top, #F0F6EA, #627737);
+  border-bottom: 4px solid #165888;  /*  gradient  --light-green: #F0F6EA;  --dark-green: #627737;  ZEPELIN*/  
+  
+}
+
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter > div a {
+  /* color: #1B5E20; CURRENT*/
+  color: #16588C; /* --navy ZEPELIN*/ 
+}
+
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter:hover {
+  /* background-color: #1B5E20; CURRENT*/
+  background-color: #16588C; /* --navy ZEPELIN*/ 
+}
+
+.ACA_NaviMenu #tab_item_place_holder .ACA_CenterOn {
+  /* background-color: #1B5E20; CURRENT*/
+  background-color: #16588C; /* --navy ZEPELIN*/   
+}
+
+.ACA_NaviMenu #tab_item_place_holder .ACA_CenterOn::after {
+  /* border-top: 5px solid #1B5E20; CURRENT*/
+  border-top: 5px solid #16588C; /* --navy ZEPELIN*/ 
+}
+
+.ACA_NaviMenu #more_tab_place_holder:hover {
+  /* background-color: #1B5E20; CURRENT*/
+  background-color: #16588C; /* --navy ZEPELIN*/ 
+}
+
+.ACA_NaviMenu #more_tab_place_holder .ACA_MoreItemCenter span {
+  /* color: #1B5E20; CURRENT*/
+  color: #16588C; /* --navy ZEPELIN*/
+}
+
+.ACA_NaviMenu #divNavMenu font {
+  /* color: #1B5E20; CURRENT*/
+  color: #16588C; /* --navy ZEPELIN*/
+}
+
+.ACA_SubMenuList {
+  /* border-top: 1px solid #A5D6A7; CURRENT*/
+  border-top: 1px solid #627737; /* --dark-green 627737 top border ZEPELIN*/
+  /* border-bottom: 2px solid #4CAF50; CURRENT*/
+  border-bottom: #000000; /* black sub border ZEPELIN*/  
+  /* background-color: #E8F5E9; CURRENT*/
+  background-color: 1px solid #165888; /* background-color: solid 1px var(--navy);ZEPELIN*/  
+}
+
+.ACA_SubMenuList #nav_span_links > span a {
+  /* color: #1B5E20; CURRENT*/
+  color: #16588C; /* --navy ZEPELIN*/
+}
+
+.ACA_SubMenuList #nav_span_more_link a > span {
+  /* color: #1B5E20; CURRENT*/
+  color: #16588c; /* --navy no difference on more ZEPELIN*/
+}
+
+.ACA_SubMenuList #divLinkMenu ul a {
+  /* color: #1B5E20; CURRENT*/
+  color: #16588c; /* --navy no difference on ul ZEPELIN*/
+}
+
+.search-sub-menu ul > li:hover {
+  /* background-color: #E8F5E9; CURRENT*/
+  background-color: 1px solid #165888; /* background-color: --navy li ul sub hover ZEPELIN*/  
+}
+
+.search-sub-menu ul > li > ul {
+  /* border-bottom: 2px solid #4CAF50; CURRENT*/
+  border-bottom: #000000; /* black li us hover ZEPELIN*/
+  /* background-color: #E8F5E9; CURRENT*/
+  background-color: 1px solid #165888; /* background-color: --navy search-sub-menu ul > li > ul ZEPELIN*/    
+}
+
+.search-sub-menu ul > li > ul > li:hover {
+  /* background-color: #E8F5E9; CURRENT*/
+  background-color: 1px solid #165888; /* background-color: var(--navy search-sub-menu ul > li > ul > li:hover ZEPELIN*/    
+}
+
+.ACA_NaviTitle .ACA_Body_Text,
+.ACA_NaviTitle #ctl00_HeaderNavigation_com_headNav_label_loggedinas,
+.ACA_NaviTitle #ctl00_HeaderNavigation_lblUserName,
+.ACA_NaviTitle #ctl00_HeaderNavigation_lblAccessibilityAfter,
+.ACA_NaviTitle #ctl00_HeaderNavigation_lblAccessibilityBefore,
+.ACA_NaviTitle a {
+  /* color: #66BB6A; CURRENT*/
+  color: #000000; /* black ZEPELIN*/
+}
+
+.ACA_NaviTitle a {
+  /* color: #66BB6A; CURRENT*/
+  color: #000000; /* black duplicate of above ZEPELIN*/
+}
+
+.ACA_NaviTitle a:hover span {
+  /* color: #4CAF50; CURRENT*/
+  color: #000000; /* black no difference on hover ZEPELIN*/
+}
+
+.ACA_NaviTitle #ctl00_HeaderNavigation_lblAccessibilityBefore:hover {
+  color: #4CAF50;
+  /* leaving this as-is because it would override accessiblity menu item */ 
+}
+
+.ACA_Title_Bar,
+.ACA_InfoTitle {
+  /* border-bottom: 2px solid #1B5E20; CURRENT*/
+  border-bottom: 2px solid #000000; /* --black ZEPELIN*/
+}
+
+.ACA_SectionBody h1 span {
+  /*color: #1B5E20; CURRENT*/
+  color: #000000; /* black because it would be white on white if using specified color ZEPELIN*/
+}
+
+.aca_gridview_caption > table > tbody > tr > td a {
+  color: #66BB6A !important;
+  font-size: 1.0em !important;
+  font-weight: 500 !important;
+  /* not modifying this because it is already override */	
+}
+
+.aca_pagination td {
+  /* border: 1px solid #E8F5E9; CURRENT*/
+  border: 1px solid #f8f8f8; /* --grey-white: boxes around page number list #; ZEPELIN*/
+}
+
+.aca_pagination .SelectedPageButton {
+  /* border-bottom: 3px solid #66BB6A; CURRENT*/
+  border-bottom: 3px solid #165888; /* --navy: Selected Page Button ZEPELIN*/
+}
+
+.aca_pagination .aca_pagination_PrevNext > a {
+  /* color: #4CAF50; CURRENT*/
+  color: #414042; /* --charcoal-grey: Previous Page and Next Page Button ZEPELIN*/
+}
+
+.ajax__calendar_container {
+  /* border-left: 1px solid #E8F5E9;
+  border-bottom: 1px solid #E8F5E9;
+  border-right: 1px solid #E8F5E9; CURRENT*/
+  border-left: 1px solid #165888; /* border: solid 1px var(--navy);ZEPELIN*/
+  border-bottom: 1px solid #165888; /* border: solid 1px var(--navy);ZEPELIN*/
+  border-right: 1px solid #165888; /* border: solid 1px var(--navy);ZEPELIN*/
+  /* calendar controls #165888 --navy border */
+}
+
+.ajax__calendar_container .ajax__calendar_header {
+  /* background-color: #4CAF50; CURRENT*/
+  background-color: #4CAF50; /* calendar controls #165888 --navy border background for the calendar header ZEPELIN*/
+}
+
+.ajax__calendar_container .ajax__calendar_body .ajax__calendar_days .ajax__calendar_other > div {
+	/* color: #E8F5E9 !important; CURRENT*/
+	color: #165888 !important; /* keeping ! important calendar controls #165888 --navy border background for the calendar header ZEPELIN*/
+}
+
+.ajax__calendar_container .ajax__calendar_body .ajax__calendar_hover > div,
+.ajax__calendar_container .ajax__calendar_body .ajax__calendar_active > div {
+  /* background-color: #388E3C !important; CURRENT*/
+  color: #165888 !important; /* keeping ! important calendar controls #165888 --navy border background for the calendar header ZEPELIN*/
+}
+
+.divSessionTimeoutDialog .boxTitle {
+  /* background-color: #388E3C; CURRENT*/
+  background-color: #165888;  /* timeout dialog #165888 --navy box ZEPELIN*/
+}
+
+.divSessionTimeoutDialog .entryBtun .tabbables {
+  /* color: #66BB6A; CURRENT*/
+  color: #000000; /* ZEPELIN*/
+  /* timeout dialog button #000000 --black ZEPELIN*/
+}
+
+.header {
+  /* background-color: #4CAF50; CURRENT*/
+  background-color: #93c850;  /* ZEPELIN*/
+  /* header bar --green: #93c950; ZEPELIN*/
+}
+
+.header .container .return {
+  /* background-color: #E8F5E9; CURRENT*/
+  background-color: #165888;  /* timeout dialog #165888 --navy box ZEPELIN*/  
+}
+
+.header .container .return a {
+  /* color: #1B5E20; CURRENT*/
+  color: #000000; /*links #000000 --black ZEPELIN*/  
+}
+
+#divProcessInfo .ACA_TabRow_Even td {
+  /* background: #E8F5E9 !important; CURRENT*/
+  background: #165888 !important; /* even tab rows #165888 --navy box ZEPELIN*/    
+}
+
+.ACA_Welcome_Block a > span {
+  /* color: #388E3C !important;CURRENT*/
+  color: 2px solid #000000 !important; /* --black welcome block link ZEPELIN*/  
+}
+
+.aca_wrapper #ctl00_PlaceHolderMain_divContentLink .Header_h2 {
+  /* border-bottom: 2px solid #388E3C; CURRENT*/
+  border-bottom: 2px solid #000000; /* --black border ZEPELIN*/
+}
+
+
+.ACA_LoginBox {
+  /* background-color: #E8F5E9; CURRENT*/
+  background-color: #f3f4f2;;  /* login box #165888 --navy box ZEPELIN*/   
+}
+
+
+.dsh-section-top {
+  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  /* did not modify */
+}
+
+.myShoppingCart.cartTotalRow {
+  /*border-top: Solid 1px #66BB6A; CURRENT*/
+  border-top: Solid 1px #000000; /* --black top border ZEPELIN*/
+}
+
+.myCollectiontable .myCollectionCol.recCountCol {
+  /* background-color: #E8F5E9; CURRENT*/
+  background-color: #165888;  /* ZEPELIN*/
+  /* collection table #165888 --navy box ZEPELIN*/     
+}
+
+.portlet.box.action-req > .portlet-title > .tools .btn {
+  background-color: transparent;
+  /* color: #66BB6A; CURRENT*/
+  color: #000000; /* --black portlet title button ZEPELIN*/
+}
+
+.portlet.box.action-req > .portlet-title > .tools .btn:hover,
+.portlet.box.action-req > .portlet-title > .tools .btn:focus {
+  /* color: #66BB6A; CURRENT*/
+  color: #000000; /* --black portlet title button hover and focus ZEPELIN*/
+}
+
+.portlet > .portlet-title {
+  /* background-color: #4CAF50; CURRENT*/
+  background-color: #93c850;  /* ZEPELIN*/
+  /* title bar --green: #93c950; ZEPELIN*/	
+}
+
+.portlet > .portlet-title > .actions .btn:hover, .portlet > .portlet-title > .actions .btn:focus {
+    /* background-color: #A5D6A7; CURRENT*/
+	background-color: #627737; /* hover and focus action button  --dark-green: #627737; ZEPELIN*/
+}
+
+.portlet > .portlet-title > .actions .btn {
+    /* background-color: #1B5E20; CURRENT*/
+	background-color: #F0F6EA; /* hover and focus action button  --light-green: #f0f6ea; ZEPELIN*/	  
+}
+
+.record-detail .record-nav .nav-bar > li .rec-downarrow {
+  /* border-color: #4CAF50 transparent transparent transparent; CURRENT*/
+  border-color: #93c850; /* --green: record detail nav downarrow LI ZEPELIN*/	  
+}
+
+.record-detail .record-nav .nav-bar > li.selected {
+  /* border-bottom: solid 2px #66BB6A; CURRENT*/
+  border-bottom: solid 2px #000000; /* record detail nav LI downarrow --black ZEPELIN*/
+}
+
+.record-detail .dropdown-menu > li > a:hover,
+.record-detail .dropdown-menu > li > a:focus {
+  /* background-color: #E8F5E9; CURRENT*/
+  background-color: #165888; /* record detail drop down menu hover and focus #165888 --navy box ZEPELIN*/  
+}
+
+.header {
+    /* background: #66BB6A; CURRENT*/
+    background: #000000; /* header --black ZEPELIN*/	
+}
+
+.ACA_Welcome_Block tr td:nth-child(odd) {
+    /* background: #1B5E20 !important; CURRENT*/
+	background: #F0F6EA !important; /* --light-green: odd nth-child ZEPELIN*/
+}
+
+.ACA_Welcome_Block tr td:nth-child(odd) a > span:hover{
+  /* color: #388E3C !important; CURRENT*/
+  color: #388E3C !important; /* --black: odd welcome hover nth-child ZEPELIN*/	
+}
+
+.ACA_Welcome_Block tr td:nth-child(even) a > span:hover{
+    /* color: #1B5E20 !important; CURRENT*/
+	color: #F0F6EA !important; /* --light-green: even hover nth-child ZEPELIN*/	
+}
+
+.permit_typelist .aca_checkbox {
+  /* background: #E8F5E9; CURRENT*/
+  background: #165888;  /* --navy permit type list and check box ZEPELIN*/    	
+}
+
+.ACA_Title_Bar, .ACA_InfoTitle {
+  /* background: #4CAF50 transparent transparent transparent; CURRENT*/
+  background: #93c850; /* --green: record detail nav downarrow LI ZEPELIN*/	 	
+}
+
+.SectionTextDecoration + div {
+	background: rgb(232, 232, 232);
+	/* not changed */
+}
+
+[id$="_divShowSaveandResume"] {
+    /* background: #FF6A00 !important;
+    background-color: #FFB27F;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFB27F), to(#FF6A00));
+    background: -webkit-linear-gradient(top, #FFB27F, #FF6A00);
+    background: -moz-linear-gradient(top, #FFB27F, #FF6A00);
+    background: -ms-linear-gradient(top, #FFB27F, #FF6A00);
+    background: -o-linear-gradient(top, #FFB27F, #FF6A00); CURRENT*/
+    background: #f8f8f8 !important;
+    background-color: #165888;
+    background: -webkit-gradient(linear, left top, left bottom, from(#165888), to(#f8f8f8));
+    background: -webkit-linear-gradient(top, #165888, #f8f8f8);
+    background: -moz-linear-gradient(top, #165888, #f8f8f8);
+    background: -ms-linear-gradient(top, #165888, #f8f8f8);
+    background: -o-linear-gradient(top, #165888, #f8f8f8);
+	/* --navy: #165888; --grey-white: #f8f8f8; gradient on SaveandResume ZEPELIN*/
+}	
+
+[id$="_divShowSaveandResume"]:hover:hover {
+    /* background: #FFC76D !important;
+    background-color: #FFC76D; CURRENT*/
+    background: #f8f8f8 !important;
+    background-color: #f8f8f8; 	
+	/*  --grey-white: #f8f8f8; hover on SaveandResume ZEPELIN*/
+}
+
+.ACA_Title_Bar {
+  /* background: #4CAF50; CURRENT*/
+  background: #93c850;  /*  --green: ZEPELIN*/
+  /* aca title bar ZEPELIN*/		
+}
+
+.Header_h2 {
+  /* color: #4CAF50; CURRENT*/
+  color: #93c850;  /*  --green: ZEPELIN*/
+  /* header h2 ZEPELIN*/		
+}
+
+.wrap nav {
+    /* background: #1B5E20; CURRENT*/
+	background: #F0F6EA /* --light-green: nav ZEPELIN*/		
+}
+.wrap ul.sub li a {
+  /* background: #E8F5E9; CURRENT*/
+  background: #165888;  /* --navy ul li ZEPELIN*/    	
+}
+
+.wrap ul.primary li:hover a {
+  /* background: #E8F5E9; CURRENT*/
+  background: #165888;  /* --navy ul li hover ZEPELIN*/    	
+}
+
+@media screen and (max-width: 768px) {
+.ACA_RegisterLogin {
+  /* background: #E8F5E9; CURRENT*/
+  background: #165888;  /* --navy register login background ZEPELIN*/    	
+}
+
+@media screen and (max-width: 768px){
+.menu {
+    /* color: #1B5E20; CURRENT*/
+	color: #F0F6EA /* --light-green: menu ZEPELIN*/			
+}

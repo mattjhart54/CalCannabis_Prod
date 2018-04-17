@@ -1,0 +1,646 @@
+/*====================== Responsive ===============================*/
+
+@media screen and ( min-width: 1300px ) {
+	.aca_wrapper > div {	
+		padding-left: 35px;
+		padding-right: 35px;
+		max-width: 1200px;
+	}
+	.welcome_cartlist {
+		right: 80px;
+	}
+	
+	td[style*="width:490px"],
+	td[style*="width: 490px"],
+	table[style*="width:490px"],
+	table[style*="width: 490px"],
+	td[style*="padding-left:490px"],
+	td[style*="padding-left: 490px"],
+	table[style*="padding-left:490px"],
+	table[style*="padding-left: 490px"]	{
+		width: 170px !important;
+		padding-left: 0px !important;
+	}
+	
+}
+
+@media screen and ( max-width: 1000px ) {
+	body {
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+	-webkit-perspective: 1000;
+	}
+
+	td[style*="width:490px"],
+	td[style*="width: 490px"],
+	table[style*="width:490px"],
+	table[style*="width: 490px"],
+	td[style*="padding-left:490px"],
+	td[style*="padding-left: 490px"],
+	table[style*="padding-left:490px"],
+	table[style*="padding-left: 490px"]	{
+		width: 120px !important;
+		padding-left: 0px !important;
+	}
+	
+}
+@media screen and ( max-width: 850px ) {
+
+	td[style*="width:490px"],
+	td[style*="width: 490px"],
+	table[style*="width:490px"],
+	table[style*="width: 490px"],
+	td[style*="padding-left:490px"],
+	td[style*="padding-left: 490px"],
+	table[style*="padding-left:490px"],
+	table[style*="padding-left: 490px"]	{
+		width: 100px !important;
+		padding-left: 0px !important;
+	}	
+}
+@media screen and ( max-width: 768px ) {
+	.ACA_Dialog {
+		width: 95% !important;
+	}
+	.aca_wrapper > div{
+		padding: 0px;
+	}	
+
+	.welcome_cartlist{
+		right: 20px;
+	}	
+	.ACA_NaviTitle{
+		float: none;
+	}
+	
+	.breadcrump-table {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+	
+	.permit_typelist {
+		font-size: medium;
+		line-height: 30px;
+	}
+	
+	.menu {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1001;
+        font: bold 26px Sans-Serif;
+	color: #01579B;
+	}
+	
+	.ACA_RegisterLogin {
+		float: none !important;
+		font-size: 22px;
+		position: absolute;
+		top: -4px;
+		left: -9px;
+		z-index: 1000;
+		background: linen;
+		width: 100%;
+		height: 300px;
+		display: none;
+		padding: 10px;
+	}
+	
+	.ACA_RegisterLogin .ACA_FRight {
+		width:100%;
+	}
+	
+	.ACA_NaviTitle table{
+		margin: auto;
+		float: none;
+	}
+	
+	.breadcrump-table > tbody > tr > td {
+		overflow: hidden;
+		width: 45px;
+		height: 30px;
+		display: inline-block;
+		text-align: left;
+		border-right: 1px solid rgba(140, 140, 140, 0.5);
+	}
+	.breadcrump-tt .numbercolumn {
+		width: 11.3em;
+	}
+	.ACA_Title_Color {
+		visibility: hidden;
+	}
+	.ServiceListGroupName .ACA_Title_Color {
+		visibility: visible;
+		padding: 10px;
+		display: inline-block;
+	}
+
+	.breadcrump-table > tbody > tr > .breadcrump-collapsed-disable{
+		border-right: 0px;
+	}
+	.breadcrump-table > tbody > tr > .breadcrump-collapsed-disable-end{
+		width: 19px;
+		border-right: 1px solid rgba(0,0,0,0.2);
+	}	
+	.breadcrump-tt .spacecolumn {
+		width: 6px;
+	}
+	.breadcrump-table > tbody > tr > .breadcrump-collapsed-disable-end {
+		width: 24px;
+		border-right: 0;
+		margin-right: 0px;
+	}
+	.breadcrump-table > tbody > tr > .breadcrump-collapsed-disable-end > .breadcrumb_number_padding {
+		padding-left: 8px;
+	}
+	
+	td[style*="width:490px"],
+	td[style*="width: 490px"],
+	table[style*="width:490px"],
+	table[style*="width: 490px"],
+	td[style*="padding-left:490px"],
+	td[style*="padding-left: 490px"],
+	table[style*="padding-left:490px"],
+	table[style*="padding-left: 490px"]	{
+		width: 80px !important;
+		padding-left: 0px !important;
+	}	
+	
+	
+	.ACA_ContainerLong_ShoppingCart	div[style*="width:720px"],
+	.ACA_ContainerLong_ShoppingCart	div[style*="width: 720px"],
+	.ACA_ContainerLong_ShoppingCart	div[style*="width:700px"],
+	.ACA_ContainerLong_ShoppingCart	div[style*="width: 700px"]
+	{
+		width:100% !important;
+	}
+	#ctl00_PlaceHolderMain_capFeeList_lnkRecalculate{
+		margin-right: 15px;
+		margin-top: 10px;
+	}	
+	.ACA_GridView tr td {
+		padding: 0px;
+	}
+
+
+	.table_parent_detail
+	{
+		width: 100% !important;
+		table-layout: auto;
+	}
+
+
+	.td_parent_right
+	{
+		width: 100% !important;
+	}
+
+	.table_child
+	{
+		width: 100% !important;
+
+	}
+	.td_child_right
+	{
+		width: 100% !important;
+	}
+	.ACA_NShot {
+	  width: 100%;
+	  font-weight: bold;
+	  font-size: 12px;
+	  text-decoration: underline;
+	}
+}
+
+@media screen and ( max-width: 600px ) {
+	.breadcrump-table > tbody > tr > td {
+		width: 24px;
+		}
+	.header img {
+		max-width: 500px;
+	}
+	.container_40 > div {
+		width: 100%;
+	}
+	.ACA_GridView, .searchsection {
+		overflow:hidden;
+	}
+	#ctl00_PlaceHolderMain_ddlSearchType {
+		float: right;
+	}
+	.ACA_TDAlignLeftOrRightTop TD {
+		display: block;
+	}
+	
+	.ACA_CenterOff {
+		display: none;
+	}
+	
+	/* Collapse Tables */
+
+	.Condition_Document_Body td{
+		display: block;
+		width: 100%;
+	}	
+	
+	.header .container img{
+		float: none;
+		margin: 10px;
+	}
+	
+	.ACA_CenterOn div::after {
+		content: "\0022EE";
+		color: #FFFFFF;
+		font-size: 21px;
+		float: right;
+	}
+	.ACA_CenterOn div:focus::after {
+		content: "-";
+	}
+	
+	/*.ACA_TabRow table > tbody > tr > td {*/
+	#ctl00_PlaceHolderMain_BreadCrumpToolBar table,
+	.ACA_TabRow table,
+	.ACA_TabRow table tbody,
+	.ACA_TabRow table tr,
+	.ACA_TabRow ajax__calendar:(not) table tr td	{
+		display:block;
+		width: 100% !important;
+	}
+	
+
+	#ctl00_PlaceHolderMain_BreadCrumpToolBar > table > tbody > tr {
+		text-align: center;
+	}
+	
+	
+	.ACA_NaviMenu  > #tab_item_place_holder > span,
+	.ACA_NaviMenu  > #more_tab_place_holder > span
+	{
+		display: block;
+		position: relative;
+		width:100%;
+	}
+	.ACA_NaviMenu  .tab_bar_table,
+	.ACA_NaviMenu  #span_more_tab{
+		width:100%;
+	}
+
+	.ACA_MoreItemRight,
+	.ACA_MoreItemLeft {
+		width: auto;
+	}
+	
+	.ACA_MoreItemRight {
+		background-position: right center;
+	}
+		
+	#tab_item_place_holder, #more_tab_place_holder, #nav_span_more_link, #nav_span_links {
+		display: block;
+		width: 100%;
+	}	
+	#divLinkMenu {
+		padding: 15px;
+	}	
+
+	.ACA_LeftOff, 
+	.ACA_LeftOn	{
+		border-top-left-radius: 0px;
+	}
+	.ACA_RightOff, 
+	.ACA_RightOn	{
+		border-top-right-radius: 0px;
+	}
+	
+	#span_tab_0 .ACA_LeftOff, 
+	#span_tab_0 .ACA_LeftOn	{
+		border-top-left-radius: 6px;
+	}
+	#span_tab_0 .ACA_RightOff, 
+	#span_tab_0 .ACA_RightOn	{
+		border-top-right-radius: 6px;
+	}
+
+	
+	.welcome_cartlist{
+		position: relative;
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		right: 0px;
+		left: 0px;
+	}	
+	.welcome_cartlist > div {
+		width: 100% !important;
+		padding-bottom: 20px;
+		padding-top: 20px;
+		position: relative;
+}
+	.welcome_cartlist > div > div {
+		padding-left: 20px;
+		padding-right: 20px;
+		position: relative;
+	}
+	
+	.ACA_Content td {
+		display: block;
+		width: 100% !important;
+	}
+	.collapse_table td {
+		padding: 0px;
+		display: block;
+		width: 100% !important;
+	}	
+
+	.collapse_table td input[type="text"],
+	.collapse_table td select,
+	.collapse_table td textarea,
+	input, select, textarea {
+		width: 90% !important;
+	}
+	
+	.gs_container .gs_top_table .gs_search_box {
+		width: 100% !important;
+	}
+	
+	.gs_container {
+		width: 85%;
+	}
+	
+	.ACA_NaviTitle .ACA_Body_Text, .ACA_NaviTitle #ctl00_HeaderNavigation_com_headNav_label_loggedinas, .ACA_NaviTitle #ctl00_HeaderNavigation_lblUserName, .ACA_NaviTitle #ctl00_HeaderNavigation_lblAccessibilityAfter, .ACA_NaviTitle #ctl00_HeaderNavigation_lblAccessibilityBefore, .ACA_NaviTitle a {
+		line-height: 50px;
+	}
+	
+	.gs_top_table {
+		float: right !important;
+	}
+	
+	.collapse_table td input[type="radio"],
+	.collapse_table td input[type="checkbox"],
+	 input[type="radio"],
+	 input[type="checkbox"]	 
+	 {
+		width: auto !important;
+		width: initial !important;
+	}
+	.ACA_Help_Icon_Container{
+		position: absolute;
+		margin-top: -18px;
+		z-index: 10;
+		right: 50px;
+	}
+
+	.ACA_Help_Icon img {
+		width: 20px;
+		height: 20px;
+	}
+
+	/* For Date fields, prevent spillover of the Calendar icon to the second line */
+	.collapse_table td input[fieldname*='Date'],
+	.collapse_table td input[fieldname*='date'],
+	.collapse_table td input[fieldname*='DATE']
+	td input[fieldname*='Date'],
+	td input[fieldname*='date'],
+	td input[fieldname*='DATE']
+	 {
+		width: 88% !important;
+	}
+	
+	.ACA_TabRow table{
+		width: 100% !important;
+	}
+
+	.ajax__calendar td{
+		display: table-cell;
+	}
+	
+	#nav_link_place_holder {
+		white-space: normal;
+		word-wrap: normal;
+		width: 100%;
+	}
+	#nav_link_content {
+		width: 100%;
+	}
+	
+	.ACA_SubMenuList{
+		height: auto;
+	}
+
+	
+	div[style*="width:490px"],
+	div[style*="width: 490px"],		
+	td[style*="width:490px"],
+	td[style*="width: 490px"],
+	table[style*="width:490px"],
+	table[style*="width: 490px"],
+	td[style*="padding-left:490px"],
+	td[style*="padding-left: 490px"],
+	table[style*="padding-left:490px"],
+	table[style*="padding-left: 490px"]{
+		width: auto !important;
+		padding-left: 0px !important;
+	}	
+	.ACA_LoginBox {
+		margin-left: 0px;
+	}
+	
+	.DisclaimerContainerStyle {
+		width: 90%;
+	}
+	
+	/* Search & pagination */
+	
+	.ACA_TabRow_Header {
+		display: none;
+	}
+
+	#divSearchPanel .ACA_Line_Content{
+		display: none;
+	}
+	/*have to do this to avoid calendar issues*/
+	#divSearchPanel > div, #divSearchPanel > div > div, #divSearchPanel > div > div > div, #divSearchPanel > div > div > div > div, #divSearchPanel > div > div > div > div > div, #divSearchPanel > div > div > div > div > div > div {
+		display: inline;			
+		width: 100%;
+		clear: both;
+		float: none; 
+	}
+	
+	#divSearchPanel div .ACA_Hide{
+		display: none;			
+	}
+	
+	.UploadFileName {
+		width: 14em;
+	}
+	
+	.aca_pagination_td,
+	.ACA_Content .aca_pagination_td{
+		display: none;
+
+	}
+
+	.aca_pagination_PrevNext,
+	.ACA_Content .aca_pagination_PrevNext{
+		display: block;
+		font-size: 16px;
+		padding: 15px
+	}
+
+	.ACA_TabRow_Even input[type="radio"], .ACA_TabRow_Even input[type="checkbox"],
+	.ACA_TabRow_Odd input[type="radio"], .ACA_TabRow_Odd input[type="checkbox"]  {
+		float:right;
+		clear:right;
+		margin-right: 20px;
+	}
+	.ACA_TabRow_Even, .ACA_TabRow_Odd{
+		padding-top: 20px;
+		display: block;	
+		padding-bottom: 20px;
+		padding: 10px;
+		background: transparent;
+}
+
+	.ACA_TabRow_Even .ACA_AlignLeftOrRightTop, 
+	.ACA_TabRow_Odd  .ACA_AlignLeftOrRightTop{
+		display: block;
+		width: auto !important;
+	
+		padding-top: 3px;
+		padding-bottom: 3px;
+}
+	
+	.ACA_FRight{
+		float:none;
+	}
+	.ACA_NaviTitle .ACA_FRight [id*="lblSplit"],
+	.ACA_NaviTitle .ACA_FRight #ctl00_HeaderNavigation_collectionSplit {
+		display:none;
+	}
+
+	.aca_gridview_caption td{
+		display: table-cell;
+	}
+	
+	#ctl00_PlaceHolderMain_dgvPermitList_mapCapList_updatePanel td{
+		display: table-cell;
+	}
+	
+	.ACA_Grid_OverFlow {
+		font-size: 12px;
+	}
+	
+	.ACA_Area_CapDetail .ACA_AlignLeftOrRight {
+	  display: block;	
+	}
+	.ACA_Area_CapDetail th.ACA_AlignLeftOrRight {
+	  display: none;	
+	}	
+	/* Payment */
+	
+	.ACA_TabRow_SmallEven {
+		width: 95%;
+	}
+	.ACA_Column_XLong {
+		width: 95%;
+	}
+	.ACA_Container {
+		width: 100%;
+	}
+	#ctl00_PlaceHolderMain_capFeeList_divTotalFee .ACA_RightColumn_Short{
+		padding-right: 15px;
+	}
+	.Condition_Document_Body {
+	  margin-top: 20px;
+	  display: inline-block;
+	  width: 100%;
+	}
+	.Condition_Document_Body td {
+	  width: 100% !important;
+	}
+
+	.FileSelect td{
+		float:left;
+	}
+
+	.FileSelect .fileInfo {
+	  padding-top: 5px;
+	  width: 100%;
+	}	
+
+	.FileSelect .removeInfo {
+	  padding-top: 15px;
+	  padding-left: 10px;
+	  width: 40px !important;
+	}	
+	.FileSelect .addInfo{
+		width: 100px !important;
+	}
+}
+
+@media screen and ( max-width: 450px ) {
+	.Resume_Dialog {
+		left: 4.5px !important;
+   	 	min-width: 360px;
+	}
+	
+	.header img {
+		max-width: 370px;
+	}
+	
+	#ctl00_PlaceHolderMain_lblPageInstruction {
+		display: none;
+	}
+	.actionbar_top {
+		display: none;
+	}
+	[class*="ASIReview"] {
+	  width: 100%;
+	  padding-right: 0px;
+	  padding-left: 0px;
+	}	
+
+	/* For Date fields, prevent spillover of the Calendar icon to the second line */
+	.collapse_table td input[fieldname*='Date'],
+	.collapse_table td input[fieldname*='date'],
+	.collapse_table td input[fieldname*='DATE']
+	td input[fieldname*='Date'],
+	td input[fieldname*='date'],
+	td input[fieldname*='DATE']
+	 {
+		width: 83% !important;
+	}	
+
+}
+
+@media screen and ( max-width: 400px ) {
+	#ctl00_PlaceHolderMain_actionBarBottom_divShowSaveandResume {
+		margin-top: 10px;
+	}
+}
+@media screen and ( max-width: 360px ) {
+	.ACA_Help_Frame{
+		left: 0px !important;
+	}
+	#ctl00_HeaderNavigation_com_headNav_label_loggedinas {
+		display: none;
+	}
+	
+	.header img {
+		max-width: 300px;
+	}
+
+	/* For Date fields, prevent spillover of the Calendar icon to the second line */
+	.collapse_table td input[fieldname*='Date'],
+	.collapse_table td input[fieldname*='date'],
+	.collapse_table td input[fieldname*='DATE']
+	td input[fieldname*='Date'],
+	td input[fieldname*='date'],
+	td input[fieldname*='DATE']
+	 {
+		width: 78% !important;
+	}	
+
+}

@@ -1,0 +1,549 @@
+.ACA_SmButton a, .ACA_SmButtonForRight a, .ACA_SmButtonDisable a, .ACA_LgButton a, .ACA_LgButtonForRight a {
+    background: #16588c !important;
+    background-color: #16588c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#66BB6A), to(#16588c));
+    background: -webkit-linear-gradient(top, #66BB6A, #16588c);
+    background: -moz-linear-gradient(top, #66BB6A, #16588c);
+    background: -ms-linear-gradient(top, #66BB6A, #16588c);
+    background: -o-linear-gradient(top, #66BB6A, #16588c);
+}
+.ACA_SmButton a:hover,
+.ACA_SmButtonForRight a:hover,
+.ACA_SmButtonDisable a:hover,
+.ACA_LgButton a:hover,
+.ACA_LgButtonForRight a:hover {
+  background: #16588c !important;
+}
+.ACA_SmButton a:hover:hover,
+.ACA_SmButtonForRight a:hover:hover,
+.ACA_SmButtonDisable a:hover:hover,
+.ACA_LgButton a:hover:hover,
+.ACA_LgButtonForRight a:hover:hover {
+  background: #16588c !important;
+}
+.ACA_SmButton a:active,
+.ACA_SmButtonForRight a:active,
+.ACA_SmButtonDisable a:active,
+.ACA_LgButton a:active,
+.ACA_LgButtonForRight a:active {
+  background: #388E3C !important;
+  background-color: #16588c;
+  background-color: #16588c !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#388E3C), to(#16588c)) !important;
+  background: -webkit-linear-gradient(top, #388E3C, #16588c) !important;
+  background: -moz-linear-gradient(top, #388E3C, #16588c) !important;
+  background: -ms-linear-gradient(top, #388E3C, #16588c) !important;
+  background: -o-linear-gradient(top, #388E3C, #16588c) !important;
+}
+
+
+a {
+  color: #16588c;
+}
+
+a:hover {
+    color: #16588c;
+}
+
+a font {
+  color: #16588c;
+}
+
+a:hover font {
+  color: #16588c;
+}
+
+a > span {
+  color: #16588c;
+}
+
+a:hover > span {
+  color: #16588c;
+}
+
+a:hover span {
+  color: #16588c;
+}
+
+
+.add2collectionlink:hover span,
+.ACA_LinkButton:hover span {
+  color: #4CAF50;
+}
+
+.add2collectionlink span,
+.ACA_LinkButton span {
+  color: #66BB6A;
+}
+
+.search-sub-menu a {
+  color: #1B5E20;
+}
+
+.splitbutton {
+  background: #16588c !important;
+  background-color: #16588c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#66BB6A), to(#16588c));
+  background: -webkit-linear-gradient(top, #66BB6A, #16588c);
+  background: -moz-linear-gradient(top, #66BB6A, #16588c);
+  background: -ms-linear-gradient(top, #66BB6A, #16588c);
+  background: -o-linear-gradient(top, #66BB6A, #16588c);
+}
+
+.splitbutton:hover {
+  background: #16588c !important;
+}
+
+.splitbutton:hover:hover {
+  background: #16588c !important;
+}
+
+.splitbutton:active {
+  background: #2684C8 !important;
+  background-color: #2684C8;
+  background-color: #2684C8 !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2684C8), to(#16588c)) !important;
+  background: -webkit-linear-gradient(top, #2684C8, #16588c) !important;
+  background: -moz-linear-gradient(top, #2684C8, #16588c) !important;
+  background: -ms-linear-gradient(top, #2684C8, #16588c) !important;
+  background: -o-linear-gradient(top, #2684C8, #16588c) !important;
+}
+
+.splitbutton_menu .splitbutton_menuitem a {
+  color: #66BB6A;
+}
+
+.splitbutton_menu .splitbutton_menuitem:hover {
+  background-color: #E8F5E9 !important;
+}
+
+[id$="_divShowSaveandResume"] {
+  background: #16588c !important;
+  background-color: #66BB6A;
+  background: -webkit-gradient(linear, left top, left bottom, from(#66BB6A), to(#16588c));
+  background: -webkit-linear-gradient(top, #66BB6A, #16588c);
+  background: -moz-linear-gradient(top, #66BB6A, #16588c);
+  background: -ms-linear-gradient(top, #66BB6A, #16588c);
+  background: -o-linear-gradient(top, #66BB6A, #16588c);
+}
+
+[id$="_divShowSaveandResume"]:hover {
+  background: #16588c !important;
+}
+
+[id$="_divShowSaveandResume"]:hover:hover {
+  background: #16588c !important;
+}
+
+[id$="_divShowSaveandResume"]:active {
+  background: #2684C8 !important;
+  background-color: #2684C8;
+  background-color: #2684C8 !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2684C8), to(#16588c)) !important;
+  background: -webkit-linear-gradient(top, #2684C8, #16588c) !important;
+  background: -moz-linear-gradient(top, #2684C8, #16588c) !important;
+  background: -ms-linear-gradient(top, #2684C8, #16588c) !important;
+  background: -o-linear-gradient(top, #2684C8, #16588c) !important;
+}
+.Map_Bottom .aca_imagebutton_label {
+  background: #16588c !important;
+  background-color: #16588c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#66BB6A), to(#16588c));
+  background: -webkit-linear-gradient(top, #2684C8, #16588c);
+  background: -moz-linear-gradient(top, #2684C8, #16588c);
+  background: -ms-linear-gradient(top, #2684C8, #16588c);
+  background: -o-linear-gradient(top, #2684C8, #16588c);
+}
+
+.Map_Bottom .aca_imagebutton_label:hover {
+  background: #16588c !important;
+}
+
+.Map_Bottom .aca_imagebutton_label:hover:hover {
+  background: #16588c !important;
+}
+
+.ACA_Message_Success .ACA_Message_Content > div,
+.ACA_Message_Notice .ACA_Message_Content > div,
+.ACA_Message_Error .ACA_Message_Content > div,
+.message_error_contact .ACA_Message_Content > div,
+.ACA_Message_Success .ACA_Message_Content > span,
+.ACA_Message_Notice .ACA_Message_Content > span,
+.ACA_Message_Error .ACA_Message_Content > span,
+.message_error_contact .ACA_Message_Content > span,
+.ACA_Message_Success td a,
+.ACA_Message_Notice td a,
+.ACA_Message_Error td a,
+.message_error_contact td a {
+  color: #1B5E20;
+}
+
+.ACA_Message_Success td:nth-child(3) a,
+.ACA_Message_Notice td:nth-child(3) a,
+.ACA_Message_Error td:nth-child(3) a,
+.message_error_contact td:nth-child(3) a {
+  color: #1B5E20;
+}
+
+.ACA_Message_Notice {
+  background: #A5D6A7;
+  background-color: #E8F5E9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E8F5E9), to(#A5D6A7));
+  background: -webkit-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -moz-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -ms-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -o-linear-gradient(top, #E8F5E9, #A5D6A7);
+  border-bottom: 4px solid #388E3C;
+}
+
+.ACA_Message_Note {
+  color: #1B5E20;
+  background: #A5D6A7;
+  background-color: #E8F5E9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E8F5E9), to(#A5D6A7));
+  background: -webkit-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -moz-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -ms-linear-gradient(top, #E8F5E9, #A5D6A7);
+  background: -o-linear-gradient(top, #E8F5E9, #A5D6A7);
+  border-bottom: 4px solid #388E3C;
+}
+
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter > div a {
+  color: #1B5E20;
+}
+
+.ACA_NaviMenu #tab_item_place_holder .ACA_ItemCenter:hover {
+  background-color: #1B5E20;
+}
+
+.ACA_NaviMenu #tab_item_place_holder .ACA_CenterOn {
+  background-color: #1B5E20;
+}
+
+.ACA_NaviMenu #tab_item_place_holder .ACA_CenterOn::after {
+  border-top: 5px solid #1B5E20;
+}
+
+.ACA_NaviMenu #more_tab_place_holder:hover {
+  background-color: #1B5E20;
+}
+
+.ACA_NaviMenu #more_tab_place_holder .ACA_MoreItemCenter span {
+  color: #1B5E20;
+}
+
+.ACA_NaviMenu #divNavMenu font {
+  color: #1B5E20;
+}
+.ACA_SubMenuList {
+  border-top: 1px solid #A5D6A7;
+  border-bottom: 2px solid #16588c;
+  background-color: #E8F5E9;
+}
+
+.ACA_SubMenuList #nav_span_links > span a {
+  color: #1B5E20;
+}
+
+.ACA_SubMenuList #nav_span_more_link a > span {
+  color: #1B5E20;
+}
+
+.ACA_SubMenuList #divLinkMenu ul a {
+  color: #1B5E20;
+}
+
+.search-sub-menu ul > li:hover {
+  background-color: #E8F5E9;
+}
+
+.search-sub-menu ul > li > ul {
+  border-bottom: 2px solid #16588c;
+  background-color: #E8F5E9;
+}
+
+.search-sub-menu ul > li > ul > li:hover {
+  background-color: #E8F5E9;
+}
+
+.ACA_NaviTitle a:hover span {
+  color: #16588c;
+}
+
+.ACA_NaviTitle #ctl00_HeaderNavigation_lblAccessibilityBefore:hover {
+  color: #16588c;
+}
+
+.ACA_Title_Bar,
+.ACA_InfoTitle {
+  border-bottom: 2px solid #1B5E20;
+}
+
+.ACA_SectionBody h1 span {
+  color: #1B5E20;
+}
+
+.aca_gridview_caption > table > tbody > tr > td a {
+  color: #16588c !important;
+  font-size: 1.0em !important;
+  font-weight: 500 !important;
+}
+
+.aca_pagination td {
+  border: 1px solid #E8F5E9;
+}
+
+.aca_pagination .SelectedPageButton {
+  border-bottom: 3px solid #66BB6A;
+}
+
+.aca_pagination .aca_pagination_PrevNext > a {
+  color: #16588c;
+}
+
+.ajax__calendar_container {
+  border-left: 1px solid #E8F5E9;
+  border-bottom: 1px solid #E8F5E9;
+  border-right: 1px solid #E8F5E9;
+}
+.ajax__calendar_container .ajax__calendar_header {
+  background-color: #16588c;
+}
+
+.ajax__calendar_container .ajax__calendar_body .ajax__calendar_days .ajax__calendar_other > div {
+  color: #E8F5E9 !important;
+}
+
+.ajax__calendar_container .ajax__calendar_body .ajax__calendar_hover > div,
+.ajax__calendar_container .ajax__calendar_body .ajax__calendar_active > div {
+  background-color: #388E3C !important;
+}
+
+.divSessionTimeoutDialog .boxTitle {
+  background-color: #388E3C;
+}
+
+.divSessionTimeoutDialog .entryBtun .tabbables {
+  color: #66BB6A;
+}
+
+.header {
+  background-color: #4CAF50;
+}
+
+.header .container .return {
+  background-color: #E8F5E9;
+}
+
+.header .container .return a {
+  color: #1B5E20;
+}
+#divProcessInfo .ACA_TabRow_Even td {
+  background: #E8F5E9 !important;
+}
+.ACA_Welcome_Block a > span {
+  color: #388E3C !important;
+}
+
+.aca_wrapper #ctl00_PlaceHolderMain_divContentLink .Header_h2 {
+  border-bottom: 2px solid #388E3C;
+}
+
+
+.ACA_LoginBox {
+  /* background-color: #f3f4f2; */
+}
+.dsh-section-top {
+  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.myShoppingCart.cartTotalRow {
+  border-top: Solid 1px #66BB6A;
+}
+
+.myCollectiontable .myCollectionCol.recCountCol {
+  background-color: #E8F5E9;
+}
+
+.portlet.box.action-req > .portlet-title > .tools .btn {
+  background-color: transparent;
+  color: #66BB6A;
+}
+.portlet.box.action-req > .portlet-title > .tools .btn:hover,
+.portlet.box.action-req > .portlet-title > .tools .btn:focus {
+  color: #66BB6A;
+}
+
+.portlet > .portlet-title {
+    background-color: #4CAF50;
+}
+
+.portlet > .portlet-title > .actions .btn:hover, .portlet > .portlet-title > .actions .btn:focus {
+    background-color: #A5D6A7;
+}
+.portlet > .portlet-title > .actions .btn {
+    background-color: #1B5E20;
+}
+
+.record-detail .record-nav .nav-bar > li .rec-downarrow {
+  border-color: #4CAF50 transparent transparent transparent;
+}
+
+.record-detail .record-nav .nav-bar > li.selected {
+  border-bottom: solid 2px #66BB6A;
+}
+
+.record-detail .dropdown-menu > li > a:hover,
+.record-detail .dropdown-menu > li > a:focus {
+  background-color: #E8F5E9;
+}
+
+.header {
+    background: #66BB6A;
+}
+
+.ACA_Welcome_Block tr td:nth-child(odd) {
+	background: #1B5E20 !important;
+}
+
+.ACA_Welcome_Block tr td:nth-child(odd) a > span:hover{
+	color: #388E3C !important;
+}
+
+.ACA_Welcome_Block tr td:nth-child(even) a > span:hover{
+	color: #1B5E20 !important;
+}
+
+.permit_typelist .aca_checkbox {
+    background: #E8F5E9;
+}
+
+.ACA_Title_Bar, .ACA_InfoTitle {
+    background: #4CAF50;
+}
+
+.SectionTextDecoration + div {
+	background: rgb(232, 232, 232);
+}
+
+[id$="_divShowSaveandResume"] {
+    background: #FF6A00 !important;
+    background-color: #FFB27F;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFB27F), to(#FF6A00));
+    background: -webkit-linear-gradient(top, #FFB27F, #FF6A00);
+    background: -moz-linear-gradient(top, #FFB27F, #FF6A00);
+    background: -ms-linear-gradient(top, #FFB27F, #FF6A00);
+    background: -o-linear-gradient(top, #FFB27F, #FF6A00);
+}
+
+[id$="_divShowSaveandResume"]:hover:hover {
+    background: #FFC76D !important;
+    background-color: #FFC76D;
+}
+
+.ACA_Title_Bar {
+	background: #4CAF50;
+}
+
+.Header_h2 {
+	color: #000000;
+}
+
+.wrap nav {
+    background: #1B5E20;
+}
+
+.wrap ul.sub li a {
+    background: #E8F5E9;
+}
+
+.wrap ul.primary li:hover a {
+    background: #E8F5E9;
+}
+
+@media screen and (max-width: 768px) {
+.ACA_RegisterLogin {
+    background: #F3F4F2;
+}
+} 
+@media screen and (max-width: 768px){
+.menu {
+    color: #1B5E20;
+}
+}
+
+.DisclaimerContainerStyle, .ACA_ContainerStyle {
+	background-color: #FFFFFF !important;
+	width: 97%;
+}
+/* links on dark green were blue now are gold */
+.ACA_NaviTitl .ACA_Body_Text,
+.ACA_NaviTitle #ctl00_HeaderNavigation_com_headNav_label_loggedinas,
+.ACA_NaviTitle #ctl00_HeaderNavigation_lblUserName,
+.ACA_NaviTitle #ctl00_HeaderNavigation_lblAccessibilityAfter,
+.ACA_NaviTitle #ctl00_HeaderNavigation_lblAccessibilityBefore, 
+.ACA_NaviTitle #ctl00_HeaderNavigation_managerURL, 
+.ACA_NaviTitle #ctl00_HeaderNavigation_com_headNav_label_accountManagement, 
+.ACA_NaviTitle #ctl00_HeaderNavigation_com_headIsLoggedInStatus_label_logout, 
+.ACA_NaviTitle #ctl00_HeaderNavigation_btnLogout, 
+.ACA_NaviTitle #ctl00_HeaderNavigation_afterLogin, 
+.ACA_NaviTitle #ctl00_PlaceHolderMain_refContactList_gdvRefContactList_gdvRefContactListtop4btnExport, 
+.ACA_NaviTitle #ctl00_PlaceHolderMain_CapList1_gdvPermitList_gdvPermitListtop4btnExport, 
+.ACA_NaviTitle #ctl00_PlaceHolderMain_lnkBack, 
+.ACA_NaviTitle #ctl00_PlaceHolderMain_LoginBox_hrefForgotPWD, 
+.ACA_NaviTitle #ctl00_PlaceHolderMain_LoginBox_hrefRegisterAccount,
+.ACA_NaviTitle #ctl00_PlaceHolderMain_btnGSLoadASI, 
+.ACA_NaviTitle #btnGSExpandCollapse,
+.ACA_NaviTitle a{
+	color: #16588c !important;
+} 
+/* links on dark green were blue now are gold */
+a #ctl00_PlaceHolderMain_TopShoppingCartItems_btnMore {
+	color: #16588c !important; 
+} 
+/* links on dark green were blue now are gold */
+#ctl00_HeaderNavigation_com_headIsLoggedInStatus_label_logout {
+		color: #16588c !important;
+}
+
+//* -- JVM background-color = Pine 162500 --*//
+.aca_wrapper .ACA_Content.welcome-page > table > tbody > tr > td:first-child {
+		background-color: #162500 !important;
+}
+//* -- JVM background-color = Pine 162500 --*//
+.welcome-page > table> tbody > tr > td {
+background-color: #16250 !important;
+}
+/* remove the section You are now logged in.  */
+#ctl00_PlaceHolderMain_areaLoggedIn {
+display: none !important
+}
+/* links on dark green were blue now are gold */
+.ACA_RightContent #ctl00_PlaceHolderMain_per_permitHome_label_onlinePermit,
+.ACA_RightContent #ctl00_PlaceHolderMain_acc_regHome_label_register,
+.ACA_RightContent #ctl00_PlaceHolderMain_acc_regHome_label_register {
+	color: #16588c !important; 
+} 
+
+.ACA_LinkButton #ctl00_phPopup_btnCancel,
+.ACA_TabRow #ctl00_PlaceHolderMain_LoginBox_divForgotPassword,	
+.ACA_Link_Text #ctl00_PlaceHolderMain_LoginBox_hrefForgotPWD, 
+.ACA_Link_Text_FontSize #ctl00_PlaceHolderMain_LoginBox_hrefForgotPWD {
+	color: #599600 !important;
+	font-size: 12px !important;	
+}
+/* make all fonts same size using 12px because that is the sample size from state */
+.ACA_Section_Instruction, .ACA_Section_Instruction_FontSize, .ACA_Link_Text, .ACA_Link_Text_FontSize, .ACA_SmLabel, .ACA_SmLabel_FontSize, .ACA_Body_Text, .ACA_Body_Text_FontSize, .ACA_Body_Text, .ACA_LoginBox, .ACA_Body_Text p {
+    color: #464646;
+    font-weight: 400;
+    font-size: 12px !important;
+}
+
+/*-- make the background-color white on contact popup --*/
+
+.ACA_TDAlignLeftOrRightTop #ctl00_phPopup_ucContactInfo_ddlContactType_table,
+.ACA_Dialog_Frame, .ACA_Dialog_Form, .ACA_Dialog_Content, .ACA_Dialog_Frame_DIV, .ACA_Dialog_Frame,	 .ContactAddressListForm, .ContactInput, .ContactInputForm {
+	background-color: #FFFFFF !important;	
+}

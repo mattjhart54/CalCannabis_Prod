@@ -1,0 +1,74 @@
+
+	<link  type="text/css" rel="stylesheet" href="Customization/CALCANNABIS/main.css">
+	<link style="text/css" rel="stylesheet" href="Customization/CALCANNABIS/welcome.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- ***** TWO NEW STYLE SHEETS ***** -->
+	<link style="text/css" rel="stylesheet" href="Customization/CALCANNABIS/cdfa.css">
+	<link style="text/css" rel="stylesheet" href="Customization/CALCANNABIS/font-awesome.css">
+
+<div>
+	<!-- begin masthead -->
+	<table cellpadding="0" cellspacing="0" class="masthead-table" width="100%">
+	<tr valign="top">
+		<td class="cdfa-logo" align="left">
+			<a href="https://www.cdfa.ca.gov/" target="_blank" title="Go to the CDFA Homepage..."><img src="/CALCANNABIS/cdfa_logo_masthead.png" width="362" height="82" alt="California Department of Food and Agriculture"></a>
+		</td>
+		<td class="calcan-logo" align="left">
+			<a href="http://calcannabis.cdfa.ca.gov/" target="_blank" title="Go to the CalCannabis Homepage..."><img src="/CALCANNABIS/calcan_logo_masthead.png" width="290" height="38" alt="CalCannabis Cultivation Licensing"></a>
+		</td>
+	</tr>
+	</table>
+	<!-- end masthead -->
+	<!-- Include Navigation -->
+	<div class="registered">
+		<table cellpadding="0" cellspacing="0" class="navbar-table" width="100%">
+		<tr valign="middle" width="100%">
+			<td>
+				<ul>
+					<li><a href="/CALCANNABIS/Welcome.aspx"><i class="fa fa-fw fa-home"></i> My Dashboard</a></li>
+					<li><a href="/CALCANNABIS/Cap/MyRecordsCap.aspx"><i class="fa fa-fw fa-address-card"></i> My Licenses</a></li>
+					<li><a href="/CALCANNABIS/Account/AccountManager.aspx"><i class="fa fa-fw fa-user"></i> My Account</a></li>
+					<li><a href="/CALCANNABIS/Cap/CapHome.aspx?module=Licenses"><i class="fa fa-fw fa-search"></i> Look Up Licenses</a></li>
+				</ul>
+			</td>
+			<td align="right" class="right">
+				<a href="https://www.cdfa.ca.gov/calcannabis/training/" target="_new" style="text-align: right;"><i class="fa fa-fw fa-book"></i> eLearning</a>
+			</td>
+		</tr>
+		</table>
+	</div>
+	<!-- Display different DIV when logged in (registered) and when not logged in (anonymous) -->
+	<div class="anonymous">
+		<table cellpadding="0" cellspacing="0" class="navbar-table">
+		<tr valign="middle">
+			<td>
+				<ul>
+					<li><a href="/CALCANNABIS/Welcome.aspx"><i class="fa fa-fw fa-home"></i> Home</a></li>
+					<li><a href="/CALCANNABIS/Cap/CapHome.aspx?module=Licenses"><i class="fa fa-fw fa-search"></i> Look Up Licenses</a></li>
+				</ul>
+			</td>
+			<td align="right" class="right">
+				<a href="https://www.cdfa.ca.gov/calcannabis/training/" target="_new" style="text-align: right;"><i class="fa fa-fw fa-book"></i> eLearning</a>
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
+<!-- div class="top-spacer">&nbps;</div>
+<div class="content-area">
+	<div class="content-wrapper" -->
+<!--Customize Below per Agency-->
+<script>
+	if ($("#ctl00_HeaderNavigation_lblLogin").length) {
+		anonymous = true;		
+	} else {
+		anonymous = false;
+	}
+	
+	if (anonymous) {
+		$(".registered").hide();
+	} else {
+		$(".anonymous").hide();
+	}
+</script>
+<noscript>Your browser does not support JavaScript.</noscript>

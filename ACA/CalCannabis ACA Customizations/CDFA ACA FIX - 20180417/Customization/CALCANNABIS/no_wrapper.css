@@ -1,0 +1,317 @@
+body, html {
+	overflow-y: auto !important;
+}
+
+.menu {
+	display: none;
+}
+.inactiveLink {
+	pointer-events: none;
+	cursor: default;
+}
+.header {
+	height: 100px;
+}
+.header .container {
+    width: 100%;
+}
+.header .container img{
+    float: left;
+	margin: 10px;
+}
+.footer {
+	height: 50px;
+	text-align: center;
+}
+.footer .container {
+	margin: 10px;
+}
+.aca_wrapper {
+	width: 100%;
+}
+.aca_wrapper > div{
+	width: auto !important;
+	width: initial !important;
+	min-height: 650px;
+}
+.ACA_NavBanner {
+	width: 100%;
+}
+.nav_bar_container {
+	margin: 0px;
+	width: 100%;
+}
+.ACA_NaviTitle {
+	width: 100%;
+	margin: 0px;
+}
+.ACA_Content {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+.ACA_Content > table {
+	width: 100%;
+}
+.ACA_RightContent {
+	width: 100%;
+	padding-left: 0px;
+	float: none;
+}
+
+.container_40 {
+    width: auto;
+    max-width: 100em;
+}
+
+.ACA_RightItem {
+	width:100%;
+	padding-left: 0px;
+}
+
+.gs_container {
+	float: right !important;
+}
+
+.ACA_Grid_OverFlow .ACA_GridView {
+	width: 100% !important;
+	overflow: hidden;
+}
+/*	Application Type Select Page	*/
+#ctl00_PlaceHolderMain_PermitTypeSelect_table,
+#ctl00_PlaceHolderMain_PermitTypeSelect{
+	width:100%;
+}
+.ACA_Area_CapHome > table {
+	width: 100%;
+}
+.aca_asi_table {
+	width: 100%;
+}
+.actionbar_bottom {
+	margin-top: 20px;
+	float: none;
+	width: 100%;
+	overflow: hidden;
+}
+.ACA_GridView{
+	width: 100% !important;	
+}
+.ACA_Area_CapConfirm #divContent > .ACA_TabRow + p {
+	width: 100%;
+	text-align: center;
+}
+#ctl00_PlaceHolderMain_attachmentEdit_iframeAttachmentList{
+	width: 100% !important;
+}
+.table_parent_detail
+{
+	width: 100% !important;
+	table-layout: auto;
+}
+
+
+.td_parent_right
+{
+	width: 100% !important;
+}
+
+.table_child
+{
+	width: 100% !important;
+
+}
+.td_child_right
+{
+	width: 100% !important;
+}
+.ACA_NShot {
+  width: 100%;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+/* Record Detail Page */
+.record-detail .record-summary, .record-detail .record-nav, .record-detail .record-main-section {
+    width: 100%;
+}
+
+/* Top Navigation inside Header */
+.wrap {
+  margin-top: 0px;
+}
+
+/* a little "umph" */
+
+.wrap a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.wrap div {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.wrap ul {
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+
+.wrap li {
+  float: left;
+  min-width: 100px;
+}
+
+/* clear'n floats */
+.wrap ul:after {
+  clear: both;
+}
+
+.wrap ul:before,
+.wrap ul:after {
+    content: " ";
+    display: table;
+}
+
+.wrap nav {
+  background: #004A7F;
+}
+
+/* prime */
+.wrap ul.primary li a {
+  display: block;
+  padding: 10px 10px;
+  font-size: 20px;
+}
+
+.wrap ul.primary li div {
+  display: block;
+  padding: 10px 10px;
+  font-size: 20px;
+}
+
+.wrap .primary .material-icons {
+    vertical-align: sub !important;
+}
+
+.wrap ul.primary li:last-child a {
+  border-right: none;
+}
+
+.wrap ul.primary li a:hover {
+  color: #000;
+}
+
+.wrap ul.primary li div:hover {
+  color: #000;
+}
+
+/* subs */
+.wrap ul.sub {
+  position: absolute;
+  z-index: 200;
+  box-shadow: 2px 2px 0 #BEBEBE;
+  display:none;
+}
+
+.wrap ul.sub li {
+  float: none;
+  margin: 0;
+}
+
+.wrap ul.sub li a {
+  border-bottom: 1px dotted #ccc;
+  border-right: none;
+  color: #000;
+  padding: 15px 30px;
+}
+
+.wrap ul.sub li:last-child a {
+  border-bottom: none;
+}
+
+.wrap ul.sub li a:hover {
+  color: #000;
+  background: #eeeeee;
+}
+
+/* sub display*/
+.wrap ul.primary li:hover ul {
+  display: block;
+  background: #fff;
+}
+
+/* keeps the tab background white */
+.wrap ul.primary li:hover a {
+  background: #fff;
+  color: #666;
+  text-shadow: none;
+}
+
+.wrap ul.primary li:hover div {
+  background: #fff;
+  color: #666;
+  text-shadow: none;
+}
+
+.wrap ul.primary li:hover > a{
+  color: #000;
+} 
+.wrap ul.primary li:hover > div{
+  color: #000;
+} 
+  .wrap .topMenu {
+	display: none;
+  }
+
+@media only screen and (max-width: 600px) {
+  
+  .wrap {
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .wrap .topMenu {
+	display: block;
+  }
+
+  .wrap nav {
+	display: none;
+  }
+
+  .wrap li {
+    float: none;
+  }
+  
+  .wrap ul.primary li:hover a {
+    background: #e7f5fd;
+    color: #000000;
+  }
+
+  .wrap ul.primary li:hover ul {
+    display: block;
+    background: #e7f5fd;
+    color: #000000;
+  }
+ 
+  .wrap ul.sub {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+  }
+  
+  .wrap ul.sub li a {
+    background: #e7f5fd;
+    border: none;
+    color: #000000;
+  }
+  
+  .wrap ul.sub li a:hover {
+    color: #000000;
+  }
+}
