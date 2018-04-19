@@ -284,9 +284,6 @@ try{
 }
 //lwacht: 180216: story 5177: end
 
-
-/
-
 //lwacht: if defer payment is used, then re-invoice the fees and turn the associated forms into real records
 //lwacht: 171108: and send email
 //lwacht: 171113: commenting out until CTRCB is figured out
