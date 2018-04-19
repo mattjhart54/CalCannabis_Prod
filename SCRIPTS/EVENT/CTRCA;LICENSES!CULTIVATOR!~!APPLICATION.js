@@ -238,6 +238,39 @@ try{
 }
 //lwacht: 180216: story 5177: end
 
+//lwacht: 180419: testing here
+//mhart 180409 user story 5391 - Send submitted application notice when the application fee is paid in full
+try {
+	if(balanceDue<=0){
+		feeFound = false
+		feeTbl = loadFees(capId);
+			for(x in feeTbl) {
+				feeItem = feeTbl[x];
+				if(feeItem.code.indexOf("LI",6) > 0  || feeItem.code == "LIC_NSF") {
+					feeFound = true;
+				}
+			}
+		if(!feeFound) {
+			contType = "Designated Responsible Party";
+			addrType = "Mailing";
+			var liveScanNotActive = lookup("LIVESCAN_NOT_AVAILABLE","LIVESCAN_NOT_AVAILABLE");
+			if(!matches(liveScanNotActive,true, "true")){
+				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
+			}else{
+				runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
+			}	
+			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
+		}
+	}
+}catch(err){
+	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Attach submitted letter: " + err.message);
+	logDebug(err.stack);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Attach submitted letter: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
+}
+//mhart 180409 user story 5391 - end
+//lwacht: 180419: end
+/
+
 //lwacht: if defer payment is used, then re-invoice the fees and turn the associated forms into real records
 //lwacht: 171108: and send email
 //lwacht: 171113: commenting out until CTRCB is figured out

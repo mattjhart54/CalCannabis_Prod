@@ -62,6 +62,8 @@ try{
 	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/*/APPLICATION: Admin Fees Paid: " + err.message);
 	logDebug(err.stack);
 }
+
+/*lwacht: 180419: moving to CTRCA for testing
 //mhart 180409 user story 5391 - Send submitted application notice when the application fee is paid in full
 try {
 	if(balanceDue<=0){
@@ -81,15 +83,14 @@ try {
 				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
 			}else{
 				runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
-				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
-				runReportAttach(capId,"Cash Payment Due Letter", "altId", capId.getCustomID(), "contactType", "Designated Responsible Party", "addressType", "Mailing");
-				aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : PRA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + contType + br + addrType + br + capId.getCustomID() + br + debug);
 			}	
 			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
 		}
 	}
 }catch(err){
-	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/*/APPLICATION: Admin Fees Paid: " + err.message);
+	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/* /APPLICATION: Admin Fees Paid: " + err.message);
 	logDebug(err.stack);
 }
 //mhart 180409 user story 5391 - end
+//lwacht: 180419: end
+*/ 
