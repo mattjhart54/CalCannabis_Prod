@@ -80,7 +80,7 @@ try {
 			if(!matches(liveScanNotActive,true, "true")){
 				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
 			}else{
-				var drpContact = getContactByType("Designated Responsible Party",parentCapId);
+				var drpContact = getContactByType("Designated Responsible Party",capId);
 				aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : PRA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + "drpContact.getFirstName() : " + drpContact.getFirstName() + br + drpContact.length);
 				runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
 			}	
