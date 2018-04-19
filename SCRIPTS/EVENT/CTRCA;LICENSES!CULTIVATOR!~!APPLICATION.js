@@ -10,29 +10,19 @@ try {
 				newFeeFound = true;
 			}
 		}
+		aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + newFeeFound + br + capId.getCustomID() + br + debug);
 		//no new fee = not selecting cash payment
 		if(!newFeeFound){
-			if(balanceDue<=0){
-				feeFound = false
-				feeTbl = loadFees(capId);
-				for(x in feeTbl) {
-					feeItem = feeTbl[x];
-					if(feeItem.code.indexOf("LI",6) > 0  || feeItem.code == "LIC_NSF") {
-						feeFound = true;
-					}
-				}
-				if(!feeFound) {
-					contType = "Designated Responsible Party";
-					addrType = "Mailing";
-					var liveScanNotActive = lookup("LIVESCAN_NOT_AVAILABLE","LIVESCAN_NOT_AVAILABLE");
-					if(!matches(liveScanNotActive,true, "true")){
-						runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
-					}else{
-						runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
-					}	
-					emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
-				}
-			}
+			contType = "Designated Responsible Party";
+			addrType = "Mailing";
+			var liveScanNotActive = lookup("LIVESCAN_NOT_AVAILABLE","LIVESCAN_NOT_AVAILABLE");
+			if(!matches(liveScanNotActive,true, "true")){
+				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
+			}else{
+				runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
+			}	
+			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
+			aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + contType + br + addrType + br + capId.getCustomID() + br + debug);
 		}
 	}
 }catch(err){
