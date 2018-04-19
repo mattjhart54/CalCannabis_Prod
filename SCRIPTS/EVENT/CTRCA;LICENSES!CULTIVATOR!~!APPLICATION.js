@@ -20,6 +20,8 @@ try {
 				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
 			}else{
 				runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
+				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
+				runReportAttach(capId,"Cash Payment Due Letter", "altId", capId.getCustomID(), "contactType", "Designated Responsible Party", "addressType", "Mailing");
 			}	
 			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
 			aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + contType + br + addrType + br + capId.getCustomID() + br + debug);
