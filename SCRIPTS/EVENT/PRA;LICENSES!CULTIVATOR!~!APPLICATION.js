@@ -81,8 +81,9 @@ try {
 				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
 			}else{
 				var drpContact = getContactByType("Designated Responsible Party",capId);
-				aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : PRA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + "drpContact.getFirstName() : " + drpContact.getFirstName() + br + drpContact.length + br + capId.getCustomID());
+				aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : PRA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + "drpContact.getFirstName() : " + drpContact.getFirstName() + br + contType + br + addrType + br + capId.getCustomID() + br + debug);
 				runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
+				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
 			}	
 			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
 		}
@@ -92,4 +93,3 @@ try {
 	logDebug(err.stack);
 }
 //mhart 180409 user story 5391 - end
-
