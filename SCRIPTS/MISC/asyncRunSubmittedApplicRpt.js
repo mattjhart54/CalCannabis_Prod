@@ -33,9 +33,12 @@ try{
 		parameters.put("altId",sendCap);
 	}else{
 		parameters.put("Record ID",sendCap);
+		eTxt+="Record ID" + sendCap + br;
 	}
 	parameters.put("contType",contType);
+	eTxt+="contType" + contType + br;
 	parameters.put("addrType",addrType);
+	eTxt+="addrType" + addrType + br;
 	report.setReportParameters(parameters);
 	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
 	if(permit.getOutput().booleanValue()) { 
