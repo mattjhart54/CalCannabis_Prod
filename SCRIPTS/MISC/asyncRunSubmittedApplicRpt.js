@@ -31,9 +31,9 @@ try{
 	var parameters = aa.util.newHashMap(); 
 	if(reportName=="Submitted Annual App No LiveScan"){
 		parameters.put("altId",sendCap);
+		eTxt+="altId" + sendCap + br;
 	}else{
 		parameters.put("Record ID",sendCap);
-		eTxt+="Record ID" + sendCap + br;
 	}
 	parameters.put("contType",contType);
 	eTxt+="contType" + contType + br;
