@@ -28,17 +28,19 @@ try{
 	//report.setCapId(itemCap.getID1() + "-" + itemCap.getID2() + "-" + itemCap.getID3()); 
 	report.setCapId(tmpID.getID1() + "-" + tmpID.getID2() + "-" + tmpID.getID3()); 
 	report.getEDMSEntityIdModel().setAltId(sendCap);
+	eTxt+="reportName: " + reportName + br;
+	eTxt+="reportName: " + typeof(reportName) + br;
 	var parameters = aa.util.newHashMap(); 
 	if(reportName=="Submitted Annual App No LiveScan"){
 		parameters.put("altId",sendCap);
-		eTxt+="altId" + sendCap + br;
+		eTxt+="param altId" + sendCap + br;
 	}else{
 		parameters.put("Record ID",sendCap);
 	}
 	parameters.put("contType",contType);
-	eTxt+="contType" + contType + br;
+	eTxt+="contType: " + contType + br;
 	parameters.put("addrType",addrType);
-	eTxt+="addrType" + addrType + br;
+	eTxt+="addrType: " + addrType + br;
 	report.setReportParameters(parameters);
 	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
 	if(permit.getOutput().booleanValue()) { 
