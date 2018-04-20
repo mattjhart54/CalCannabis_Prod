@@ -33,13 +33,13 @@ try{
 	var parameters = aa.util.newHashMap(); 
 	if(reportName=="Submitted Annual App No LiveScan"){
 		parameters.put("altId",sendCap);
-		eTxt+="param altId" + sendCap + br;
+		eTxt+="param altId: " + sendCap + br;
 	}else{
 		parameters.put("Record ID",sendCap);
 	}
-	parameters.put("contType",contType);
+	parameters.put("Contact Type",contType);
 	eTxt+="contType: " + contType + br;
-	parameters.put("addrType",addrType);
+	parameters.put("Address Type",addrType);
 	eTxt+="addrType: " + addrType + br;
 	report.setReportParameters(parameters);
 	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
