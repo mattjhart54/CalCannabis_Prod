@@ -252,11 +252,24 @@ try {
 			addrType = "Mailing";
 			var liveScanNotActive = lookup("LIVESCAN_NOT_AVAILABLE","LIVESCAN_NOT_AVAILABLE");
 			if(!matches(liveScanNotActive,true, "true")){
-				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
+				//runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
+				var scriptName = "asyncRunSubmittedApplicRpt";
+				var envParameters = aa.util.newHashMap();
+				envParameters.put("sendCap",capIDString); 
+				envParameters.put("reportName","Submitted Annual Application"); 
+				envParameters.put("contType",contType); 
+				envParameters.put("addrType",addrType); 
+				envParameters.put("currentUserID",currentUserID);
+				aa.runAsyncScript(scriptName, envParameters);
 			}else{
-				runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
-				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
-				runReportAttach(capId,"Cash Payment Due Letter", "altId", capId.getCustomID(), "contactType", "Designated Responsible Party", "addressType", "Mailing");
+				var scriptName = "asyncRunSubmittedApplicRpt";
+				var envParameters = aa.util.newHashMap();
+				envParameters.put("sendCap",capIDString); 
+				envParameters.put("reportName","Submitted Annual App No LiveScan"); 
+				envParameters.put("contType",contType); 
+				envParameters.put("addrType",addrType); 
+				envParameters.put("currentUserID",currentUserID);
+				aa.runAsyncScript(scriptName, envParameters);
 			}	
 			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
 			aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + contType + br + addrType + br + capId.getCustomID() + br + debug);
