@@ -38,9 +38,9 @@ try{
 		parameters.put("Record ID",sendCap);
 	}
 	parameters.put("Contact Type",contType);
-	eTxt+="contType: " + contType + br;
+	eTxt+="Contact Type: " + contType + br;
 	parameters.put("Address Type",addrType);
-	eTxt+="addrType: " + addrType + br;
+	eTxt+="Address Type: " + addrType + br;
 	report.setReportParameters(parameters);
 	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
 	if(permit.getOutput().booleanValue()) { 
