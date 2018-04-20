@@ -2,7 +2,7 @@
 try{
 	//aa.env.setValue("sendCap", "LCA18-0000116");
 	//aa.env.setValue("currentUserID", "LWACHT");
-	var reportName = "" + aa.env.getValue("sendCap");
+	var reportName = "" + aa.env.getValue("reportName");
 	var sendCap = "" + aa.env.getValue("sendCap");
 	var contType = "" + aa.env.getValue("contType");
 	var addrType = "" + aa.env.getValue("addrType");
