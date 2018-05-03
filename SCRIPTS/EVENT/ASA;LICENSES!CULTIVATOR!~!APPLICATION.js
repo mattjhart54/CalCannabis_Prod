@@ -156,7 +156,8 @@ try{
 			if (addResult.getSuccess()){
 				logDebug("Successfully added addresses to DRP.");
 				createRefContactsFromCapContactsAndLink(capId,["Designated Responsible Party"], null, false, false, comparePeopleGeneric);
-				var drpUser = createPublicUserFromContact_Rev("Designated Responsible Party");
+				//lwacht 180425: COMMENTING OUT FOR AVTEST6
+				var drpUser = createPublicUserFromContact("Designated Responsible Party");
 				logDebug("Successfully created DRP");
 			}else{
 				logDebug("failure: " + addResult.getErrorMessage());
@@ -165,13 +166,14 @@ try{
 		if(appTypeArray[2]!="Temporary"){
 			if(bsnsEmail && (!bsnsExists || bsnsEmail==drpEmail)){
 				createRefContactsFromCapContactsAndLink(capId,["Business"], null, false, false, comparePeopleGeneric);
-				var bsnsUser = createPublicUserFromContact_Rev("Business");
+				//lwacht 180425: COMMENTING OUT FOR AVTEST6
+				var bsnsUser = createPublicUserFromContact("Business");
 				logDebug("Successfully created Business");
 			}
 			//not needed now but leaving for when they change their minds
 			//if(asopEmail && (!asopExists || asopEmail==bsnsEmail || asopEmail==drpEmail)){
 			//	createRefContactsFromCapContactsAndLink(capId,["Business"], null, false, false, comparePeopleGeneric);
-			//	var asopUser = createPublicUserFromContact_Rev("Agent for Service of ProcessS");
+			//	var asopUser = createPublicUserFromContact("Agent for Service of ProcessS");
 			//	logDebug("Successfully created ASOP");
 			//}
 		}
@@ -199,7 +201,8 @@ try{
 				if (addResult.getSuccess()){
 					logDebug("Successfully added addresses to T0DRP.");
 					createRefContactsFromCapContactsAndLink(capId,["DRP - Temporary License"], null, false, false, comparePeopleGeneric);
-					var tdrpUser = createPublicUserFromContact_Rev("DRP - Temporary License");
+					//lwacht 180425: COMMENTING OUT FOR AVTEST6
+					var tdrpUser = createPublicUserFromContact("DRP - Temporary License");
 					logDebug("Successfully created Temp DRP");
 				}else{
 					logDebug("failure: " + addResult.getErrorMessage());
@@ -208,7 +211,8 @@ try{
 			if(bsnsEmail && (!bsnsExists || bsnsEmail==drpEmail)){
 				logDebug("here");
 				createRefContactsFromCapContactsAndLink(capId,["Business"], null, false, false, comparePeopleGeneric);
-				var bsnsUser = createPublicUserFromContact_Rev("Business");
+				//lwacht 180425: COMMENTING OUT FOR AVTEST6
+				var bsnsUser = createPublicUserFromContact("Business");
 				logDebug("Successfully created Business");
 			}
 		}
@@ -268,9 +272,10 @@ try{
 	logDebug(err.stack);
 	aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ASA:Licenses/Cultivation/*/Application: Add Fees: " + startDate, "capId: " + capId + br + err.message + br + err.stack + br + currEnv);
 }
-
+// mhart 05/03/18 user story 5447 - remove rletaed record relation between Temp and annual applications
 //lwacht
 //add child if app number provided
+/*
 try{
 	logDebug("publicUser " + AInfo["Temp App Number"])
 	if(!publicUser){
@@ -294,10 +299,11 @@ try{
 		}
 	}
 } catch(err){
-	logDebug("An error has occurred in ASA:LICENSES/CULTIVATOR/*/APPLICATION: Relate Temp Record: " + err.message);
+	logDebug("An error has occurred in ASA:LICENSES/CULTIVATOR//APPLICATION: Relate Temp Record: " + err.message);
 	logDebug(err.stack);
 }
-
+*/
+// mhart 05/03/18 user story 5447 end
 //lwacht: create submission report
 try{
 	//lwacht: 180108: defect 5120: don't run for temporary
