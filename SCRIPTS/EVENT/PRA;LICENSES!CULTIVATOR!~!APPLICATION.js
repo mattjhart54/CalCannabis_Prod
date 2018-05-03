@@ -23,7 +23,9 @@ try{
 			runReportAttach(parCapId,"Official License Certificate", "altId", parCapId.getCustomID());
 		}
 		runReportAttach(capId,"Approval Letter", "p1value", capId.getCustomID());
-		emailRptContact("PRA", "LCA_APP_APPROVAL_PAID", "", false, capStatus, capId, "Designated Responsible Party", "RECORD_ID", capId.getCustomID());
+//mhart 180430 story 5392 Attach the Official License to the email sent
+		emailRptContact("PRA", "LCA_APP_APPROVAL_PAID", "Official License Certificate", true, capStatus, capId, "Designated Responsible Party", "altId", parCapId.getCustomID());
+//mhart 180430 story 5392 end 
 		//emailRptContact("PRA", "LCA_APP_APPROVAL_PAID", "", false, capStatus, capId, "Primary Contact", "RECORD_ID", capId.getCustomID());
 		//lwacht: 180123: story 4679: add post contacts to a set; create set if it does not exist
 		var priContact = getContactObj(capId,"Designated Responsible Party");
@@ -63,7 +65,7 @@ try{
 	logDebug(err.stack);
 }
 
-/*lwacht: 180419: moving to CTRCA for testing
+//lwacht: 180419: story 5441: report only populates correctly in async mode
 //mhart 180409 user story 5391 - Send submitted application notice when the application fee is paid in full
 try {
 	if(balanceDue<=0){
@@ -80,9 +82,25 @@ try {
 			addrType = "Mailing";
 			var liveScanNotActive = lookup("LIVESCAN_NOT_AVAILABLE","LIVESCAN_NOT_AVAILABLE");
 			if(!matches(liveScanNotActive,true, "true")){
-				runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
+				//runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
+				var scriptName = "asyncRunSubmittedApplicRpt";
+				var envParameters = aa.util.newHashMap();
+				envParameters.put("sendCap",capIDString); 
+				envParameters.put("reportName","Submitted Annual Application"); 
+				envParameters.put("contType",contType); 
+				envParameters.put("addrType",addrType); 
+				envParameters.put("currentUserID",currentUserID);
+				aa.runAsyncScript(scriptName, envParameters);
 			}else{
-				runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
+				//runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
+				var scriptName = "asyncRunSubmittedApplicRpt";
+				var envParameters = aa.util.newHashMap();
+				envParameters.put("sendCap",capIDString); 
+				envParameters.put("reportName","Submitted Annual App No LiveScan"); 
+				envParameters.put("contType",contType); 
+				envParameters.put("addrType",addrType); 
+				envParameters.put("currentUserID",currentUserID);
+				aa.runAsyncScript(scriptName, envParameters);
 			}	
 			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
 		}
@@ -92,5 +110,5 @@ try {
 	logDebug(err.stack);
 }
 //mhart 180409 user story 5391 - end
-//lwacht: 180419: end
-*/ 
+//lwacht: 180419: story 5441: end
+
