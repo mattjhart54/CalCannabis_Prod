@@ -38,6 +38,7 @@ try {
 
 //lwacht
 //add child if app number provided
+
 try{
 	if(!matches(AInfo["Temp App Number"],null,"", "undefined")){
 		var tmpID = aa.cap.getCapID(AInfo["Temp App Number"]);
@@ -58,11 +59,10 @@ try{
 		}
 	}
 } catch(err){
-	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Relate Temp Record: " + err.message);
+	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR//APPLICATION: Relate Temp Record: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Relate Temp Record: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR//APPLICATION: Relate Temp Record: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
 }
-
 //lwacht: if defer payment is used, then re-invoice the fees and turn the associated forms into real records
 //lwacht: 171108: and send email
 //lwacht: 171112: moving from CTRCB for time being
@@ -241,7 +241,7 @@ try{
 //lwacht: if defer payment is used, then re-invoice the fees and turn the associated forms into real records
 //lwacht: 171108: and send email
 
-//lwacht: 180419: testing here
+/*lwacht: 180419: story 5441: report only populates in async mode -moving back to PRA in hopes it works there to make the logic easier
 //mhart 180409 user story 5391 - Send submitted application notice when the application fee is paid in full
 try {
 	if(appTypeArray[2]!="Temporary"){
@@ -272,16 +272,16 @@ try {
 				aa.runAsyncScript(scriptName, envParameters);
 			}	
 			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
-			aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: " + startDate, "capId: " + capId + ": " + br + contType + br + addrType + br + capId.getCustomID() + br + debug);
+			//aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY : CTRCA:LICENSES/CULTIVATOR/* /APPLICATION: " + startDate, "capId: " + capId + ": " + br + contType + br + addrType + br + capId.getCustomID() + br + debug);
 		}
 	}
 }catch(err){
-	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Attach submitted letter: " + err.message);
+	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/* /APPLICATION: Attach submitted letter: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Attach submitted letter: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/* /APPLICATION: Attach submitted letter: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
 }
 //mhart 180409 user story 5391 - end
-//lwacht: 180419: end
+//lwacht: 180419: story 5441: end */
 
 
 
