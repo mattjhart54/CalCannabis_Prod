@@ -1,5 +1,26 @@
 function getReqdDocs(recdType){ //optional callingPgm variable since now having to call this from ASB
 try{
+	//lwacht: 180605: story 5544: remove conditions that are disabled
+	var cType = "License Required Documents";
+	var capCondResult = aa.capCondition.getCapConditions(capId,cType);
+	if (!capCondResult.getSuccess()){
+		logDebug("**WARNING: error getting cap conditions : " + capCondResult.getErrorMessage()) ; 
+	}else{
+		var ccs = capCondResult.getOutput();
+		for (pc1 in ccs){
+			var thisCond = ccs[pc1];
+			var stdCond = aa.capCondition.getStandardConditions(cType, thisCond.resConditionDescription).getOutput();
+			if(stdCond.length <1){
+				var rmCapCondResult = aa.capCondition.deleteCapCondition(capId,thisCond.getConditionNumber()); 
+				if (rmCapCondResult.getSuccess()){
+					logDebug("Successfully removed condition to CAP : " + capId + "  (" + thisCond.resConditionDescription + ") ");
+				}else{
+					logDebug( "**ERROR: removing condition  (" + cType + "): " + rmCapCondResult.getErrorMessage());
+				}
+			}
+		}
+	}
+	//lwacht: 180605: story 5544: end
 	if (arguments.length == 2){
 		var callPgm = arguments[1];
 	}else{
@@ -31,7 +52,7 @@ try{
 	var need_lightDiagram = false;	
 	//application documents
 	var conditionType = "License Required Documents";
-    var businessFormation = {condition : "Business - Business Formation Documents", document : "Business - Business Formation Documents"};
+    var businessFormation = {condition : "Business - Formation Documents", document : "Business - Formation Documents"};
     var businessFI = {condition : "Business - List of Financial Interest Holders", document : "Business - List of Financial Interest Holders"};
     var businessBond = {condition : "Business - Evidence Surety Bond", document : "Business - Evidence Surety Bond"};
 	var foriegnCorp = {condition : "Business - Foreign Corp. Certificate of Qualification", document : "Business - Foreign Corp. Certificate of Qualification"};
@@ -50,7 +71,10 @@ try{
 	var propertyDiagram = {condition : "Cultivation Plan - Property Diagram", document : "Cultivation Plan - Property Diagram"};
 	//lwacht: 180502: story 5445: changing condition name
 	var detailPremises = {condition : "Cultivation Plan - Detailed Premises", document : "Cultivation Plan - Detailed Premises"};
+	//hwacht: 180529: story 5445: THIS STORY SUPERCEDES 5353
 	//var detailPremises = {condition : "Cultivation Plan - Detailed Premises Diagram", document : "Cultivation Plan - Detailed Premises Diagram"};
+	var detailPremises = {condition : "Cultivation Plan - Detailed Premises Diagram", document : "Cultivation Plan - Detailed Premises Diagram"};
+	//hwacht: 180529: story 5445: end
 	//lwacht: 180502: story 5445: end
 	//mhart 180411 user story 5353
 	var wastePlan = {condition : "Cultivation Plan - Waste Management Plan", document : "Cultivation Plan - Waste Management Plan"};
@@ -92,10 +116,10 @@ try{
 		
 	//Business documents
 		if (AInfo["Business Entity Structure"] != "Sole Proprietorship"){
-			arrReqdDocs_App.push(stateDocuments);
+			arrReqdDocs_App.push(businessFormation);
 		}else{
-			if(appHasCondition(conditionType, null, stateDocuments.condition, null)){
-				removeCapCondition(conditionType, stateDocuments.condition);
+			if(appHasCondition(conditionType, null, businessFormation.condition, null)){
+				removeCapCondition(conditionType, businessFormation.condition);
 			}
 		}
 		
