@@ -51,22 +51,23 @@ try{
 		Action Plan" is not attached to the case (dependent on Story 5204).
 */
 try{
-	//lwacht: 180404: story 5233: because of changed workflow, removing the wfTask criterion
-	//if(wfTask=="Case Disposition" && wfStatus == "Closed - Corrective Action Plan Approved" && matches(AInfo["Corrective Action Plan"], "Yes", "Y", "YES")){
-	if(wfStatus == "Corrective Action Plan Approved" && matches(AInfo["Corrective Action Plan"], "Yes", "Y", "YES")){
+ 	//lwacht: 180404: story 5233: because of changed workflow, removing the wfTask criterion
+	if(wfTask=="Legal Review" && wfStatus == "Action Approved" && matches(AInfo["Corrective Action Plan"], "Yes", "Y", "YES")){
 	//lwacht: 180404: story 5233: end
 		var docExists = false;
 		var arrDocs = getDocumentList();
 		for(doc in arrDocs){
 			var thisDocument = arrDocs[doc];
-			if (thisDocument.getDocCategory() == "Corrective Action Plan"){
+		//Mhart 180418: story 5402 change criteria to look for document Final Corrective Action Plan			
+			if (matches(thisDocument.getDocCategory(), "Final Corrective Action Plan", "Stipulated Decision and Order")){
+		//Mhart 180418: end
 				docExists=true;
 			}
 		}
 		if(!docExists){
 			cancel = true;
 			showMessage = true;
-			comment("The 'Corrective Action Plan' document must be uploaded before continuing.");
+			comment("Before this case can be closed the Final Corrective Action Plan or Stipulated Decision and Order document must be attached.");
 		}
 	}
 } catch(err){
