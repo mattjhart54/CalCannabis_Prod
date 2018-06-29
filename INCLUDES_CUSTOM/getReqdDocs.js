@@ -70,7 +70,7 @@ try{
 	//var premiseDiagram = {condition : "Cultivation Plan - Property Diagram and Detailed Premises Diagram", document : "Cultivation Plan - Property Diagram and Detailed Premises Diagram"};
 	var propertyDiagram = {condition : "Cultivation Plan - Property Diagram", document : "Cultivation Plan - Property Diagram"};
 	//lwacht: 180502: story 5445: changing condition name
-	var detailPremises = {condition : "Cultivation Plan - Detailed Premises", document : "Cultivation Plan - Detailed Premises"};
+	//var detailPremises = {condition : "Cultivation Plan - Detailed Premises", document : "Cultivation Plan - Detailed Premises"};
 	//hwacht: 180529: story 5445: THIS STORY SUPERCEDES 5353
 	//var detailPremises = {condition : "Cultivation Plan - Detailed Premises Diagram", document : "Cultivation Plan - Detailed Premises Diagram"};
 	var detailPremises = {condition : "Cultivation Plan - Detailed Premises Diagram", document : "Cultivation Plan - Detailed Premises Diagram"};
