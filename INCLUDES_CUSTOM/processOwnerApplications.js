@@ -50,21 +50,22 @@ try {
 			var contFName = arrContacts[0]["firstName"]; //should only be one
 			var contLName = arrContacts[0]["lastName"]; //should only be one
 			var contEmail = arrContacts[0]["email"]; //should only be one
-			//logDebug("contFName: " + contFName);
-			//logDebug("contLName: " + contLName);
-			//logDebug("contEmail: " + contEmail);
+			logDebug("contFName: " + contFName);
+			logDebug("contLName: " + contLName);
+			logDebug("contEmail: " + contEmail);
 			var ownerRecdExists = false;
 			for(ow in tblOwners){
 				var vFirst = tblOwners[ow]["First Name"];
 				var vLast = tblOwners[ow]["Last Name"];
 				var vEmail = tblOwners[ow]["Email Address"];
 				var vStatus = tblOwners[ow]["Status"];
-				//logDebug("---first match: " + (""+vFirst==""+contFName));
-				//logDebug("---last match: " + (""+vLast==""+contLName));
-				//logDebug("---email match: " + (""+vEmail==""+contEmail));
-				//logDebug("---vFirst: " + vFirst);
-				//logDebug("---vLast: " + vLast);
-				//logDebug("---vEmail: " + vEmail);
+				logDebug("---first match: " + (""+vFirst==""+contFName));
+				logDebug("---last match: " + (""+vLast==""+contLName));
+				logDebug("---email match: " + (""+vEmail==""+contEmail));
+				logDebug("---vFirst: " + vFirst);
+				logDebug("---vLast: " + vLast);
+				logDebug("---vEmail: " + vEmail);
+				logDebug("---vStatus: " + vStatus)
 				if(""+contFName==""+vFirst && ""+contLName==""+vLast && ""+contEmail==""+vEmail && vStatus!="Submitted"){
 					tblOwners[ow]["Status"]="Submitted";
 					//removeASITable("OWNERS");
@@ -75,14 +76,28 @@ try {
 				}
 			}
 			if(!ownerRecdExists){
-				var removeResult = aa.people.removeCapContact(capId, contSeq); 
+				//lwacht: 180726: delete the record instead of re-using
+				//var removeResult = aa.people.removeCapContact(capId, contSeq); 
+				var capIDModel = aa.cap.getCapIDModel(capId.getID1(),capId.getID2(),capId.getID3()).getOutput();
+				var removeResult = aa.cap.deletePartialCAP(capIDModel);
 				if (removeResult.getSuccess()){
-					logDebug("Contact removed : " + this + " from record " + this.capId.getCustomID());
+					logDebug("Owner app removed : " + this + " from record " + this.capId.getCustomID());
 				}else{
-					logDebug("Error removing contact : " + arrContacts[0]["lastName"] + " : from record " + this.capId.getCustomID() + " : " + removeResult.getErrorMessage());
+					logDebug("Error removing record : " + arrContacts[0]["lastName"] + " : from record " + this.capId.getCustomID() + " : " + removeResult.getErrorMessage());
 				}
+				//lwacht: 180726: end
+			}
+		//lwacht: 180726: record has no contact--remove it
+		}else{
+			var capIDModel = aa.cap.getCapIDModel(capId.getID1(),capId.getID2(),capId.getID3()).getOutput();
+			var removeResult = aa.cap.deletePartialCAP(capIDModel);
+			if (removeResult.getSuccess()){
+				logDebug("Owner app removed : " + this + " from record " + this.capId.getCustomID());
+			}else{
+				logDebug("Error removing record : " + arrContacts[0]["lastName"] + " : from record " + this.capId.getCustomID() + " : " + removeResult.getErrorMessage());
 			}
 		}
+		//lwacht: 180726: end
 		if(!hasOwnerContact){
 			logDebug("Owner not found.  Attempting to add owner contact. ");
 			var qryPeople = aa.people.createPeopleModel().getOutput().getPeopleModel(); 
@@ -94,6 +109,21 @@ try {
 			for(o in tblOwners){
 				//logDebug("owner status: " + tblOwners[o]["Status"]);
 				if(tblOwners[o]["Status"]!="Submitted"){
+					//lwacht: 180726: record should not exist, so create first
+					ctm = aa.proxyInvoker.newInstance("com.accela.aa.aamain.cap.CapTypeModel").getOutput();
+					ctm.setGroup("Licenses");
+					ctm.setType("Cultivator");
+					ctm.setSubType("Medical");
+					ctm.setCategory("Owner Application");
+					logDebug("Attempting to create record : " + recTypeAlias); 
+					var result = aa.cap.createSimplePartialRecord(ctm, null, "INCOMPLETE CAP"); 
+					if (result.getSuccess() && result.getOutput() != null) { 
+						var newCapId = result.getOutput(); 
+						logDebug("Created new associated form record " + newCapId.getCustomID() + " for type " + recTypeAlias); 
+						aa.cap.createAssociatedFormsHierarchy(currCapId, newCapId); 
+						capId = newCapId;
+					}
+					//lwacht: 180726: end
 					var vFirst = tblOwners[o]["First Name"];
 					var vLast = tblOwners[o]["Last Name"];
 					var vEmail = tblOwners[o]["Email Address"];
