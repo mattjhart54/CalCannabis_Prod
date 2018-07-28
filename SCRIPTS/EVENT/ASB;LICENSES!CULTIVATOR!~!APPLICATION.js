@@ -20,10 +20,41 @@ try{
 				cancel = true;
 				comment("The record has not been completed.  Please edit each page to ensure all required fields are populated.");
 			}
+	// mhart: 180727 Owner Issue
+			if(typeof(OWNERS) != "object") {
+				showMessage = true;
+				cancel = true;
+				comment("The record has not been completed.  Must have at least one owner in the owner table below. At least one owner must be the DRP.");
+			}
+			var drpInTable = false;
+			for(row in OWNERS){
+				//get contact by email
+				var correctLastName = false;
+				var capitalLastName = false;
+				var matchLastName = "";
+				var correctFirstName = false;
+				tblOwner.push(OWNERS[row]);
+				var qryPeople = aa.people.createPeopleModel().getOutput().getPeopleModel();
+				var ownerEmail = ""+OWNERS[row]["Email Address"];
+				ownEmail = ownerEmail.toLowerCase();
+				qryPeople.setEmail(ownEmail);
+				var ownFName = ""+OWNERS[row]["First Name"];
+				var ownLName = ""+OWNERS[row]["Last Name"];
+				if(ownEmail==drpEmail && ownLName==drpLName){
+					drpInTable = true;
+				}
+			}
+			if(!drpInTable){
+				cancel = true;
+				showMessage = true;
+				//comment("The Designated Responsible Party (" + drpFName + " " + drpLName + ") contact needs to be added to the Owners table.");
+				//lwacht 171105: required text per defect 4615
+				comment("Must have at least one owner in the owner table below. At least one owner must be the DRP.");
+			}
+	// mhart: 180727  end
 		}
 	}
 } catch (err) {
-	showDebug =true;
 	logDebug("An error has occurred in ASB:Licenses/Cultivation/*/Application: Completed field check: " + err.message);
 	logDebug(err.stack);
 	aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ASB:Licenses/Cultivation/*/Application: Completed field check: " + startDate, "capId: " + capId + ": " + br + err.message + br + err.stack + br + currEnv);
