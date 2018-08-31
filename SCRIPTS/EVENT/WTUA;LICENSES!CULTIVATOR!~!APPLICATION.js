@@ -195,6 +195,7 @@ try{
 	if("Administrative Manager Review".equals(wfTask) && "Deficiency Letter Sent".equals(wfStatus)){
 		//set due date and expiration date
 		editAppSpecific("App Expiry Date", dateAdd(null,90));
+                deactivateTask("Administrative Manager Review");
 		if(matches(taskStatus("Administrative Review"), "Additional Information Needed", "Incomplete Response")){
 			editTaskDueDate("Administrative Review", dateAdd(null,90));
 			//activateTask("Administrative Review");
@@ -397,6 +398,27 @@ try{
 	aa.print("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: Remove appeal denial condition: " + err.message);
 	aa.print(err.stack);
 }
+
+//MJH: 180809 Story 5607 - Close Owner records when application Disqualified. 
+try {
+
+	if(wfStatus == "Disqualified") {
+		holdId = capId;
+		childArray = getChildren("Licenses/Cultivator/Medical/Owner Application");
+		for (x in childArray) {
+			capId = childArray[x];
+			updateAppStatus("Disqualified", "set by script");
+			deactivateTask("Owner Application Review");
+		}
+		capId = holdId;
+		runReportAttach(capId,"Final Deficiency Disqualification Letter", "altId", capId.getCustomID(), "addressType", "Mailing", "contactType", "Designated Responsible Party");
+		emailRptContact("WTUA", "LCA_GENERAL_NOTIFICATION", "", false, capStatus, capId, "Designated Responsible Party", "altId", capId.getCustomID());
+	}
+}catch(err){
+	aa.print("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: CLose Owner Records: " + err.message);
+	aa.print(err.stack);
+}
+//MJH: 180809 Story 5607 - End
 
 //lwacht: 180207: story 2896: end
 
