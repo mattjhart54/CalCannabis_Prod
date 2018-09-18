@@ -1,12 +1,11 @@
-
 /*------------------------------------------------------------------------------------------------------/
 | Program: BATCH_TMP_EXPIRATION
 | Client:  CDFA_CalCannabis
 |
 | Version 1.0 - Base Version. 
 |
-| Script to run nightly to send thirty day notification on applications requiring more information
-| Batch job name: LCA_App_Disqual_Notif
+| Script to run nightly to send notice of license expiring or to expire the license
+| Batch job name: LCA_TMP_ABOUT_TO_EXPIRE, LCA_TMP_EXPIRED 
 /------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------/
 |
@@ -14,6 +13,7 @@
 |
 /------------------------------------------------------------------------------------------------------*/
 var emailText = "";
+var errLog = "";
 var debugText = "";
 var showDebug = false;	
 var showMessage = false;
@@ -69,8 +69,8 @@ else
 |
 /------------------------------------------------------------------------------------------------------*/
 /* test parameters  
-aa.env.setValue("lookAheadDays", "-365");
-aa.env.setValue("daySpan", "700");
+aa.env.setValue("lookAheadDays", "0");
+aa.env.setValue("daySpan", "0");
 aa.env.setValue("gracePeriodDays", "0");
 aa.env.setValue("recordGroup", "Licenses");
 aa.env.setValue("recordType", "Cultivator");
@@ -84,7 +84,7 @@ aa.env.setValue("setType", "License Notifications");
 aa.env.setValue("setStatus", "New");
 aa.env.setValue("setNonEmailPrefix", "TEMP_EXPIRED");
 aa.env.setValue("skipAppStatusArray", "Denied,Withdrawn,Disqualified,Inactive,Revoked,Suspended");
-aa.env.setValue("emailAddress", "lwacht@trustvip.com");
+aa.env.setValue("emailAddress", "mhart@trustvip.com");
 aa.env.setValue("sendEmailToContactTypes", "Business");
 aa.env.setValue("emailTemplate","LCA_GENERAL_NOTIFICATION");
 aa.env.setValue("sysFromEmail", "calcannabislicensing@cdfa.ca.gov");
@@ -95,7 +95,7 @@ aa.env.setValue("assignTaskTo", "LICENSE/NA/NA/NA/NA/ADMIN");
 aa.env.setValue("setParentWorkflowTaskAndStatus", "License,About to Expire");
 aa.env.setValue("respectNotifyPrefs", "Y");
 aa.env.setValue("checkForPermApplication", "Y");
- */
+*/
 var paramStdChoice = getJobParam("paramStdChoice")  // use this standard choice for parameters instead of batch jobs
 var fromDate = getJobParam("fromDate"); // Hardcoded dates.   Use for testing only
 var toDate = getJobParam("toDate"); // ""
@@ -183,8 +183,12 @@ logDebug("Start of Job");
 try {
 	mainProcess();
 	logDebug("End of Job: Elapsed Time : " + elapsed() + " Seconds");
-	if (emailAddress.length)
+	if (emailAddress.length) {
 		aa.sendMail(sysFromEmail, emailAddress, "", batchJobName + " Results", emailText);
+		if(errLog != "") {
+			aa.sendMail(sysFromEmail, emailAddress, "", batchJobName + " Errors", errLog);
+		}
+	}
 } catch (err) {
 	logDebug("ERROR: BATCH_TMP_EXPIRATION: " + err.message + " In " + batchJobName + " Line " + err.lineNumber);
 	logDebug("Stack: " + err.stack);
@@ -266,10 +270,10 @@ try{
 		} else {
 			var cap = capResult.getOutput();
 		}
+		 fileDateObj = cap.getFileDate();
+		 fileDate = "" + fileDateObj.getMonth() + "/" + fileDateObj.getDayOfMonth() + "/" + fileDateObj.getYear();
+		 fileDateYYYYMMDD = dateFormatted(fileDateObj.getMonth(),fileDateObj.getDayOfMonth(),fileDateObj.getYear(),"YYYY-MM-DD");
 		var capStatus = cap.getCapStatus();
-		fileDateObj = cap.getFileDate();
-		fileDate = "" + fileDateObj.getMonth() + "/" + fileDateObj.getDayOfMonth() + "/" + fileDateObj.getYear();
-		fileDateYYYYMMDD = dateFormatted(fileDateObj.getMonth(),fileDateObj.getDayOfMonth(),fileDateObj.getYear(),"YYYY-MM-DD");
 		appTypeResult = cap.getCapType(); //create CapTypeModel object
 		appTypeString = appTypeResult.toString();
 		appTypeArray = appTypeString.split("/");
@@ -300,7 +304,7 @@ try{
 			var chMApp = getChildren("Licenses/Cultivator/Medical/Application", capId);
 			if(chMApp!=null) if(chMApp.length<1) chMApp = null;
 			var chTApp = getChildren("Licenses/Cultivator/Temporary/Application", capId);
-			if(chTApp!=null) {
+			if(chTApp!=null && chTApp!="") {
 				var currCap = capId;
 				capId = chTApp[0];
 				var chPar = getParents("Licenses/Cultivator/*/Application");
@@ -316,6 +320,16 @@ try{
 			if(getParent() || chLic!=null || chAApp!=null || chMApp!=null || chPar!=null) {
 				capPermApp++;
 				logDebug("     " +"skipping, due to related permanent application." )
+// mhart 180914 story 5711 -send email if parent is an enforcement record
+				var enfPar = getParents("Enforcement/*/*/*");
+				logDebug("Enforcement parent " + enfPar);
+				if(enfPar!=null) if(enfPar.length<1) enfPar = null;
+				if(enfPar!=null && enfPar!="") {
+					errLog = errLog + "Record " + capId.getCustomID() + " not processed.  Parent record is an Enforcement record." + br;
+		//			aa.sendMail(sysFromEmail, emailAddress, "", "Error in batch job " + batchJobName, "Record " + capId.getCustomID() + " not processed.  Parent record is an Enforcement record.");
+		//			logDebug("email sent to " + emailAddress);
+				}
+// mhart 180914 story 5711
 				continue;
 			}
 		}
@@ -608,3 +622,4 @@ try{
 	logDebug("ERROR: createExpirationSet: " + err.message + " In " + batchJobName);
 	logDebug("Stack: " + err.stack);
 }}
+
