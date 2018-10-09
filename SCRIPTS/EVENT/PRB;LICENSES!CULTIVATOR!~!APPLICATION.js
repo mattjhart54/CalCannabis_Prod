@@ -69,6 +69,7 @@ try{
 				addToCat(licCapId); //send active license to CAT
 			}
 			closeTask("Application Disposition","License Issued","Updated via PRA:LICENSES/CULTIVATOR/*/APPLICATION","");
+			runReportAttach(parCapId,"Official License Certificate", "altId", licCapId.getCustomID());
 		}else{
 			logDebug("Error creating License record: " + licCapId);
 		}
