@@ -20,26 +20,12 @@ try{
 	if(balanceDue<=0 && capStatus == "License Issued"){
 		var parCapId = getParent();
 		if(parCapId){
-//mhart 100918 Story 5753 - code to run License Certificate in async mode
-//			var licAltId = parCapId.getCustomID();
-//			var contType = "Designated Responsible Party";
-//			var addrType = "Mailing";
-//			var scriptName = "asyncRunOfficialLicenseRpt";
-//			var envParameters = aa.util.newHashMap();
-//			envParameters.put("sendCap",licAltId); 
-//			envParameters.put("reportName","Official License Certificate"); 
-//			envParameters.put("contType",contType); 
-//			envParameters.put("addrType",addrType); 
-//			envParameters.put("currentUserID",currentUserID);
-//			aa.runAsyncScript(scriptName, envParameters);
-//			runReportAttach(parCapId,"Official License Certificate", "altId", parCapId.getCustomID());
-//mhart 100918 Story 5753 - end
+			runReportAttach(capId,"Approval Letter", "p1value", capId.getCustomID());
 		}
-		runReportAttach(capId,"Approval Letter", "p1value", capId.getCustomID());
 //mhart 180430 story 5392 Attach the Official License to the email sent
 		emailRptContact("PRA", "LCA_APP_APPROVAL_PAID", "Official License Certificate", true, capStatus, capId, "Designated Responsible Party", "altId", parCapId.getCustomID());
 //mhart 180430 story 5392 end 
-		//emailRptContact("PRA", "LCA_APP_APPROVAL_PAID", "", false, capStatus, capId, "Primary Contact", "RECORD_ID", capId.getCustomID());
+
 		//lwacht: 180123: story 4679: add post contacts to a set; create set if it does not exist
 		var priContact = getContactObj(capId,"Designated Responsible Party");
 		if(priContact){
