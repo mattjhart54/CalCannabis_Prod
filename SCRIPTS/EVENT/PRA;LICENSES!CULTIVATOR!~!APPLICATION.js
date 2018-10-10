@@ -20,8 +20,10 @@ try{
 	if(balanceDue<=0 && capStatus == "License Issued"){
 		var parCapId = getParent();
 		if(parCapId){
-			runReportAttach(capId,"Approval Letter", "p1value", capId.getCustomID());
-		}
+			runReportAttach(parCapId,"Official License Certificate", "altId", parCapId.getCustomID());
+		}	
+		runReportAttach(capId,"Approval Letter", "p1value", capId.getCustomID());
+
 //mhart 180430 story 5392 Attach the Official License to the email sent
 		emailRptContact("PRA", "LCA_APP_APPROVAL_PAID", "Official License Certificate", true, capStatus, capId, "Designated Responsible Party", "altId", parCapId.getCustomID());
 //mhart 180430 story 5392 end 
