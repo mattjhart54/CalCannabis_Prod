@@ -20,7 +20,18 @@ try{
 	if(balanceDue<=0 && capStatus == "License Issued"){
 		var parCapId = getParent();
 		if(parCapId){
-			runReportAttach(parCapId,"Official License Certificate", "altId", parCapId.getCustomID());
+//mhart 100918 Story 5753 - code to run License Certificate in async mode
+			var licAltId = parCapId.getCustomID());
+			var scriptName = "asyncRunOfficialLicenseRpt";
+			var envParameters = aa.util.newHashMap();
+			envParameters.put("sendCap",licAltId); 
+			envParameters.put("reportName","Official License Certificate"); 
+			envParameters.put("contType",contType); 
+			envParameters.put("addrType",addrType); 
+			envParameters.put("currentUserID",currentUserID);
+			aa.runAsyncScript(scriptName, envParameters);
+//			runReportAttach(parCapId,"Official License Certificate", "altId", parCapId.getCustomID());
+//mhart 100918 Story 5753 - end
 		}
 		runReportAttach(capId,"Approval Letter", "p1value", capId.getCustomID());
 //mhart 180430 story 5392 Attach the Official License to the email sent
