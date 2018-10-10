@@ -21,7 +21,7 @@ try{
 		var parCapId = getParent();
 		if(parCapId){
 //mhart 100918 Story 5753 - code to run License Certificate in async mode
-			var licAltId = parCapId.getCustomID());
+			var licAltId = parCapId.getCustomID();
 			var scriptName = "asyncRunOfficialLicenseRpt";
 			var envParameters = aa.util.newHashMap();
 			envParameters.put("sendCap",licAltId); 
