@@ -21,17 +21,17 @@ try{
 		var parCapId = getParent();
 		if(parCapId){
 //mhart 100918 Story 5753 - code to run License Certificate in async mode
-			var licAltId = parCapId.getCustomID();
-			var contType = "Designated Responsible Party";
-			var addrType = "Mailing";
-			var scriptName = "asyncRunOfficialLicenseRpt";
-			var envParameters = aa.util.newHashMap();
-			envParameters.put("sendCap",licAltId); 
-			envParameters.put("reportName","Official License Certificate"); 
-			envParameters.put("contType",contType); 
-			envParameters.put("addrType",addrType); 
-			envParameters.put("currentUserID",currentUserID);
-			aa.runAsyncScript(scriptName, envParameters);
+//			var licAltId = parCapId.getCustomID();
+//			var contType = "Designated Responsible Party";
+//			var addrType = "Mailing";
+//			var scriptName = "asyncRunOfficialLicenseRpt";
+//			var envParameters = aa.util.newHashMap();
+//			envParameters.put("sendCap",licAltId); 
+//			envParameters.put("reportName","Official License Certificate"); 
+//			envParameters.put("contType",contType); 
+//			envParameters.put("addrType",addrType); 
+//			envParameters.put("currentUserID",currentUserID);
+//			aa.runAsyncScript(scriptName, envParameters);
 //			runReportAttach(parCapId,"Official License Certificate", "altId", parCapId.getCustomID());
 //mhart 100918 Story 5753 - end
 		}
