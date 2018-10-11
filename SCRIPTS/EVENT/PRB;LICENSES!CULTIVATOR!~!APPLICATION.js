@@ -60,6 +60,7 @@ try{
 			updateWorkDesc(workDescGet(capId),licCapId);
 			copyAppSpecific(licCapId);
 			editAppSpecific("Valid From Date", sysDateMMDDYYYY, licCapId);
+			editAppSpecific("Premise State", "CA", licCapId);
 			//lwacht: 170823: removing primary contact
 			//var contPri = getContactObj(licCapId,"Primary Contact");
 			//capId = licCapId;
