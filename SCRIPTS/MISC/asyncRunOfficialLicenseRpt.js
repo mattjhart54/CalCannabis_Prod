@@ -43,14 +43,15 @@ function getMasterScriptText(vScriptName) {
 }
 try{
 //---------------------------------------
-	//aa.env.setValue("sendCap", "LCA18-0000664");
+	//aa.env.setValue("licCap", "LCA18-0000664");
 	//aa.env.setValue("currentUserID", "MHART");
 	//aa.env.setValue("reportName", "Official License Certificate");
 	//aa.env.setValue("contType", "Designated Responsible Party");
 	//aa.env.setValue("addressType", "Mailing");
 	//aa.env.setValue("fromEmail","calcannabislicensing@cdfa.ca.gov")
 	var reportName = "" + aa.env.getValue("reportName");
-	var sendCap = "" + aa.env.getValue("sendCap");
+	var appCap = "" + aa.env.getValue("appCap");
+	var licCap = "" + aa.env.getValue("licCap");
 	var currentUserID = "" + aa.env.getValue("currentUserID");
 	var contType = "" + aa.env.getValue("contType");
 	var fromEmail = "" + aa.env.getValue("fromEmail");
@@ -66,7 +67,7 @@ try{
 	}
 	var rFiles = [];
 	var report = reportResult.getOutput(); 
-	var tmpID = aa.cap.getCapID(sendCap).getOutput(); 
+	var tmpID = aa.cap.getCapID(licCap).getOutput(); 
 	cap = aa.cap.getCap(tmpID).getOutput();
 	appTypeResult = cap.getCapType();
 	appTypeString = appTypeResult.toString(); 
@@ -74,11 +75,11 @@ try{
 	report.setModule(appTypeArray[0]); 
 	//report.setCapId(itemCap.getID1() + "-" + itemCap.getID2() + "-" + itemCap.getID3()); 
 	report.setCapId(tmpID.getID1() + "-" + tmpID.getID2() + "-" + tmpID.getID3()); 
-	report.getEDMSEntityIdModel().setAltId(sendCap);
+	report.getEDMSEntityIdModel().setAltId(licCap);
 	eTxt+="reportName: " + reportName + br;
 	eTxt+="reportName: " + typeof(reportName) + br;
 	var parameters = aa.util.newHashMap(); 
-	parameters.put("altId",sendCap);
+	parameters.put("altId",licCap);
 	report.setReportParameters(parameters);
 	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
 	if(permit.getOutput().booleanValue()) { 
@@ -88,8 +89,8 @@ try{
 			var reportFile=aa.reportManager.storeReportToDisk(reportOutput);
 			rFile=reportFile.getOutput();
 			rFiles.push(rFile);
-			logDebug("Report '" + reportName + "' has been run for " + sendCap);
-			eTxt+=("Report '" + reportName + "' has been run for " + sendCap) +br;
+			logDebug("Report '" + reportName + "' has been run for " + licCap);
+			eTxt+=("Report '" + reportName + "' has been run for " + licCap) +br;
 		}else {
 			logDebug("System failed get report: " + reportResult.getErrorType() + ":" +reportResult.getErrorMessage());
 		}
@@ -97,7 +98,7 @@ try{
 		logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
 		eTxt+="No permission to report: "+ reportName + " for user: " + currentUserID;
 	}
-	var emailPriReport = true;
+	var tmpID = aa.cap.getCapID(appCap).getOutput();
 	var priContact = getContactObj(tmpID,contType);
 	if(priContact){
 		var eParams = aa.util.newHashtable(); 
@@ -120,7 +121,7 @@ try{
 } catch(err){
 	logDebug("An error has occurred in asyncRunSubmittedApplicRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunSubmittedApplicRpt: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + sendCap + br + "avpre6" + br + eTxt);
+	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunSubmittedApplicRpt: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + licCap + br + "avpre6" + br + eTxt);
 }
  function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
 {
