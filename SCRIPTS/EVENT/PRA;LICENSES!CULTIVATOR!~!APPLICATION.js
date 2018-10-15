@@ -20,10 +20,12 @@ try{
 	if(balanceDue<=0 && capStatus == "License Issued"){
 		var parCapId = getParent();
 		if(parCapId){
+			var appAltId = capId.getCustomID();
 			var licAltId = parCapId.getCustomID();
 			var scriptName = "asyncRunOfficialLicenseRpt";
 			var envParameters = aa.util.newHashMap();
-			envParameters.put("sendCap",licAltId); 
+			envParameters.put("appCap",appAltId);
+			envParameters.put("licCap",licAltId); 
 			envParameters.put("reportName","Official License Certificate"); 
 			envParameters.put("currentUserID",currentUserID);
 			envParameters.put("contType","Designated Responsible Party");
