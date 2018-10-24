@@ -1,29 +1,18 @@
-//lwacht: 170817: moved record creation to before script
-//lwacht
-//send the application fee notification letter
-//lwacht 170920: paid application fee notice is not going to be sent per CDFA decision
-try{
-	if(balanceDue<=0 && isTaskActive("Administrative Review")){
-		//runReportAttach(capId,"Paid Application Fee", "p1value", capId.getCustomID()); 
-		//emailDrpPriContacts("PRA", "LCA_GENERAL_NOTIFICATION", "", false, "Application Fee Paid", capId, "RECORD_ID", capId.getCustomID());
-		//emailRptContact("PRA", "LCA_GENERAL_NOTIFICATION", "", false, capStatus, capId, "Designated Responsible Party", "RECORD_ID", capId.getCustomID());
-		//emailRptContact("PRA", "LCA_GENERAL_NOTIFICATION", "", false, capStatus, capId, "Primary Contact", "RECORD_ID", capId.getCustomID());
-	}
-}catch(err){
-	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/*/APPLICATION: App Fee Paid: " + err.message);
-	logDebug(err.stack);
-}
 
-//lwacht
-//create official license record
+// mhart 100918 Story 5738 and 5739 Changes to generate correct approval letter based on CAP status
 try{
-	if(balanceDue<=0 && capStatus == "License Issued"){
+	if(balanceDue<=0 && matches(capStatus, "License Issued", "Provisional License Issued")){
+		if(capStatus == "License Issued")
+			var licType = "annual";
+		else 
+			var licType = "provisional"; 
 		var parCapId = getParent();
 		if(parCapId){
 			var appAltId = capId.getCustomID();
 			var licAltId = parCapId.getCustomID();
 			var scriptName = "asyncRunOfficialLicenseRpt";
 			var envParameters = aa.util.newHashMap();
+			envParameters.put("licType", licType);
 			envParameters.put("appCap",appAltId);
 			envParameters.put("licCap",licAltId); 
 			envParameters.put("reportName","Official License Certificate"); 
@@ -31,21 +20,28 @@ try{
 			envParameters.put("contType","Designated Responsible Party");
 			envParameters.put("fromEmail","calcannabislicensing@cdfa.ca.gov");
 			aa.runAsyncScript(scriptName, envParameters);
-//			runReportAttach(parCapId,"Official License Certificate", "altId", parCapId.getCustomID());
 		}	
-		runReportAttach(capId,"Approval Letter", "p1value", capId.getCustomID());
-
+		if(capStatus=="License Issued") 
+			runReportAttach(capId,"Approval Letter", "p1value", capId.getCustomID());
+		else
+			runReportAttach(capId,"Approval Letter Provisional", "p1value", capId.getCustomID());
+// mhart 100918 Story 5738 and 5739 end
+		
 //mhart 180430 story 5392 Attach the Official License to the email sent
+//   moved to the asyncRunOfficialLicenseReport
 //		emailRptContact("PRA", "LCA_APP_APPROVAL_PAID", "Official License Certificate", true, capStatus, capId, "Designated Responsible Party", "altId", parCapId.getCustomID());
 //mhart 180430 story 5392 end 
 
-		//lwacht: 180123: story 4679: add post contacts to a set; create set if it does not exist
+//lwacht: 180123: story 4679: add post contacts to a set; create set if it does not exist
 		var priContact = getContactObj(capId,"Designated Responsible Party");
 		if(priContact){
 			var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
 			if(!matches(priChannel, "",null,"undefined", false)){
 				if(priChannel.indexOf("Postal") > -1 ){
-					var sName = createSet("LICENSE_ISSUED","License Notifications", "New");
+					if(capStatus=="License Issued") 
+						var sName = createSet("LICENSE_ISSUED","License Notifications", "New");
+					else
+						var sName = createSet("PROV_LICENSE_ISSUED","License Notifications", "New");
 					if(sName){
 						setAddResult=aa.set.add(sName,parCapId);
 						if(setAddResult.getSuccess()){
@@ -57,7 +53,7 @@ try{
 				}
 			}
 		}
-		//lwacht: 180123: story 4679: end
+//lwacht: 180123: story 4679: end
 	}
 }catch(err){
 	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/*/APPLICATION: License Fee Paid: " + err.message);
@@ -114,7 +110,27 @@ try {
 				envParameters.put("currentUserID",currentUserID);
 				aa.runAsyncScript(scriptName, envParameters);
 			}	
-			emailRptContact("ASIUA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);	
+//mhart 181019 story 5756 Add record to set if preference is postal
+			var priContact = getContactObj(capId,"Designated Responsible Party");
+			if(priContact){
+				var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
+				if(!matches(priChannel, "",null,"undefined", false)){
+					if(priChannel.indexOf("Postal") > -1 ){
+						var sName = createSet("APPSUBMITTED","License Notifications", "New");
+						if(sName){
+							setAddResult=aa.set.add(sName,capId);
+							if(setAddResult.getSuccess()){
+								logDebug(capId.getCustomID() + " successfully added to set " +sName);
+							}else{
+								logDebug("Error adding record to set " + sName + ". Error: " + setAddResult.getErrorMessage());
+							}
+						}
+					}else {
+						emailRptContact("PRA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);
+					}
+				}	
+			}
+//mhart 181019 story 5756 end
 		}
 	}
 }catch(err){
@@ -123,4 +139,3 @@ try {
 }
 //mhart 180409 user story 5391 - end
 //lwacht: 180419: story 5441: end
-
