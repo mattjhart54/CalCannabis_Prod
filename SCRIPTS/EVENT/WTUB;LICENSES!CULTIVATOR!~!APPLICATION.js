@@ -50,10 +50,11 @@ try{
 				cntChild = "0" +cntChild;
 			}
 			var newAltId = capIDString +"-DEF"+ cntChild;
+			var defAltIdT = newAltId + "T"
 			//logDebug("newAltId: " + newAltId);
-			var updAltId = aa.cap.updateCapAltID(newDefId,newAltId+"T");
+			var updAltId = aa.cap.updateCapAltID(newDefId,defAltIdT);
 			if(!updAltId.getSuccess()){
-				logDebug("Error updating Alt Id: " + newAltId + ":: " +updAltId.getErrorMessage());
+				logDebug("Error updating Alt Id: " + defAltIdT + ":: " +updAltId.getErrorMessage());
 			}else{
 				editAppSpecific("AltId", newAltId,newDefId);
 				logDebug("Deficiency record ID updated to : " + newAltId);
@@ -74,7 +75,7 @@ try{
 		}
 		if(showReport){
 			showDebug=false;
-			displayReport("Deficiency Report", "Record ID", capIDString,"CHILD_RECORD_ID",newAltId );
+			displayReport("Deficiency Report", "p1value", capIDString,"p2value",defAltIdT);
 		}
 	}
 }catch(err){
@@ -85,7 +86,7 @@ try{
 //lwacht: when the status is set to a status that requires notification and the preferred channel is *not* email,
 //display the appropriate report for printing
 try{
-	if(matches(wfStatus, "Deficiency Letter Sent", "Science Manager Review Completed")){
+	if(matches(wfStatus, "Deficiency Letter Sent")){
 		showDebug=false;
 		//lwacht : 170823 : removing primary contact
 		//var priContact = getContactObj(capId,"Primary Contact");
@@ -107,11 +108,7 @@ try{
 			}
 		}
 		if(showReport){
-			var rptName = "";
-			switch(""+wfStatus){
-				case "Science Manager Review Completed": rptName = "Approval Letter and Invoice"; break;
-				default: rptName = "Deficiency Report";
-			}
+			var rptName = "Deficiency Report";
 			displayReport(rptName, "Record Id", capIDString);
 		}
 	}
@@ -246,3 +243,35 @@ try{
 	aa.print(err.stack);
 }
 //MJH: 180809 Story 5607 - End
+
+//MJH 181016 Story 5749 - Check that all deficiency records completed before Manager Review task completed
+try{
+	if("Administrative Manager Review".equals(wfTask) && "Administrative Manager Review Completed".equals(wfStatus)){
+		var currCap = capId;
+		var amendUpdated=true;
+		var arrAmend = getChildren("Licenses/Cultivator/*/Amendment");
+		if(arrAmend){
+			for(ch in arrAmend){
+				capId = arrAmend[ch];
+				capAmend = aa.cap.getCap(capId).getOutput();
+				amendStatus = capAmend.getCapStatus();
+				if(matches(amendStatus ,"Pending", "Submitted", "Under Review")){
+					amendUpdated=false;
+				}
+			}
+			capId = currCap;
+			if(isTaskStatus("Owner Application Reviews", "Additional Information Needed") || isTaskStatus("Owner Application Reviews", "Incomplete Response")) {
+				amendUpdated=false;
+			}
+			if(!amendUpdated){
+				cancel=true;
+				showMessage=true;
+				comment("There are deficiency record(s) that need to be updated before continuing.");
+			}
+		}
+	}
+}catch(err){
+	aa.print("An error has occurred in WTUB:LICENSES/CULTIVATOR/*/APPLICATION: Check owner update: " + err.message);
+	aa.print(err.stack);
+}
+//MJH 181016 Story 5749 end
