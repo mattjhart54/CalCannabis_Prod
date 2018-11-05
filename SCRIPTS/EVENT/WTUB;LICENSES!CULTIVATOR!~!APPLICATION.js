@@ -51,7 +51,7 @@ try{
 			}
 			var newAltId = capIDString +"-DEF"+ cntChild;
 			var defAltIdT = newAltId + "T"
-			//logDebug("newAltId: " + newAltId);
+			logDebug("newAltId: " + newAltId);
 			var updAltId = aa.cap.updateCapAltID(newDefId,defAltIdT);
 			if(!updAltId.getSuccess()){
 				logDebug("Error updating Alt Id: " + defAltIdT + ":: " +updAltId.getErrorMessage());
@@ -165,7 +165,7 @@ try{
 //add fees
 //lwacht: don't run for temporary app 
 try{
-	if(appTypeArray[2]!="Temporary" && wfStatus=="Science Manager Review Completed"){
+	if(appTypeArray[2]!="Temporary" && wfTask == "Final Review" && matches(wfStatus,"Approved for Annual License","Approved for Provisional License")){
 		var feeDesc = AInfo["License Type"] + " - License Fee";
 		var thisFee = getFeeDefByDesc("LIC_CC_CULTIVATOR", feeDesc);
 		if(thisFee){
@@ -290,7 +290,7 @@ try{
 				}
 			}
 			capId = currCap;
-			if(isTaskStatus("Owner Application Reviews", "Additional Information Needed") || isTaskStatus("Owner Application Reviews", "Incomplete Response")) {
+			if(isTaskStatus("Owner Application Reviews", "Additional Information Needed") || isTaskStatus("Owner Application Reviews", "Incomplete Response") || isTaskStatus("Owner Application Reviews", "Under Review")) {
 				amendUpdated=false;
 			}
 			if(!amendUpdated){
@@ -305,3 +305,16 @@ try{
 	aa.print(err.stack);
 }
 //MJH 181016 Story 5749 end
+
+//MJH 181031 Story 5776 add Adhoc task for final review
+try {
+	if(wfTask == "Final Review" && !matches(currentUserGroup,"LicensesAdmin","LicensesAdminMgr","LicensesManager","LicensesScienceMgr")) {
+		cancel = true;
+		showMessage = true;
+		comment("Only the Administrative Manager, License Manager or Science Manger can update the Final Review")
+	}
+}catch(err){
+	aa.print("An error has occurred in WTUB:LICENSES/CULTIVATOR/*/APPLICATION: Final Review update: " + err.message);
+	aa.print(err.stack);
+}
+//MJH 181031 Story 5776 end
