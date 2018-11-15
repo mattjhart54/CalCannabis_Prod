@@ -308,7 +308,7 @@ try{
 
 //MJH 181031 Story 5776 add Adhoc task for final review
 try {
-	if(wfTask == "Final Review" && !matches(currentUserGroup,"LicensesAdmin","LicensesAdminMgr","LicensesManager","LicensesScienceMgr")) {
+	if(wfTask == "Final Review" && !matches(currentUserGroup,"LicensesAdmin","LicensesAdminMgr","LicensesManager","LicensesScienceMgr","LicensesAgencyAdmin","LicensesISS")) {
 		cancel = true;
 		showMessage = true;
 		comment("Only the Administrative Manager, License Manager or Science Manger can update the Final Review")
