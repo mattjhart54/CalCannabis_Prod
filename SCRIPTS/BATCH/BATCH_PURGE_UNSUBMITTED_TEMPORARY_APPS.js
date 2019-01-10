@@ -245,3 +245,4 @@ function getCapIdStatusClass(inCapId){
    
     return retClass;
 }
+
