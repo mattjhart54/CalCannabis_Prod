@@ -193,11 +193,14 @@ try{
 	}
 		
 	for (myCapsXX in myCaps) {
+// MJH Story 5843 - Remove timeout logic
+/*		
 		if (elapsed() > maxSeconds) { // only continue if time hasn't expired
 			logDebug("WARNING: A script timeout has caused partial completion of this process.  Please re-run.  " + elapsed() + " seconds elapsed, " + maxSeconds + " allowed.") ;
 			timeExpired = true ;
 			break; 
 		}
+*/
     	capId = myCaps[myCapsXX].getCapID();
    		//capId = getCapIdByIDs(thisCapId.getID1(), thisCapId.getID2(), thisCapId.getID3()); 
 		altId = capId.getCustomID();
@@ -205,7 +208,7 @@ try{
 			logDebug("Could not get record capId: " + altId);
 			continue;
 		}
-		cap = aa.cap.getCap(capId).getOutput();	
+		cap = aa.cap.getCap(capId).getOutput();
 		fileDateObj = cap.getFileDate();
 		fileDate = "" + fileDateObj.getMonth() + "/" + fileDateObj.getDayOfMonth() + "/" + fileDateObj.getYear();
 		fileDateYYYYMMDD = dateFormatted(fileDateObj.getMonth(),fileDateObj.getDayOfMonth(),fileDateObj.getYear(),"YYYY-MM-DD");
