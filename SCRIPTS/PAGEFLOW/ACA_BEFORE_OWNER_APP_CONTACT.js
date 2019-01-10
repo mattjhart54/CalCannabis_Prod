@@ -18,11 +18,12 @@
 |     changes are made, please add notes above.
 /------------------------------------------------------------------------------------------------------*/
 var showMessage = false; // Set to true to see results in popup window
-var showDebug = false; // Set to true to see debug messages in popup window
+var showDebug = true; // Set to true to see debug messages in popup window
 var useAppSpecificGroupName = false; // Use Group name when populating App Specific Info Values
 var useTaskSpecificGroupName = false; // Use Group name when populating Task Specific Info Values
 var cancel = false;
 var SCRIPT_VERSION = 3;
+var useCustomScriptFile = true;
 /*------------------------------------------------------------------------------------------------------/
 | END User Configurable Parameters
 /------------------------------------------------------------------------------------------------------*/
@@ -44,15 +45,15 @@ if (bzr.getSuccess() && bzr.getOutput().getAuditStatus() != "I") {
 }
 
 if (SA) {
-	eval(getScriptText("INCLUDES_ACCELA_FUNCTIONS", SA,true));
+	eval(getScriptText("INCLUDES_ACCELA_FUNCTIONS", SA,useCustomScriptFile));
 	eval(getScriptText("INCLUDES_ACCELA_GLOBALS", SA, true));
 	eval(getScriptText(SAScript, SA));
 } else {
-	eval(getScriptText("INCLUDES_ACCELA_FUNCTIONS","CALCANNABIS",true));
+	eval(getScriptText("INCLUDES_ACCELA_FUNCTIONS","CALCANNABIS",useCustomScriptFile));
 	eval(getScriptText("INCLUDES_ACCELA_GLOBALS", "CALCANNABIS",true));
 }
 
-eval(getScriptText("INCLUDES_CUSTOM"));
+eval(getScriptText("INCLUDES_CUSTOM",null,useCustomScriptFile));
 
 function getScriptText(vScriptName, servProvCode, useProductScripts) {
 	if (!servProvCode)  servProvCode = aa.getServiceProviderCode();
@@ -76,42 +77,74 @@ var cap = aa.env.getValue("CapModel");
 // page flow custom code begin
 
 try{
-	//lwacht: 180306: story 5302: don't allow script to run against completed records
-	var capIdStatusClass = getCapIdStatusClass(capId);
-	if(!matches(capIdStatusClass, "COMPLETE")){
-	//lwacht: 180306: story 5302: end
-		var capId = cap.getCapID();
-		var appName = cap.getSpecialText();
-		if(appName!=null){
-			if(appName.indexOf("(")>-1){
-				var parenLoc = appName.indexOf("(");
-				var ownerName = appName.substring(0,parseInt(parenLoc));
-				var appNameLen = 0
-				appNameLen = appName.length();
-				var ownerEmail = appName.substring(parseInt(parenLoc)+1, appNameLen-1);
-				//var resCurUser = aa.person.getUser(publicUserID);
-				var resCurUser = aa.people.getPublicUserByUserName(publicUserID);
-				if(resCurUser.getSuccess()){
-					var currUser = resCurUser.getOutput();
-					var currEmail = currUser.email;
-					if(!matches(ownerEmail,"",null,"undefined")){
-						if(ownerEmail.toUpperCase() != currEmail.toUpperCase()){
-							showMessage = true;
-							cancel = true;
-							comment("Error: Only " + ownerName + " can submit this application.");
-						}
-					}
-				}else{
-					logDebug("An error occurred retrieving the current user: " + resCurUser.getErrorMessage());
-					aa.sendMail(sysFromEmail, debugEmail, "", "An error occurred retrieving the current user: ACA_BEFORE_OWNER_APP_CONTACT: " + startDate, "capId: " + capId + ": " + resCurUser.getErrorMessage());
-				}
-			}else{
-				logDebug("Error with appName: " + appName);
-			}
-		}else{
-				logDebug("Error with null appName: " + appName);
-		}
+	var userMatch = false;
+	var currEmail = null
+	var resCurUser = aa.people.getPublicUserByUserName(publicUserID);
+	if(resCurUser.getSuccess()){
+		var currUser = resCurUser.getOutput();
+		var currEmail = currUser.email;
+		currEmail = String(currEmail).toUpperCase();
 	}
+/*	var contactList = cap.getContactsGroup();
+    if(contactList != null && contactList.size() > 0){
+    	var arrContacts = contactList.toArray();
+    	for(var i in arrContacts) {
+    		var thisCont = arrContacts[i];
+    		var contEmail = thisCont.email;
+    		var contType = thisCont.contactType;
+    		if(contType == "Owner") {
+    			contEmail = String(contEmail).toUpperCase();
+    		}
+    	}
+    }
+    if(contEmail == currEmail){
+    	userMatch = true;
+    }
+*/
+	var AInfo = [];
+	loadAppSpecific4ACA(AInfo);
+	var varAppNbr = AInfo["Application ID"];
+	var varOwnership = parseFloat(AInfo["Percent Ownership"]);
+	var parentId = getApplication(varAppNbr);
+//	comment("parent ID " + parentId + " app ID " + varAppNbr);
+		loadASITables(parentId);
+		if(OWNERS.length<1){
+			cancel = true;
+			showMessage = true;
+			comment("Contacts needs to be added to the Owners table.");
+		}
+		var ownerFnd = false;
+		var pctMatch = false;
+
+		for(o in OWNERS) {
+			var ownerEmail = OWNERS[o]["Email Address"];
+			var ownerPct = parseFloat(OWNERS[o]["Percent Ownership"]);
+			ownEmail = String(ownerEmail).toUpperCase();
+			if(ownEmail == currEmail) {
+				ownerFnd = true;
+				if(varOwnership == ownerPct) {
+					pctMatch = true;
+				}
+			}
+		}
+//		if(!userMatch) {
+//			showMessage = true;
+//			cancel = true;
+//			comment("Error:  Your public user email " + currEmail + " does not match your contact email " + contEmail + " you cannot submit an application.  Go to account managemnt and correct you contact email address.");
+//		}else {
+			if(!ownerFnd) {
+				showMessage = true;
+				cancel = true;
+				comment("Error:  Your user email " + currEmail + " does not match an owner on the License Application " + varAppNbr  + ". Contact the Designated Responsible Party for this application");
+			}else {
+				if(!pctMatch) {
+					showMessage = true;
+					cancel = true;
+					comment("The Ownership Percentage you entered does not match the Ownership Percentage entered on the annual application " + varAppNbr + ".  Please contact the Designated Responsible Party for this application and correct the discrepancy.");
+				}
+			}
+//		}
+	
 } catch (err) {
 	showDebug =true;
 	logDebug("An error has occurred in ACA_BEFORE_OWNER_APP_CONTACT: Correct contact : " + err.message);
