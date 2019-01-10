@@ -1,8 +1,54 @@
 // lwacht
 // set altId based on application parent
 try{
-	parentCapId = getParent();
-	if(parentCapId){
+	updateAppStatus("Submitted","Updated via CTRCA:Licenses/Cultivator//Owner Application");
+	appId = AInfo["Application ID"];
+	addParent(appId);
+	var ownerEmail = null
+	contacts = getContactArray();
+	for(c in contacts) {
+		if(contacts[c]["contactType"] == "Owner")
+			ownerEmail = ""+ contacts[c]["email"];
+	}
+	parentId = getApplication(appId);
+	ownerTable = loadASITable("OWNERS",parentId);
+	var allOwnersSubmitted = true;
+	for(x in ownerTable) {
+		var tblEmail = ""+ ownerTable[x]["Email Address"];
+		logDebug("OwnerEmail " + ownerEmail + " email " + tblEmail);
+		if(ownerEmail == tblEmail) {
+			 ownerTable[x]["Status"] = "Submitted";
+		}
+		else{
+			if(ownerTable[x]["Status"] != "Submitted") {
+			allOwnersSubmitted = false;
+			}
+		}
+	}
+	removeASITable("OWNERS",parentId)
+	addASITable("OWNERS",ownerTable,parentId);
+	
+	if(allOwnersSubmitted){
+		updateAppStatus("Pending Final Affidavit","Updated via CTRCA:Licenses/Cultivator//Owner Application",parentId);
+		var drpContact = getContactByType("Designated Responsible Party",parentId);
+		if(drpContact){
+			var drpFirst = drpContact.getFirstName();
+			var drpLast =  drpContact.getLastName();
+			var drpEmail = drpContact.getEmail();
+			if(!matches(drpEmail,null,"","undefined")){
+				emailParameters = aa.util.newHashtable();
+				var sysDate = aa.date.getCurrentDate();
+				var sysDateMMDDYYYY = dateFormatted(sysDate.getMonth(), sysDate.getDayOfMonth(), sysDate.getYear(), "MM/DD/YYYY");
+				addParameter(emailParameters, "$$altID$$", parentId.getCustomID());
+				addParameter(emailParameters, "$$firstName$$", ""+drpFirst);
+				addParameter(emailParameters, "$$lastName$$", ""+drpLast);
+				addParameter(emailParameters, "$$today$$", sysDateMMDDYYYY);
+				addParameter(emailParameters, "$$ACAUrl$$", getACAlinkForEdit(parentId, "Licenses", "1005"));
+				sendNotification(sysEmail,drpEmail,"","LCA_DRP_DECLARATION_NOTIF",emailParameters,null,parentId);
+			}
+		}
+	}
+	if(parentId){
 		nbrToTry = 1;
 		//because owners can be added and deleted, need a way to number the records
 		//but only if they haven't been numbered before
@@ -18,7 +64,7 @@ try{
 					}
 					var nbrOwner = ""+ nbrToTry;
 				}
-				var newAltId = parentCapId.getCustomID() + "-" + nbrOwner + "O";
+				var newAltId = parentId.getCustomID() + "-" + nbrOwner + "O";
 				var updateResult = aa.cap.updateCapAltID(capId, newAltId);
 				if (updateResult.getSuccess()) {
 					logDebug("Updated owner record AltId to " + newAltId + ".");
