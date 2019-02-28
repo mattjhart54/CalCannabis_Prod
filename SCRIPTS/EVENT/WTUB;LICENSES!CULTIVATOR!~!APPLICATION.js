@@ -1,11 +1,63 @@
-//lwacht: when the status is "Additional Information Needed" and the preferred channel is *not* email,
-//display the deficiency report for printing. Note: only use the primary contact's preferred channel
+try{
+// MJH 20190212 US 5864 and 5865 - update application expiration date, deficiency letter sent and task due dates. US 5868 - Move from WTUA to WTUB.
+	if(((wfTask == "Administrative Review" && wfStatus == "Administrative Review Completed") && 
+		(taskStatus("Owner Application Reviews")  == "Owner Application Reviews Completed")) ||
+		((wfTask == "Owner Application Reviews" && wfStatus == "Owner Application Reviews Completed") &&
+		(taskStatus("Administrative Review") == "Administrative Review Completed"))) {
+			editAppSpecific("App Expiry Date", "");
+	}
+	if(wfTask == "Scientific Review" && wfStatus == "Scientific Review Completed")  {
+			editAppSpecific("App Expiry Date", "")
+	}
+	if("Administrative Manager Review".equals(wfTask) && "Deficiency Letter Sent".equals(wfStatus)){
+		//set due date and expiration date
+		var nextDueDay = dateAdd(null,89);
+		if(matches(AInfo["App Expiry Date"],null,"",undefined)) {
+			editAppSpecific("App Expiry Date", nextWorkDay(nextDueDay));
+			var expDate = getAppSpecific("App Expiry Date");
+			logDebug("exp Date " + expDate);
+		}
+		if(matches(AInfo["Admin Deficiency Letter Sent"],null,"",undefined)) {
+			editAppSpecific("Admin Deficiency Letter Sent", jsDateToASIDate(new Date()));
+			if(matches(taskStatus("Administrative Review"), "Additional Information Needed", "Incomplete Response")){
+				editTaskDueDate("Administrative Review", nextWorkDay(nextDueDay));
+			}
+			if(matches(taskStatus("Owner Application Reviews"), "Additional Information Needed" , "Incomplete Response")){
+				editTaskDueDate("Owner Application Reviews", nextWorkDay(nextDueDay));
+			}
+		}
+        deactivateTask("Administrative Manager Review");
+	}
+	if("Science Manager Review".equals(wfTask) && "Deficiency Letter Sent".equals(wfStatus)){
+		//set due date and expiration date
+		var nextDueDay = dateAdd(null,89);
+		if(matches(AInfo["App Expiry Date"],null,"",undefined)) {
+			editAppSpecific("App Expiry Date", nextWorkDay(nextDueDay));
+			var expDate = getAppSpecific("App Expiry Date");
+			logDebug("exp Date " + expDate + " nextDueDay " + nextDueDay);
+		}
+		if(matches(AInfo["Science Deficiency Letter Sent"],null,"",undefined)) {
+			editAppSpecific("Science Deficiency Letter Sent", jsDateToASIDate(new Date()));
+			if(matches(taskStatus("Scientific Review"), "Additional Information Needed","Incomplete Response")){
+				editTaskDueDate("Scientific Review", nextWorkDay(nextDueDay));
+			}
+			if(matches(taskStatus("CEQA Review"),"Additional Information Needed","Incomplete Response")){
+				editTaskDueDate("CEQA Review", nextWorkDay(nextDueDay));
+			}
+		}
+	//eshanower 20190207: US 5826 start deactivate Science Mgr Review task
+		deactivateTask("Science Manager Review");
+	//eshanower 20190207: US 5826 end deactivate Science Mgr Review task
+	}
+	// MJH US 5864 and 5865 - update application expiration date, deficiency letter sent and task due dates.
+}catch(err){
+	logDebug("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: Expiration Dates: " + err.message);
+	logDebug(err.stack);
+}
+
 try{ 
-	//lwacht: 171205: deficiency record needs to be created for both science and admin tasks
-	//if("Administrative Manager Review".equals(wfTask) && "Deficiency Letter Sent".equals(wfStatus)){
+//lwacht: 171205: deficiency record needs to be created for both science and admin tasks
 	if("Deficiency Letter Sent".equals(wfStatus)){
-	//lwacht: 171205: end
-		//lwacht 171129 start
 		var newAppName = "Deficiency: " + capName;
 		//create child amendment record
 		ctm = aa.proxyInvoker.newInstance("com.accela.aa.aamain.cap.CapTypeModel").getOutput();
@@ -59,45 +111,33 @@ try{
 				editAppSpecific("AltId", newAltId,newDefId);
 				logDebug("Deficiency record ID updated to : " + newAltId);
 			}
-			//runReportAttach(capId,"Deficiency Report", "p1value", capId.getCustomID(), "p2value",newAltId);
-			//emailRptContact("WTUA", "LCA_DEFICIENCY", "", false, capStatus, capId, "Designated Responsible Party", "p1value", capId.getCustomID());
-		}
-		//lwacht 171129 end
-		var showReport = false;
-		var drpContact = getContactObj(capId,"Designated Responsible Party");
-		if(drpContact){
-			var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ drpContact.capContact.getPreferredChannel());
-			if(!matches(priChannel,"",null,"undefined")){
-				if(priChannel.indexOf("Email") < 0 && priChannel.indexOf("E-mail") < 0){
-					showReport = true;
+			var showReport = false;
+			var drpContact = getContactObj(capId,"Designated Responsible Party");
+			if(drpContact){
+				var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ drpContact.capContact.getPreferredChannel());
+				if(!matches(priChannel,"",null,"undefined")){
+					if(priChannel.indexOf("Email") < 0 && priChannel.indexOf("E-mail") < 0){
+						showReport = true;
+					}
 				}
 			}
-		}
-		if(showReport){
-			showDebug=false;
-			displayReport("Deficiency Report", "p1value", capIDString,"p2value",defAltIdT);
+			if(showReport){
+				showDebug=false;
+				displayReport("Deficiency Report", "p1value", capIDString,"p2value",defAltIdT);
+			}
 		}
 	}
+//lwacht 171129 end
 }catch(err){
 	aa.print("An error has occurred in WTUB:LICENSES/CULTIVATOR/*/APPLICATION: Deficiency Notice: " + err.message);
 	aa.print(err.stack);
 }
-
+/*
 //lwacht: when the status is set to a status that requires notification and the preferred channel is *not* email,
 //display the appropriate report for printing
 try{
 	if(matches(wfStatus, "Deficiency Letter Sent")){
 		showDebug=false;
-		//lwacht : 170823 : removing primary contact
-		//var priContact = getContactObj(capId,"Primary Contact");
-		//var showReport = false;
-		//if(priContact){
-		//	var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
-		//	if(priChannel.indexOf("Postal") >-1){
-		//		showReport = true;
-		//	}
-		//}
-		//lwacht: 170815: uncommenting in preparation for Primary Contact going away
 		var drpContact = getContactObj(capId,"Designated Responsible Party");
 		if(drpContact){
 			var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ drpContact.capContact.getPreferredChannel());
@@ -113,10 +153,10 @@ try{
 		}
 	}
 }catch(err){
-	aa.print("An error has occurred in WTUB:LICENSES/CULTIVATOR/*/APPLICATION: Deficiency Notice: " + err.message);
+	aa.print("An error has occurred in WTUB:LICENSES/CULTIVATOR/~/APPLICATION: Deficiency Notice: " + err.message);
 	aa.print(err.stack);
 }
-
+*/
 //lwacht: all owner records need to be updated before this task can be updated
 try{
 	if("Owner Application Reviews".equals(wfTask) && "Owner Application Reviews Completed".equals(wfStatus)){
@@ -247,7 +287,7 @@ try{
 
 //MJH 181016 Story 5749 - Check that all deficiency records completed before Manager Review task completed
 try{
-	if(appTypeArray[2]!="Temporary" && "Administrative Review".equals(wfTask)){
+	if("Administrative Review".equals(wfTask)&& wfStatus != "Under Review"){
 		var currCap = capId;
 		var ownerUpdated=true;
 		var notUpdated = "Yes";
@@ -268,7 +308,7 @@ try{
 			if(!ownerUpdated){
 				cancel=true;
 				showMessage=true;
-				comment("The following owner amendment record(s) need to be updated before continuing: " + notUpdated);
+				comment("The following amendment record(s) need to be updated before continuing: " + notUpdated);
 			}
 		}
 	}
@@ -312,7 +352,7 @@ try {
 	if(wfTask == "Final Review" && !matches(currentUserGroup,"LicensesAdmin","LicensesAdminMgr","LicensesManager","LicensesScienceMgr","LicensesAgencyAdmin","LicensesISS")) {
 		cancel = true;
 		showMessage = true;
-		comment("Only the Administrative Manager, License Manager or Science Manger can update the Final Review")
+		comment("Only the Administrative Manager, License Manager or Science Manager can update the Final Review")
 	}
 }catch(err){
 	aa.print("An error has occurred in WTUB:LICENSES/CULTIVATOR/*/APPLICATION: Final Review update: " + err.message);
