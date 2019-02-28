@@ -1,10 +1,14 @@
 try{
 	if(!publicUser){
+// ees 20190211 story 5861 start Save fileDate as Created Date
+		editAppSpecific("Created Date", fileDate);
+		var vNewFileDate = fileDate;
+// ees 20190211 story 5861 end
 		if(!parentCapId){
 			appId = AInfo["Application ID"];
 			addParent(appId);
 			parentCapId = getApplication(appId);
-		} 
+		}		
 // MJH story 5785 Move fee assessment from Application record submittal to Declaration record submittal
 		var holdId = capId;
 		capId = parentCapId;
@@ -23,9 +27,19 @@ try{
 		}else{
 			aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: CTRCA:Licenses/Cultivation/~/Declaration: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
 			logDebug("An error occurred retrieving fee item: " + feeDesc);
+		}		
+// ees 20190211 story 5861 start Update Main app and Owner App fileDates to DEC fileDate
+		updateFileDate(vNewFileDate);
+		
+		var children = getChildren("Licenses/Cultivator/*/Owner Application",parentCapId)
+		for(c in children) {
+			capId = children[c];
+			updateFileDate(vNewFileDate);
 		}
+// ees 20190211 story 5861 end		
 		capId = holdId;
 		updateAppStatus("Application Fee Due", "Updated via ASA:LICENSES/CULTIVATOR/* /DECLARATION",parentCapId);
+
 // MJH Story 5785 end		
 		logDebug("parentCapId.getCustomID(): " +parentCapId.getCustomID());
 		var newAltId = parentCapId.getCustomID() + "-DEC";
