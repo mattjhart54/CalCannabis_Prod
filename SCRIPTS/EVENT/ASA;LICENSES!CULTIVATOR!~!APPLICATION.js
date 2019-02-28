@@ -281,3 +281,6 @@ try{
 	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/APPLICATION: Add livescan required condition: "+ startDate, capId + br + err.message + br + err.stack + br + currEnv);
 }
 //mhart 180321: story 5376: end
+// ees 20190211 story 5861 start Save fileDate as Created Date
+		editAppSpecific("Created Date", fileDate);
+// ees 20190211 story 5861 end
