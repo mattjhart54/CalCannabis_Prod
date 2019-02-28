@@ -1,60 +1,6 @@
 //lwacht: send a deficiency email when the status is "Deficiency Letter Sent" 
 try{
 	if("Deficiency Letter Sent".equals(wfStatus)){
-/* lwacht 171129: moving to WTUB to try to get report to work
-		var newAppName = "Deficiency: " + capName;
-		//create child amendment record
-		ctm = aa.proxyInvoker.newInstance("com.accela.aa.aamain.cap.CapTypeModel").getOutput();
-		ctm.setGroup("Licenses");
-		ctm.setType("Cultivator");
-		ctm.setSubType("Medical");
-		ctm.setCategory("Amendment");
-		var resDefId = aa.cap.createSimplePartialRecord(ctm,newAppName, "INCOMPLETE CAP");
-		if(resDefId.getSuccess()){
-			var newDefId = resDefId.getOutput();
-			//emailRptContact("WTUA", "LCA_DEFICIENCY", "", false, capStatus, capId, "Primary Contact", "p1value", capId.getCustomID());
-			//if(emailReport){
-			//	runReportAttach(capId,"Deficiency Report", "p1value", capId.getCustomID());
-			//	emailDrpPriContacts("WTUA", "LCA_GENERAL_NOTIFICATION", "", false, wfStatus, newDefId);
-			//}
-			//relate amendment to application
-			var resCreateRelat = aa.cap.createAppHierarchy(capId, newDefId); 
-			if (resCreateRelat.getSuccess()){
-				logDebug("Child application successfully linked");
-			}else{
-				logDebug("Could not link applications: " + resCreateRelat.getErrorMessage());
-			}
-			editAppSpecific("ParentCapId", capIDString,newDefId);
-			//copyASITables(capId,newDefId,["CANNABIS FINANCIAL INTEREST", "OWNERS", "ATTACHMENTS"]);
-			var tblODefic = [];
-			var arrDef = [];
-			for (row in DEFICIENCIES){
-				if(DEFICIENCIES[row]["Status"]=="Deficient"){
-					arrDef.push(DEFICIENCIES[row]);
-				}
-			}
-			logDebug("newDefId: " + newDefId.getCustomID());
-			addASITable("DEFICIENCIES", arrDef, newDefId);
-			copyContactsByType(capId, newDefId,"Designated Responsible Party");
-			//copyContactsByType(capId, newDefId,"Primary Contact");
-			//find out how many amendment records there have been so we can create an AltId
-			var childAmend = getChildren("Licenses/Cultivator/Medical/Amendment");
-			var cntChild = childAmend.length;
-			//cntChild ++;
-			//logDebug("cntChild: " + cntChild);
-			if(cntChild<10){
-				cntChild = "0" +cntChild;
-			}
-			var newAltId = capIDString +"-DEF"+ cntChild;
-			//logDebug("newAltId: " + newAltId);
-			var updAltId = aa.cap.updateCapAltID(newDefId,newAltId+"T");
-			if(!updAltId.getSuccess()){
-				logDebug("Error updating Alt Id: " + newAltId + ":: " +updAltId.getErrorMessage());
-			}else{
-				editAppSpecific("AltId", newAltId,newDefId);
-				logDebug("Deficiency record ID updated to : " + newAltId);
-			}
-*/
 			var childAmend = getChildren("Licenses/Cultivator/Medical/Amendment");
 			var cntChild = childAmend.length;
 			logDebug("cntChild: " + cntChild);
@@ -71,7 +17,17 @@ try{
 					}
 				}
 			}
-			runReportAttach(capId,"Deficiency Report", "p1value", capId.getCustomID(), "p2value",newAltId);
+// MJH 190222 User Story 5881 - run Defieciency report in async mode
+			var scriptName = "asyncRunDeficiencyRpt";
+			var envParameters = aa.util.newHashMap();
+			envParameters.put("altId",capIDString); 
+			envParameters.put("newAltId",newAltId);
+			envParameters.put("reportName","Deficiency Report"); 
+			envParameters.put("currentUserID",currentUserID);
+			logDebug("altId " + capIDString + " newAltId " + newAltId + " curentUser " + currentUserID)
+			aa.runAsyncScript(scriptName, envParameters);
+//			runReportAttach(capId,"Deficiency Report", "p1value", capId.getCustomID(), "p2value",newAltId);
+// MJH 190222 User Story 5881 - end
 			emailRptContact("WTUA", "LCA_DEFICIENCY", "", false, capStatus, capId, "Designated Responsible Party", "p1value", capId.getCustomID());
 		//}
 		//only create a record if the owner app task on the parent says you should
@@ -146,7 +102,17 @@ try{
 								}
 							}
 						}
-						runReportAttach(thisOwnCapId,"Deficiency Report - Owner", "p1value", thisOwnCapId.getCustomID(), "p2value",defAltIdT);
+// MJH 190222 User Story 5881 - run Defieciency report in async mode
+						var scriptName = "asyncRunDeficiencyRpt";
+						var envParameters = aa.util.newHashMap();
+						envParameters.put("altId",thisOwnCapId.getCustomID()); 
+						envParameters.put("newAltId",defAltIdT);
+						envParameters.put("reportName","Deficiency Report - Owner"); 
+						envParameters.put("currentUserID",currentUserID);
+						logDebug("altId " + capIDString + " newAltId " + newAltId + " curentUser " + currentUserID)
+						aa.runAsyncScript(scriptName, envParameters);
+//						runReportAttach(thisOwnCapId,"Deficiency Report - Owner", "p1value", thisOwnCapId.getCustomID(), "p2value",defAltIdT);
+// MJH 190222 User Story 5881 - end
 						holdCapId = capId;
 						capId = thisOwnCapId;
 						emailRptContact("", "LCA_DEFICIENCY_OWNER", "", false, capStatus, thisOwnCapId, "Owner", "p1value", thisOwnCapId.getCustomID());
@@ -172,6 +138,8 @@ try{
 		emailRptContact("WTUA", notName, "", false, capStatus, capId, "Designated Responsible Party", "p1value", capId.getCustomID());
 		activateTask("Application Disposition");
 		updateTask("Application Disposition", "Pending Payment","Updated by Script","");
+//MJH 201902-8 US 5866 Update License Fee Due date
+		editAppSpecific("License Fee Due",nextWorkDay(dateAdd(null,89)));
 	}
 }catch(err){
 	logDebug("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: Generic notifications: " + err.message);
@@ -179,39 +147,7 @@ try{
 }
 //mhart 100818 story 5725 end
 
-// lwacht: set expiration dates
-try{
-	if("Administrative Manager Review".equals(wfTask) && "Deficiency Letter Sent".equals(wfStatus)){
-		//set due date and expiration date
-		editAppSpecific("App Expiry Date", dateAdd(null,90));
-                deactivateTask("Administrative Manager Review");
-		if(matches(taskStatus("Administrative Review"), "Additional Information Needed", "Incomplete Response")){
-			editTaskDueDate("Administrative Review", dateAdd(null,90));
-			//activateTask("Administrative Review");
-		}
-		if(matches(taskStatus("Owner Application Reviews"), "Additional Information Needed" , "Incomplete Response")){
-			editTaskDueDate("Owner Application Reviews", dateAdd(null,90));
-			//activateTask("Owner Application Reviews");
-		}
-		//setTask("Administrative Manager Review", "N", "Y");
-	}
-	if("Science Manager Review".equals(wfTask) && "Deficiency Letter Sent".equals(wfStatus)){
-		//set due date and expiration date
-		editAppSpecific("App Expiry Date", dateAdd(null,90));
-		if(matches(taskStatus("Scientific Review"), "Additional Information Needed","Incomplete Response")){
-			editTaskDueDate("Scientific Review", dateAdd(null,90));
-			//activateTask("Scientific Review");
-		}
-		if(matches(taskStatus("CEQA Review"),"Additional Information Needed","Incomplete Response")){
-			editTaskDueDate("CEQA Review", dateAdd(null,90));
-			//activateTask("CEQA Review");
-		}
-		//setTask("Science Manager Review", "N", "Y");
-	}
-}catch(err){
-	logDebug("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: Expiration Dates: " + err.message);
-	logDebug(err.stack);
-}
+
 
 //mhart
 //If License Manager requires revisions to the denial reasons reeactivete the task the denial request came from.
