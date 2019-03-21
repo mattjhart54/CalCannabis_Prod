@@ -11,9 +11,6 @@ try{
 	}
 	if(wfTask == "Scientific Review" && wfStatus == "Scientific Review Completed")  {
 			editAppSpecific("App Expiry Date", "")
-// ees 20190320 US 5945 - update Record status to Under Scientific Review.
-			updateAppStatus("Under Scientific Review","updated by script"); 
-// ees 20190320 US 5945 end
 	}
 	if("Administrative Manager Review".equals(wfTask) && "Deficiency Letter Sent".equals(wfStatus)){
 		//set due date and expiration date
@@ -216,7 +213,20 @@ try{
 		var feeDesc = AInfo["License Type"] + " - License Fee";
 		var thisFee = getFeeDefByDesc("LIC_CC_CULTIVATOR", feeDesc);
 		if(thisFee){
-			updateFee_Rev(thisFee.feeCode,"LIC_CC_CULTIVATOR", "FINAL", 1, "Y", "N");
+//mhart 031319 story 5914 Run report Approval Letter and License Fee Invoice and send DRP email notification 
+			feeSeqNbr = updateFee_Rev(thisFee.feeCode,"LIC_CC_CULTIVATOR", "FINAL", 1, "Y", "N");
+							var licAltId = capId.getCustomID();
+							var scriptName = "asyncApprovalLetterinvoiceRpt";
+							var envParameters = aa.util.newHashMap();
+							envParameters.put("licCap",licAltId); 
+							envParameters.put("feeSeqNbr",feeSeqNbr); 
+							envParameters.put("reportName","Approval Letter and License Fee Invoice"); 
+							envParameters.put("currentUserID",currentUserID);
+							envParameters.put("contType","Designated Responsible Party");
+							envParameters.put("fromEmail","calcannabislicensing@cdfa.ca.gov");
+							aa.runAsyncScript(scriptName, envParameters);
+						logDebug("got Here");
+//mhart 031319 story 5914 Run report Approval Letter and License Fee Invoice and send DRP email notification 
 		}else{
 			aa.print("An error occurred retrieving fee item: " + feeDesc);
 			aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: WTUB:Licenses/Cultivation/*/Application: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
