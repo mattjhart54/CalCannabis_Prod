@@ -4,7 +4,7 @@ try{
 // ees 20190211 story 5861 start Save fileDate as Created Date
 		editAppSpecific("Created Date", fileDate);
 // ees 20190211 story 5861 end
-		updateAppStatus("Submitted","Updated via CTRCA:Licenses/Cultivator//Owner Application");
+		updateAppStatus("Submitted","Updated via ASA:LICENSES/CULTIVATOR/* /OWNER APPLICATION");
 		appId = AInfo["Application ID"];
 		addParent(appId);
 		var ownerEmail = null
@@ -32,11 +32,18 @@ try{
 		}
 		removeASITable("OWNERS",parentId)
 		addASITable("OWNERS",ownerTable,parentId);
-	
-		if(allOwnersSubmitted){
-			updateAppStatus("Pending Final Affidavit","Updated via CTRCA:Licenses/Cultivator//Owner Application",parentId);
+
+// ees 20190306: US 5911 start: check for DEC attached to parent before updating parent record status
+		var isDec = getChildren("Licenses/Cultivator/*/Declaration",parentId);
+		if (isDec.length == 0 || isDec == "" || isDec == null || isDec == "undefined") {
+			logDebug("DEC records found: " + isDec.length);
+			if(allOwnersSubmitted){
+				updateAppStatus("Pending Final Affidavit","Updated via ASA:LICENSES/CULTIVATOR/* /OWNER APPLICATION",parentId);
+			}
+		} else {
+			logDebug("App Status not updated due to DEC already exists");
 		}
-		
+// ees 20190306: US 5911 end		
 		nbrToTry = 1;
 		//because owners can be added and deleted, need a way to number the records
 		//but only if they haven't been numbered before
