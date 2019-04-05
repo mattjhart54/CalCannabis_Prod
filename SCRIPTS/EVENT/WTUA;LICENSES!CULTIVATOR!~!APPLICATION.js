@@ -22,7 +22,7 @@ try{
 			var envParameters = aa.util.newHashMap();
 			envParameters.put("altId",capIDString); 
 			envParameters.put("newAltId",newAltId);
-			envParameters.put("reportName","Deficiency Report"); 
+			envParameters.put("reportName","Deficiency Letter"); 
 			envParameters.put("currentUserID",currentUserID);
 			logDebug("altId " + capIDString + " newAltId " + newAltId + " curentUser " + currentUserID)
 			aa.runAsyncScript(scriptName, envParameters);
@@ -137,7 +137,7 @@ try{
 //		notName = "LCA_GENERAL_NOTIFICATION"; 
 //		runReportAttach(capId,rptName, "p1value", capId.getCustomID());
 //		emailRptContact("WTUA", notName, "", false, capStatus, capId, "Designated Responsible Party", "p1value", capId.getCustomID());
-//mhart 031319 story 5914 end
+		//mhart 031319 story 5914 end		
 		activateTask("Application Disposition");
 		updateTask("Application Disposition", "Pending Payment","Updated by Script","");
 //MJH 201902-8 US 5866 Update License Fee Due date
@@ -149,10 +149,35 @@ try{
 }
 //mhart 100818 story 5725 end
 
+// MJH 190305 story 5890 Set record status to Additional Information Needed
+if(wfTask == "Administrative Review" || wfTask == "Owner Application Reviews") {
+	adminStatus = taskStatus("Administrative Review");
+	ownerStatus = taskStatus("Owner Application Reviews");
+	if((adminStatus  == "Additional Information Needed" && ownerStatus  != "Incomplete Response") ||
+		(ownerStatus == "Additional Information Needed" && adminStatus != "Incomplete Response")) {
+			if(isTaskActive("Administrative Manager Review")) {
+				updateAppStatus("Additional Information Needed", "Updated by Script");
+			}
+	}
+}
+//MJH 190305 story 5890 end
+
+// ees 20190311 story 5894 start Set record status to Additional Information Needed in Scientific section
+if(wfTask == "Scientific Review" || wfTask == "CEQA Review") {
+	sciStatus = taskStatus("Scientific Review");
+	ceqaStatus = taskStatus("CEQA Review");
+	if((sciStatus  == "Additional Information Needed" && (ceqaStatus  != "Incomplete Response" || ceqaStatus == "undefined")) ||
+		(ceqaStatus == "Additional Information Needed" && sciStatus != "Incomplete Response")) {
+			if(isTaskActive("Science Manager Review")) {
+				updateAppStatus("Additional Information Needed", "Updated by Script");
+			}
+	}
+}
+// ees 20190311 story 5894 end
 
 
 //mhart
-//If License Manager requires revisions to the denial reasons reeactivete the task the denial request came from.
+//If License Manager requires revisions to the denial reasons reactivete the task the denial request came from.
 try {
 	if(wfTask == "License Manager" && wfStatus == "Revisions Required") { 
 		altId = capId.getCustomID();
