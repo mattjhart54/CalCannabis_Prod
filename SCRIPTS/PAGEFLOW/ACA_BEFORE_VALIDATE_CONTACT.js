@@ -88,9 +88,12 @@ try {
 			var appFnd = false;
 			var currUser = resCurUser.getOutput();
 			var currEmail = currUser.email;
+			var currUserID = currUser.fullName;
 			//lwacht: 170810: need person logged in to be able to access the application in the future
 			if(matches(AInfo["publicUserEmail"],"",null)){
 				editAppSpecific4ACA("publicUserEmail",currEmail);
+				// ees: 20190304 US 5905: populate public user ID ASI
+				editAppSpecific4ACA("Public User ID",currUserID);
 				prepFnd = true;
 			}else{
 				if(AInfo["publicUserEmail"]==currEmail){
@@ -123,6 +126,7 @@ try {
 					logMessage("  Warning: Only the Business or the Designated Responsible party can update this application.");
 				}	
 			}
+
 		}
 		else{
 			logDebug("An error occurred retrieving the current user: " + resCurUser.getErrorMessage());
