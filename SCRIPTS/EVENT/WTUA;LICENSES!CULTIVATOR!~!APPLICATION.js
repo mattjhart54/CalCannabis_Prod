@@ -140,6 +140,7 @@ try{
 		//mhart 031319 story 5914 end		
 		activateTask("Application Disposition");
 		updateTask("Application Disposition", "Pending Payment","Updated by Script","");
+		updateAppStatus("Pending Payment","Updated by Script","");
 //MJH 201902-8 US 5866 Update License Fee Due date
 		editAppSpecific("License Fee Due",nextWorkDay(dateAdd(null,89)));
 	}
@@ -174,48 +175,58 @@ if(wfTask == "Scientific Review" || wfTask == "CEQA Review") {
 	}
 }
 // ees 20190311 story 5894 end
-
-
-//mhart
-//If License Manager requires revisions to the denial reasons reactivete the task the denial request came from.
 try {
-	if(wfTask == "License Manager" && wfStatus == "Revisions Required") { 
-		altId = capId.getCustomID();
-		var taskItemScriptModel=aa.workflow.getTask(capId, "Administrative Manager Review");
-		if(taskItemScriptModel.getSuccess()){
-			var taskItemScript = taskItemScriptModel.getOutput();
-			if(matches(taskItemScript.disposition, "Recommended for Denial")){
-				//lwacht: 180426: story 5436: reset the assigned task
-				var asgnDateAR = getAssignedDate("Administrative Review");
-				activateTask("Administrative Manager Review");
-				deactivateTask("License Manager");
-				if(asgnDateAR){
-					updateTaskAssignedDate("Administrative Review", asgnDateAR);
-				}else{
-					logDebug("No assigned date found for Administrative Review");
+//mhart 190410 story 5954 - Close record and children records when workflow status Denied is entered.
+	if(wfTask == "License Manager" && wfStatus == "Denied") { 
+//		updateTask("Application Disposition", "Denied - Pending Appeal","Updated by script","");
+//		editAppSpecific("Appeal Expiry Date",dateAdd(wfDateMMDDYYYY,30));
+//		editAppSpecific("Denial Letter Sent",wfDateMMDDYYYY);
+//		emailRptContact("WTUA", "LCA_APP_DENIAL_LETTER", "", false, capStatus, capId, "Designated Responsible Party", "p1value", capId.getCustomID());
+		closeTask("Application Disposition", "Denied","Updated by script","");
+		updateAppStatus("Denied", "Updated by script");
+		childRecs = getChildren("Licenses/Cultivator/*/*");
+		var holdId = capId;
+		for (c in childRecs) {
+			capId = childRecs[c];
+			childCap = aa.cap.getCap(capId).getOutput();
+			childStatus = childCap.getCapStatus();
+			childTypeResult = childCap.getCapType();	
+			childTypeString = childTypeResult.toString();	
+			childTypeArray = childTypeString.split("/");
+			childAltId = capId.getCustomID();
+			if(childTypeArray[3] == "Owner Application") {
+logDebug("got Here ");			
+				if(matches(childStatus,"Under Review", "Pending","Additional Information Needed")) {
+logDebug("got Here 2");	
+					closeTask("Owner Application Review","Closed","updated by script","");
+					updateAppStatus("Closed","updated by script",capId);
+					ownChildRecs = getChildren("Licenses/Cultivator/Owner/Amendment",capId);
+					for (o in ownChildRecs) {
+						capId = ownChildRecs[o];
+						ownChildCap = aa.cap.getCap(ownChildRecs[o]).getOutput();
+						ownChildStatus = ownChildCap.getCapStatus();
+						if(matches(ownChildStatus,"Under Review", "Pending")) {
+							closeTask("Amendment Review","Closed","updated by script","");
+							updateAppStatus("Closed","updated by script",ownChildRecs[o]);
+						}
+					}
 				}
-				//lwacht: 180426: story 5436: end
+			}
+			if(childTypeArray[3] == "Amendment") { 
+				if(matches(childStatus,"Under Review", "Pending")) {
+					closeTask("Amendment Review","Closed","updated by script","");
+					updateAppStatus("Closed","updated by script",capId);
+				}
 			}
 		}
-		var taskItemScriptModel=aa.workflow.getTask(capId, "Science Manager Review");
-		if(taskItemScriptModel.getSuccess()){
-			var taskItemScript = taskItemScriptModel.getOutput();
-			if(matches(taskItemScript.disposition, "Recommended for Denial")){
-				activateTask("Science Manager Review");
-				deactivateTask("License Manager");
-			}
-		}	
+		var capId = holdId;
 	}
-	if(wfTask == "License Manager" && wfStatus == "Denied") { 
-		updateTask("Application Disposition", "Denied - Pending Appeal","Updated by script","");
-		editAppSpecific("Appeal Expiry Date",dateAdd(wfDateMMDDYYYY,30));
-		editAppSpecific("Denial Letter Sent",wfDateMMDDYYYY);
-		emailRptContact("WTUA", "LCA_APP_DENIAL_LETTER", "", false, capStatus, capId, "Designated Responsible Party", "p1value", capId.getCustomID());
-	}
+//mhart 190410 story 5954 - end
 }catch(err){
-	logDebug("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: Denial Revisions Required: " + err.message);
-	logDebug(err.stack);
+	aa.print("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: License Manager Denial: " + err.message);
+	aa.print(err.stack);
 }
+
 //mhart: send local auth notice
 try{
 	if(matches(wfStatus,"Local Auth Sent - 10","Local Auth Sent - 60")){
@@ -381,90 +392,105 @@ try{
 		}
 	}
 }catch(err){
-	aa.print("An error has occurred in WTUB:LICENSES/CULTIVATOR/*/APPLICATION: Check owner update: " + err.message);
+	aa.print("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: Check date and add Final Review task: " + err.message);
 	aa.print(err.stack);
 }
-
 //lwacht: 180207: story 2896: end
 
-
-//lwacht
-//if the perm application is set to denied, then close out any related temp licenses
-//MJH User Story 3556 remove this functionality
-/*
-try{
-	if(wfStatus== "Denied" && appTypeArray[2]!="Temporary"){
-		var currCap = capId;
-		var arrTemp = getChildren("Licenses/Cultivator/Temporary/Application");
-		for(rec in arrTemp){
-			capId = arrTemp[rec];
-			var arrParId= getParentsRev("Licenses/Cultivator/Temporary/License");
-			if(arrParId){
-				for(row in arrParId){
-					capId = arrParId[row];
-					taskCloseAllExcept("Revoked","Updated via script WTUA:LICENSES/CULTIVATOR/* /APPLICATION: Close Temp License");
-					updateAppStatus("Revoked","Updated via script WTUA:LICENSES/CULTIVATOR/* /APPLICATION: Close Temp License");
-				}
+//mhart 190408 story 5953 - Activate tasks when Revision required status entered
+try {
+	if(wfTask == "License Manager" && wfStatus == "Revisions Required") { 
+		altId = capId.getCustomID();
+		var adminDate = null;
+		var scienceDate = null;
+		var adminReview = false;
+		var ownerReview = false;
+		var scienceReview = false;
+		var ceqaReview = false;
+		asgnDateAR = null;
+		asgnDateOR = null;
+		asgnDateSR = null;
+		asgnDateCR = null;
+		var workflowResult = aa.workflow.getTasks(capId);
+		if (workflowResult.getSuccess())
+			var wfObj = workflowResult.getOutput();
+		else {
+			logMessage("**ERROR: Failed to get workflow object: " + workflowResult.getErrorMessage());
+		}
+		for (i in wfObj) {
+			var fTask = wfObj[i];
+			if (fTask.getTaskDescription()== "Administrative Manager Review" && fTask.getDisposition() == "Recommended for Denial"){
+				adminDate = fTask.getStatusDate();
+				logDebug("status Date" + adminDate);
 			}
-			capId = currCap;
+			if (fTask.getTaskDescription()== "Science Manager Review" && fTask.getDisposition() == "Recommended for Denial") {
+				scienceDate = fTask.getStatusDate();
+				logDebug("status Date" + scienceDate);
+			}
+			if (fTask.getTaskDescription()== "Administrative Review" && fTask.getDisposition() == "Incomplete Response") {
+				var tempdate = fTask.getAssignmentDate();
+				asgnDateAR = new Date(tempdate.getMonth() + "/" + tempdate.getDayOfMonth() + "/" + tempdate.getYear());
+				adminReview = true;
+			}
+			if (fTask.getTaskDescription()== "Owner Application Reviews" && fTask.getDisposition() == "Incomplete Response") {
+				var tempdate = fTask.getAssignmentDate();
+				asgnDateOR = new Date(tempdate.getMonth() + "/" + tempdate.getDayOfMonth() + "/" + tempdate.getYear());
+				ownerReview = true;
+			}
+			if (fTask.getTaskDescription()== "Scientific Review" && fTask.getDisposition() == "Incomplete Response") {
+				var tempdate = fTask.getAssignmentDate();
+				asgnDateSR = new Date(tempdate.getMonth() + "/" + tempdate.getDayOfMonth() + "/" + tempdate.getYear());
+				scienceReview = true;
+			}
+			if (fTask.getTaskDescription()== "CEQA Review" && fTask.getDisposition() == "Incomplete Response") {
+				var tempdate = fTask.getAssignmentDate();
+				asgnDateCR = new Date(tempdate.getMonth() + "/" + tempdate.getDayOfMonth() + "/" + tempdate.getYear());
+				ceqaReview = true;
+			}
 		}
-		var arrTemp = getChildren("Licenses/Cultivator/Temporary/License");
-		for(rec in arrTemp){
-			capId = arrTemp[rec];
-			taskCloseAllExcept("Revoked","Updated via script WTUA:LICENSES/CULTIVATOR/* /APPLICATION: Close Temp License");
-			updateAppStatus("Revoked","Updated via script WTUA:LICENSES/CULTIVATOR/* /APPLICATION: Close Temp License");
-			capId = currCap;
+		if(scienceDate == null && adminDate == null) {
+			showMessage = true;
+			comment("No Recommended for Denial status found.  License Manager task remains active.");
 		}
-	}
+		if(scienceDate >= adminDate) {
+			if(scienceReview == false && ceqaReview == false) {
+				activateTask("Science Manager Review");
+				showMessage = true;
+				comment("No Incomplete Response status found.  Science Manager Review was activated.");
+			}
+			deactivateTask("License Manager");			
+			if(scienceReview) {
+				activateTask("Scientific Review");	
+				if(asgnDateSR != null)
+					updateTaskAssignedDate("Scientific Review", asgnDateSR);
+			}
+			if(ceqaReview) {
+				activateTask ("CEQA Review");
+				if(asgnDateCR != null)
+					updateTaskAssignedDate("CEQA Review", asgnDateCR);
+			}				
+		}
+		else {
+			if(adminReview == false && ownerReview == false) {
+				activateTask("Administrative Manager Review");
+				showMessage = true;
+				comment("No Incomplete Response status found.  Administrative Manager Review was activated.");
+			}
+			deactivateTask("License Manager");
+			if(adminReview) {
+				activateTask("Administrative Review");
+				if(asgnDateAR != null)
+					updateTaskAssignedDate("Administrative Review", asgnDateAR);
+			}
+			if(ownerReview) {
+				activateTask ("Owner Application Reviews");
+				if(asgnDateOR != null)
+					updateTaskAssignedDate("Owner Application Review", asgnDateOR);
+			}
+		}
+	}  
 }catch(err){
-	logDebug("An error has occurred in WTUA:LICENSES/CULTIVATOR/* /APPLICATION: Close Temp License: " + err.message);
-	logDebug(err.stack);
+	aa.print("An error has occurred in WTUA:LICENSES/CULTIVATOR/*/APPLICATION: activate task after Reviesions Required status: " + err.message);
+	aa.print(err.stack);
 }
-*/
-
-
-//lwacht
-//create the license record, update altid,  and copy DRP and Owner contacts to it
-/* lwacht: moved to PRA, commenting out for now in case minds are changed.
-try{
-	if("License Issuance".equals(wfTask) && "Issued".equals(wfStatus)){
-		var licCapId = createLicense("Active",false);
-		if(licCapId){
-			var expDate = dateAddMonths(null,12);
-			setLicExpirationDate(licCapId,null,expDate,"Active");
-			if(appTypeArray[2]=="Adult Use"){
-				var newAltFirst = "CAL" + sysDateMMDDYYYY.substr(8,2);
-			}else{
-				var newAltFirst = "CML";
-			}
-			var newAltLast = capIDString.substr(3,capIDString.length());
-			var newAltId = newAltFirst + newAltLast;
-			var updAltId = aa.cap.updateCapAltID(licCapId,newAltId);
-			if(!updAltId.getSuccess()){
-				logDebug("Error updating Alt Id: " + newAltId + ":: " +updAltId.getErrorMessage());
-			}else{
-				logDebug("License record ID updated to : " + newAltId);
-			}
-			var arrChild = getChildren("Licenses/Cultivator/* /Owner Application");
-			for(ch in arrChild){
-				copyContactsByType(arrChild[ch], licCapId, "Individual");
-			}
-			editContactType("Individual", "Owner",licCapId);
-			var newAppName = AInfo["Premise County"] + " - " + AInfo["License Type"];
-			var contApp = getContactObj(capId, "Applicant");
-			editAppName();
-			var contPri = getContactObj(licCapId,"Primary Contact");
-			var currCapId = capId;
-			capId = licCapId;
-			contactSetPrimary(contPri.seqNumber);
-			capId = currCapId;
-		}else{
-			logDebug("Error creating License record: " + licCapId);
-		}
-	}
-}catch(err){
-	logDebug("An error has occurred in WTUA:LICENSES/CULTIVATOR/* /APPLICATION: License Issuance: " + err.message);
-	logDebug(err.stack);
-}
-lwacht end */
-
+//mhart 190408 story 5953 - end
