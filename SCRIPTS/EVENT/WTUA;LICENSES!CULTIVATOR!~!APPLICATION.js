@@ -150,7 +150,6 @@ try{
 }
 //mhart 100818 story 5725 end
 
-/* ----- do not move code with MR02 release ------
 // MJH 190305 story 5890 Set record status to Additional Information Needed
 if(wfTask == "Administrative Review" || wfTask == "Owner Application Reviews") {
 	adminStatus = taskStatus("Administrative Review");
@@ -177,7 +176,6 @@ if(wfTask == "Scientific Review" || wfTask == "CEQA Review") {
 }
 // ees 20190311 story 5894 end
 
-*/
 
 //mhart
 //If License Manager requires revisions to the denial reasons reactivete the task the denial request came from.
