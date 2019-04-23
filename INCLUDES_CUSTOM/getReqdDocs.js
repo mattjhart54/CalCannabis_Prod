@@ -52,6 +52,7 @@ try{
 	var need_lightDiagram = false;	
 	//application documents
 	var conditionType = "License Required Documents";
+	var businessHOO = {condition : "Business - Hours of Operation", document : "Business - Hours of Operation"};
     var businessFormation = {condition : "Business - Formation Documents", document : "Business - Formation Documents"};
     var businessFI = {condition : "Business - List of Financial Interest Holders", document : "Business - List of Financial Interest Holders"};
     var businessBond = {condition : "Business - Evidence Surety Bond", document : "Business - Evidence Surety Bond"};
@@ -70,7 +71,7 @@ try{
 	//var premiseDiagram = {condition : "Cultivation Plan - Property Diagram and Detailed Premises Diagram", document : "Cultivation Plan - Property Diagram and Detailed Premises Diagram"};
 	var propertyDiagram = {condition : "Cultivation Plan - Property Diagram", document : "Cultivation Plan - Property Diagram"};
 	//lwacht: 180502: story 5445: changing condition name
-	//var detailPremises = {condition : "Cultivation Plan - Detailed Premises", document : "Cultivation Plan - Detailed Premises"};
+	var detailPremises = {condition : "Cultivation Plan - Detailed Premises", document : "Cultivation Plan - Detailed Premises"};
 	//hwacht: 180529: story 5445: THIS STORY SUPERCEDES 5353
 	//var detailPremises = {condition : "Cultivation Plan - Detailed Premises Diagram", document : "Cultivation Plan - Detailed Premises Diagram"};
 	var detailPremises = {condition : "Cultivation Plan - Detailed Premises Diagram", document : "Cultivation Plan - Detailed Premises Diagram"};
@@ -84,6 +85,10 @@ try{
 	var wellLog = {condition : "Water - Groundwater Well Log", document : "Water - Groundwater Well Log"};
 	var srs2WellLog = {condition : "Water - Small Retail Supplier Well Log", document : "Water - Small Retail Supplier Well Log"};
 	var SWRCBAhuth = {condition : "Water - SWRCB Diversion Authorization", document : "Water - SWRCB Diversion Authorization"};
+	var waterBill = {condition : "Water - Retail Water Service Bill", document : "Water - Retail Water Service Bill"};
+	var divWaterBill = {condition : "Water - SR Diversion Water Service Bill", document : "Water - SR Diversion Water Service Bill"};
+	var gwWaterBill = {condition : "Water - SR Groundwater Well Water Service Bill", document : "Water - SR Groundwater Well Water Service Bill"};
+	var rcPhoto = {condition : "Water - Rainwater Catchment Photographs", document : "Water - Rainwater Catchment Photographs"};
 	//lwacht 171130 new doc type
 	var docWtrSmRetSupDiv = {condition : "Water - Small Retail Supplier Diversion", document : "Water - Small Retail Supplier Diversion"};
 	//lwacht 171130 end
@@ -133,6 +138,7 @@ try{
 			}
 		}
 		
+		arrReqdDocs_App.push(businessHOO);		
 		arrReqdDocs_App.push(businessFI);
 		
 		if (AInfo["Business Entity Structure"] == "Sovereign Entity"){
@@ -241,15 +247,20 @@ try{
 		// Water Documents
 		arrReqdDocs_App.push(streambedAlter);
 		arrReqdDocs_App.push(waterQuality);
-		
+//MJH 040819 story 5916 Add code to make water bill document required		
 		var gw=false;
 		var sr=false;
 		var di=false;
 		var de=false;
 		var wtrSmRetSupDiv=false;
+		var rs = false;
+		var rc=false;
 		if(typeof(SOURCEOFWATERSUPPLY)=="object"){
 			var tblWater = SOURCEOFWATERSUPPLY;
 			for(x in tblWater) {
+				if (tblWater[x]["Type of Water Supply"] == "Retail Supplier"){
+					rs=true;
+				}
 				if (tblWater[x]["Type of Water Supply"] == "Groundwater Well"){
 					gw=true;
 				}
@@ -269,8 +280,25 @@ try{
 				if (tblWater[x]["Type of Water Supply"] == "Diversion with Exception from Requirement to File a Statement of Diversion and Use"){
 					de=true;
 				}
+				if(matches(tblWater[x]["Type of Water Supply"], "Rainwater Catchment System")){
+					rc=true;
+				}
 			}
 		}
+	if(rs == true) {
+		arrReqdDocs_App.push(waterBill);
+	}else{
+		if(appHasCondition(conditionType, null, waterBill.condition, null)){
+			removeCapCondition(conditionType, waterBill.condition);
+		}
+	}
+	if(rc == true) {
+		arrReqdDocs_App.push(rcPhoto);
+	}else{
+		if(appHasCondition(conditionType, null, rcPhoto.condition, null)){
+			removeCapCondition(conditionType, rcPhoto.condition);
+		}
+	}
 	if(gw == true) {
 		arrReqdDocs_App.push(wellLog);
 	}else{
@@ -280,9 +308,13 @@ try{
 	}
 	if(sr == true) {
 		arrReqdDocs_App.push(srs2WellLog);
+		arrReqdDocs_App.push(gwWaterBill);
 	}else{
 		if(appHasCondition(conditionType, null, srs2WellLog.condition, null)){
-			removeCapCondition(conditionType, srs2WellLog.condition);
+			removeCapCondition(conditionType, srs2WellLog.condition);	
+		}
+		if(appHasCondition(conditionType, null, gwWaterBill.condition, null)){
+			removeCapCondition(conditionType, gwWaterBill.condition);
 		}
 	}
 	if(di == true) {
@@ -295,11 +327,16 @@ try{
 	//lwacht 171130: new doc type
 	if(wtrSmRetSupDiv == true) {
 		arrReqdDocs_App.push(docWtrSmRetSupDiv);
+		arrReqdDocs_App.push(divWaterBill);
 	}else{
 		if(appHasCondition(conditionType, null, docWtrSmRetSupDiv.condition, null)){
 			removeCapCondition(conditionType, docWtrSmRetSupDiv.condition);
 		}
+		if(appHasCondition(conditionType, null, divWaterBill.condition, null)){
+			removeCapCondition(conditionType, divWaterBill.condition);
+		}
 	}
+//MJH 040819 story 5916 Add code to make water bill document required	
 	//lwacht 171130 end
 	/*lwacht 171127: no longer needed
 	if(de == true) {
