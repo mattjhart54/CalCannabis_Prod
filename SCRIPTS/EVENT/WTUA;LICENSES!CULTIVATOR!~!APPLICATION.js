@@ -219,7 +219,7 @@ logDebug("got Here 2");
 				}
 			}
 		}
-		var capId = holdId;
+		capId = holdId;
 	}
 //mhart 190410 story 5954 - end
 }catch(err){
