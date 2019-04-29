@@ -9,14 +9,26 @@ try{
 	logDebug("An error has occurred in ASUA:LICENSES/CULTIVATOR/*/LICENSE: Adding to CAT Set: " + err.message);
 	logDebug(err.stack);
 }
-//Mhart 04/23/2019 story 5977 revoke license
+//MJH 190411 story 5977 - Revoke application when license is revoked
 try {
-	if(capStatus == "Revoked") {
-		var childId = getChildren("Licenses/Cultivator/*/Application");
-		for (x in childId) {}
-			updateAppStatus("Revoked",childId[x])
+	if(capStatus == "Revoked") { 
+		childRecs = getChildren("Licenses/Cultivator/*/Application");
+		var holdId = capId;
+		for (c in childRecs) {
+			capId = childRecs[c];
+			childCap = aa.cap.getCap(capId).getOutput();
+			childStatus = childCap.getCapStatus();
+			childTypeResult = childCap.getCapType();	
+			childTypeString = childTypeResult.toString();	
+			childTypeArray = childTypeString.split("/");
+			childAltId = capId.getCustomID();
+			if(matches(childTypeArray[2], "Adult Use","Medical","Temporary")) 
+				updateAppStatus("Revoked","updated by script",capId);	
+		}
+		var capId = holdId;
 	}
 }catch(err){
-	logDebug("An error has occurred in ASUA:LICENSES/CULTIVATOR/*/APPLICATION: Status Revoked: " + err.message);
+	logDebug("An error has occurred in ASUA:LICENSES/CULTIVATOR/*/LICENSE: License Revoked: " + err.message);
 	logDebug(err.stack);
 }
+//MJH 190411 story 5977 - end
