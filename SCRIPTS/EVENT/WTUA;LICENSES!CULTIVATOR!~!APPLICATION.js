@@ -453,27 +453,27 @@ try {
 			comment("No Recommended for Denial status found.  License Manager task remains active.");
 		}
 		if(scienceDenial) {
-				if(scienceReview == false && ceqaReview == false) {
-					activateTask("Science Manager Review");
-					showMessage = true;
-					comment("No Incomplete Response status found.  Science Manager Review was activated.");
-				}
-				deactivateTask("License Manager");			
-				if(scienceReview) {
-					activateTask("Scientific Review");	
-					if(asgnDateSR != null)
-						updateTaskAssignedDate("Scientific Review", asgnDateSR);
-				}
-				if(ceqaReview) {
-					activateTask ("CEQA Review");
-					if(asgnDateCR != null)
-						updateTaskAssignedDate("CEQA Review", asgnDateCR);
-				}				
+			if(scienceReview == false && ceqaReview == false) {
+				activateTask("Science Manager Review");
+				showMessage = true;
+				comment("No Incomplete Response status found.  Science Manager Review was activated.");
 			}
+			deactivateTask("License Manager");			
+			if(scienceReview) {
+				activateTask("Scientific Review");	
+				if(asgnDateSR != null)
+					updateTaskAssignedDate("Scientific Review", asgnDateSR);
+			}
+			if(ceqaReview) {
+				activateTask ("CEQA Review");
+				if(asgnDateCR != null)
+					updateTaskAssignedDate("CEQA Review", asgnDateCR);
+			}				
+		}
 		else {
 			if(adminReview == false && ownerReview == false) {
 				activateTask("Administrative Manager Review");
-					showMessage = true;
+				showMessage = true;
 				comment("No Incomplete Response status found.  Administrative Manager Review was activated.");
 			}
 			deactivateTask("License Manager");
