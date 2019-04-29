@@ -418,14 +418,14 @@ try {
 		}
 		for (i in wfObj) {
 			var fTask = wfObj[i];
-			logDebug (fTask.getTaskDescription() + " - " + fTask.getDisposition());
+	//		logDebug (fTask.getTaskDescription() + " - " + fTask.getDisposition());
 			if (fTask.getTaskDescription()== "Administrative Manager Review" && fTask.getDisposition() == "Recommended for Denial"){
 				adminDenial = true;
-				logDebug("admin Denial" + adminDenial);
+	//			logDebug("admin Denial" + adminDenial);
 			}
 			if (fTask.getTaskDescription()== "Science Manager Review" && fTask.getDisposition() == "Recommended for Denial") {
 				scienceDenial = true;
-				logDebug("science denial" + scienceDenial);
+	//			logDebug("science denial" + scienceDenial);
 			}
 			if (fTask.getTaskDescription()== "Administrative Review" && fTask.getDisposition() == "Incomplete Response") {
 				var tempdate = fTask.getAssignmentDate();
