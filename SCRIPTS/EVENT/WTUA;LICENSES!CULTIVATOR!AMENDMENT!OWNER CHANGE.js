@@ -199,7 +199,7 @@ try {
 			var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
 			if(!matches(priChannel, "",null,"undefined", false)){
 				if(priChannel.indexOf("Postal") > -1 ){
-					var sName = createSet("Amendment Rejcted","Amendment Notifications", "New");
+					var sName = createSet("Amendment Rejected","Amendment Notifications", "New");
 					if(sName){
 						setAddResult=aa.set.add(sName,parentCapId);
 						if(setAddResult.getSuccess()){
