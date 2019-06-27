@@ -170,4 +170,4 @@ try {
 } catch(err){
 	logDebug("An error has occurred in WTUA:LICENSES/CULTIVATOR/AMENDMENT/DRP DECLARATION: Amendmeth Approved/Rejected " + err.message);
 	logDebug(err.stack);
-}	
+}
