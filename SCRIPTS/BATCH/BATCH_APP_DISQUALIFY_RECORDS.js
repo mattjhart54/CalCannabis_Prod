@@ -135,6 +135,7 @@ try{
 	var capFilterAppType = 0
 	var capFilterOverride = 0
 	var capCount = 0;
+	var updateFailed = 0;
 	var setCreated = false;
 	var currDate = new Date();
 	var capList = new Array();
@@ -181,7 +182,7 @@ try{
 		appTypeString = appTypeResult.toString();	
 		appTypeArray = appTypeString.split("/");
 		var capStatus = cap.getCapStatus();
-		if(appTypeArray[3] == "Owner Application" ) {
+		if(appTypeArray[3] == "Owner Application" || appTypeArray[2] == "Amendment") {
 				capFilterAppType++;
 				continue;
 		}
@@ -220,7 +221,13 @@ try{
 				var childIdStatusClass = getCapIdStatusClass(capId);
 				if(childIdStatusClass == "INCOMPLETE CAP") {
 					capModelChild = aa.cap.getCapViewBySingle4ACA(capId);
-					convert2RealCAP2(capModelChild, "", altId);
+					if(capModelChild) {
+						convert2RealCAP2(capModelChild, "", altId);
+					}
+					else {
+						logDebug("Failed to get cap model for " + capId.getCustomID() + ". Status not set to Disqualify");
+						updateFailed++;
+					}
 				}
 				else {
 					updateAppStatus(newAppStatus, "set by " + batchJobName +  " batch");
@@ -241,7 +248,13 @@ try{
 					var childIdStatusClass = getCapIdStatusClass(capId);
 					if(childIdStatusClass == "INCOMPLETE CAP") {
 						capModelChild = aa.cap.getCapViewBySingle4ACA(capId);
-						convert2RealCAP2(capModelChild, "", ownAltId);
+						if(capModelChild) {
+							convert2RealCAP2(capModelChild, "", ownAltId);
+						}
+						else {
+							logDebug("Failed to get cap model for " + capId.getCustomID() + ". Status not set to Disqualify");
+							updateFailed++;
+						}
 					}
 					else {
 						updateAppStatus(newAppStatus, "set by " + batchJobName +  " batch");
@@ -302,6 +315,7 @@ try{
 	logDebug("Ignored due to Record Type: " + capFilterAppType);
 	logDebug("Ignored due to Override: " + capFilterOverride);
 	logDebug("Total CAPS processed: " + capCount);
+	logDebug("Status Update Failed: " + updateFailed);
 
 }catch (err){
 	logDebug("ERROR: " + err.message + " In " + batchJobName);
@@ -425,4 +439,3 @@ function convert2RealCAP2(capModel, transactions, parentId)
 	addParent(parentId);
 	capid = holdChildId;
 }
-
