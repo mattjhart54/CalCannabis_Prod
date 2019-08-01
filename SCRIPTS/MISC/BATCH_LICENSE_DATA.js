@@ -159,10 +159,10 @@ try{
 		altId =	 capId.getCustomID();
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
-		var recordCnt = 0
-		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
-		if(altId == "PAL18-0000906") continue;
+//		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
+//		if(altId == "PAL18-0000906") continue;
 		logDebug("Processing License Record " + altId);
+		 rcdsUpdated++;
 		cId = getChildren("Licenses/Cultivator/"+appTypeArray[2]+"/Application");
 		for(x in cId) {
 			holdId = capId;
