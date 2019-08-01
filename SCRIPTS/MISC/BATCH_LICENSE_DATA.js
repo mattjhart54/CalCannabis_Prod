@@ -158,6 +158,7 @@ function mainProcess() {
 		altId =	 capId.getCustomID();
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
+		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
 //		if(altId != "CAL18-0000121") continue;
 		logDebug("Processing License Record " + altId);
 		rcdsUpdated++;
