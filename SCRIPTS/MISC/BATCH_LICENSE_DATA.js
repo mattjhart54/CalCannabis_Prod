@@ -163,7 +163,6 @@ try{
 		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
 //		if(altId != "CAL18-0000121") continue;
 		logDebug("Processing License Record " + altId);
-		rcdsUpdated++;
 		cId = getChildren("Licenses/Cultivator/"+appTypeArray[2]+"/Application");
 		for(x in cId) {
 			holdId = capId;
