@@ -129,6 +129,7 @@ if (showDebug) {
 function mainProcess() {
 try{
 	var rcdsUpdated = 0;
+	var recSkip = 0;
 	var capList = new Array();
 	for (i in sArray) {
 		for(c in cArray) {
@@ -160,9 +161,14 @@ try{
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
 		loadASITables();
-		if (typeof(OWNERS) == "object" && OWNERS.length>0) continue;
+
 //		if(altId == "PAL18-0000906") continue;
 		logDebug("Processing License Record " + altId);
+		if (typeof(OWNERS) == "object" && OWNERS.length>0) {
+			logDebug("Skipping Record already updated");
+			recSkip++;
+			continue;
+		}
 		 rcdsUpdated++;
 		cId = getChildren("Licenses/Cultivator/"+appTypeArray[2]+"/Application");
 		for(x in cId) {
@@ -204,7 +210,8 @@ try{
 			
 	}		
 	logDebug("Total Records qualified : " + capList.length);
-	logDebug("Toat Records Processed: " + rcdsUpdated)
+	logDebug("Toat Records skipped: " + recSkip);
+	logDebug("Toat Records Processed: " + rcdsUpdated);
 
 }catch(err){
 		logDebug("An error has occurred in Batch License Update: " + err.message);
