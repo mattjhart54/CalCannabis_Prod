@@ -159,7 +159,6 @@ try{
 		altId =	 capId.getCustomID();
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
-		load
 		var recordCnt = 0
 		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
 		if(altId == "PAL18-0000906") continue;
