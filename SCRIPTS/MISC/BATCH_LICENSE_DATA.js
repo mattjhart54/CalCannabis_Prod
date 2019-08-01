@@ -159,7 +159,8 @@ try{
 		altId =	 capId.getCustomID();
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
-//		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
+		loadASITables();
+		if (typeof(OWNERS) == "object" && OWNERS.length>0) continue;
 //		if(altId == "PAL18-0000906") continue;
 		logDebug("Processing License Record " + altId);
 		 rcdsUpdated++;
