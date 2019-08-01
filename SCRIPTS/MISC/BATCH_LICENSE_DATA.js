@@ -161,9 +161,7 @@ try{
 		loadAppSpecific(AInfo);
 		var recordCnt = 0
 		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
-		recordCnt++;
 //		if(altId != "CAL18-0000121") continue;
-		if(recordCnt > 10) continue;
 		logDebug("Processing License Record " + altId);
 		rcdsUpdated++;
 		cId = getChildren("Licenses/Cultivator/"+appTypeArray[2]+"/Application");
