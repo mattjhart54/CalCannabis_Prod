@@ -159,6 +159,7 @@ try{
 		altId =	 capId.getCustomID();
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
+		load
 		var recordCnt = 0
 		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
 		if(altId == "PAL18-0000906") continue;
@@ -193,7 +194,12 @@ try{
 			editAppSpecificB("Local Authorizaton Zip",appInfo["Local Authorizaton Zip"]);
 			editAppSpecificB("Local Authority County",appInfo["Local Authority County"]);
 			editAppSpecificB("Local Authority Phone",appInfo["Local Authority Phone"]);
-			copyASITables(cId[x],capId,"DEFICIENCIES","DENIAL REASONS");
+			loadASITables();
+			if (typeof(OWNERS) == "object")
+				copyASITables(cId[x],capId,"DEFICIENCIES","DENIAL REASONS");
+			else 
+				logDebug("Record " + altId + " tables were not updated");
+				
 		}
 			
 	}		
