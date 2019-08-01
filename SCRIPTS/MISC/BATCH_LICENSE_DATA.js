@@ -127,6 +127,7 @@ if (showDebug) {
 /-----------------------------------------------------------------------------------------------------*/
 
 function mainProcess() {
+try{
 	var rcdsUpdated = 0;
 	var capList = new Array();
 	for (i in sArray) {
@@ -158,8 +159,11 @@ function mainProcess() {
 		altId =	 capId.getCustomID();
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
+		var recordCnt = 0
 		if(!matches(AInfo["Local Authority Type"],null,"",undefined)) continue;
+		recordCnt++;
 //		if(altId != "CAL18-0000121") continue;
+		if(recordCnt > 10) continue;
 		logDebug("Processing License Record " + altId);
 		rcdsUpdated++;
 		cId = getChildren("Licenses/Cultivator/"+appTypeArray[2]+"/Application");
@@ -198,7 +202,12 @@ function mainProcess() {
 	}		
 	logDebug("Total Records qualified : " + capList.length);
 	logDebug("Toat Records Processed: " + rcdsUpdated)
-}	
+
+}catch(err){
+		logDebug("An error has occurred in Batch License Update: " + err.message);
+		logDebug(err.stack);
+}
+}
 function getCapIdByIDs(s_id1, s_id2, s_id3)  {
 	var s_capResult = aa.cap.getCapID(s_id1, s_id2, s_id3);
     if(s_capResult.getSuccess())
