@@ -162,7 +162,7 @@ try{
 		loadAppSpecific(AInfo);
 		loadASITables();
 
-//		if(altId == "PAL18-0000906") continue;
+		if(altId != "CAL18-0000044") continue;
 		logDebug("Processing License Record " + altId);
 		if (typeof(OWNERS) == "object" && OWNERS.length>0) {
 			logDebug("Skipping Record already updated");
@@ -174,7 +174,7 @@ try{
 		for(x in cId) {
 			holdId = capId;
 			capId = cId[x];
-			appInfo = new Array();
+	/*		appInfo = new Array();
 			loadAppSpecific(appInfo);
 			capId = holdId;
 			editAppSpecificB("Business Entity Structure",appInfo["Business Entity Structure"]);
@@ -201,10 +201,11 @@ try{
 			editAppSpecificB("Local Authority County",appInfo["Local Authority County"]);
 			editAppSpecificB("Local Authority Phone",appInfo["Local Authority Phone"]);
 			loadASITables();
-			if (typeof(OWNERS) == "object")
-				copyASITables(cId[x],capId,"DEFICIENCIES","DENIAL REASONS");
-			else 
-				logDebug("Record " + altId + " tables were not updated");
+			*/
+//			if (typeof(OWNERS) == "object")
+				copyASITablesT(cId[x],capId,"DEFICIENCIES","DENIAL REASONS");
+//			else 
+//				logDebug("Record " + altId + " tables were not updated");
 				
 		}
 			
@@ -218,6 +219,135 @@ try{
 		logDebug(err.stack);
 }
 }
+
+function addASITableT(tableName, tableValueArray) // optional capId
+{
+	//  tableName is the name of the ASI table
+	//  tableValueArray is an array of associative array values.  All elements MUST be either a string or asiTableVal object
+	var itemCap = capId
+		if (arguments.length > 2)
+			itemCap = arguments[2]; // use cap ID specified in args
+
+		var tssmResult = aa.appSpecificTableScript.getAppSpecificTableModel(itemCap, tableName)
+
+		if (!tssmResult.getSuccess()) {
+			logDebug("**WARNING: error retrieving app specific table " + tableName + " " + tssmResult.getErrorMessage());
+			return false
+		}
+
+	var tssm = tssmResult.getOutput();
+	var tsm = tssm.getAppSpecificTableModel();
+	var fld = tsm.getTableField();
+	var fld_readonly = tsm.getReadonlyField(); // get Readonly field
+
+	for (thisrow in tableValueArray) {
+
+		var col = tsm.getColumns()
+			var coli = col.iterator();
+		while (coli.hasNext()) {
+			var colname = coli.next();
+
+			if (!tableValueArray[thisrow][colname.getColumnName()]) {
+				logDebug("addToASITable: null or undefined value supplied for column " + colname.getColumnName() + ", setting to empty string");
+				tableValueArray[thisrow][colname.getColumnName()] = "";
+			}
+			
+			if (typeof(tableValueArray[thisrow][colname.getColumnName()].fieldValue) != "undefined") // we are passed an asiTablVal Obj
+			{
+				fld.add(tableValueArray[thisrow][colname.getColumnName()].fieldValue);
+				fld_readonly.add(tableValueArray[thisrow][colname.getColumnName()].readOnly);
+				//fld_readonly.add(null);
+			} else // we are passed a string
+			{
+				fld.add(tableValueArray[thisrow][colname.getColumnName()]);
+			//	fld_readonly.add(null);
+			}
+		}
+
+		tsm.setTableField(fld);
+
+		tsm.setReadonlyField(fld_readonly);
+
+	}
+
+	var addResult = aa.appSpecificTableScript.editAppSpecificTableInfos(tsm, itemCap, currentUserID);
+
+	if (!addResult.getSuccess()) {
+		logDebug("**WARNING: error adding record to ASI Table:  " + tableName + " " + addResult.getErrorMessage());
+		return false
+	} else
+		logDebug("Successfully added record to ASI Table: " + tableName);
+
+}
+function copyASITablesT(pFromCapId, pToCapId) {
+	// Function dependencies on addASITable()
+	// par3 is optional 0 based string array of table to ignore
+	var itemCap = pFromCapId;
+
+	var gm = aa.appSpecificTableScript.getAppSpecificTableGroupModel(itemCap).getOutput();
+	var ta = gm.getTablesArray()
+		var tai = ta.iterator();
+	var tableArr = new Array();
+	var ignoreArr = new Array();
+	var limitCopy = false;
+	if (arguments.length > 2) {
+		ignoreArr = arguments[2];
+		limitCopy = true;
+	}
+	while (tai.hasNext()) {
+		var tsm = tai.next();
+
+		var tempObject = new Array();
+		var tempArray = new Array();
+		var tn = tsm.getTableName() + "";
+		var numrows = 0;
+
+		//Check list
+		if (limitCopy) {
+			var ignore = false;
+			for (var i = 0; i < ignoreArr.length; i++)
+				if (ignoreArr[i] == tn) {
+					ignore = true;
+					break;
+				}
+			if (ignore)
+				continue;
+		}
+		if (!tsm.rowIndex.isEmpty()) {
+			var tsmfldi = tsm.getTableField().iterator();
+			var tsmcoli = tsm.getColumns().iterator();
+			var readOnlyi = tsm.getAppSpecificTableModel().getReadonlyField().iterator(); // get Readonly filed
+			var numrows = 1;
+			while (tsmfldi.hasNext()) // cycle through fields
+			{
+				if (!tsmcoli.hasNext()) // cycle through columns
+				{
+					var tsmcoli = tsm.getColumns().iterator();
+					tempArray.push(tempObject); // end of record
+					var tempObject = new Array(); // clear the temp obj
+					numrows++;
+				}
+				var tcol = tsmcoli.next();
+				var tval = tsmfldi.next();
+
+				var readOnly = 'N';
+				if (readOnlyi.hasNext()) {
+					readOnly = readOnlyi.next();
+				}
+
+				var fieldInfo = new asiTableValObj(tcol.getColumnName(), tval, readOnly);
+				tempObject[tcol.getColumnName()] = fieldInfo;
+				//tempObject[tcol.getColumnName()] = tval;
+			}
+
+			tempArray.push(tempObject); // end of record
+		}
+
+		addASITableT(tn, tempArray, pToCapId);
+		logDebug("ASI Table Array : " + tn + " (" + numrows + " Rows)");
+	}
+} 
+
 function getCapIdByIDs(s_id1, s_id2, s_id3)  {
 	var s_capResult = aa.cap.getCapID(s_id1, s_id2, s_id3);
     if(s_capResult.getSuccess())
