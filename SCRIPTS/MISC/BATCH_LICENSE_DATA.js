@@ -160,7 +160,7 @@ try{
 		altId =	 capId.getCustomID();
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
-		if(altId != "CAL18-0000044") continue;
+//		if(altId != "CAL18-0000044") continue;
 		loadASITables();
 		logDebug("Processing License Record " + altId);
 		if (typeof(OWNERS) == "object" && OWNERS.length>0) {
