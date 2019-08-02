@@ -160,9 +160,8 @@ try{
 		altId =	 capId.getCustomID();
 		AInfo = new Array();
 		loadAppSpecific(AInfo);
-		loadASITables();
-
 		if(altId != "CAL18-0000044") continue;
+		loadASITables();
 		logDebug("Processing License Record " + altId);
 		if (typeof(OWNERS) == "object" && OWNERS.length>0) {
 			logDebug("Skipping Record already updated");
@@ -172,9 +171,9 @@ try{
 		 rcdsUpdated++;
 		cId = getChildren("Licenses/Cultivator/"+appTypeArray[2]+"/Application");
 		for(x in cId) {
-			holdId = capId;
+/*			holdId = capId;
 			capId = cId[x];
-	/*		appInfo = new Array();
+			appInfo = new Array();
 			loadAppSpecific(appInfo);
 			capId = holdId;
 			editAppSpecificB("Business Entity Structure",appInfo["Business Entity Structure"]);
@@ -256,11 +255,11 @@ function addASITableT(tableName, tableValueArray) // optional capId
 			{
 				fld.add(tableValueArray[thisrow][colname.getColumnName()].fieldValue);
 				fld_readonly.add(tableValueArray[thisrow][colname.getColumnName()].readOnly);
-				//fld_readonly.add(null);
+				fld_readonly.add(null);
 			} else // we are passed a string
 			{
 				fld.add(tableValueArray[thisrow][colname.getColumnName()]);
-			//	fld_readonly.add(null);
+				fld_readonly.add(null);
 			}
 		}
 
