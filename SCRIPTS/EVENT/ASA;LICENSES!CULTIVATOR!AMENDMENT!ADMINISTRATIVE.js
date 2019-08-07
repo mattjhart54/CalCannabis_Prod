@@ -1,5 +1,5 @@
 try {
-// Link Amendment record to License reord as a child
+// Link Amendment record to License record as a child
 	var parentAltId = AInfo["License Number"];
 	addParent(parentAltId);
 	
