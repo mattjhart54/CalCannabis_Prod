@@ -74,7 +74,7 @@ aa.env.setValue("sysFromEmail", "calcannabislicensing@cdfa.ca.gov");
 aa.env.setValue("reportName", "CDFA_purge");
 aa.env.setValue("recordGroup", "Licenses");
 aa.env.setValue("recordType", "Cultivator");
-aa.env.setValue("testRecord", "CAL19-0000253");
+aa.env.setValue("testRecord", "");
 aa.env.setValue("recordSubType", "Medical,Adult Use");
 aa.env.setValue("recordCategory", "License,Provisional");
 */
@@ -133,6 +133,7 @@ function mainProcess() {
 try{
 	acaDocBiz = aa.proxyInvoker.newInstance("com.accela.aa.ads.ads.EDMS4ACABusiness").getOutput();
 	var rcdsCreated = 0;
+	var rcdsRetired = 0;
 	AInfo = new Array();
 	var capList = new Array();
 	for (i in sArray) {
@@ -172,7 +173,10 @@ try{
 				continue;
 			}
 		}
-		
+		if(capStatus == "Retired") {
+			rcdsRetired++;
+			continue;
+		}
 		logDebug("Processing License Record " + altId);
 		var licNum = capId.getCustomID();
 		
@@ -195,9 +199,10 @@ try{
 		var updAltId = aa.cap.updateCapAltID(licCapId,newLicNum);
 		if(!updAltId.getSuccess()){
 			logDebug("Error updating Alt Id: " + newLicNum + ":: " +updAltId.getErrorMessage());
-		}else{
-			logDebug("License record ID updated to : " + newLicNum);
 		}
+	//	else{
+	//		logDebug("License record ID updated to : " + newLicNum);
+	//	}
 		var tmpNewDate = "";
 		var tmpNewStatus = "";
 		b1ExpResult = aa.expiration.getLicensesByCapID(capId);
@@ -212,11 +217,11 @@ try{
 		thisLic = new licenseObject(newLicNum,licCapId); 
 		thisLic.setExpiration(dateAdd(tmpNewDate,0));
 		thisLic.setStatus(tmpNewStatus); 
-		logDebug("Successfully set the expiration date and status for " + newLicNum);
+	//	logDebug("Successfully set the expiration date and status for " + newLicNum);
 	
 		thisLic = new licenseObject(licNum,capId); 
 		thisLic.setStatus("Inactive"); 
-		logDebug("Successfully set the expiration date and status for " + licNum);
+	//	logDebug("Successfully set the expiration date and status for " + licNum);
 
 		if(matches(AInfo["Premise City"], null, "")) {
 			updateShortNotes(AInfo["Premise County"],licCapId);
@@ -232,9 +237,10 @@ try{
 		setDateResult = aa.cap.editCapByPK(capModel);
 		if (!setDateResult.getSuccess()) {
 			logDebug("**WARNING: error setting file date : " + setDateResult.getErrorMessage());
-		}else{
-			logDebug("File date successfully updated to " + fileDateObj);
 		}
+	//	else{
+	//		logDebug("File date successfully updated to " + fileDateObj);
+	//	}
 		
 // copy data from the current record to the new record
 		updateWorkDesc(workDescGet(capId),licCapId);
@@ -303,7 +309,7 @@ try{
 					var reportFile=aa.reportManager.storeReportToDisk(reportOutput);
 					rFile=reportFile.getOutput();
 					rFiles.push(rFile);
-					logDebug("Report '" + "Official License Certificate" + "' has been run for " + newLicNum);
+		//			logDebug("Report '" + "Official License Certificate" + "' has been run for " + newLicNum);
 				}else {
 					logDebug("System failed get report: " + reportResult.getErrorType() + ":" +reportResult.getErrorMessage());
 				}
@@ -370,7 +376,7 @@ try{
 			}
 		}
 		else{
-			logDebug("An error occurred retrieving the contactObj for " + contactType + ": " + priContact);
+			logDebug("An error occurred retrieving the contactObj for Designated Responsible Party on record " + altId);
 		}
 	}	
 
@@ -378,6 +384,7 @@ try{
 	
 	logDebug("Total Records qualified : " + capList.length);
 	logDebug("Total Records Created: " + rcdsCreated);
+	logDebug("Total Records Skipped Due to Retired Status: " + rcdsRetired);
 	
 }catch(err){
 	logDebug("An error has occurred in Batch License Update: " + err.message);
@@ -438,10 +445,10 @@ function createNewParent(grp,typ,stype,cat,desc) {
 // creates the new application and returns the capID object
 // updated by JHS 10/23/12 to use copyContacts that handles addresses
 	var appCreateResult = aa.cap.createApp(grp,typ,stype,cat,desc);
-	logDebug("creating cap " + grp + "/" + typ + "/" + stype + "/" + cat);
+//	logDebug("creating cap " + grp + "/" + typ + "/" + stype + "/" + cat);
 	if (appCreateResult.getSuccess()){
 		var newId = appCreateResult.getOutput();
-		logDebug("cap " + grp + "/" + typ + "/" + stype + "/" + cat + " created successfully ");
+	//	logDebug("cap " + grp + "/" + typ + "/" + stype + "/" + cat + " created successfully ");
 	// create Detail Record
 		capModel = aa.cap.newCapScriptModel().getOutput();
 		capDetailModel = capModel.getCapModel().getCapDetailModel();
@@ -483,7 +490,7 @@ function createNewParent(grp,typ,stype,cat,desc) {
 		return newId;
 	}
 	else{
-		logDebug( "**ERROR: adding parent App: " + appCreateResult.getErrorMessage());
+		logDebug( "**ERROR: creating new license App: " + appCreateResult.getErrorMessage());
 	}
 
 }
@@ -515,11 +522,11 @@ function setLicExpirationDate(licCap,newLicCap) {
     thisLic = new licenseObject(newLicNum,newLicCap); 
     thisLic.setExpiration(dateAdd(tmpNewDate,0));
     thisLic.setStatus(tmpNewStatus); 
-    logDebug("Successfully set the expiration date and status for " + newLicNum);
+  //  logDebug("Successfully set the expiration date and status for " + newLicNum);
 	
 	thisLic = new licenseObject(licNum,licCap); 
     thisLic.setStatus("Inactive"); 
-    logDebug("Successfully set the expiration date and status for " + licNum);
+  //  logDebug("Successfully set the expiration date and status for " + licNum);
 	
     return true;
 }
@@ -534,7 +541,7 @@ function setLicExpirationDate(licCap,newLicCap) {
 	result = aa.document.sendEmailAndSaveAsDocument(emailFrom, emailTo, emailCC, templateName, params, capIDScriptModel, reportFile);
 	if(result.getSuccess())
 	{
-		logDebug("Sent email successfully!");
+//		logDebug("Sent email successfully!");
 		return true;
 	}
 	else
