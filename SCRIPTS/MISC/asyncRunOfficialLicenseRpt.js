@@ -43,12 +43,12 @@ function getMasterScriptText(vScriptName) {
 }
 try{
 /*---------------------------------------
-	aa.env.setValue("licCap", "PAL18-0002117");
-	aa.env.setValue("appCap", "LCA18-0002117");
+	aa.env.setValue("licCap", "CAL18-0000143");
+	aa.env.setValue("appCap", "CAL18-0000143-SA001");
 	aa.env.setValue("currentUserID", "ADMIN");
 	aa.env.setValue("reportName", "Official License Certificate");
 	aa.env.setValue("contType", "Designated Responsible Party");
-	aa.env.setValue("licType", "Annual");
+	aa.env.setValue("licType", "Transition");
 	aa.env.setValue("fromEmail","calcannabislicensing@cdfa.ca.gov");
 */
 	var reportName = "" + aa.env.getValue("reportName");
@@ -109,10 +109,24 @@ try{
 	appTypeString = appTypeResult.toString(); 
 	appTypeArray = appTypeString.split("/");
 	capStatus = cap.getCapStatus();
-	if(licType=="annual") 
+	var emailTemplate = "LCA_APP_APPROVAL_PAID"
+	if(licType=="annual") {
 		reportName = "Approval Letter"
-	else
-	reportName = "Approval Letter Provisional"
+	}else {
+		if(licType=="Provisional") {
+			reportName = "Approval Letter Provisional"
+		}else {
+			if(licType=="Renewal") {
+				reportName = "Approval Letter Renewal"
+				var emailTemplate = "LCA_RENEWAL_APPROVAL"
+			}else {
+				if(licType=="Transition") {
+					reportName = "Amendment Approval - Transition"
+					var emailTemplate = "LCA_TRANSITION_APPROVAL"
+				}
+			}
+		}
+	}
 	reportResult = aa.reportManager.getReportInfoModelByName(reportName);
 	if (!reportResult.getSuccess()){
 		logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); 
@@ -161,7 +175,7 @@ try{
 		addParameter(eParams, "$$parentId$$", licCap);
 		addParameter(eParams, "$$licType$$", licType);
 		var priEmail = ""+priContact.capContact.getEmail();
-		sendApprovalNotification(fromEmail,priEmail,"","LCA_APP_APPROVAL_PAID",eParams, rFiles,tmpID);
+		sendApprovalNotification(fromEmail,priEmail,"",emailTemplate,eParams, rFiles,tmpID);
 	}else{
 		logDebug("An error occurred retrieving the contactObj for " + contactType + ": " + priContact);
 	}
