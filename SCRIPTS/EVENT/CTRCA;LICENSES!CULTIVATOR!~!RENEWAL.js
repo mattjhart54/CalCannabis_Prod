@@ -3,13 +3,19 @@ try{
 	vIDArray = String(vLicenseID).split("-");
 	vLicenseID = aa.cap.getCapID(vIDArray[0],vIDArray[1],vIDArray[2]).getOutput();
 	if (vLicenseID != null) {
-// Get current expiration date.
-		vLicenseObj = new licenseObject(null, vLicenseID);
-		vExpDate = vLicenseObj.b1ExpDate;
-		vExpDate = new Date(vExpDate);
-// Extend license expiration by 1 year and append to record number
-		vExpYear = vExpDate.getFullYear() + 1;
-		var newAltId = vLicenseID.getCustomID() + "-" + vExpYear;
+// Update alt id on renewal record
+		vLicenseAltId = vLicenseID.getCustomID();
+		cIds = getChildren("Licenses/Cultivator/License/Renewal",vLicenseID);
+		if(matches(cIds, null, "", undefined)) 
+			renewNbr = renewNbr = "0" + 1;
+		else {
+			cIdLen = cIds.length 
+			if(cIds.length <= 9)
+				renewNbr = "0" +  cIdLen;
+			else
+				renewNbr = cIdLen;
+		}
+		newAltId = vLicenseAltId + "-R" + renewNbr;
 		var resAltId = aa.cap.updateCapAltID(capId,newAltId);
 		if(resAltId.getSuccess()==true){
 			logDebug("Alt ID set to " + newAltId);
@@ -18,8 +24,8 @@ try{
 		}
 	}
 // Copy business contact from license
+	copyContactsByType(vLicenseID,capId,"Designated Responsible Party");
 	copyContactsByType(vLicenseID,capId,"Business");
-	copyContactsByType(parentCapId,partialCapId,"Designated Responsible Party");
 // Add condition effective in thirty days if Late Fee not paid	
 	var feeDesc = AInfo["License Type"] + " - Late Fee";
 	var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
@@ -53,3 +59,4 @@ try{
 	logDebug(err.stack);
 	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/LICENSE/RENEWAL: Submission: "+ startDate, capId + br + err.message+ br+ err.stack + br + currEnv);
 }
+
