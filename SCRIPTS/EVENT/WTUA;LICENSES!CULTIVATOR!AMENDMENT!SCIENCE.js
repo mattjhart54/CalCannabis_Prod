@@ -1,5 +1,6 @@
 try {
-	if(wfStatus == "Amendment Approved") {
+	if(matches(wfStatus,"Physical Modification Approved","Approved for Provisional Renewal","Transition Amendment Approved")) {
+		// Copy custom fields from the license record to the parent record
 		pIds = getParents("Licenses/Cultivator/License/License");
 		if(!matches(pIds,null,'',undefined)) {
 			parentCapId = pIds[0];
@@ -51,34 +52,73 @@ try {
 //  Send approval email notification to DRP
 		var priContact = getContactObj(capId,"Designated Responsible Party");
 		if(priContact){
-			var eParams = aa.util.newHashtable(); 
-			addParameter(eParams, "$$fileDateYYYYMMDD$$", fileDateYYYYMMDD);
-			var contPhone = priContact.capContact.phone1;
-			if(contPhone){
-				var fmtPhone = contPhone.substr(0,3) + "-" + contPhone.substr(3,3) +"-" + contPhone.substr(6,4);
-			}else{
-				var fmtPhone = "";
+			if(wfStatus == "Physical Modification Approved") {
+				var eParams = aa.util.newHashtable(); 
+				addParameter(eParams, "$$fileDateYYYYMMDD$$", fileDateYYYYMMDD);
+				var contPhone = priContact.capContact.phone1;
+				if(contPhone){
+					var fmtPhone = contPhone.substr(0,3) + "-" + contPhone.substr(3,3) +"-" + contPhone.substr(6,4);
+				}else{
+					var fmtPhone = "";
+				}
+				addParameter(eParams, "$$altId$$", capId.getCustomID());
+				addParameter(eParams, "$$contactPhone1$$", fmtPhone);
+				addParameter(eParams, "$$contactFirstName$$", priContact.capContact.firstName);
+				addParameter(eParams, "$$contactLastName$$", priContact.capContact.lastName);
+				addParameter(eParams, "$$contactEmail$$", priContact.capContact.email);
+				addParameter(eParams, "$$parentId$$", parentAltId);
+				var priEmail = ""+priContact.capContact.getEmail();
+				var rFiles = [];
+				emailTemplate = "LCA_PHYSICAL_MOD_APPROVED";
+				sendNotification(sysFromEmail,priEmail,"",emailTemplate,eParams, rFiles,capId);
+//				emailRptContact("", "emailTemplate", "", false, capStatus, capId, "Designated Responsible Party");
+				var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
+				if(!matches(priChannel, "",null,"undefined", false)){
+					if(priChannel.indexOf("Postal") > -1 ){
+						var sName = createSet("Physical Modification Amendment Approval","Amendment Notifications", "New");
+						if(sName){
+							setAddResult=aa.set.add(sName,capId);
+							if(setAddResult.getSuccess()){
+								logDebug(capId.getCustomID() + " successfully added to set " +sName);
+							}else{
+								logDebug("Error adding record to set " + sName + ". Error: " + setAddResult.getErrorMessage());
+							}
+						}
+					}
+				}
 			}
-			addParameter(eParams, "$$altId$$", capId.getCustomID());
-			addParameter(eParams, "$$contactPhone1$$", fmtPhone);
-			addParameter(eParams, "$$contactFirstName$$", priContact.capContact.firstName);
-			addParameter(eParams, "$$contactLastName$$", priContact.capContact.lastName);
-			addParameter(eParams, "$$contactEmail$$", priContact.capContact.email);
-			addParameter(eParams, "$$parentId$$", parentAltId);
-			var priEmail = ""+priContact.capContact.getEmail();
-			var rFiles = [];
-			sendNotification(sysFromEmail,priEmail,"","LCA_AMENDMENT_APPROVAL",eParams, rFiles,capId);
-//			emailRptContact("", "LCA_AMENDMENT_APPROVAL", "", false, capStatus, capId, "Designated Responsible Party");
-			var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
-			if(!matches(priChannel, "",null,"undefined", false)){
-				if(priChannel.indexOf("Postal") > -1 ){
-				var sName = createSet("Amendment Approval","Amendment Notifications", "New");
-				if(sName){
-					setAddResult=aa.set.add(sName,capId);
-					if(setAddResult.getSuccess()){
-						logDebug(capId.getCustomID() + " successfully added to set " +sName);
-					}else{
-						logDebug("Error adding record to set " + sName + ". Error: " + setAddResult.getErrorMessage());
+			if(wfStatus == "Transition Amendment Approved") {
+				if(AInfo["Transition"] == "Yes") {
+					editAppSpecific("License Issued Type", "Annual",parentCapId);
+					var licType = getAppSpecific("License Type",parentCapId);
+					var cType = getAppSpecific("Cultivator Type",parentCapId);
+					editAppName("Annual " + cType + " - " + licType,parentCapId);
+					editAppSpecific("Transition Date",jsDateToASIDate(new Date()),parentCapId);
+					updateCat = true;
+				}
+				//Run Official License Certificate and Transistion Approval Letter and email the DRP	
+				var scriptName = "asyncRunOfficialLicenseRpt";
+				var envParameters = aa.util.newHashMap();
+				envParameters.put("licType", "Transition");
+				envParameters.put("appCap",capId.getCustomID());
+				envParameters.put("licCap",parentAltId); 
+				envParameters.put("reportName","Official License Certificate"); 
+				envParameters.put("currentUserID",currentUserID);
+				envParameters.put("contType","Designated Responsible Party");
+				envParameters.put("fromEmail","calcannabislicensing@cdfa.ca.gov");
+				aa.runAsyncScript(scriptName, envParameters);
+				
+				var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
+				if(!matches(priChannel, "",null,"undefined", false)){
+					if(priChannel.indexOf("Postal") > -1 ){
+						var sName = createSet("Transistion Amendment Approval","Amendment Notifications", "New");
+						if(sName){
+							setAddResult=aa.set.add(sName,capId);
+							if(setAddResult.getSuccess()){
+								logDebug(capId.getCustomID() + " successfully added to set " +sName);
+							}else{
+								logDebug("Error adding record to set " + sName + ". Error: " + setAddResult.getErrorMessage());
+							}
 						}
 					}
 				}
@@ -108,7 +148,7 @@ try {
 			addParameter(eParams, "$$parentId$$", parentCapId.getCustomID());
 			var priEmail = ""+priContact.capContact.getEmail();
 			var rFiles = [];
-			sendNotification(sysFromEmail,priEmail,"","LCA_AMENDMENT_REJECTED",eParams, rFiles,capId);
+			sendNotification(sysFromEmail,priEmail,"","LCA_SCIENCE_AMENDMENT_REJECTED",eParams, rFiles,capId);
 	//		emailRptContact("", "LCA_AMENDMENT_APPROVAL", "", false, capStatus, capId, "Designated Responsible Party");
 			var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
 			if(!matches(priChannel, "",null,"undefined", false)){
