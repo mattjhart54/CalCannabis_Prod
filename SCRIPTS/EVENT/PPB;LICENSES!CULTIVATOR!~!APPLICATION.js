@@ -1,7 +1,7 @@
 try {
 //MJH 082719 Story 6162,6163 - Updated script to create License record type License/Cultivator/License/License, set the record Id prefix to CCL, 
 //                             update new custom fields Cultivator Type and License Issued Type and to include Cultivator type in the application name.
-	if(balanceDue<=PaymentTotalPaidAmount  && isTaskActive("Application Disposition")){
+	if(balanceDue<=ppPaymentAmount  && isTaskActive("Application Disposition")){
 		var annualLic = false;
 		if(isTaskStatus("Final Review","Approved for Annual License")) {
 			annualLic = true;
@@ -27,7 +27,7 @@ try {
 				var expDate = dateAddMonths(null,12);
 				setLicExpirationDate(licCapId,null,expDate,"Active");
 			}
-			closeTask("Application Disposition","License Issued","Updated via PRA:LICENSES/CULTIVATOR/*/APPLICATION","");
+			
 			var newAltLast = capIDString.substr(3,capIDString.length());
 			var newAltId = "CCL" + newAltLast;
 			var updAltId = aa.cap.updateCapAltID(licCapId,newAltId);
@@ -46,8 +46,10 @@ try {
 			}
 			if(annualLic) {
 				var issueType =  "Annual";
+				closeTask("Application Disposition","License Issued","Updated via PRA:LICENSES/CULTIVATOR/*/APPLICATION","");
 			} else {
 				var issueType = "Provisional";
+				closeTask("Application Disposition","Provisional License Issued","Updated via PRA:LICENSES/CULTIVATOR/*/APPLICATION","");
 			}
 			if(childSupport){
 				var newAppName = "TEMPORARY - " + cultivatorType + " - " + AInfo["License Type"];
@@ -83,5 +85,4 @@ try {
 	logDebug("An error has occurred in PRB:LICENSES/CULTIVATOR/*/APPLICATION: License Issuance: " + err.message);
 	logDebug(err.stack);
 }
-
 //mhart 082719 Story 6162 and 6163 end
