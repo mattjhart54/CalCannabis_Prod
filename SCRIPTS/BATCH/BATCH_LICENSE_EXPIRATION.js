@@ -116,6 +116,8 @@ var createNotifySets = getJobParam("createNotifySets").substring(0, 1).toUpperCa
 var sendEmailNotifications = getJobParam("sendEmailNotifications");
 var sysFromEmail = getJobParam("sysFromEmail");
 var rptName = getJobParam("reportName");
+var addrType = getParam("sendEmailAddressType");
+
 
 if(appTypeType=="*") appTypeType="";
 if(appSubtype=="*")  appSubtype="";
@@ -140,7 +142,11 @@ acaSite = acaSite.substr(0, acaSite.toUpperCase().indexOf("/ADMIN"));
 
 logDebug("Date Range -- fromDate: " + fromDate + ", toDate: " + toDate)
 
+var useAppSpecificGroupName = false;
+var AInfo = [];
+var feeSeqList = [];
 var startTime = startDate.getTime(); // Start timer
+var currentUserID = "ADMIN";
 var systemUserObj = aa.person.getUser("ADMIN").getOutput();
 
 appGroup = appGroup == "" ? "*" : appGroup;
@@ -303,7 +309,27 @@ try{
 				updateAppStatus(newAppStatus, "");
 				capId = holdId;
 			}
-		}	
+		}
+	// Add Late Fee
+		if (newAppStatus == "Expired - Pending Renewal"){
+			renewalCapProject = getRenewalCapByParentCapIDForIncomplete(capId);
+			if (renewalCapProject != null) {
+				var renCapId = renewalCapProject.getCapID();
+				var feeDesc = getAppSpecific("License Type",renCapId) + " - Late Fee";
+				var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
+				if(thisFee){
+					holdId = capId;
+					capId = renCapId;
+					if (!feeExists(thisFee.feeCode)){
+						updateFee(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y", "N");
+					}
+					capId = holdId;
+				}else{
+					aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ASA:Licenses/Cultivation/Licnese/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
+					logDebug("An error occurred retrieving fee item: " + feeDesc);
+				}
+			}
+		}
 	// Send Notification
 		if (sendEmailNotifications == "Y" && sendEmailToContactTypes.length > 0 && emailTemplate.length > 0) {
 			var conTypeArray = sendEmailToContactTypes.split(",");
@@ -316,10 +342,10 @@ try{
 					contactFound = true;
 					pContact = getContactObj(capId,thisContact["contactType"]);
 					var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ pContact.capContact.getPreferredChannel());
-					if((matches(priChannel,null,"",undefined) || priChannel.indexOf("Postal") >-1) && setNonEmailPrefix != ""){
+					if((matches(priChannel,null,"",undefined) || priChannel.indexOf("Postal") >-1) && setPrefix != ""){
 						if(setCreated == false) {
 						   //Create NonEmail Set
-							var vNonEmailSet =  createExpirationSet(setNonEmailPrefix);
+							var vNonEmailSet =  createExpirationSet(setPrefix);
 							if(vNonEmailSet){
 								var sNonEmailSet = vNonEmailSet.toUpperCase();
 								var setHeaderSetType = aa.set.getSetByPK(sNonEmailSet).getOutput();
@@ -336,8 +362,13 @@ try{
 					}
 					conEmail = thisContact["email"];
 					if (conEmail) {
-						runReportAttach(capId,rptName, "altId", capId.getCustomID(), "contactType", thisContact["contactType"], "addressType", addrType); 
-						emailRptContact("BATCH", emailTemplate, "", false, "Deficiency Letter Sent", capId, thisContact["contactType"]);
+						if (expStatus == "Expired"){
+							var capReportVar = "RECORD_ID";
+						}else{
+							var capReportVar = "capId";
+						}
+						runReportAttach(capId,rptName, capReportVar, altId, "contactType", thisContact["contactType"], "addrType", addrType, "numberDays", lookAheadDays); 
+						emailRptContact("BATCH", emailTemplate, rptName, true, expStatus, capId, thisContact["contactType"], capReportVar, altId, "contactType", thisContact["contactType"], "addrType", addrType, "numberDays", lookAheadDays);
 						logDebug(altId + ": Sent Email template " + emailTemplate + " to " + thisContact["contactType"] + " : " + conEmail);
 					}
 				}
