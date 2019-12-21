@@ -24,6 +24,8 @@ try{
 			editAppSpecific("License Issued Type", pInfo["License Issued Type"]);
 			editAppSpecific("Business Name", pInfo["Legal Business Name"]);
 			editAppSpecific("Premises Address", pInfo["Premise Address"]);
+			editAppSpecific("Premises City", pInfo["Premise City"]);
+			editAppSpecific("Premises County", pInfo["Premise County"]);
 			editAppSpecific("APN", pInfo["APN"]);
 			editAppSpecific("Cultivator Type", pInfo["Cultivator Type"]);
 	//		editAppSpecific("Parent ID",parentCapId);
@@ -60,7 +62,6 @@ try{
 					logDebug("An error occurred retrieving fee item: " + feeDesc);
 				}
 			}
-				
 		//5. Set B1PERMIT.B1_ACCESS_BY_ACA to "N" for partial CAP to not allow that it is searched by ACA user.
 	//		aa.cap.updateAccessByACA(partialCapId, "N");
 		}else{

@@ -1,5 +1,5 @@
 try {
-	if (wfTask == "Renewal Review" && wfStatus == "Approved") {
+	if (matches(wfTask,"Renewal Review","Annual Renewal Review","Provisional Renewal Review") && wfStatus == "Approved") {
 		var vLicenseID;
 		var vIDArray;
 		var renewalCapProject;
@@ -37,24 +37,39 @@ try {
 				renewalCapProject.setRelationShip("R");  // move to related records
 				aa.cap.updateProject(renewalCapProject);
 			}
-	//Run Official License Certificate and Renewal Approval Letter and email the DRP	
+			
+	//Run Official License Certificate and Annual/Provisional Renewal Approval Email and Set the DRP		
+			if (AInfo["License Issued Type"] == "Provisional")
+				var approvalLetter = "Provisional Renewal Approval";
+			else
+				var approvalLetter = "Approval Letter Renewal";
 			var scriptName = "asyncRunOfficialLicenseRpt";
 			var envParameters = aa.util.newHashMap();
-			envParameters.put("licType", "Renewal");
+			envParameters.put("licType", "");
 			envParameters.put("appCap",altId);
 			envParameters.put("licCap",licAltId); 
-			envParameters.put("reportName","Official License Certificate"); 
+			envParameters.put("reportName","Official License Certificate");
+			envParameters.put("approvalLetter", approvalLetter);
+			envParameters.put("emailTemplate", "LCA_RENEWAL_APPROVAL");
+			envParameters.put("reason", "");
 			envParameters.put("currentUserID",currentUserID);
 			envParameters.put("contType","Designated Responsible Party");
 			envParameters.put("fromEmail","calcannabislicensing@cdfa.ca.gov");
 			aa.runAsyncScript(scriptName, envParameters);
+			
 			var priContact = getContactObj(capId,"Designated Responsible Party");
-	// If DRP preference is Postal ad license record to Renewal Issued set
+		// If DRP preference is Postal add license record to Annual/Provisional Renewal A set
 			if(priContact){
 				var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
 				if(!matches(priChannel, "",null,"undefined", false)){
 					if(priChannel.indexOf("Postal") > -1 ){
-						var sName = createSet("LICENSE_RENEWAL_ISSUED","License Notifications", "New");
+						
+						if (AInfo['License Issued Type'] == "Provisional") {
+							var sName = createSet("PROVISIONAL_LICENSE_RENEWAL_ISSUED","License Notifications", "New");
+						}
+						if (AInfo['License Issued Type'] == "Annual"){
+							var sName = createSet("ANNUAL_LICENSE_RENEWAL_ISSUED","License Notifications", "New");
+						}
 						if(sName){
 							setAddResult=aa.set.add(sName,vLicenseID);
 							if(setAddResult.getSuccess()){
@@ -70,7 +85,8 @@ try {
 			addToCat(vLicenseID);
 		}
 	}
-	if (wfTask == "Renewal Review" && wfStatus == "Denied") {
+	//Removing as per 6355, 6313, 6314, 6315
+	/*if (matches(wfTask,"Annual Renewal Review","Provisional Renewal Review") && wfStatus == "Recommended for Denial") {
 		var vLicenseID;
 		var vIDArray;
 		var renewalCapProject;
@@ -97,7 +113,11 @@ try {
 	// Add record to the CAT set
 			addToCat(vLicenseID);
 		}
-	}
+	}*/
+	if (wfTask == "License Manager" && wfStatus == "Revisions Required") {
+		reactivateActiveTasksWithStatus("Recommended for Denial");
+		deactivateTask("License Manager");
+	}			
 }catch(err){
 	logDebug("An error has occurred in WTUA:LICENSES/CULTIVATOR/LICENSE/RENEWAL: " + err.message);
 	logDebug(err.stack);
