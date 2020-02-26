@@ -31,7 +31,7 @@ try{
 	}
 	if (wfTask == "Licensing Case Assessment" && wfStatus == "Refer to LAU") {
 		editAppSpecific("Case Renewal Type","Renewal Review");
-		editAppName(editAppName("Renewal Review");
+		editAppName("Renewal Review");
 	}
 	if (wfTask == "LAU Assessment" && wfStatus == "Refer to Legal") {
 		editAppSpecific("Case Renewal Type","Renewal Hold");
@@ -40,7 +40,7 @@ try{
 	if (wfTask == "Licensing Case Assessmentt" && matches(wfStatus,"Refer to LAU","Notice of Violation","Local Non-Compliance","Owner Conviction")) {
 		if (AInfo['Case Renewal Type'] == "Renewal Allowed"){
 			editAppSpecific("Case Renewal Type", "Renewal Review");
-			editAppName(AInfo[editAppName("Renewal Review");
+			editAppName("Renewal Review");
 		}
 	}
 	if (matches(wfTask,"LAU Assessment","Licensing Case Assessment") && matches(wfStatus,"Resolved","Closed")) {
