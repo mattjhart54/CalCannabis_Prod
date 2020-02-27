@@ -4,8 +4,8 @@ try{
 		parentCapId = getParent();
 		holdId = capId;
 		capId = parentCapId;
-		if(!appHasCondition("License Hold","Applied","Notice of Violation",null)){
-			addStdCondition("License Hold","Notice of Violation");
+		if(!appHasCondition("Notice","Applied","Notice of Violation",null)){
+			addStdCondition("Notice","Notice of Violation");
 		}
 		capId = holdId;
 	}
@@ -14,8 +14,8 @@ try{
 		parentCapId = getParent();
 		holdId = capId;
 		capId = parentCapId;
-		if(!appHasCondition("License Hold","Applied","Owner Subsequent Convictions",null)){
-			addStdCondition("License Hold","Owner Subsequent Convictions");
+		if(!appHasCondition("Notice","Applied","Owner Subsequent Convictions",null)){
+			addStdCondition("Notice","Owner Subsequent Convictions");
 		}
 		capId = holdId;
 	}
