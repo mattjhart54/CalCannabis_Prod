@@ -164,7 +164,7 @@ try{
 			envParameters.put("contType","Designated Responsible Party");
 			envParameters.put("fromEmail","calcannabislicensing@cdfa.ca.gov");
 			aa.runAsyncScript(scriptName, envParameters);
-			
+			aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "","CTRCA debug: ",  altId + br +" " + licAltId + " " + br + approvalLetter);
 			var priContact = getContactObj(capId,"Designated Responsible Party");
 		// If DRP preference is Postal add license record to Annual/Provisional Renewal A set
 			if(priContact){
