@@ -111,7 +111,7 @@ try{
 		var vNewExpDate;
 		var vLicenseObj;
 		licAltId = licId.getCustomID();
-		altId = vLicenseAltId  //capId.getCustomID();
+		altId = newAltId  //capId.getCustomID();
 		if (licId != null) {
 	// Get current expiration date.
 			vLicenseObj = new licenseObject(null, licId);
