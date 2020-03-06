@@ -1,7 +1,6 @@
 try{
 	if(balanceDue<=0){
 		if (matches(getAppStatus(), null, "", undefined, "Renewal Fee Due")){
-			updateAppStatus("Submitted", "Updated via PPA:LICENSES/CULTIVATOR/*/Renewal.");
 
 			if(!isTaskComplete("Annual Renewal Review") && !isTaskComplete("Provisional Renewal Review")){
 				if (AInfo["License Issued Type"] == "Provisional") {
@@ -174,7 +173,8 @@ try{
 						addToCat(licId);
 					}
 				}
-			}	
+			}
+			updateAppStatus("Submitted", "Updated via PPA:LICENSES/CULTIVATOR/*/Renewal.");
 		}
 	}
 }catch(err){
