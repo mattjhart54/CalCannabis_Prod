@@ -140,6 +140,8 @@ try{
 		if(permit.getOutput().booleanValue()) { 
 			var reportResult = aa.reportManager.getReportResult(report); 
 			eTxt+="Get Report: " + reportResult.getOutput() + br;
+			eTxt+="appCap: " + appCap +br;
+			etxt+="Report: " + report + br;
 			if(reportResult) {
 				reportOutput = reportResult.getOutput();
 				var reportFile=aa.reportManager.storeReportToDisk(reportOutput);
@@ -178,7 +180,7 @@ try{
 } catch(err){
 	logDebug("An error has occurred in asyncRunOfficialLicenseRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunOfficialLicenseRpt: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + licCap + br + eTxt);
+	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunOfficialLicenseRpt: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + licCap + br + eTxt + br + + reportResult.getErrorType() + ":" +reportResult.getErrorMessage());
 }
  function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
 {
