@@ -1,8 +1,6 @@
 try{
-	updateAppStatus("Submitted","PRA script executed");
-	creatCapComment("Balance " + balanceDue + " App Status " + getAppStatus);
 	if(balanceDue<=0){
-		if (matches(getAppStatus(), null, "", undefined, "Renewal Fee Due")){
+//		if (matches(getAppStatus(), null, "", undefined, "Renewal Fee Due")){
 
 			if(!isTaskComplete("Annual Renewal Review") && !isTaskComplete("Provisional Renewal Review")){
 				if (AInfo["License Issued Type"] == "Provisional") {
@@ -179,7 +177,7 @@ try{
 			if (AInfo['Fast Track'] != "CHECKED"){
 				updateAppStatus("Submitted", "Updated via PPA:LICENSES/CULTIVATOR/*/Renewal.");
 			}
-		}
+//		}
 	}
 }catch(err){
 	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/*/Renewal: Renewal Fees Paid: " + err.message);
