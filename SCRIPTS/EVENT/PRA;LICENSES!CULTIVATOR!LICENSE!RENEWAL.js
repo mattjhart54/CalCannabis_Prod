@@ -1,4 +1,5 @@
 try{
+	updateAppStatus("Submitted","PRA script executed");
 	creatCapComment("Balance " + balanceDue + " App Status " + getAppStatus);
 	if(balanceDue<=0){
 		if (matches(getAppStatus(), null, "", undefined, "Renewal Fee Due")){
