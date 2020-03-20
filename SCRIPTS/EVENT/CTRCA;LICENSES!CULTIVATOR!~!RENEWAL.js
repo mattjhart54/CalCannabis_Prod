@@ -139,9 +139,9 @@ try{
 			}
 	// Update the workflow on the Renewal record to approved
 			if (AInfo["License Issued Type"] == "Provisional") {
-				closeTask("Provisional Renewal Review","Approved","Renewal Fast Tracked pre6","");
+				closeTask("Provisional Renewal Review","Approved","Renewal Fast Tracked","");
 			}else{
-				closeTask("Annual Renewal Review","Approved","Renewal Fast Tracked pre6","");
+				closeTask("Annual Renewal Review","Approved","Renewal Fast Tracked","");
 			}
 	//		updateAppStatus("Approved","Renewal Fast Tracked");
 			editAppSpecific("Fast Track","CHECKED");
