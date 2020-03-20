@@ -46,13 +46,13 @@ try{
 	}
 // Set status and deactivate workflow if fees are due
 	
-	if (AInfo["License Issued Type"] == "Provisional") {
-		updateTask("Provisional Renewal Review","In Progress","","");
-		deactivateTask("Annual Renewal Review");
-	}else{
-		updateTask("Annual Renewal Review","In Progress","","");
-		deactivateTask("Provisional Renewal Review");
-	}
+//	if (AInfo["License Issued Type"] == "Provisional") {
+//		updateTask("Provisional Renewal Review","In Progress","","");
+//		deactivateTask("Annual Renewal Review");
+//	}else{
+//		updateTask("Annual Renewal Review","In Progress","","");
+//		deactivateTask("Provisional Renewal Review");
+//	}
 //	if(balanceDue > 0) {
 //		updateAppStatus("Renewal Fee Due","Licensee chose Cash Option at checkout");
 //		deactivateActiveTasks();
@@ -64,11 +64,11 @@ try{
 		var hasFee = feeExists(thisFee.feeCode,"NEW");
 		if(hasFee) {
 			var invNbr = invoiceAllFees();
-			if (AInfo["License Issued Type"] == "Provisional") {
-				updateTask("Provisional Renewal Review","In Progress","","");
-			}else{
-				updateTask("Annual Renewal Review","In Progress","","");
-			}
+//			if (AInfo["License Issued Type"] == "Provisional") {
+//				updateTask("Provisional Renewal Review","In Progress","","");
+//			}else{
+//				updateTask("Annual Renewal Review","In Progress","","");
+//			}
 			updateAppStatus("Renewal Fee Due","Licensee chose Cash Option at checkout");
 			deactivateTask("Annual Renewal Review");
 			deactivateTask("Provisional Renewal Review");

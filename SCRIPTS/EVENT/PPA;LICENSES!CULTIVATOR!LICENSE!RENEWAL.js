@@ -5,9 +5,11 @@ try{
 			if(!isTaskComplete("Annual Renewal Review") && !isTaskComplete("Provisional Renewal Review")){
 				if (AInfo["License Issued Type"] == "Provisional") {
 					activateTask("Provisional Renewal Review");
+					updateTask("Provisional Renewal Review","In Progress","","");
 					deactivateTask("Annual Renewal Review");
 				}else{
 					activateTask("Annual Renewal Review");
+					updateTask("Annual Renewal Review","In Progress","","");
 					deactivateTask("Provisional Renewal Review");
 				}
 			}
