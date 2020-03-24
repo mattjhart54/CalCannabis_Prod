@@ -54,7 +54,7 @@ try{
 //		deactivateTask("Provisional Renewal Review");
 //	}
 	if(balanceDue > 0) {
-		updateAppStatus("Renewal Fee Due","");
+		updateAppStatus("Renewal Fee Due"," ");
 		deactivateActiveTasks();
 	}
 // Invoice all fees if cash payment selected at submission in ACA
