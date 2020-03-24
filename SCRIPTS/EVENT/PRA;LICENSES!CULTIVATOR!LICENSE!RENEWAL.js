@@ -176,7 +176,7 @@ try{
 					}
 				}
 			}
-			if (AInfo['Fast Track'] != "CHECKED"){
+			if (AInfo['Fast Track'] != "CHECKED" && getAppStatus != 'Submitted'){
 				updateAppStatus("Submitted", "Updated via PPA:LICENSES/CULTIVATOR/*/Renewal.");
 			}
 //		}
