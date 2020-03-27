@@ -13,6 +13,7 @@ try{
 					deactivateTask("Provisional Renewal Review");
 				}
 			}
+
 		
 			if(getAppStatus() == "Renewal Fee Due") {
 		// Check License Cases to see if renewal can be fast tracked
@@ -132,11 +133,11 @@ try{
 				}
 			}
 			if (AInfo['Fast Track'] != "CHECKED" && getAppStatus != 'Submitted'){
-				updateAppStatus("Submitted", "Updated via PPB:LICENSES/CULTIVATOR/*/Renewal.");
+				updateAppStatus("Submitted", "Updated via PPA:LICENSES/CULTIVATOR/*/Renewal.");
 			}
 //		}
 	}
 }catch(err){
-	logDebug("An error has occurred in PPA:LICENSES/CULTIVATOR/*/Renewal: Renewal Fees Paid: " + err.message);
+	logDebug("An error has occurred in PRA:LICENSES/CULTIVATOR/*/Renewal: Renewal Fees Paid: " + err.message);
 	logDebug(err.stack);
 }
