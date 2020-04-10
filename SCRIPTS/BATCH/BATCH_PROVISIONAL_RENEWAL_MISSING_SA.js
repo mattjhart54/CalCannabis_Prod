@@ -71,18 +71,17 @@ else
 |
 /------------------------------------------------------------------------------------------------------*/
 
-var appGroup = getParam("recordGroup");							//   app Group to process {Licenses}
-var appTypeType = getParam("recordType");						//   app type to process {Rental License}
-var appSubtype = getParam("recordSubtype");						//   app subtype to process {NA}
-var appCategory = getParam("recordCategory");						//   app category to process {NA}
-var skipAppStatusArray = getParam("skipAppStatus").split(",");	//   Skip records with one of these application statuses
-var caseTypeFieldValue = getParam("caseTypeFieldValue");
-var caseDescFieldValue = getParam("caseDescFieldValue");
-var caseOpenByFieldValue = getParam("caseOpenByFieldValue");
-var priorityFieldValue = getParam("priorityFieldValue");
-var emailAddress = getParam("emailAddress");					// email to send report
-var sendEmailToContactTypes = getParam("sendEmailToContactTypes");// send out emails?
-var emailTemplate = getParam("emailTemplate");				// email Template
+var appGroup = "Licenses"							//   app Group to process {Licenses}
+var appTypeType = "Cultivator"						//   app type to process {Rental License}
+var appSubtype = "License"						//   app subtype to process {NA}
+var appCategory = "Renewal"						//   app category to process {NA}
+var caseTypeFieldValue = "Renewal Allowed"
+var caseDescFieldValue = "Provisional Renewal Missing Science Amendment"
+var caseOpenByFieldValue = "Science Provisional"
+var priorityFieldValue = "Moderate"
+var emailAddress = ""					// email to send report
+var sendEmailToContactTypes = "";// send out emails?
+var emailTemplate = "";				// email Template
 
 
 /*----------------------------------------------------------------------------------------------------/
@@ -170,13 +169,6 @@ try{
 		capId = aa.cap.getCapID(vCapList[x].getCapID().getID1(),vCapList[x].getCapID().getID2(),vCapList[x].getCapID().getID3()).getOutput();
 		var capValue = aa.cap.getCap(capId).getOutput();
 		var altID = capId.getCustomID();
-		var capStatus = aa.cap.getCap(capId).getOutput().getCapStatus();
-		
-		// Filter by CAP Status
-		if (exists(capStatus, skipAppStatusArray)) {
-			capFilterStatus++;
-			continue;
-		}
 		
 		if (capValue.isCompleteCap() && getAppSpecific("License Issued Type",capId) == "Provisional"){
 			if(appHasCondition("Application Condition","Applied","Provisional Renewal Missing Science Amendment",null)){
@@ -186,7 +178,12 @@ try{
 				vIDArray = String(vLicenseID).split("-");
 				vLicenseID = aa.cap.getCapID(vIDArray[0],vIDArray[1],vIDArray[2]).getOutput();
 				renewalCapProject = getRenewalCapByParentCapIDForIncomplete(vLicenseID);
-				if (renewalCapProject != null) {
+				if (matches(renewalCapProject,undefined,null,"")) {
+					vLicenseID = getParent();
+				}
+				logDebug("vLicenseID: " + vLicenseID + " vLicAltID: " + vLicenseID.getCustomID());
+				if (String(vLicenseID.getCustomID()).substr(0,3) == "CCL"){
+					logDebug("Parent Record " + vLicenseID.getCustomID());
 					var licCaseId = createChild("Licenses","Cultivator","License Case","NA","",vLicenseID);
 					if (licCaseId){
 						// Set alt id for the case record based on the number of child case records linked to the license record
