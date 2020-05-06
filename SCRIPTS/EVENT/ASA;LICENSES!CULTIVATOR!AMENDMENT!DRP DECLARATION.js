@@ -37,10 +37,13 @@ try {
 	
 // Copy custom fields from the license record to the child amendment record
 
-	if(parentAltId.substring(1,2) == "M")
-		appIds = getChildren("Licenses/Cultivator/Medical/Application",parentId);
-	else
-		appIds = getChildren("Licenses/Cultivator/Adult Use/Application",parentId);
+//	if(parentAltId.substring(1,2) == "M")
+	var cType = getAppSpecific("Cultivator Type",parentId)
+//	if(cType == "Medicinal")
+//		appIds = getChildren("Licenses/Cultivator/Medical/Application",parentId);
+//	else
+//		appIds = getChildren("Licenses/Cultivator/Adult Use/Application",parentId);
+	appIds = getChildren("Licenses/Cultivator/*/Application",parentId);
 	for(a in appIds) {
 		decIds = getChildren("Licenses/Cultivator/Medical/Declaration",appIds[a]);
 		for(d in decIds) {
