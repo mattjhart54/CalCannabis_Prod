@@ -28,7 +28,9 @@ try {
 	// Update the Cultivation Type on the license record
 			if(AInfo["Designation Change"] == "Yes") {
 				editAppSpecific("Cultivator Type",AInfo["Designation Type"],vLicenseID);
-				editAppName(AInfo["Designation Type"] + " - " + AInfo["License Type"],vLicenseID);
+				editAppName(AInfo["License Issued Type"] + " " + AInfo["New Designation"] + " - " + AInfo["License Type"],vLicenseID);
+			}else{
+				editAppName(AInfo["License Issued Type"] + " " + AInfo["Cultivator Type"] + " - " + AInfo["License Type"],vLicenseID);
 			}
 	//Set renewal to complete, used to prevent more than one renewal record for the same cycle
 			renewalCapProject = getRenewalCapByParentCapIDForIncomplete(vLicenseID);
@@ -83,6 +85,20 @@ try {
 			}
 	// Add record to the CAT set
 			addToCat(vLicenseID);
+		}
+		if(balanceDue>0){
+			// Remove Late Fees
+			if (AInfo['Waive Late Fee'] == "CHECKED"){
+				var feeDesc = AInfo["License Type"] + " - Late Fee";
+				var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
+				if(thisFee){
+					var hasFee = feeExists(thisFee.feeCode);
+					if(hasFee) {
+						voidRemoveFeesByDesc(feeDesc);
+					}
+				}
+			}
+			updateAppStatus("Deferral Approved", "Updated via ASIUA:LICENSES/CULTIVATOR/*/Renewal.");
 		}
 	}
 	//Removing as per 6355, 6313, 6314, 6315
