@@ -73,12 +73,8 @@ else
 
 var appGroup = "Licenses"							//   app Group to process {Licenses}
 var appTypeType = "Cultivator"						//   app type to process {Rental License}
-var appSubtype = "License"						//   app subtype to process {NA}
-var appCategory = "Renewal"						//   app category to process {NA}
-var caseTypeFieldValue = "Renewal Allowed"
-var caseDescFieldValue = "Provisional Renewal Missing Science Amendment"
-var caseOpenByFieldValue = "Science Provisional"
-var priorityFieldValue = "Moderate"
+var appSubtype = "Amendment"						//   app subtype to process {NA}
+var appCategory = "DRP Declaration"						//   app category to process {NA}
 var emailAddress = ""					// email to send report
 var sendEmailToContactTypes = "";// send out emails?
 var emailTemplate = "";				// email Template
@@ -124,6 +120,7 @@ function mainProcess(){
 try{	
 	var capFilterStatus = 0;
 	var capCount  =0;
+	var processedArray = [];
 	
 	var capModel = aa.cap.getCapModel().getOutput();
 	//Get the Permits from the system 
@@ -148,43 +145,63 @@ try{
 
 	for (x in vCapList) {
 		capCount++;
+		var editCount = false;
 		capId = aa.cap.getCapID(vCapList[x].getCapID().getID1(),vCapList[x].getCapID().getID2(),vCapList[x].getCapID().getID3()).getOutput();
-		var parentAltId = getAppSpecific("License Number",capId);
-		parentId = aa.cap.getCapID(parentAltId).getOutput();
-		appIds = getChildren("Licenses/Cultivator/*/Application",parentId);
-		for(a in appIds) {
-			decIds = getChildren("Licenses/Cultivator/Medical/Declaration",appIds[a]);
-			for(d in decIds) {
-				decId = decIds[d];
+		if (String(capId.getCustomID()).substr(0,3) == "CCL"){
+			var parentAltId = getAppSpecific("License Number",capId);
+			if (matches(parentAltId,null,undefined,"")){logDebug(capId.getCustomID() + " Missing Parent ID"); continue;}
+			parentId = aa.cap.getCapID(parentAltId).getOutput();
+			appIds = getChildren("Licenses/Cultivator/*/Application",parentId);
+			for(a in appIds) {
+				decIds = getChildren("Licenses/Cultivator/Medical/Declaration",appIds[a]);
+				for(d in decIds) {
+					decId = decIds[d];
+				}
+			}
+			var recordASIGroup = aa.appSpecificInfo.getByCapID(capId);
+			if (recordASIGroup.getSuccess()){
+				var recordASIGroupArray = recordASIGroup.getOutput();
+				for (i in recordASIGroupArray) {
+					var group = recordASIGroupArray[i];
+					var groupName = String(group.getGroupCode());
+					var recordField = String(group.getCheckboxDesc());
+					var subGroup = String(group.getCheckboxType());
+					var fieldValue = String(group.getChecklistComment());
+					var decValue = String(getAppSpecific(recordField,decId));
+					if (matches(subGroup,"DISCLOSURES","DECLARATION")){
+						if (!matches(recordField,"hide_da_disc","hide_da_dcl")){
+							if(fieldValue != decValue){
+								logDebug("Record: " + capId.getCustomID() + " Editing: " + recordField + ": " + fieldValue + " To: " + decValue);
+								editAppSpecific(recordField,decValue,capId);
+								if (processedArray.indexOf(String(capId.getCustomID())) < 0){
+									processedArray.push(String(capId.getCustomID()));
+								}
+								editCount = true;
+							}
+						}
+					}
+				}
+			}
+			var appName = String(aa.cap.getCap(capId).getOutput().getSpecialText());
+			var parentAppName = String(aa.cap.getCap(parentId).getOutput().getSpecialText());
+			if (appName != parentAppName){
+				editAppName(parentAppName);
+				logDebug("Record: " + capId.getCustomID() + " appName: " + appName + " Edited to: " + parentAppName);
+				editCount = true;
+				if (processedArray.indexOf(String(capId.getCustomID())) < 0){
+					processedArray.push(String(capId.getCustomID()));
+				}
+			}
+			if (editCount){
+				capFilterStatus++;
 			}
 		}
-       holdId = capId;
-       capId = decId;
-       PInfo = new Array;
-       loadAppSpecific(PInfo);
-       capId = holdId;
-       editAppSpecific("Conflicting License",PInfo["Conflicting License"]);
-       editAppSpecific("Unlicensed Activity",PInfo["Unlicensed Activity"]);
-       editAppSpecific("Documented Conduct",PInfo["Documented Conduct"]);
-       editAppSpecific("Fines or Penalties",PInfo["Fines or Penalties"]);
-       editAppSpecific("D1",PInfo["D1"]);
-       editAppSpecific("D2",PInfo["D2"]);
-       editAppSpecific("D3",PInfo["D3"]);
-       editAppSpecific("D4",PInfo["D4"]);
-       editAppSpecific("D5",PInfo["D5"]);
-       editAppSpecific("D7",PInfo["D7"]);
-       editAppSpecific("D8",PInfo["D8"]);
-       editAppSpecific("D9",PInfo["D9"]);
-       editAppSpecific("D10",PInfo["D10"]);
-       editAppSpecific("D11",PInfo["D11"]);
-       editAppSpecific("Certification",PInfo["Certification"]);
-       editAppName(getAppSpecific("License Type",parentId));
-       updateShortNotes(getShortNotes(parentId));
-       updateWorkDesc(workDescGet(parentId));
 	}
 	
 	logDebug("Total Caps: " + capCount);
+	logDebug("Number Caps Processed: " + capFilterStatus);
+	logDebug("List of Caps Processed: " + processedArray);
 }catch (err){
-	logDebug("BATCH_PROVISIONAL_RENEWAL_MISSING_SA: " + err.message + " In " + batchJobName);
+	logDebug("BATCH_DRP_Updates: " + err.message + " In " + batchJobName);
 	logDebug("Stack: " + err.stack);
 }}
