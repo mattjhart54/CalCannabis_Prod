@@ -32,6 +32,7 @@ try {
 			logDebug("Updated amendment record AltId to " + newAltId + ".");
 		else 
 			logDebug("Error renaming amendment record " + capId + " to " + newAltId);
+	
 		
 // Copy the Designated resposible Party contact from the License Record to the Amanedment record
 		copyContactsByType_rev(parentId,capId,"Designated Responsible Party");
@@ -61,7 +62,7 @@ try {
 		editAppSpecific("Other Update",PInfo["Other"]);
 		editAppSpecific("Other Source Description",PInfo["Other Source Description"]);
 		copyASITables(parentId,capId,"DEFICIENCIES","DENIAL REASONS","OWNERS","CANNABIS FINANCIAL INTEREST");
-		editAppName(PInfo["Cultivator Type"] + " " + PInfo["License Type Issued"] + " - " +PInfo["License Type"]);
+		editAppName(PInfo["Cultivator Type"] + " " + PInfo["License Issued Type"] + " - " +PInfo["License Type"]);
 		updateShortNotes(getShortNotes(parentId));
 		updateWorkDesc(workDescGet(parentId));
 	
