@@ -28,13 +28,17 @@ try{
     var dataJsonArray = [];
     for (var i = 0, len = licenseNumStrings.length; i < len; i++) {
         try {
-            var jsonData = licenseNumberToCatJson(licenseNumStrings[i]);
-            if (jsonData["LicenseStatus"] == 'Active') {
-                result.activeCount++;
-            } else {
-                result.inactiveCount++;
-            }
-            dataJsonArray.push(jsonData);
+			var jsonData = licenseNumberToCatJson(licenseNumStrings[i]);
+			if (typeof(jsonData) == "object"){
+				if (jsonData["LicenseStatus"] == 'Active') {
+					result.activeCount++;
+				} else {
+					result.inactiveCount++;
+				}
+				dataJsonArray.push(jsonData);
+			}else{
+				throw jsonData;
+			}
         } catch (err) {
             aa.print(err.stack);
             result.errorRecordCount++;
