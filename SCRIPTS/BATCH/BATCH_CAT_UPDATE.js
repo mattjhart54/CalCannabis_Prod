@@ -71,6 +71,7 @@ aa.env.setValue("sysFromEmail", "calcannabislicensing@cdfa.ca.gov");
 aa.env.setValue("nbrDays", "45")
 */
 
+
 var emailAddress = aa.env.getValue("emailAddress"); // email address to send failures
 var baseUrl = aa.env.getValue("baseUrl"); // base url for CAT API
 var apiKey = aa.env.getValue("apiKey"); // key for CAT API
@@ -78,6 +79,7 @@ var nbrDays = aa.env.getValue("nbrDays");
 var catAPIChunkSize = aa.env.getValue("chunkSize"); //get Number of records to send to CAT during each iteration
 var SET_ID = aa.env.getValue("setId"); //Set that records will be processing from
 var sysFromEmail = aa.env.getValue("sysFromEmail");
+
 
 
 /*----------------------------------------------------------------------------------------------------/
@@ -103,54 +105,163 @@ try {
     var theSet = aa.set.getSetByPK(SET_ID).getOutput();
     var status = theSet.getSetStatus();
     var setId = theSet.getSetID();
-    var memberResult = aa.set.getCAPSetMembersByPK(SET_ID);
-    if (!memberResult.getSuccess()) {
-        logDebug("**WARNING** error retrieving set members " + memberResult.getErrorMessage());
+	var members = [];
+	var correctionArray = [];
+	var correctionRecordCount = 0;
+	var expWithinNbrDays = [];
+	var expWithinNbrDaysCount = 0; 
+	var invalidRecordArray = [];
+	var invalidRecordCount = 0;
+	
+	memberResult=aa.set.getSetByPK(SET_ID); 
+	if(!memberResult.getSuccess()) { 
+		logDebug("**WARNING** error retrieving set members " + memberResult.getErrorMessage());
     } else {
-        var members = memberResult.getOutput().toArray();
-        var size = members.length;
-        if (members.length > 0) {
-            var compositeResult = {
-                totalCount: size,
-                activeCount: 0,
-                inactiveCount: 0,
-                errorRecordCount: 0,
-                errorRecords: [],
-                errors: []
-            };
-            //logDebug("capSet: loaded set " + setId + " of status " + status + " with " + size + " records");
-            logDebug("capSet: loaded set " + setId + " with " + size + " records");
-            var licenseNos = capIdsToLicenseNos(members);
-            var start, end, licenseNosChunk;
-            for (start = 0, end = licenseNos.length; start < end; start += catAPIChunkSize) { //chunk calls to the API
+		memberResult=memberResult.getOutput(); 
+		
+		var setMembers=aa.set.getCAPSetMembersByPK(memberResult.getSetID()); 
+		var array=new Array(); 
+		array=setMembers.getOutput();
+
+		for(x=0;x<array.size();x++){
+			
+			var setMember=array.get(x);
+			setMember=setMember.toString();
+			var ids=new Array();
+			ids=setMember.split("-");
+			var license = aa.cap.getCap(ids[0], ids[1], ids[2]);
+			license= license.getOutput();
+			capId = license.getCapID();
+			var altId = capId.getCustomID();
+			cap = aa.cap.getCap(capId).getOutput();
+			capStatus = cap.getCapStatus();
+			if(capStatus == "Expired") {
+				var vLicenseObj = new licenseObject(altId);
+				var licExp = vLicenseObj.b1ExpDate;
+				var diff = getDateDiff(licExp);
+				if(diff < nbrDays) {
+					logDebug(altId + ": Ignored, Expired within last 45 days");
+					expWithinNbrDays.push(altId);
+					expWithinNbrDaysCount++;
+					continue;
+				}
+			}
+			var AInfo = [];
+			var validationMessage = "";
+			loadAppSpecific(AInfo);
+			if (String(altId.substr(0,3)) != "CCL"){
+				logDebug("Record " + altId + " is not a valid record number");	
+				invalidRecordArray.push(altId);
+				invalidRecordCount++;
+				continue;
+			}else{
+				if(AInfo["Legal Business Name"]!=null){
+					if(isUnicode(String(AInfo["Legal Business Name"]))){	
+						validationMessage += " An illegal character has been found in Legal Business Name of " + altId;
+					}
+				}
+				if(matches(AInfo["Cultivator Type"],null,undefined,"")){
+					validationMessage += " Record " + altId + " - License Type is null";
+				}else{
+					if(!matches(AInfo["Cultivator Type"],"Adult-Use","Medicinal")){
+						validationMessage += " Record " + altId + " - Cultivation Type field is invalid";
+					}
+				}
+				if(matches(AInfo["Valid From Date"],null,undefined,"")){
+					validationMessage += " Record " + altId + " - Invalid Valid from Date";
+				}
+				var vLicenseObj = new licenseObject(altId);
+				var expDate = vLicenseObj.b1ExpDate;
+				if (!expDate){
+					validationMessage += " Record " + altId + "- Invalid Expiration Date";
+				}
+				var contDRP = getContactByType("Designated Responsible Party",capId);
+				var contBsns = getContactByType("Business",capId);
+				if (matches(contDRP.phone3,null,undefined,"")){
+					validationMessage += " Record " + altId + "- Invalid DRP phone number";
+				}
+				if (matches(contBsns.phone3,null,undefined,"")){
+					validationMessage += " Record " + altId + " - Invalid Business phone number";
+				}
+				if (matches(contDRP.email,null,undefined,"")){
+					validationMessage += " Record " + altId + " - The DRP email address is null";
+				}
+				if(!matches(AInfo["Premise Address"],null,undefined,"")){
+					if(isUnicode(String(AInfo["Premise Address"]))){
+						validationMessage += " An illegal character has been found in Premise Address of " + altId;
+					}
+				}
+				if(AInfo["Premise County"]==null){
+					validationMessage += " Record " + altId + "- The Premises County is null";
+				}
+				if(matches(contDRP.firstName,null,undefined,"")){
+					validationMessage += " Record " + altId + "- The Designated Responsible Party first name is null";
+				}
+				if(matches(contDRP.lastName,null,undefined,"")){
+					validationMessage += " Record " + altId + "- The Designated Responsible Party last name is null";
+				}
+				if(AInfo["APN"]==null){
+					validationMessage += " Record " + altId +  "- The Premise APN is null";
+				}
+				if(!matches(validationMessage,null,undefined,"")){
+					correctionArray.push(altId);
+					correctionRecordCount++;
+					logDebug("Record " + altId + " was not processed due to validation errors: " + validationMessage);
+					continue;
+				}else{
+					members.push(altId);
+				}	
+			}	
+		
+		}
+	}		
+	var size = members.length;
+	if (members.length > 0) {
+		var compositeResult = {
+			totalCount: size,
+			activeCount: 0,
+			inactiveCount: 0,
+			errorRecordCount: 0,
+			errorRecords: [],
+			errors: []
+		};
+		//logDebug("capSet: loaded set " + setId + " of status " + status + " with " + size + " records");
+		logDebug("capSet: loaded set " + setId + " with " + size + " records");
+		var start, end, licenseNosChunk;
+		for (start = 0, end = members.length; start < end; start += catAPIChunkSize) { //chunk calls to the API
 // MJH Story 5843 - Remove timeout logic
 /*            	if (elapsed() > maxSeconds) { // only continue if time hasn"t expired
-					logDebug("WARNING: A script timeout has caused partial completion of this process.  Please re-run.  " + elapsed() + " seconds elapsed, " + maxSeconds + " allowed.") ;
-					timeExpired = true ;
-					break; 
-				}
+				logDebug("WARNING: A script timeout has caused partial completion of this process.  Please re-run.  " + elapsed() + " seconds elapsed, " + maxSeconds + " allowed.") ;
+				timeExpired = true ;
+				break; 
+			}
 */				
-                licenseNosChunk = licenseNos.slice(start, start + catAPIChunkSize);
-                var putResult = initiateCatPut(licenseNosChunk, String(baseUrl), String(apiKey));
-                if (putResult.getSuccess()) {
-                    var resultObject = putResult.getOutput();
-                    removeFromSet(licenseNosToCapIds(licenseNosChunk), resultObject.errorRecords);
-                    compositeResult = {
-                        totalCount: compositeResult.totalCount,
-                        activeCount: compositeResult.activeCount + resultObject.activeCount,
-                        inactiveCount: compositeResult.inactiveCount + resultObject.inactiveCount,
-                        errorRecordCount: compositeResult.errorRecordCount + resultObject.errorRecordCount,
-                        errorRecords: compositeResult.errorRecords.concat(resultObject.errorRecords),
-                        errors: compositeResult.errors.concat(resultObject.errors)
-                    };
-                } else {
-                    logDebug( "ERROR: " + putResult.getErrorType() + " " + putResult.getErrorMessage());
-                }
-            }
-        } else {
-            logDebug("Completed successfully: No records to process");
-        }
-    }
+			licenseNosChunk = members.slice(start, start + catAPIChunkSize);
+			var putResult = initiateCatPut(licenseNosChunk, String(baseUrl), String(apiKey));
+			if (putResult.getSuccess()) {
+				var resultObject = putResult.getOutput();
+				removeFromSet(licenseNosToCapIds(licenseNosChunk), resultObject.errorRecords);
+				compositeResult = {
+					totalCount: compositeResult.totalCount,
+					activeCount: compositeResult.activeCount + resultObject.activeCount,
+					inactiveCount: compositeResult.inactiveCount + resultObject.inactiveCount,
+					errorRecordCount: compositeResult.errorRecordCount + resultObject.errorRecordCount,
+					errorRecords: compositeResult.errorRecords.concat(resultObject.errorRecords),
+					errors: compositeResult.errors.concat(resultObject.errors)
+				};
+			} else {
+				logDebug( "ERROR: " + putResult.getErrorType() + " " + putResult.getErrorMessage());
+			}
+		}
+	} else {
+		logDebug("Completed successfully: No records to process");
+	}
+	logDebug(correctionRecordCount + " records have invalid information and where not processed.");
+	logDebug("records to be corrected: " + correctionArray);
+	logDebug(expWithinNbrDaysCount + " records have been skipped, because they have expired within last 45 days.");
+	logDebug("records expired within last 45 days: " + expWithinNbrDays);
+	logDebug(invalidRecordCount + " records have invalid Record Numbers.");
+	logDebug("records to be corrected: " + invalidRecordArray);
 	logDebug("End of Job: Elapsed Time : " + elapsed() + " Seconds");
 	if (emailAddress.length)
 		aa.sendMail(sysFromEmail, emailAddress, "",batchJobID + " " + batchJobName + " Results for " + sysDateMMDDYYYY, emailText);
@@ -167,28 +278,6 @@ try {
 | <===========Internal Functions and Classes (Used by this script)
 /------------------------------------------------------------------------------------------------------*/
 
-function capIdsToLicenseNos(capIdArray) {
-    var licenseNoArray = [];
-    for (var i = 0, len = capIdArray.length; i < len; i++) {
-    	var licenseNo = aa.cap.getCap(capIdArray[i]).getOutput().getCapID().getCustomID();
-		logDebug("licenseNumber: " + licenseNo);
-		capId = aa.cap.getCapID(capIdArray[i].ID1, capIdArray[i].ID2, capIdArray[i].ID3).getOutput();
-		cap = aa.cap.getCap(capId).getOutput();
-		capStatus = cap.getCapStatus();
-		if(capStatus == "Expired") {
-			var vLicenseObj = new licenseObject(licenseNo);
-			var licExp = vLicenseObj.b1ExpDate;
-			var diff = getDateDiff(licExp);
-//			logDebug("expiration: " + licExp + " days diff " + diff);
-			if(diff < nbrDays) {
-				logDebug("License Ignored");
-				continue;
-			}
-		}
-        licenseNoArray.push(licenseNo.toString());
-    }
-    return licenseNoArray;
-}
 
 function licenseNosToCapIds(licenseNoArray) {
     var capIdArray = [];
@@ -209,7 +298,7 @@ function removeFromSet(capIds, errorLicenseNumbers) {
             if (!removeResult.getSuccess()) {
                 logDebug("**WARNING** error removing record from set " + SET_ID + " : " + removeResult.getErrorMessage());
             } else {
-                logDebug("capSet: removed record " + capIds[i] + " from set " + SET_ID);
+                logDebug("capSet: removed record " + capIds[i].getCustomID() + " from set " + SET_ID);
             }
         }
     }
