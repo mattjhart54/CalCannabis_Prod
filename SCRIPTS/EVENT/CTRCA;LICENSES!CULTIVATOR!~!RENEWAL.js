@@ -354,7 +354,7 @@ try{
 				invNbr = iList[iNum].getInvNbr();
 				if (!matches(invNbr,null,undefined,"")){
 					iFound = true;
-					runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",newAltId,"invoiceNbr", String(invNbr));
+					runReportAttach(capId,"CDFA_Invoice_Params","agencyid", "CALCANNABIS","capID",capId.getCustomID(),"invoiceNbr", String(invNbr));
 				}
 			}
 			if (!iFound){
