@@ -350,9 +350,47 @@ try{
 		for (iNum in iList){
 			invNbr = iList[iNum].getInvNbr();
 			logDebug("invNbr: " + invNbr);
-			runReportAttach(capId,"CDFA_Invoice_Params","agencyid", "CALCANNABIS","capID",capId.getCustomID(),"invoiceNbr", String(invNbr));
+			runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",String(capId.getCustomID()),"invoiceNbr", String(invNbr));
 		}
 	}
+	//************************Test**************************************************
+	
+	var reportName = "CDFA_Invoice_Params";
+
+	reportResult = aa.reportManager.getReportInfoModelByName(reportName);
+
+	if (!reportResult.getSuccess())
+		{ logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); return false; }
+
+	var report = reportResult.getOutput(); 
+
+	var itemCap = aa.cap.getCap(capId).getOutput();
+	appTypeResult = itemCap.getCapType();
+	appTypeString = appTypeResult.toString(); 
+	appTypeArray = appTypeString.split("/");
+
+	report.setModule(appTypeArray[0]); 
+	report.setCapId(itemCapId.getID1() + "-" + itemCapId.getID2() + "-" + itemCapId.getID3()); 
+	report.getEDMSEntityIdModel().setAltId(itemCapId.getCustomID());
+
+	var parameters = aa.util.newHashMap();              
+		parameters.put("agencyId","CALCANNABIS");
+		parameters.put("capID",String(capId.getCustomID()));
+		parameters.put("invoiceNbr",String(invNbr));
+
+	report.setReportParameters(parameters);
+
+	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
+	if(permit.getOutput().booleanValue()) 
+		{ 
+		var reportResult = aa.reportManager.getReportResult(report); 
+
+		logDebug("Report " + aaReportName + " has been run for " + itemCapId.getCustomID());
+
+		}
+	else
+		logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
+}
 
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
