@@ -350,7 +350,7 @@ try{
 		for (iNum in iList){
 			invNbr = iList[iNum].getInvNbr();
 			logDebug("invNbr: " + invNbr);
-			runReportAttach(capId,"CDFA_Invoice_Params","invoiceNbr", String(invNbr));
+			runReportAttach(capId,"CDFA_Invoice_Params","agencyid", "CALCANNABIS","capID",capId.getCustomID(),"invoiceNbr", String(invNbr));
 		}
 	}
 
