@@ -350,47 +350,16 @@ try{
 		for (iNum in iList){
 			invNbr = iList[iNum].getInvNbr();
 			logDebug("invNbr: " + invNbr);
-			runReportAttach(capId,"CDFA_Invoice_Params","capID",String(capId.getCustomID()),"invoiceNbr", String(invNbr)),"agencyId", "CALCANNABIS";
+			logDebug("currentUserID: " + currentUserID);
+			runReportAttach(capId,"CDFA_Invoice_Params","capID",capId.getCustomID(),"invoiceNbr", String(invNbr)),"agencyId", "CALCANNABIS";
 		}
 	}
-	//************************Test**************************************************
-	
-	var reportName = "CDFA_Invoice_Params";
-
-	reportResult = aa.reportManager.getReportInfoModelByName(reportName);
-
-	if (!reportResult.getSuccess())
-		{ logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage());}
-
-	var report = reportResult.getOutput(); 
-
-	var itemCap = aa.cap.getCap(capId).getOutput();
-	appTypeResult = itemCap.getCapType();
-	appTypeString = appTypeResult.toString(); 
-	appTypeArray = appTypeString.split("/");
-
-	report.setModule(appTypeArray[0]); 
-	report.setCapId(capId.getID1() + "-" + capId.getID2() + "-" + capId.getID3()); 
-	report.getEDMSEntityIdModel().setAltId(capId.getCustomID());
-
-	var parameters = aa.util.newHashMap();
-		parameters.put("capID",capId.getCustomID());
-		parameters.put("invoiceNbr",String(invNbr));	
-		parameters.put("agencyId","CALCANNABIS");
-
-
-	report.setReportParameters(parameters);
-
-	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
-	if(permit.getOutput().booleanValue()) 
-		{ 
-		var reportResult = aa.reportManager.getReportResult(report); 
-
-		logDebug("Report " + reportName + " has been run for " + capId.getCustomID());
-
-		}
-	else
-		logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
+	var scriptName = "asyncRunCDFAInvoiceParamsRpt";
+	var envParameters = aa.util.newHashMap();
+	envParameters.put("licCap",capId.getCustomID()); 
+	envParameters.put("invNbr", invNbr);
+	envParameters.put("currentUserID",currentUserID);
+	aa.runAsyncScript(scriptName, envParameters);
 
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
