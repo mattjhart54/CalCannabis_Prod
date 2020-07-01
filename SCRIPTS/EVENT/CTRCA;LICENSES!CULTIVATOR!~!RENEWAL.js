@@ -351,7 +351,7 @@ try{
 			invNbr = iList[iNum].getInvNbr();
 			logDebug("invNbr: " + invNbr);
 			logDebug("currentUserID: " + currentUserID);
-			runReportAttach(capId,"CDFA_Invoice_Params","capID",capId.getCustomID(),"invoiceNbr", String(invNbr)),"agencyId", "CALCANNABIS";
+			runReportAttach(capId,"CDFA_Invoice_Params","capID",capId.getCustomID(),"invoiceNbr", String(invNbr),"agencyId", "CALCANNABIS");
 		}
 	}
 	var scriptName = "asyncRunCDFAInvoiceParamsRpt";
