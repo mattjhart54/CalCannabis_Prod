@@ -360,7 +360,7 @@ try{
 	reportResult = aa.reportManager.getReportInfoModelByName(reportName);
 
 	if (!reportResult.getSuccess())
-		{ logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); return false; }
+		{ logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage());}
 
 	var report = reportResult.getOutput(); 
 
