@@ -370,8 +370,8 @@ try{
 	appTypeArray = appTypeString.split("/");
 
 	report.setModule(appTypeArray[0]); 
-	report.setCapId(itemCapId.getID1() + "-" + itemCapId.getID2() + "-" + itemCapId.getID3()); 
-	report.getEDMSEntityIdModel().setAltId(itemCapId.getCustomID());
+	report.setCapId(capId.getID1() + "-" + capId.getID2() + "-" + capId.getID3()); 
+	report.getEDMSEntityIdModel().setAltId(capId.getCustomID());
 
 	var parameters = aa.util.newHashMap();              
 		parameters.put("agencyId","CALCANNABIS");
@@ -385,7 +385,7 @@ try{
 		{ 
 		var reportResult = aa.reportManager.getReportResult(report); 
 
-		logDebug("Report " + aaReportName + " has been run for " + itemCapId.getCustomID());
+		logDebug("Report " + aaReportName + " has been run for " + capId.getCustomID());
 
 		}
 	else
