@@ -347,20 +347,11 @@ try{
 	if (iListResult.getSuccess()) {
 		iList = iListResult.getOutput();
 		invNbr = "";
-		iFound = false;
 		for (iNum in iList){
-			fList = aa.invoice.getFeeItemInvoiceByInvoiceNbr(iList[iNum].getInvNbr()).getOutput()
-			for (fNum in fList){
-				invNbr = iList[iNum].getInvNbr();
-				if (!matches(invNbr,null,undefined,"")){
-					iFound = true;
-					runReportAttach(capId,"CDFA_Invoice_Params","agencyid", "CALCANNABIS","capID",capId.getCustomID(),"invoiceNbr", String(invNbr));
-				}
-			}
-			if (!iFound){
-				  logMessage("Invoice not found");
-			}
-		}	
+			invNbr = iList[iNum].getInvNbr();
+			logDebug("invNbr: " + invNbr);
+			runReportAttach(capId,"CDFA_Invoice_Params","invoiceNbr", String(invNbr));
+		}
 	}
 
 } catch(err){
