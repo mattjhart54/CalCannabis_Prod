@@ -343,13 +343,18 @@ try{
 		}
 	}
 	//attach invoice for all submitted records
+	var altId = capId.getCustomID();
+	var altIdString = String(altId);
+	logDebug(newAltId + " " + altIdString);
 	iListResult = aa.finance.getInvoiceByCapID(capId,null);
 	if (iListResult.getSuccess()) {
 		iList = iListResult.getOutput();
 		invNbr = "";
+		invNbrString = "";
 		for (iNum in iList){
 			invNbr = iList[iNum].getInvNbr();
-			runReportAttach(capId,"CDFA_Invoice_Params","capID",capId.getCustomID(),"invoiceNbr",invNbr,"agencyId", "CALCANNABIS");
+			invNbrString = String(invNbr);
+			runReportAttach(capId,"CDFA_Invoice_Params","capID",altIdString,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");
 		}
 	}
 
