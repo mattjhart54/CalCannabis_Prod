@@ -343,7 +343,6 @@ try{
 		}
 	}
 	//attach invoice for all submitted records
-	logDebug(newAltId + " " + typeof(newAltId));
 	iListResult = aa.finance.getInvoiceByCapID(capId,null);
 	if (iListResult.getSuccess()) {
 		iList = iListResult.getOutput();
