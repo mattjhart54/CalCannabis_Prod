@@ -343,9 +343,7 @@ try{
 		}
 	}
 	//attach invoice for all submitted records
-	var altId = capId.getCustomID();
-	var altIdString = String(altId);
-	logDebug(newAltId + " " + altIdString);
+	logDebug(newAltId + " " + typeof(newAltId));
 	iListResult = aa.finance.getInvoiceByCapID(capId,null);
 	if (iListResult.getSuccess()) {
 		iList = iListResult.getOutput();
@@ -354,7 +352,7 @@ try{
 		for (iNum in iList){
 			invNbr = iList[iNum].getInvNbr();
 			invNbrString = String(invNbr);
-			runReportAttach(capId,"CDFA_Invoice_Params","capID",altIdString,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");
+			runReportAttach(capId,"CDFA_Invoice_Params","capID",newAltId,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");
 		}
 	}
 
