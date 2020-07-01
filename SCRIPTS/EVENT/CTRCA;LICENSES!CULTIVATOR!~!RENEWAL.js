@@ -390,7 +390,6 @@ try{
 		}
 	else
 		logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
-}
 
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
