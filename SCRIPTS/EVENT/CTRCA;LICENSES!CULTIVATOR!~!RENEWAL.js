@@ -350,7 +350,7 @@ try{
 		for (iNum in iList){
 			invNbr = iList[iNum].getInvNbr();
 			logDebug("invNbr: " + invNbr);
-			runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",String(capId.getCustomID()),"invoiceNbr", String(invNbr));
+			runReportAttach(capId,"CDFA_Invoice_Params","capID",String(capId.getCustomID()),"invoiceNbr", String(invNbr)),"agencyId", "CALCANNABIS";
 		}
 	}
 	//************************Test**************************************************
@@ -373,10 +373,11 @@ try{
 	report.setCapId(capId.getID1() + "-" + capId.getID2() + "-" + capId.getID3()); 
 	report.getEDMSEntityIdModel().setAltId(capId.getCustomID());
 
-	var parameters = aa.util.newHashMap();              
+	var parameters = aa.util.newHashMap();
+		parameters.put("capID",capId.getCustomID());
+		parameters.put("invoiceNbr",String(invNbr));	
 		parameters.put("agencyId","CALCANNABIS");
-		parameters.put("capID",String(capId.getCustomID()));
-		parameters.put("invoiceNbr",String(invNbr));
+
 
 	report.setReportParameters(parameters);
 
@@ -385,7 +386,7 @@ try{
 		{ 
 		var reportResult = aa.reportManager.getReportResult(report); 
 
-		logDebug("Report " + aaReportName + " has been run for " + capId.getCustomID());
+		logDebug("Report " + reportName + " has been run for " + capId.getCustomID());
 
 		}
 	else
