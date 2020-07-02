@@ -352,6 +352,7 @@ try{
 			invNbr = iList[iNum].getInvNbr();
 		}
 	}
+	var scriptName = "asyncRunInvoiceParamsRpt";
 	logDebug("invNbr: "  + invNbr);
 	logDebug("newAltId: "  + newAltId);
 	if(!matches(invNbr,null,undefined,"")){
@@ -359,7 +360,8 @@ try{
 		invParameters.put("licCap",newAltId); 
 		invParameters.put("invNbr", invNbr);
 		invParameters.put("currentUserID","ADMIN");
-		aa.runAsyncScript("asyncRunInvoiceParamsRpt", invParameters);
+		aa.runAsyncScript(scriptName invParameters);
+		logDebug("async ran")
 	}
 
 		
