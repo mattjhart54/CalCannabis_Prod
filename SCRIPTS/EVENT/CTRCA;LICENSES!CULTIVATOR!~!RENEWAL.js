@@ -352,8 +352,8 @@ try{
 			invNbr = iList[iNum].getInvNbr();
 		}
 	}
-	logDebug("invNbr: "  invNbr);
-	logDebug("newAltId: "  newAltId);
+	logDebug("invNbr: "  + invNbr);
+	logDebug("newAltId: "  + newAltId);
 	if(!matches(invNbr,null,undefined,"")){
 		var invParameters = aa.util.newHashMap();
 		invParameters.put("licCap",newAltId); 
