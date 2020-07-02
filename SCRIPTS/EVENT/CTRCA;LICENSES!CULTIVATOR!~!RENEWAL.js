@@ -355,10 +355,10 @@ try{
 		}
 	}
 		var scriptName = "asyncRunCDFAInvoiceParamsRpt";
-		var envParameters = aa.util.newHashMap();
-		envParameters.put("licCap",newAltId); 
-		envParameters.put("invNbr", invNbrString);
-		aa.runAsyncScript(scriptName, envParameters);
+		var invParameters = aa.util.newHashMap();
+		invParameters.put("licCap",newAltId); 
+		invParameters.put("invNbr", invNbrString);
+		aa.runAsyncScript(scriptName, invParameters);
 		
 
 } catch(err){
