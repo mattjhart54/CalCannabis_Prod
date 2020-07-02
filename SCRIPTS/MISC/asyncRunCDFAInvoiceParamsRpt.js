@@ -45,7 +45,7 @@ try{
 //---------------------------------------
 
 	var licCap = "" + aa.env.getValue("licCap");
-	capId = getApplication(licCap);
+	capId = aa.cap.getCapID(licCap).getOutput();
 	var invNbr = "" + aa.env.getValue("invNbr");	
 	var currentUserID = "ADMIN";
 	var reportName = "CDFA_INVOICE_PARAMS";
