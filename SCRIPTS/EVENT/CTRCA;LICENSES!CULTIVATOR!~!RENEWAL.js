@@ -350,12 +350,16 @@ try{
 		invNbrString = "";
 		for (iNum in iList){
 			invNbr = iList[iNum].getInvNbr();
-			var invParameters = aa.util.newHashMap();
-			invParameters.put("licCap",newAltId); 
-			invParameters.put("invNbr", invNbr);
-			invParameters.put("currentUserID","ADMIN");
-			aa.runAsyncScript("asyncRunInvoiceParamsRpt", invParameters);
 		}
+	}
+	logDebug("invNbr: "  invNbr);
+	logDebug("newAltId: "  newAltId);
+	if(!matches(invNbr,null,undefined,"")){
+		var invParameters = aa.util.newHashMap();
+		invParameters.put("licCap",newAltId); 
+		invParameters.put("invNbr", invNbr);
+		invParameters.put("currentUserID","ADMIN");
+		aa.runAsyncScript("asyncRunInvoiceParamsRpt", invParameters);
 	}
 
 		
