@@ -360,7 +360,7 @@ try{
 		invParameters.put("licCap",newAltId); 
 		invParameters.put("invNbr", invNbr);
 		invParameters.put("currentUserID","ADMIN");
-		aa.runAsyncScript(scriptName invParameters);
+		aa.runAsyncScript(scriptName, invParameters);
 		logDebug("async ran")
 	}
 
