@@ -357,7 +357,7 @@ try{
 	var scriptName = "asyncRunInvoiceParamsRpt";
 	var envParameters = aa.util.newHashMap();
 	envParameters.put("licCap",newAltId); 
-	envParameters.put("invNbr", invNbr);
+	envParameters.put("invNbr", invNbrString);
 	envParameters.put("currentUserID",currentUserID);
 	aa.runAsyncScript(scriptName, envParameters);
 		
