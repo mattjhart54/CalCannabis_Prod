@@ -354,6 +354,13 @@ try{
 			runReportAttach(capId,"CDFA_Invoice_Params","capID",newAltId,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");
 		}
 	}
+	
+	var scriptName = "asyncRunCDFAInvoiceParamsRpt";
+	var envParameters = aa.util.newHashMap();
+	envParameters.put("licCap",newAltId); 
+	envParameters.put("invNbr", invNbrString);
+	envParameters.put("currentUserID",currentUserID);
+	aa.runAsyncScript(scriptName, envParameters);
 
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
