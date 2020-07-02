@@ -351,9 +351,23 @@ try{
 		for (iNum in iList){
 			invNbr = iList[iNum].getInvNbr();
 			invNbrString = String(invNbr);
-			runReportAttach(capId,"CDFA_Invoice_Params","capID",newAltId,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");
+			//runReportAttach(capId,"CDFA_Invoice_Params","capID",newAltId,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");
 		}
 	}
+		var scriptName = "asyncRunInvoiceParamsRpt";
+		var envParameters = aa.util.newHashMap();
+		envParameters.put("licCap",capId.getCustomID()); 
+		envParameters.put("invNbr", invNbr);
+		envParameters.put("currentUserID",currentUserID);
+		aa.runAsyncScript(scriptName, envParameters);
+		
+		var scriptName = "asyncRunCDFAInvoiceParamsRpt";
+		var envParameters = aa.util.newHashMap();
+		envParameters.put("licCap",capId.getCustomID()); 
+		envParameters.put("invNbr", invNbrString);
+		envParameters.put("currentUserID",currentUserID);
+		aa.runAsyncScript(scriptName, envParameters);
+		
 
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
