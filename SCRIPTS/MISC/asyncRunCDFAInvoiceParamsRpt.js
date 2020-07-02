@@ -46,8 +46,9 @@ try{
 
 	var licCap = "" + aa.env.getValue("licCap");
 	var invNbr = "" + aa.env.getValue("invNbr");	
-	var currentUserID = "" + aa.env.getValue("currentUserID");
+	var currentUserID = "ADMIN";
 	var reportName = "CDFA_INVOICE_PARAMS";
+	var fromEmail = "calcannabislicensing@cdfa.ca.gov"
 	var br = "<BR>";
 	var eTxt = "";
 	var sDate = new Date();
