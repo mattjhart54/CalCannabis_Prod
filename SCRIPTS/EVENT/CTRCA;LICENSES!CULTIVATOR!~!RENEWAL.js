@@ -1,7 +1,7 @@
 try{
 // Make the renewal record accessible in ACA	
 	aa.cap.updateAccessByACA(capId,"Y");
-/* Update alt id on renewal record
+//	Update alt id on renewal record
 	vLicenseID = getParentLicenseCapID(capId);
 	vIDArray = String(vLicenseID).split("-");
 	vLicenseID = aa.cap.getCapID(vIDArray[0],vIDArray[1],vIDArray[2]).getOutput();
@@ -27,8 +27,6 @@ try{
 			logDebug("Error updating Alt ID: " +resAltId.getErrorMessage());
 		}
 	}
-	*/
-	newAltId = capId.getCustomID()
 // Copy business contact from license
 	copyContactsByType(vLicenseID,capId,"Designated Responsible Party");
 	copyContactsByType(vLicenseID,capId,"Business");
@@ -359,7 +357,8 @@ try{
 	logDebug("newAltId: "  + newAltId);
 	if(!matches(invNbr,null,undefined,"")){
 		var invParameters = aa.util.newHashMap();
-		invParameters.put("licCap",newAltId); 
+		invParameters.put("licCap",	capId.getCustomID()); 
+		logDebug("id " + capId.getCustomID());
 		invParameters.put("invNbr", invNbr);
 		invParameters.put("currentUserID","ADMIN");
 		aa.runAsyncScript(scriptName, invParameters);

@@ -1,30 +1,5 @@
 try {
-	// Update alt id on renewal record
-	vLicenseID = getParentLicenseCapID(capId);
-	vIDArray = String(vLicenseID).split("-");
-	vLicenseID = aa.cap.getCapID(vIDArray[0],vIDArray[1],vIDArray[2]).getOutput();
-	if (vLicenseID != null) {
-		vLicenseAltId = vLicenseID.getCustomID();
-		cIds = getChildren("Licenses/Cultivator/License/Renewal",vLicenseID);
-		if(matches(cIds, null, "", undefined)) 
-			renewNbr = renewNbr = "0" + 1;
-		else {
-			cIdLen = cIds.length 
-			if(cIds.length <= 9) {
-				renewNbr = cIdLen + 1;
-				renewNbr = "0" +  renewNbr;
-			}else {
-				renewNbr = cIdLen + 1;
-			}
-		}
-		newAltId = vLicenseAltId + "-R" + renewNbr;
-		var resAltId = aa.cap.updateCapAltID(capId,newAltId);
-		if(resAltId.getSuccess()==true){
-			logDebug("Alt ID set to " + newAltId);
-		}else{
-			logDebug("Error updating Alt ID: " +resAltId.getErrorMessage());
-		}
-	}
+
 	//mhart: 012320: story 6378: check License cases before submittal
 	var AInfo = [];
 	loadAppSpecific(AInfo);
