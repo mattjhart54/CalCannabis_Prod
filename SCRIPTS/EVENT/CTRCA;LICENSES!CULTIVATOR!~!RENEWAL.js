@@ -354,14 +354,12 @@ try{
 			//runReportAttach(capId,"CDFA_Invoice_Params","capID",newAltId,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");
 		}
 	}
-		var scriptName = "asyncRunInvoiceParamsRpt";
+		var scriptName = "asyncRunCDFAInvoiceParamsRpt";
 		var envInvoiceParameters = aa.util.newHashMap();
 		envInvoiceParameters.put("licCap",newAltId); 
 		envInvoiceParameters.put("invNbr", invNbrString);
 		envInvoiceParameters.put("currentUserID",currentUserID);
 		aa.runAsyncScript(scriptName, envInvoiceParameters);
-		
-		aa.runAsyncScript("asyncRunCDFAInvoiceParamsRpt", envInvoiceParameters);
 		
 
 } catch(err){
