@@ -355,18 +355,13 @@ try{
 		}
 	}
 		var scriptName = "asyncRunInvoiceParamsRpt";
-		var envParameters = aa.util.newHashMap();
-		envParameters.put("licCap",capId.getCustomID()); 
-		envParameters.put("invNbr", invNbr);
-		envParameters.put("currentUserID",currentUserID);
-		aa.runAsyncScript(scriptName, envParameters);
+		var envInvoiceParameters = aa.util.newHashMap();
+		envInvoiceParameters.put("licCap",capId.getCustomID()); 
+		envInvoiceParameters.put("invNbr", invNbr);
+		envInvoiceParameters.put("currentUserID",currentUserID);
+		aa.runAsyncScript(scriptName, envInvoiceParameters);
 		
-		var scriptName = "asyncRunCDFAInvoiceParamsRpt";
-		var envParameters = aa.util.newHashMap();
-		envParameters.put("licCap",capId.getCustomID()); 
-		envParameters.put("invNbr", invNbrString);
-		envParameters.put("currentUserID",currentUserID);
-		aa.runAsyncScript(scriptName, envParameters);
+		aa.runAsyncScript("asyncRunCDFAInvoiceParamsRpt", envInvoiceParameters);
 		
 
 } catch(err){
