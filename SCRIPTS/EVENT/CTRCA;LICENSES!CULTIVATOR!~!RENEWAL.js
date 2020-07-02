@@ -354,6 +354,8 @@ try{
 			//runReportAttach(capId,"CDFA_Invoice_Params","capID",newAltId,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");
 		}
 	}
+		logDebug("newAltId: " + newAltId);
+		logDebug("invNbrString: " + invNbrString);
 		var scriptName = "asyncRunCDFAInvoiceParamsRpt";
 		var invParameters = aa.util.newHashMap();
 		invParameters.put("licCap",newAltId); 
