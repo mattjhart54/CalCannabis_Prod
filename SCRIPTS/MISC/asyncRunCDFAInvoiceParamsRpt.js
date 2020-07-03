@@ -43,11 +43,13 @@ function getMasterScriptText(vScriptName) {
 }
 try{
 //---------------------------------------
-
+	//aa.env.setValue("licCap", "LCA18-0000355");
+	//aa.env.setValue("currentUserID", "MHART");
+	//aa.env.setValue("invNbr",907);
 	var licCap = "" + aa.env.getValue("licCap");
-	capId = aa.cap.getCapID(licCap).getOutput();
+	var renCapId = "" + aa.env.getValue("renCapId");
 	var invNbr = "" + aa.env.getValue("invNbr");	
-	var currentUserID = "ADMIN";
+	var currentUserID = "" + aa.env.getValue("currentUserID");
 	var reportName = "CDFA_INVOICE_PARAMS";
 	var fromEmail = "calcannabislicensing@cdfa.ca.gov"
 	var br = "<BR>";
@@ -55,59 +57,84 @@ try{
 	var sDate = new Date();
 	var sTime = sDate.getTime();
 //-----------------------
-
-runReportAttach(capId,reportName,"capID",licCap,"invoiceNbr", invNbr,"agencyId", "CALCANNABIS");	
+	reportResult = aa.reportManager.getReportInfoModelByName(reportName);
+	if (!reportResult.getSuccess()){
+		logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); 
+		eTxt+="**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage() +br; 
+	}
+	var rFiles = [];
+	var report = reportResult.getOutput(); 
+	//var tmpID = aa.cap.getCapID(licCap).getOutput(); 
+	cap = aa.cap.getCap(renCapId).getOutput();
+	appTypeResult = cap.getCapType();
+	appTypeString = appTypeResult.toString(); 
+	appTypeArray = appTypeString.split("/");
+	report.setModule(appTypeArray[0]); 
+	//report.setCapId(itemCap.getID1() + "-" + itemCap.getID2() + "-" + itemCap.getID3()); 
+	report.setCapId(renCapId.getID1() + "-" + renCapId.getID2() + "-" + renCapId.getID3()); 
+	report.getEDMSEntityIdModel().setAltId(licCap);
+	eTxt+="reportName: " + reportName + br;
+	eTxt+="reportName: " + typeof(reportName) + br;
+	var parameters = aa.util.newHashMap(); 
+	parameters.put("capID",licCap);
+	parameters.put("invoiceNbr", invNbr);
+	parameters.put("agencyId", "CALCANNABIS");
+	report.setReportParameters(parameters);
+	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
+	if(permit.getOutput().booleanValue()) { 
+		var reportResult = aa.reportManager.getReportResult(report); 
+		if(reportResult) {
+			reportOutput = reportResult.getOutput();
+			var reportFile=aa.reportManager.storeReportToDisk(reportOutput);
+			rFile=reportFile.getOutput();
+			rFiles.push(rFile);
+			logDebug("Report '" + reportName + "' has been run for " + licCap);
+			eTxt+=("Report '" + reportName + "' has been run for " + licCap) +br;
+		}else {
+			logDebug("System failed get report: " + reportResult.getErrorType() + ":" +reportResult.getErrorMessage());
+		}
+	}else{
+		logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
+		eTxt+="No permission to report: "+ reportName + " for user: " + currentUserID;
+	}
+	var priContact = getContactObj(tmpID,"Designated Responsible Party");
+	if(priContact){
+		var eParams = aa.util.newHashtable(); 
+		addParameter(eParams, "$$altID$$", tmpID.getCustomID());
+		addParameter(eParams, "$$contactFirstName$$", priContact.capContact.firstName);
+		addParameter(eParams, "$$contactLastName$$", priContact.capContact.lastName);
+		var priEmail = ""+priContact.capContact.getEmail();
+		sendApprovalNotification(fromEmail,priEmail,"","LCA_GENERAL_NOTIFICATION",eParams, rFiles,tmpID);
+	}else{
+		logDebug("An error occurred retrieving the contactObj for " + contactType + ": " + priContact);
+	}
+	
 //----------------------- 
 	var thisDate = new Date();
 	var thisTime = thisDate.getTime();
 	var eTime = (thisTime - sTime) / 1000
 } catch(err){
-	logDebug("An error has occurred in asyncRunCDFAInvoiceParamsRpt: " + err.message);
+	logDebug("An error has occurred in asyncRunSubmittedApplicRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "jshear@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunInvoiceParamsRpt: ",  tmpID + br + "altId: " + licCap + br +  eTxt);
+	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "jshear@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunSubmittedApplicRpt: ",  tmpID + br + "altId: " + licCap + br +  eTxt);
 }
- function runReportAttach(itemCapId,aaReportName)
+ function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
+{
+	itemCap = arguments[6]; 
+	var id1 = itemCap.ID1;
+	var id2 = itemCap.ID2;
+	var id3 = itemCap.ID3;
+	var capIDScriptModel = aa.cap.createCapIDScriptModel(id1, id2, id3);
+	var result = null;
+	result = aa.document.sendEmailAndSaveAsDocument(emailFrom, emailTo, emailCC, templateName, params, capIDScriptModel, reportFile);
+	if(result.getSuccess())
 	{
-	// optional parameters are report parameter pairs
-	// for example: runReportAttach(capId,"ReportName","altid",capId.getCustomID(),"months","12");
-	
-
-	var reportName = aaReportName;
-
-	reportResult = aa.reportManager.getReportInfoModelByName(reportName);
-
-	if (!reportResult.getSuccess())
-		{ logDebug("**WARNING** couldn't load report " + reportName + " " + reportResult.getErrorMessage()); return false; }
-
-	var report = reportResult.getOutput(); 
-
-	var itemCap = aa.cap.getCap(itemCapId).getOutput();
-	appTypeResult = itemCap.getCapType();
-	appTypeString = appTypeResult.toString(); 
-	appTypeArray = appTypeString.split("/");
-
-	report.setModule(appTypeArray[0]); 
-	report.setCapId(itemCapId.getID1() + "-" + itemCapId.getID2() + "-" + itemCapId.getID3()); 
-	report.getEDMSEntityIdModel().setAltId(itemCapId.getCustomID());
-
-	var parameters = aa.util.newHashMap();              
-
-	for (var i = 2; i < arguments.length ; i = i+2)
-		{
-		parameters.put(arguments[i],arguments[i+1]);
-		logDebug("Report parameter: " + arguments[i] + " = " + arguments[i+1]);
-		}	
-
-	report.setReportParameters(parameters);
-
-	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
-	if(permit.getOutput().booleanValue()) 
-		{ 
-		var reportResult = aa.reportManager.getReportResult(report); 
-
-		logDebug("Report " + aaReportName + " has been run for " + itemCapId.getCustomID());
-
-		}
+		logDebug("Sent email successfully!");
+		return true;
+	}
 	else
-		logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
+	{
+		logDebug("Failed to send mail. - " + result.getErrorType());
+		return false;
+	}
 }
