@@ -2,7 +2,6 @@ try{
 // Make the renewal record accessible in ACA	
 	aa.cap.updateAccessByACA(capId,"Y");
 //	Update alt id on renewal record
-	oldAltId = capId.getCustomID();
 	vLicenseID = getParentLicenseCapID(capId);
 	vIDArray = String(vLicenseID).split("-");
 	vLicenseID = aa.cap.getCapID(vIDArray[0],vIDArray[1],vIDArray[2]).getOutput();
@@ -355,10 +354,10 @@ try{
 	}
 	var scriptName = "asyncRunInvoiceParamsRpt";
 	logDebug("invNbr: "  + invNbr);
-	logDebug("oldAltId: "  + oldAltId);
+	logDebug("newAltId: "  + newAltId);
 	if(!matches(invNbr,null,undefined,"")){
 		var invParameters = aa.util.newHashMap();
-		invParameters.put("licCap",	oldAltId); 
+		invParameters.put("licCap",	newAltId); 
 		logDebug("id " + capId.getCustomID());
 		invParameters.put("invNbr", invNbr);
 		invParameters.put("currentUserID","ADMIN");
