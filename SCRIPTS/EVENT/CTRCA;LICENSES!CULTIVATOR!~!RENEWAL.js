@@ -349,23 +349,21 @@ try{
 		invNbr = "";
 		iFound = false;
 		for (iNum in iList){
-			fList = aa.invoice.getFeeItemInvoiceByInvoiceNbr(iList[iNum].getInvNbr()).getOutput()
-			for (fNum in fList){
-				invNbr = iList[iNum].getInvNbr();
-				iFound = true;
-				var scriptName = "asyncRunInvoiceParamsRpt";
-				var envParameters = aa.util.newHashMap();
-				envParameters.put("licCap",newAltId); 
-				envParameters.put("invNbr", invNbr);
-				envParameters.put("currentUserID",currentUserID);
-				aa.runAsyncScript(scriptName, envParameters);
-				//runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",newAltId,"invoiceNbr", invNbr);
-			}
-			if (!iFound){
-				  logMessage("Invoice not found");
-			}
-		}	
-	}
+			invNbr = iList[iNum].getInvNbr();
+			logDebug("invNbr: " + invNbr);
+			iFound = true;
+			var scriptName = "asyncRunInvoiceParamsRpt";
+			var envParameters = aa.util.newHashMap();
+			envParameters.put("licCap",newAltId); 
+			envParameters.put("invNbr", invNbr);
+			envParameters.put("currentUserID",currentUserID);
+			aa.runAsyncScript(scriptName, envParameters);
+			runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",newAltId,"invoiceNbr", String(invNbr));
+		}
+		if (!iFound){
+			  logMessage("Invoice not found");
+		}
+	}	
 
 
 } catch(err){
