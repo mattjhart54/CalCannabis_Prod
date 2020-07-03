@@ -342,6 +342,13 @@ try{
 			}
 		}
 	}
+	//Set renewal to complete, used to prevent more than one renewal record for the same cycle
+		renewalCapProject = getRenewalCapByParentCapIDForIncomplete(licId);
+		if (renewalCapProject != null) {
+			renewalCapProject.setStatus("Complete");
+			renewalCapProject.setRelationShip("R");  // move to related records
+			aa.cap.updateProject(renewalCapProject);
+		}
 	//attach invoice for all submitted records
 	iListResult = aa.finance.getInvoiceByCapID(capId,null);
 	if (iListResult.getSuccess()) {
