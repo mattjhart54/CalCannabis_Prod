@@ -342,38 +342,36 @@ try{
 			}
 		}
 	}
-	//Set renewal to complete, used to prevent more than one renewal record for the same cycle
-		renewalCapProject = getRenewalCapByParentCapIDForIncomplete(licId);
-		if (renewalCapProject != null) {
-			renewalCapProject.setStatus("Complete");
-			renewalCapProject.setRelationShip("R");  // move to related records
-			aa.cap.updateProject(renewalCapProject);
-		}
 	//attach invoice for all submitted records
 	iListResult = aa.finance.getInvoiceByCapID(capId,null);
 	if (iListResult.getSuccess()) {
 		iList = iListResult.getOutput();
 		invNbr = "";
-		invNbrString = "";
+		iFound = false;
 		for (iNum in iList){
-			invNbr = iList[iNum].getInvNbr();
-		}
+			fList = aa.invoice.getFeeItemInvoiceByInvoiceNbr(iList[iNum].getInvNbr()).getOutput()
+			for (fNum in fList){
+				invNbr = iList[iNum].getInvNbr();
+				iFound = true;
+				var scriptName = "asyncRunInvoiceParamsRpt";
+				var envParameters = aa.util.newHashMap();
+				envParameters.put("licCap",newAltId); 
+				envParameters.put("invNbr", invNbr);
+				envParameters.put("currentUserID",currentUserID);
+				aa.runAsyncScript(scriptName, envParameters);
+				//runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",newAltId,"invoiceNbr", invNbr);
+			}
+			if (!iFound){
+				  logMessage("Invoice not found");
+			}
+		}	
 	}
-		var scriptName = "asyncRunInvoiceParamsRpt";
-		var envParametersx = aa.util.newHashMap();
-		envParametersx.put("licCap",newAltId); 
-		envParametersx.put("invNbr", invNbr);
-		envParametersx.put("currentUserID","ADMIN");
-		aa.runAsyncScript(scriptName, envParametersx);
-		
-		var scriptName = "asyncRunCDFAInvoiceParamsRpt";
-		var invParameters = aa.util.newHashMap();
-		invParameters.put("licCap",newAltId); 
-		invParameters.put("invNbr", invNbrString);
-		invParameters.put("currentUserID","ADMIN");
-		aa.runAsyncScript(scriptName, invParameters);
-		
-	runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",newAltId,"invoiceNbr", String(invNbr));
+
+} catch(err){
+	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
+	logDebug(err.stack);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in CTRCA:LICENSES/CULTIVATOR/LICENSE/RENEWAL: Submission: "+ startDate, capId + br + err.message+ br+ err.stack + br + currEnv);
+}
 
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
