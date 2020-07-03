@@ -359,21 +359,21 @@ try{
 			invNbr = iList[iNum].getInvNbr();
 		}
 	}
-	var scriptName = "asyncRunInvoiceParamsRpt";
-	logDebug("invNbr: "  + invNbr);
-	logDebug("newAltId: "  + newAltId);
-	if(!matches(invNbr,null,undefined,"")){
+		var scriptName = "asyncRunInvoiceParamsRpt";
+		var envParametersx = aa.util.newHashMap();
+		envParametersx.put("licCap",newAltId); 
+		envParametersx.put("invNbr", invNbr);
+		envParametersx.put("currentUserID","ADMIN");
+		aa.runAsyncScript(scriptName, envParametersx);
+		
+		var scriptName = "asyncRunCDFAInvoiceParamsRpt";
 		var invParameters = aa.util.newHashMap();
-		invParameters.put("licCap",	newAltId); 
-		invParameters.put("renCapId", capId); 
-		logDebug("id " + capId.getCustomID());
-		invParameters.put("invNbr", invNbr);
+		invParameters.put("licCap",newAltId); 
+		invParameters.put("invNbr", invNbrString);
 		invParameters.put("currentUserID","ADMIN");
 		aa.runAsyncScript(scriptName, invParameters);
-		logDebug("async ran")
-	}
-
-	runReportAttach(capId,"CDFA_Invoice_Params","capID",newAltId,"invoiceNbr",invNbrString,"agencyId", "CALCANNABIS");	
+		
+	runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",newAltId,"invoiceNbr", String(invNbr));
 
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
