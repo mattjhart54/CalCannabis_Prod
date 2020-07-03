@@ -352,12 +352,13 @@ try{
 			invNbr = iList[iNum].getInvNbr();
 		}
 	}
-	var scriptName = "asyncRunInvoiceParamsRpt";
+	var scriptName = "asyncRunCDFAInvoiceParamsRpt";
 	logDebug("invNbr: "  + invNbr);
 	logDebug("newAltId: "  + newAltId);
 	if(!matches(invNbr,null,undefined,"")){
 		var invParameters = aa.util.newHashMap();
 		invParameters.put("licCap",	newAltId); 
+		invParameters.put("renCapId", capId); 
 		logDebug("id " + capId.getCustomID());
 		invParameters.put("invNbr", invNbr);
 		invParameters.put("currentUserID","ADMIN");
