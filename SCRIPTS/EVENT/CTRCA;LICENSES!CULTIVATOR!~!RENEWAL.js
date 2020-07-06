@@ -341,23 +341,6 @@ try{
 				}
 			}
 		}
-	}
-	//attach invoice for all submitted records
-	iListResult = aa.finance.getInvoiceByCapID(capId,null);
-	if (iListResult.getSuccess()) {
-		iList = iListResult.getOutput();
-		invNbr = "";
-		iFound = false;
-		for (iNum in iList){
-			invNbr = iList[iNum].getInvNbr();			
-			if (!matches(invNbr,null,undefined,"")){
-				iFound = true;
-				runReportAttach(capId,"CDFA_Invoice_Params","agencyId", "CALCANNABIS","capID",newAltId,"invoiceNbr", String(invNbr));
-			}
-		}
-		if (!iFound){
-			  logMessage("Invoice not found");
-		}
 	}		
 
 
