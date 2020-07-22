@@ -1,7 +1,7 @@
 try{
 // Make the renewal record accessible in ACA	
 	aa.cap.updateAccessByACA(capId,"Y");
-//	Update alt id on renewal record
+// Update alt id on renewal record
 	vLicenseID = getParentLicenseCapID(capId);
 	vIDArray = String(vLicenseID).split("-");
 	vLicenseID = aa.cap.getCapID(vIDArray[0],vIDArray[1],vIDArray[2]).getOutput();
@@ -341,8 +341,17 @@ try{
 				}
 			}
 		}
-	}		
-
+	}
+	// add records to set to email Invoice to DRP
+	var srName = createSet("RENEWAL_INVOICE","Renewal", "New");
+	if(srName){
+		setAddResult=aa.set.add(srName,capId);
+		if(setAddResult.getSuccess()){
+			logDebug(capId.getCustomID() + " successfully added to set " +srName);
+		}else{
+			logDebug("Error adding record to set " + srName + ". Error: " + setAddResult.getErrorMessage());
+		}
+	}
 
 } catch(err){
 	logDebug("An error has occurred in CTRCA:LICENSES/CULTIVATOR/*/RENEWAL: Submission: " + err.message);
