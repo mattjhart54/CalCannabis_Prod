@@ -117,7 +117,7 @@ var emailTemplate = getJobParam("emailTemplate"); // email Template
 var createNotifySets = getJobParam("createNotifySets").substring(0, 1).toUpperCase().equals("Y") ; // different sets based on notification preferences
 var sendEmailNotifications = getJobParam("sendEmailNotifications");
 var sysFromEmail = getJobParam("sysFromEmail");
-var rptName = getJobParam("reportName");
+var rptName = getJobParam("reportName").split(",");
 var addrType = getParam("sendEmailAddressType");
 
 
@@ -195,6 +195,7 @@ try{
 	var capDeactivated = 0;
 	var capCount = 0;
 	var setName;
+	var renAltId = "";
 	var setDescription;
 	var setCreated = false;
 	var yy = startDate.getFullYear().toString().substr(2, 2);
@@ -317,6 +318,9 @@ try{
 			renewalCapProject = getRenewalCapByParentCapIDForIncomplete(capId);
 			if (renewalCapProject != null) {
 				var renCapId = renewalCapProject.getCapID();
+				var renewalCap = aa.cap.getCap(renCapId).getOutput();
+				var renAltId = String(renewalCap.getCapID().getCustomID());;
+				logDebug("renCapId: " + renCapId + " renAltId: " + renAltId);
 				if (!renCapId.toString().contains("EST")){
 					var feeDesc = getAppSpecific("License Type",renCapId) + " - Late Fee";
 					var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
@@ -331,6 +335,9 @@ try{
 							invoiceFee(thisFee.feeCode,"FINAL");
 							if(AInfo["Waive Late Fee"] == "CHECKED") {
 								voidRemoveFeesByDesc(feeDesc);
+							}
+							if (!matches(rptName,null,undefined,"")){
+								rptName.push("Balance Due Report");
 							}
 						}
 						capId = holdId;
@@ -378,8 +385,19 @@ try{
 						}else{
 							var capReportVar = "capId";
 						}
-						runReportAttach(capId,rptName, capReportVar, altId, "contactType", thisContact["contactType"], "addrType", addrType, "numberDays", lookAheadDays); 
-						emailRptContact("BATCH", emailTemplate, rptName, true, expStatus, capId, thisContact["contactType"], capReportVar, altId, "contactType", thisContact["contactType"], "addrType", addrType, "numberDays", lookAheadDays);
+						if (typeof(rptName) == "object"){
+							for (i = 0; i < rptName.length; i++) {
+								thisRptName = String(rptName[i]);
+								if (thisRptName == "Balance Due Report"){
+									runReportAttach(capId,thisRptName,"altId",renAltId);
+								}else{
+									runReportAttach(capId,thisRptName, capReportVar, altId, "contactType", thisContact["contactType"], "addrType", addrType, "numberDays", lookAheadDays);
+								}
+							}
+						}else{
+							runReportAttach(capId,rptName, capReportVar, altId, "contactType", thisContact["contactType"], "addrType", addrType, "numberDays", lookAheadDays,"altId",renAltId); 
+						}
+						emailRptContact("BATCH", emailTemplate, rptName, true, expStatus, capId, thisContact["contactType"], capReportVar, altId, "contactType", thisContact["contactType"], "addrType", addrType, "numberDays", lookAheadDays,"altId",renAltId);
 						logDebug(altId + ": Sent Email template " + emailTemplate + " to " + thisContact["contactType"] + " : " + conEmail);
 					}
 				}
@@ -388,7 +406,13 @@ try{
 				logDebug("No contact found for notification: " + altId);
 			}
 		}
-
+		//Remove Balance Due Report from rptName Array and prepare for next record;
+		logDebug("rptName: " + rptName);
+		var index = rptName.indexOf("Balance Due Report");
+		if (index > -1) {
+		  rptName.splice(index, 1);
+		  logDebug("rptName: " + rptName);
+		}
 	}
 	logDebug("========================================");
 	logDebug("Total CAPS qualified date range: " + myExp.length);
