@@ -38,6 +38,14 @@ try{
 			var hasFee = feeExists(thisFee.feeCode,"INVOICED");
 			if(hasFee) {
 				voidRemoveFeesByDesc(feeDesc);
+				var scriptName = "asyncRunBalanceDueRpt";
+				var envParameters = aa.util.newHashMap();
+				envParameters.put("altId",capId.getCustomID()); 
+				envParameters.put("reportName","Balance Due Report"); 
+				envParameters.put("contType","Designated Responsible Party"); 
+				envParameters.put("currentUserID",currentUserID);
+				envParameters.put("fromEmail","calcannabislicensing@cdfa.ca.gov");
+				aa.runAsyncScript(scriptName, envParameters);
 			}
 		}
 	}

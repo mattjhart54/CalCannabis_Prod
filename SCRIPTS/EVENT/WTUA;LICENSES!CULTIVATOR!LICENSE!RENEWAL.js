@@ -95,10 +95,18 @@ try {
 					var hasFee = feeExists(thisFee.feeCode);
 					if(hasFee) {
 						voidRemoveFeesByDesc(feeDesc);
+						var scriptName = "asyncRunBalanceDueRpt";
+						var envParameters = aa.util.newHashMap();
+						envParameters.put("altId",capId.getCustomID()); 
+						envParameters.put("reportName","Balance Due Report"); 
+						envParameters.put("contType","Designated Responsible Party"); 
+						envParameters.put("currentUserID",currentUserID);
+						envParameters.put("fromEmail","calcannabislicensing@cdfa.ca.gov");
+						aa.runAsyncScript(scriptName, envParameters);
 					}
 				}
 			}
-			updateAppStatus("Deferral Approved", "Updated via ASIUA:LICENSES/CULTIVATOR/*/Renewal.");
+			updateAppStatus("Deferral Approved", "Updated via WTUA:LICENSES/CULTIVATOR/*/Renewal.");
 		}
 	}
 	//Removing as per 6355, 6313, 6314, 6315
