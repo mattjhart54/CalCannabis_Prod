@@ -390,6 +390,7 @@ try{
 								thisRptName = String(rptName[i]);
 								if (thisRptName == "Balance Due Report"){
 									runReportAttach(capId,thisRptName,"altId",renAltId);
+									runReportAttach(renCapId,thisRptName,"altId",renAltId);
 								}else{
 									runReportAttach(capId,thisRptName, capReportVar, altId, "contactType", thisContact["contactType"], "addrType", addrType, "numberDays", lookAheadDays);
 								}
