@@ -43,10 +43,111 @@ try {
 				editAppSpecific("Other Source Description",AInfo["OSD Update"],parentCapId);
 			}
 		}
-
-		removeASITable("Premises Addresses",parentCapId);
-		removeASITable("Source of Water Supply",parentCapId);
-		copyASITables(capId,parentCapId);		
+		//Story 6622 Copy New Value Fields to license
+		var recordASIGroup = aa.appSpecificInfo.getByCapID(capId);
+		if (recordASIGroup.getSuccess()){
+			var recordASIGroupArray = recordASIGroup.getOutput();
+			
+			for (i in recordASIGroupArray) {
+				var group = recordASIGroupArray[i];
+				var recordField = String(group.getCheckboxDesc());
+				if (recordField.slice(-4) == "-NEW"){
+					if (!matches(group.getChecklistComment(),null,undefined,"")){
+						var parentRecordField = recordField.slice(0,-4);
+						if (group.getCheckboxType() == "PROPERTY DIAGRAM" && !matches(parentRecordField,"Property Diagram Review Status","APN-PD","Does the diagram contain highlighting?")){
+							parentRecordField= parentRecordField+"?";
+						}
+						if (group.getCheckboxType() == "ENVIROSTOR" && parentRecordField == "Is a mitigation(s)/Employee Protection Plan supplied"){
+							parentRecordField = "Is a mitigation(s)/Employee Protection Plan supplied, if hazardous materials were identified on site";
+						}
+						var newFieldValue = group.getChecklistComment();
+						editAppSpecific(parentRecordField,newFieldValue,parentCapId);
+						logDebug(parentRecordField + "edited to: " + newFieldValue);
+					}
+				}
+			}
+		}
+		ignoreTableArray = [];
+		if (matches(getAppSpecific("Small Retail Water Supplier Review Status-NEW"),"Complete","N/A")){
+			removeASITable("SMALL RETAIL WATER SUPPLIERS",parentCapId);
+		}else{
+			ignoreTableArray.push("SMALL RETAIL WATER SUPPLIERS");
+		}
+		if (matches(getAppSpecific("Retail Water Supplier Review Status-NEW"),"Complete","N/A")){
+			removeASITable("RETAIL WATER SUPPLIER",parentCapId);
+		}else{
+			ignoreTableArray.push("RETAIL WATER SUPPLIER");
+		}
+		if (matches(getAppSpecific("Groundwater Well Review Status-NEW"),"Complete","N/A")){
+			removeASITable("GROUNDWATER WELL",parentCapId);
+		}else{
+			ignoreTableArray.push("GROUNDWATER WELL");
+		}
+		if (matches(getAppSpecific("Rainwater Catchment Review Status-NEW"),"Complete","N/A")){
+			removeASITable("RAINWATER CATCHMENT",parentCapId);
+		}else{
+			ignoreTableArray.push("RAINWATER CATCHMENT");
+		}
+		if (matches(getAppSpecific("Water Rights Review Status-NEW"),"Complete","N/A")){
+			removeASITable("WATER RIGHTS",parentCapId);
+		}else{
+			ignoreTableArray.push("WATER RIGHTS");
+		}
+		if (typeof(PREMISESADDRESSES) == "object"){
+			if(PREMISESADDRESSES.length > 0){
+				premTable = new Array();
+				ignoreTableArray.push("PREMISES ADDRESSES");
+				for(x in PREMISESADDRESSES){
+					var premAddrRow = PREMISESADDRESSES[x];
+					if (premAddrRow["Status"].fieldValue != "Delete"){
+						premRow = new Array();
+						premRow["APN"] = premAddrRow["APN"];
+						premRow["Premises Address"] = premAddrRow["Premises Address"];
+						premRow["Premises City"] = premAddrRow["Premises City"];
+						premRow["Premises State"] = premAddrRow["Premises State"];
+						premRow["Premises Zip"] = premAddrRow["Premises Zip"];
+						premRow["Premises County"] = premAddrRow["Premises County"];
+						premRow["Type of Possession"] = premAddrRow["Type of Possession"];
+						premRow["Owner Address"] = premAddrRow["Type of Possession"];
+						premRow["Owner Phone"] = premAddrRow["Owner Phone"];
+						premTable.push(premRow);
+					}
+				}
+				removeASITable("PREMISES ADDRESSES",parentCapId);
+				addASITable("PREMISES ADDRESSES",premTable,parentCapId);
+			}
+		}
+		
+		if (typeof(SOURCEOFWATERSUPPLY) == "object"){
+			if(SOURCEOFWATERSUPPLY.length > 0){
+				ignoreTableArray.push("SOURCE OF WATER SUPPLY");
+				var multTable = new Array(); 
+				for(x in SOURCEOFWATERSUPPLY){
+					var wtrSrcRow = SOURCEOFWATERSUPPLY[x];
+					row = new Array();
+					if(wtrSrcRow["Status"] != "Delete"){
+						row["Type of Water Supply"] = wtrSrcRow["Type of Water Supply"];
+						row["Name of Supplier"] = wtrSrcRow["Name of Supplier"];
+						row["Geographical Location Coordinates"] = wtrSrcRow["Geographical Location Coordinates"];
+						row["Groundwater Well Geographic Location Coordinates"] = wtrSrcRow["Groundwater Well Geographic Location Coordinates"];
+						row["Authorized Place of Use"] = wtrSrcRow["Authorized Place of Use"];
+						row["Maximum Amount of Water Delivered"] = wtrSrcRow["Maximum Amount of Water Delivered"];
+						row["Total Square Footage"] = wtrSrcRow["Total Square Footage"];
+						row["Total Storage Capacity"] = wtrSrcRow["Total Storage Capacity"];
+						row["Description"] = wtrSrcRow["Description"];
+						row["Diversion Number"] = wtrSrcRow["Diversion Number"];
+						row["Water Source"] = wtrSrcRow["Water Source"];
+						multTable.push(row);
+					}
+				}
+				removeASITable("SOURCE OF WATER SUPPLY",parentCapId);
+				addASITable("SOURCE OF WATER SUPPLY",multTable,parentCapId);
+			}
+		}
+		logDebug("Not copying the following Tables: " + ignoreTableArray);
+		copyASITables(capId,parentCapId,ignoreTableArray);
+		runReportAttach(parentCapId,"Scientific Review Checklist","altID",capId.getCustomID());		
+		//End Story 6622 
 		var rFiles = [];
 		if(updateCat) {
 			addToCat(parentCapId);

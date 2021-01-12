@@ -284,3 +284,48 @@ try{
 // ees 20190211 story 5861 start Save fileDate as Created Date
 		editAppSpecific("Created Date", fileDate);
 // ees 20190211 story 5861 end
+try{
+		var wrTbl = new Array();
+	wrRow = false;
+	var rsTbl = new Array();
+	rsRow = false
+	for(r in SOURCEOFWATERSUPPLY) {
+		if(SOURCEOFWATERSUPPLY[r]["Type of Water Supply"] == "Diversion from Waterbody") {
+			thisTbl = [];
+			thisTbl["Water Right Number"] = SOURCEOFWATERSUPPLY[r]["Diversion Number"];
+			thisTbl["Copy of Documents?"] = "";
+			thisTbl["APN Matches Premises"] = "";
+			thisTbl["Diversion Type"] = "";
+			thisTbl["Other Diversion"] = "";
+			thisTbl["Diversion Latitude"] = "";
+			thisTbl["Diversion Longitude"] = "";
+			thisTbl["Currently Used for Cannabis?"] = "";
+			wrTbl.push(thisTbl);
+			wrRow = true;
+		}
+		if(SOURCEOFWATERSUPPLY[r]["Type of Water Supply"] == "Retail Supplier") {
+			thisTbl = [];
+			thisTbl["Retail Water Supplier"] = SOURCEOFWATERSUPPLY[r]["Name of Supplier"];
+			thisTbl["	Name of Retail Water Supplier	"] = "";
+			thisTbl["A copy of the most recent water service bill"] = "";
+			thisTbl["Water Bill Address Matches Premises"] = "";
+			thisTbl["Currently Used for Cannabis"] = "";
+			wrTbl.push(thisTbl);
+			rsRow = true;
+		}
+	}
+	if(wrRow) {
+		removeASITable("WATER RIGHTS");
+		addASITable("WATER RIGHTS",wrTbl);
+	}
+	if(rsRow) {
+		removeASITable("RETAIL WATER SUPPLIER");
+		addASITable("RETAIL WATER SUPPLIER",wrTbl);
+	}
+			
+}catch(err){
+	logDebug("An error has occurred in ASA:LICENSES/CULTIVATOR/*/APPLICATION: Add WaterRight table row: " + err.message);
+	logDebug(err.stack);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in DUB:LICENSES/CULTIVATOR/*/AMENDMENT: Amendment Disqualified: "+ startDate, capId + br+ err.message+ br+ err.stack);
+}
+
