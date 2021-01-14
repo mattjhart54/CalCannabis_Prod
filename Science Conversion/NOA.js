@@ -145,6 +145,7 @@ try{
 		if(!matches(NOA[i]["WDID"],null,"",undefined)) {
 			editAppSpecific("NOA Review Status",NOA[i]["NOA Review Status"]);
 		}
+	}
 	logDebug("Total Records Processed : " + NOA.length);
 	logDebug("Total Records Rejected: " + rejCnt);
 	logDebug("Total Records Converted: " + recCnt);
