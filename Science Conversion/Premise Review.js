@@ -71,7 +71,7 @@ var currentUserID = "ADMIN";
 var systemUserObj = aa.person.getUser("ADMIN").getOutput();
 
 var AInfo = new Array();
-var Premise = PremiseREVIEWData();
+var Premise = PREMISEREVIEWData();
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========Main=Loop================>
