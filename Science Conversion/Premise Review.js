@@ -121,7 +121,7 @@ try{
 		}
 		recCnt++;
 	//	logDebug("processing record " + Premise[i]["License_Number"]);
-		editAppSpecific("Premise Review Status",Premise[i]["Premise_Review_Status"]);
+		editAppSpecific("Premises Diagram Review Status",Premise[i]["Premises_Review_Status"]);
 	}
 	logDebug("Total Records Processed : " + Premise.length);
 	logDebug("Total Records Rejected: " + rejCnt);
