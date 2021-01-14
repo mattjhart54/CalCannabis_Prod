@@ -140,7 +140,7 @@ try{
 		editAppSpecific("Canopy Plant Count",PREM[i]["Canopy_Plants"]);
 		editAppSpecific("Canopy SF Limit",PREM[i]["Canopy SF Limit"]);
 	*/
-		if(matches(PREM[i]["immature plant area square footage"],null,"",undefined)) {
+		if(!matches(PREM[i]["immature plant area square footage"],null,"",undefined)) {
 			editAppSpecific("Immature Plant Area SF",PREM[i]["immature plant area square footage"]);
 		}
 	}
