@@ -120,7 +120,7 @@ try{
 		}
 		recCnt++;
 	//	logDebug("processing record " + WSTATUS[i]["License_Number"]);
-		editAppSpecific("MEDIUM Review Status",WSTATUS[i]["Medium_Validation"]);
+		editAppSpecific("Medium Validation",WSTATUS[i]["Medium_Validation"]);
 	}
 	logDebug("Total Records Processed : " + WSTATUS.length);
 	logDebug("Total Records Rejected: " + rejCnt);
