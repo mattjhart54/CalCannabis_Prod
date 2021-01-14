@@ -142,7 +142,7 @@ try{
 		if(!matches(NOA[i]["NOA Review Status"],null,"",undefined)) {
 			editAppSpecific("Enrollment Level",NOA[i]["Enrollment_level"]);
 		}
-		if(!matches(NOA[i]["WDID"],null,"",undefined) {
+		if(!matches(NOA[i]["WDID"],null,"",undefined)) {
 			editAppSpecific("NOA Review Status",NOA[i]["NOA Review Status"]);
 		}
 	logDebug("Total Records Processed : " + NOA.length);
