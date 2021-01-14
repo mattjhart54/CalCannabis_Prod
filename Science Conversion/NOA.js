@@ -120,15 +120,31 @@ try{
 			}
 		}
 		recCnt++;
-		editAppSpecific("WDID",NOA[i]["WDID"]);
+		
+		if(!matches(NOA[i]["WDID"],null,"",undefined)) {
+			editAppSpecific("WDID",NOA[i]["WDID"]);
+		}
+		if(!matches(NOA[i]["APN_Matches_Premises"],null,"",undefined)) {
 		editAppSpecific("APN Matches Premises",NOA[i]["APN_Matches_Premises"]);
-		editAppSpecific("Issue Date",NOA[i]["Issue_Date"]);
-		editAppSpecific("Expiration Date",NOA[i]["Expiration_Date"]);
-		editAppSpecific("General Order",NOA[i]["General_Order?"]);
-		editAppSpecific("Order Number",NOA[i]["Order_Number"]);
-		editAppSpecific("Enrollment Level",NOA[i]["Enrollment_level"]);
-		editAppSpecific("NOA Review Status",NOA[i]["WQ_Review"]);
-	}
+		}
+		if(!matches(NOA[i]["Issue_Date"],null,"",undefined)) {	
+			editAppSpecific("Issue Date",NOA[i]["Issue_Date"]);
+		}
+		if(!matches(NOA[i]["Expiration_Date"],null,"",undefined)) {
+			editAppSpecific("Expiration Date",NOA[i]["Expiration_Date"]);
+		}
+		if(!matches(NOA[i]["General_Order?"],null,"",undefined)) {
+			editAppSpecific("General Order",NOA[i]["General_Order?"]);
+		}
+		if(!matches(NOA[i]["Order_Number"],null,"",undefined)) {
+			editAppSpecific("Order Number",NOA[i]["Order_Number"]);
+		}
+		if(!matches(NOA[i]["NOA Review Status"],null,"",undefined)) {
+			editAppSpecific("Enrollment Level",NOA[i]["Enrollment_level"]);
+		}
+		if(!matches(NOA[i]["WDID"],null,"",undefined) {
+			editAppSpecific("NOA Review Status",NOA[i]["NOA Review Status"]);
+		}
 	logDebug("Total Records Processed : " + NOA.length);
 	logDebug("Total Records Rejected: " + rejCnt);
 	logDebug("Total Records Converted: " + recCnt);
