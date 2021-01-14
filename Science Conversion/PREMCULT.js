@@ -120,7 +120,7 @@ try{
 			}
 		}
 		recCnt++;
-	/*
+	
 		editAppSpecific("Premises Diagram Review Status",PREM[i]["Premises Review Status"]);
 		editAppSpecific("Canopy area included",PREM[i]["Canopy area included?"]);
 		editAppSpecific("Aggregate square footage of noncontiguous canopy",PREM[i]["Aggregate square footage of noncontiguous canopy?"]);
@@ -139,7 +139,7 @@ try{
 		editAppSpecific("Canopy SF",PREM[i]["Canopy_SF"]);
 		editAppSpecific("Canopy Plant Count",PREM[i]["Canopy_Plants"]);
 		editAppSpecific("Canopy SF Limit",PREM[i]["Canopy SF Limit"]);
-	*/
+	
 		if(!matches(PREM[i]["immature plant area square footage"],null,"",undefined)) {
 			editAppSpecific("Immature Plant Area SF",PREM[i]["immature plant area square footage"]);
 		}
