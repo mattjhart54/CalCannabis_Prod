@@ -56,7 +56,7 @@
 				if(extArray.indexOf(extension) < 0){
 					cancel = true;		
 					showMessage = true;
-					comment("We accept the following file types for upload: " + extAllowed + ".");	
+					comment("We accept the following file types for upload: " + extAllowed);	
 				}
 			}else{
 				cancel = true;		
