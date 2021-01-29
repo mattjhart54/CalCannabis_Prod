@@ -56,7 +56,7 @@
 				if(extArray.indexOf(extension) < 0){
 					cancel = true;		
 					showMessage = true;
-					comment("We accept the following file types for upload: " + extAllowed);	
+					comment("We accept the following file types for upload: PDF; Word; Excel; TXT; JPG; PNG; and Tiff.");	
 				}
 			}else{
 				cancel = true;		
