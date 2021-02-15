@@ -1,4 +1,4 @@
-function copyASITables4ACA(pFromCapId, pToCapId) {
+function copyASITablesCDFA(pFromCapId, pToCapId) {
 	// Function dependencies on addASITable()
 	// par3 is optional 0 based string array of table to ignore
 	var itemCap = pFromCapId;
@@ -9,12 +9,14 @@ function copyASITables4ACA(pFromCapId, pToCapId) {
 	var tableArr = new Array();
 	var ignoreArr = new Array();
 	var limitCopy = false;
+	
 	if (arguments.length > 2){ //Check for tablas to exclude
 		for (var i=2; i<arguments.length; i++){
 			ignoreArr.push(arguments[i]);
 			limitCopy = true;
 		}
 	}
+	
 	while (tai.hasNext()) {
 		var tsm = tai.next();
 
@@ -26,14 +28,16 @@ function copyASITables4ACA(pFromCapId, pToCapId) {
 		//Check list
 		if (limitCopy) {
 			var ignore = false;
-			for (var i = 0; i < ignoreArr.length; i++)
+			for (var i = 0; i < ignoreArr.length; i++){
 				if (ignoreArr[i] == tn) {
-					logDebug("skipping " + tn);
+					logDebug("Skipping table: " + tn);
 					ignore = true;
 					break;
 				}
-			if (ignore)
+			}
+			if (ignore){
 				continue;
+			}
 		}
 		if (!tsm.rowIndex.isEmpty()) {
 			var tsmfldi = tsm.getTableField().iterator();
@@ -64,9 +68,8 @@ function copyASITables4ACA(pFromCapId, pToCapId) {
 
 			tempArray.push(tempObject); // end of record
 		}
-		var asit = cap.getAppSpecificTableGroupModel();
-		addASITable4ACAPageFlow(asit, tn, tempArray,pToCapId)
-//		addASITable(tn, tempArray, pToCapId);
+
+		addASITable(tn, tempArray, pToCapId);
 		logDebug("ASI Table Array : " + tn + " (" + numrows + " Rows)");
 	}
-} 
+}
