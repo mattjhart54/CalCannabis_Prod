@@ -68,6 +68,7 @@ try {
 			}
 		}
 		ignoreTableArray = [];
+		removeASITable("APN SPATIAL INFORMATION",parentCapId);
 		if (matches(getAppSpecific("Small Retail Water Supplier Review Status-NEW"),"Complete","N/A")){
 			removeASITable("SMALL RETAIL WATER SUPPLIERS",parentCapId);
 		}else{
@@ -92,6 +93,11 @@ try {
 			removeASITable("WATER RIGHTS",parentCapId);
 		}else{
 			ignoreTableArray.push("WATER RIGHTS");
+		}
+		if (matches(getAppSpecific("LSA Review Status-NEW"),"Complete","N/A")){
+			removeASITable("LAKE AND STREAMBED ALTERATION",parentCapId);
+		}else{
+			ignoreTableArray.push("LAKE AND STREAMBED ALTERATION");
 		}
 		if (typeof(PREMISESADDRESSES) == "object"){
 			if(PREMISESADDRESSES.length > 0){
