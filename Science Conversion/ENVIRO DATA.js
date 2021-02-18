@@ -29,9 +29,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL18-0000007",
     "Application_Number": "LCA18-0000007",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -23973,9 +23973,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL19-0001664",
     "Application_Number": "LCA19-0001664",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -27919,7 +27919,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0003188",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -29119,7 +29119,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0003717",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -33727,7 +33727,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005058",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -34167,7 +34167,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005133",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -34719,7 +34719,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005247",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35063,7 +35063,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005320",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35071,7 +35071,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005321",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35079,7 +35079,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005322",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35087,7 +35087,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005323",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35095,7 +35095,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005324",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35103,7 +35103,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005325",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35111,7 +35111,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005326",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35119,7 +35119,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005327",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35127,7 +35127,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005328",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35135,7 +35135,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005329",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35143,7 +35143,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005330",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35151,7 +35151,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005331",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35159,7 +35159,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005332",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35167,7 +35167,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005333",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -35397,9 +35397,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL19-0005379",
     "Application_Number": "LCA19-0005379",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -36341,9 +36341,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL19-0005529",
     "Application_Number": "LCA19-0005529",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -36597,17 +36597,17 @@ var ENVIROarray =
   {
     "License_Number": "CCL19-0005562",
     "Application_Number": "LCA19-0005562",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
     "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL19-0005563",
     "Application_Number": "LCA19-0005563",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "complete"
   },
   {
@@ -36685,9 +36685,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL19-0005576",
     "Application_Number": "LCA19-0005576",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -36999,7 +36999,7 @@ var ENVIROarray =
     "Application_Number": "LCA19-0005617",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -37479,7 +37479,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000055",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -37511,7 +37511,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000060",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -37519,7 +37519,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000061",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -37959,7 +37959,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000130",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38061,9 +38061,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000146",
     "Application_Number": "LCA20-0000146",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38101,9 +38101,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000151",
     "Application_Number": "LCA20-0000151",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38245,9 +38245,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000183",
     "Application_Number": "LCA20-0000183",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "complete"
   },
   {
@@ -38285,9 +38285,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000188",
     "Application_Number": "LCA20-0000188",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38295,7 +38295,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000190",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38303,7 +38303,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000192",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38327,7 +38327,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000197",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38335,7 +38335,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000198",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38415,7 +38415,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000218",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38583,7 +38583,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000248",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38613,9 +38613,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000252",
     "Application_Number": "LCA20-0000252",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "complete"
   },
   {
@@ -38623,7 +38623,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000254",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38717,9 +38717,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000269",
     "Application_Number": "LCA20-0000269",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "complete"
   },
   {
@@ -38751,7 +38751,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000275",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -38845,9 +38845,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000296",
     "Application_Number": "LCA20-0000296",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "complete"
   },
   {
@@ -39119,7 +39119,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000351",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -39279,7 +39279,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000383",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -39349,17 +39349,17 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000395",
     "Application_Number": "LCA20-0000395",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000396",
     "Application_Number": "LCA20-0000396",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -39565,9 +39565,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000439",
     "Application_Number": "LCA20-0000439",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "complete"
   },
   {
@@ -39581,9 +39581,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000441",
     "Application_Number": "LCA20-0000441",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -39693,9 +39693,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000464",
     "Application_Number": "LCA20-0000464",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -39829,9 +39829,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000489",
     "Application_Number": "LCA20-0000489",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -39839,7 +39839,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000494",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -40189,9 +40189,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000580",
     "Application_Number": "LCA20-0000580",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -40311,7 +40311,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000597",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -40599,7 +40599,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000647",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -40607,7 +40607,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000648",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -40615,7 +40615,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000649",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -40623,7 +40623,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000651",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -40711,7 +40711,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000668",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -40743,15 +40743,15 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000674",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000677",
     "Application_Number": "LCA20-0000677",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -41117,25 +41117,25 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000734",
     "Application_Number": "LCA20-0000734",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000735",
     "Application_Number": "LCA20-0000735",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000736",
     "Application_Number": "LCA20-0000736",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -41149,17 +41149,17 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000738",
     "Application_Number": "LCA20-0000738",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000739",
     "Application_Number": "LCA20-0000739",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -41213,9 +41213,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000755",
     "Application_Number": "LCA20-0000755",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -41445,9 +41445,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000795",
     "Application_Number": "LCA20-0000795",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -41487,7 +41487,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000800",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -41519,7 +41519,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000804",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -41999,7 +41999,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000877",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42063,7 +42063,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000886",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42525,9 +42525,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000946",
     "Application_Number": "LCA20-0000946",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "complete"
   },
   {
@@ -42549,9 +42549,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0000951",
     "Application_Number": "LCA20-0000951",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "complete"
   },
   {
@@ -42759,7 +42759,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000978",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42767,7 +42767,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000979",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42783,7 +42783,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000981",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42791,7 +42791,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000982",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42799,7 +42799,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000983",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42807,7 +42807,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000984",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42815,7 +42815,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000985",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42823,7 +42823,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000986",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42831,7 +42831,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000987",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42839,7 +42839,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000988",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42847,7 +42847,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000989",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42855,7 +42855,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000990",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42871,7 +42871,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000992",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42879,7 +42879,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0000993",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42943,7 +42943,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001004",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42959,7 +42959,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001006",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42967,7 +42967,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001007",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42975,7 +42975,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001008",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42983,7 +42983,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001009",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42991,7 +42991,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001010",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -42999,7 +42999,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001011",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43007,7 +43007,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001012",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43015,7 +43015,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001013",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43023,7 +43023,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001014",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43031,7 +43031,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001015",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43039,7 +43039,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001016",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43047,7 +43047,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001017",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43055,7 +43055,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001018",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43063,7 +43063,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001019",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43071,7 +43071,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001020",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43079,7 +43079,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001021",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43087,7 +43087,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001022",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43095,7 +43095,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001023",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43103,7 +43103,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001024",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43111,7 +43111,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001025",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43373,9 +43373,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001073",
     "Application_Number": "LCA20-0001073",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43477,9 +43477,9 @@ var ENVIROarray =
   {
     "License_Number": "",
     "Application_Number": "LCA20-0001090",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43733,9 +43733,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001150",
     "Application_Number": "LCA20-0001150",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -43743,7 +43743,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001152",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -44399,7 +44399,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001245",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -44437,9 +44437,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001252",
     "Application_Number": "LCA20-0001252",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -44791,7 +44791,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001308",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -44933,9 +44933,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001336",
     "Application_Number": "LCA20-0001336",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -45013,9 +45013,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001349",
     "Application_Number": "LCA20-0001349",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -45445,25 +45445,25 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001413",
     "Application_Number": "LCA20-0001413",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001414",
     "Application_Number": "LCA20-0001414",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001415",
     "Application_Number": "LCA20-0001415",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -45541,9 +45541,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001426",
     "Application_Number": "LCA20-0001426",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -45637,9 +45637,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001438",
     "Application_Number": "LCA20-0001438",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -45765,9 +45765,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001455",
     "Application_Number": "LCA20-0001455",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -45797,49 +45797,49 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001459",
     "Application_Number": "LCA20-0001459",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001460",
     "Application_Number": "LCA20-0001460",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001526",
     "Application_Number": "LCA20-0001526",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001527",
     "Application_Number": "LCA20-0001527",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001528",
     "Application_Number": "LCA20-0001528",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001530",
     "Application_Number": "LCA20-0001530",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -45997,9 +45997,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001552",
     "Application_Number": "LCA20-0001552",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46141,17 +46141,17 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001572",
     "Application_Number": "LCA20-0001572",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001573",
     "Application_Number": "LCA20-0001573",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46261,9 +46261,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001596",
     "Application_Number": "LCA20-0001596",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46277,17 +46277,17 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001598",
     "Application_Number": "LCA20-0001598",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001599",
     "Application_Number": "LCA20-0001599",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46317,25 +46317,25 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001606",
     "Application_Number": "LCA20-0001606",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001607",
     "Application_Number": "LCA20-0001607",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001608",
     "Application_Number": "LCA20-0001608",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46349,25 +46349,25 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001612",
     "Application_Number": "LCA20-0001612",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001613",
     "Application_Number": "LCA20-0001613",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001614",
     "Application_Number": "LCA20-0001614",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46375,7 +46375,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001615",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46389,25 +46389,25 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001617",
     "Application_Number": "LCA20-0001617",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001618",
     "Application_Number": "LCA20-0001618",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001619",
     "Application_Number": "LCA20-0001619",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46421,25 +46421,25 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001621",
     "Application_Number": "LCA20-0001621",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001622",
     "Application_Number": "LCA20-0001622",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001626",
     "Application_Number": "LCA20-0001626",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46453,17 +46453,17 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001628",
     "Application_Number": "LCA20-0001628",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001630",
     "Application_Number": "LCA20-0001630",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46485,49 +46485,49 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001633",
     "Application_Number": "LCA20-0001633",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001634",
     "Application_Number": "LCA20-0001634",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001635",
     "Application_Number": "LCA20-0001635",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001636",
     "Application_Number": "LCA20-0001636",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001637",
     "Application_Number": "LCA20-0001637",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001638",
     "Application_Number": "LCA20-0001638",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46541,17 +46541,17 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001640",
     "Application_Number": "LCA20-0001640",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001641",
     "Application_Number": "LCA20-0001641",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46565,9 +46565,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001644",
     "Application_Number": "LCA20-0001644",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46621,25 +46621,25 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001652",
     "Application_Number": "LCA20-0001652",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001653",
     "Application_Number": "LCA20-0001653",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001654",
     "Application_Number": "LCA20-0001654",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -46927,7 +46927,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001722",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -47007,7 +47007,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001734",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -47085,9 +47085,9 @@ var ENVIROarray =
   {
     "License_Number": "CCL20-0001758",
     "Application_Number": "LCA20-0001758",
-    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "yes",
-    "Address_Matches_Premises_Address_Submitted?": "yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
+    "Address_Matches_Premises_Address_Submitted?": "Yes",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -47975,7 +47975,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0001941",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -48423,7 +48423,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0002050",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
@@ -49759,7 +49759,7 @@ var ENVIROarray =
     "Application_Number": "LCA20-0002423",
     "Evidence_of_Envirostor_Database_Record_Search_Provided?": "Yes",
     "Address_Matches_Premises_Address_Submitted?": "Yes",
-    "Mitigation_Employee_Protection_Included": "n/a",
+    "Mitigation_Employee_Protection_Included": "N/A",
     "Envirostor_Review_Status": "Complete"
   },
   {
