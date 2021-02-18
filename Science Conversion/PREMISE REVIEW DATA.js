@@ -1,7 +1,17 @@
-function PREMISEREVIEWData (){
+function PREMISEREVIEWData(){
 
 var PREMISEREVIEWarray =
 [
+  {
+    "License_Number": "CCL21-0000049",
+    "Application_Number": "LCA21-0000049",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003249",
+    "Premises Review Status": "Complete"
+  },
   {
     "License_Number": "CCL18-0000004",
     "Application_Number": "LCA18-0000004",
@@ -238,6 +248,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL18-0000072",
+    "Application_Number": "LCA18-0000072",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL18-0000073",
     "Application_Number": "LCA18-0000073",
     "Premises Review Status": "Incomplete"
@@ -310,7 +325,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000092",
     "Application_Number": "LCA18-0000092",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000095",
@@ -378,11 +393,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000116",
-    "Application_Number": "LCA18-0000116",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000117",
     "Application_Number": "LCA18-0000117",
     "Premises Review Status": "Complete"
@@ -395,7 +405,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000119",
     "Application_Number": "LCA18-0000119",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000120",
@@ -595,7 +605,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000184",
     "Application_Number": "LCA18-0000184",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000185",
@@ -615,7 +625,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000190",
     "Application_Number": "LCA18-0000190",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000192",
@@ -648,11 +658,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000198",
-    "Application_Number": "LCA18-0000198",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000199",
     "Application_Number": "LCA18-0000199",
     "Premises Review Status": "Incomplete"
@@ -665,7 +670,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000204",
     "Application_Number": "LCA18-0000204",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000209",
@@ -795,7 +800,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000246",
     "Application_Number": "LCA18-0000246",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000248",
@@ -863,11 +868,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000262",
-    "Application_Number": "LCA18-0000262",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000263",
     "Application_Number": "LCA18-0000263",
     "Premises Review Status": "Complete"
@@ -910,7 +910,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000272",
     "Application_Number": "LCA18-0000272",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000273",
@@ -920,17 +920,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000275",
     "Application_Number": "LCA18-0000275",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000276",
-    "Application_Number": "LCA18-0000276",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000277",
-    "Application_Number": "LCA18-0000277",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000278",
@@ -966,16 +956,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0000285",
     "Application_Number": "LCA18-0000285",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000286",
-    "Application_Number": "LCA18-0000286",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000287",
-    "Application_Number": "LCA18-0000287",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000289",
@@ -1033,16 +1013,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000303",
-    "Application_Number": "LCA18-0000303",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000305",
-    "Application_Number": "LCA18-0000305",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000306",
     "Application_Number": "LCA18-0000306",
     "Premises Review Status": "Complete"
@@ -1093,29 +1063,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000321",
-    "Application_Number": "LCA18-0000321",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000322",
-    "Application_Number": "LCA18-0000322",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000323",
-    "Application_Number": "LCA18-0000323",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000324",
     "Application_Number": "LCA18-0000324",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000325",
-    "Application_Number": "LCA18-0000325",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000326",
@@ -1236,11 +1186,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0000361",
     "Application_Number": "LCA18-0000361",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000363",
-    "Application_Number": "LCA18-0000363",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000364",
@@ -1438,11 +1383,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0000403",
-    "Application_Number": "LCA18-0000403",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000404",
     "Application_Number": "LCA18-0000404",
     "Premises Review Status": "Incomplete"
@@ -1515,7 +1455,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000420",
     "Application_Number": "LCA18-0000420",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000422",
@@ -1545,7 +1485,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000427",
     "Application_Number": "LCA18-0000427",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
@@ -1660,11 +1600,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000458",
     "Application_Number": "LCA18-0000458",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000459",
-    "Application_Number": "LCA18-0000459",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -1790,7 +1725,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000489",
     "Application_Number": "LCA18-0000489",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000490",
@@ -1953,16 +1888,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000528",
-    "Application_Number": "LCA18-0000528",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000530",
-    "Application_Number": "LCA18-0000530",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000531",
     "Application_Number": "LCA18-0000531",
     "Premises Review Status": "Incomplete"
@@ -1970,11 +1895,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000532",
     "Application_Number": "LCA18-0000532",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000534",
-    "Application_Number": "LCA18-0000534",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -2143,11 +2063,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000575",
-    "Application_Number": "LCA18-0000575",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000576",
     "Application_Number": "LCA18-0000576",
     "Premises Review Status": "Incomplete"
@@ -2180,7 +2095,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000587",
     "Application_Number": "LCA18-0000587",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000590",
@@ -2191,11 +2106,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0000591",
     "Application_Number": "LCA18-0000591",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000594",
-    "Application_Number": "LCA18-0000594",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000596",
@@ -2295,7 +2205,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000625",
     "Application_Number": "LCA18-0000625",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000626",
@@ -2318,16 +2228,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000642",
-    "Application_Number": "LCA18-0000642",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000643",
-    "Application_Number": "LCA18-0000643",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000645",
     "Application_Number": "LCA18-0000645",
     "Premises Review Status": "Complete"
@@ -2335,7 +2235,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000646",
     "Application_Number": "LCA18-0000646",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000648",
@@ -2453,11 +2353,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0000674",
-    "Application_Number": "LCA18-0000674",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000675",
     "Application_Number": "LCA18-0000675",
     "Premises Review Status": "Complete"
@@ -2543,11 +2438,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000692",
-    "Application_Number": "LCA18-0000692",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000694",
     "Application_Number": "LCA18-0000694",
     "Premises Review Status": "Complete"
@@ -2591,11 +2481,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0000702",
     "Application_Number": "LCA18-0000702",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000704",
-    "Application_Number": "LCA18-0000704",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000705",
@@ -2653,19 +2538,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000721",
-    "Application_Number": "LCA18-0000721",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000722",
     "Application_Number": "LCA18-0000722",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000723",
-    "Application_Number": "LCA18-0000723",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000724",
@@ -2761,11 +2636,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0000760",
     "Application_Number": "LCA18-0000760",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000762",
-    "Application_Number": "LCA18-0000762",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000763",
@@ -2968,6 +2838,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL18-0000815",
+    "Application_Number": "LCA18-0000815",
+    "Premises Review Status": "Incomplete"
+  },
+  {
     "License_Number": "CCL18-0000816",
     "Application_Number": "LCA18-0000816",
     "Premises Review Status": "Complete"
@@ -2975,11 +2850,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000818",
     "Application_Number": "LCA18-0000818",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000819",
-    "Application_Number": "LCA18-0000819",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -2998,34 +2868,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000823",
-    "Application_Number": "LCA18-0000823",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000824",
     "Application_Number": "LCA18-0000824",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000825",
-    "Application_Number": "LCA18-0000825",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000826",
-    "Application_Number": "LCA18-0000826",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000827",
-    "Application_Number": "LCA18-0000827",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000828",
-    "Application_Number": "LCA18-0000828",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000830",
@@ -3040,7 +2885,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000834",
     "Application_Number": "LCA18-0000834",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0000835",
@@ -3055,6 +2900,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0000837",
     "Application_Number": "lca18-0000837",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL18-0000839",
+    "Application_Number": "LCA18-0000839",
     "Premises Review Status": "Complete"
   },
   {
@@ -3103,11 +2953,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0000850",
-    "Application_Number": "LCA18-0000850",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000851",
     "Application_Number": "LCA18-0000851",
     "Premises Review Status": "Incomplete"
@@ -3123,33 +2968,13 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0000856",
-    "Application_Number": "LCA18-0000856",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000857",
     "Application_Number": "LCA18-0000857",
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000858",
-    "Application_Number": "LCA18-0000858",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000859",
-    "Application_Number": "LCA18-0000859",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000860",
     "Application_Number": "LCA18-0000860",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0000861",
-    "Application_Number": "LCA18-0000861",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -3166,11 +2991,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0000865",
     "Application_Number": "lca18-0000865",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000866",
-    "Application_Number": "LCA18-0000866",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000868",
@@ -3296,11 +3116,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0000898",
     "Application_Number": "LCA18-0000898",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0000900",
-    "Application_Number": "LCA18-0000900",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0000901",
@@ -3553,18 +3368,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0000976",
-    "Application_Number": "LCA18-0000976",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0000977",
     "Application_Number": "LCA18-0000977",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA18-0000978",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -3723,11 +3528,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0001019",
-    "Application_Number": "LCA18-0001019",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001021",
     "Application_Number": "LCA18-0001021",
     "Premises Review Status": "Complete"
@@ -3745,7 +3545,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001024",
     "Application_Number": "LCA18-0001024",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001027",
@@ -3806,6 +3606,11 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0001041",
     "Application_Number": "lca18-0001041",
     "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA18-0001043",
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0001044",
@@ -3886,11 +3691,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0001064",
     "Application_Number": "LCA18-0001064",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0001065",
-    "Application_Number": "LCA18-0001065",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0001066",
@@ -4055,7 +3855,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001123",
     "Application_Number": "LCA18-0001123",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001125",
@@ -4163,11 +3963,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001151",
-    "Application_Number": "LCA18-0001151",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001153",
     "Application_Number": "LCA18-0001153",
     "Premises Review Status": "Incomplete"
@@ -4185,7 +3980,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001156",
     "Application_Number": "LCA18-0001156",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001157",
@@ -4200,7 +3995,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001160",
     "Application_Number": "LCA18-0001160",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001161",
@@ -4243,11 +4038,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0001171",
-    "Application_Number": "LCA18-0001171",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA18-0001172",
     "Premises Review Status": "Incomplete"
@@ -4273,11 +4063,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0001189",
-    "Application_Number": "LCA18-0001189",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001190",
     "Application_Number": "LCA18-0001190",
     "Premises Review Status": "Incomplete"
@@ -4290,7 +4075,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001193",
     "Application_Number": "LCA18-0001193",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001194",
@@ -4530,7 +4315,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001273",
     "Application_Number": "LCA18-0001273",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0001274",
@@ -4705,7 +4490,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001331",
     "Application_Number": "LCA18-0001331",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001333",
@@ -4775,7 +4560,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001354",
     "Application_Number": "LCA18-0001354",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001356",
@@ -4798,34 +4583,19 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001363",
-    "Application_Number": "LCA18-0001363",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001364",
     "Application_Number": "LCA18-0001364",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001365",
     "Application_Number": "LCA18-0001365",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001366",
     "Application_Number": "LCA18-0001366",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0001367",
-    "Application_Number": "LCA18-0001367",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0001374",
-    "Application_Number": "LCA18-0001374",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001375",
@@ -4883,11 +4653,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001386",
-    "Application_Number": "LCA18-0001386",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001387",
     "Application_Number": "LCA18-0001387",
     "Premises Review Status": "Incomplete"
@@ -4935,7 +4700,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001400",
     "Application_Number": "LCA18-0001400",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001402",
@@ -4958,18 +4723,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001408",
-    "Application_Number": "LCA18-0001408",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001410",
     "Application_Number": "LCA18-0001410",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0001411",
-    "Application_Number": "LCA18-0001411",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -4990,11 +4745,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001415",
     "Application_Number": "LCA18-0001415",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0001416",
-    "Application_Number": "LCA18-0001416",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -5023,11 +4773,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001424",
-    "Application_Number": "LCA18-0001424",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001425",
     "Application_Number": "LCA18-0001425",
     "Premises Review Status": "Complete"
@@ -5035,11 +4780,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA18-0001427",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0001431",
-    "Application_Number": "LCA18-0001431",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -5105,7 +4845,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001445",
     "Application_Number": "LCA18-0001445",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0001446",
@@ -5180,7 +4920,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001463",
     "Application_Number": "LCA18-0001463",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001466",
@@ -5228,18 +4968,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0001480",
-    "Application_Number": "LCA18-0001480",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001481",
     "Application_Number": "LCA18-0001481",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0001483",
-    "Application_Number": "LCA18-0001483",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -5393,11 +5123,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001537",
-    "Application_Number": "LCA18-0001537",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA18-0001538",
     "Premises Review Status": "Complete"
@@ -5500,7 +5225,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001584",
     "Application_Number": "LCA18-0001584",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001586",
@@ -5515,7 +5240,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001588",
     "Application_Number": "LCA18-0001588",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001589",
@@ -5650,7 +5375,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001623",
     "Application_Number": "LCA18-0001623",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001624",
@@ -5698,11 +5423,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001634",
-    "Application_Number": "LCA18-0001634",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001635",
     "Application_Number": "LCA18-0001635",
     "Premises Review Status": "Complete"
@@ -5735,7 +5455,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001642",
     "Application_Number": "LCA18-0001642",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001643",
@@ -5745,11 +5465,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA18-0001645",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0001646",
-    "Application_Number": "LCA18-0001646",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -5943,11 +5658,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001691",
-    "Application_Number": "LCA18-0001691",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001692",
     "Application_Number": "LCA18-0001692",
     "Premises Review Status": "Complete"
@@ -6118,11 +5828,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001732",
-    "Application_Number": "LCA18-0001732",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001733",
     "Application_Number": "LCA18-0001733",
     "Premises Review Status": "Complete"
@@ -6185,7 +5890,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001749",
     "Application_Number": "LCA18-0001749",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001750",
@@ -6325,7 +6030,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001788",
     "Application_Number": "LCA18-0001788",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001789",
@@ -6345,7 +6050,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001792",
     "Application_Number": "LCA18-0001792",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001793",
@@ -6403,11 +6108,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0001810",
-    "Application_Number": "LCA18-0001810",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001811",
     "Application_Number": "LCA18-0001811",
     "Premises Review Status": "Incomplete"
@@ -6435,12 +6135,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001817",
     "Application_Number": "LCA18-0001817",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001818",
     "Application_Number": "LCA18-0001818",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001819",
@@ -6455,7 +6155,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001822",
     "Application_Number": "LCA18-0001822",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001823",
@@ -6518,6 +6218,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL18-0001837",
+    "Application_Number": "LCA18-0001837",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL18-0001838",
     "Application_Number": "LCA18-0001838",
     "Premises Review Status": "Incomplete"
@@ -6530,7 +6235,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001848",
     "Application_Number": "LCA18-0001848",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
@@ -6698,11 +6403,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001895",
-    "Application_Number": "LCA18-0001895",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001898",
     "Application_Number": "LCA18-0001898",
     "Premises Review Status": "Incomplete"
@@ -6803,16 +6503,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0001921",
-    "Application_Number": "LCA18-0001921",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0001922",
-    "Application_Number": "LCA18-0001922",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001923",
     "Application_Number": "LCA18-0001923",
     "Premises Review Status": "Complete"
@@ -6836,11 +6526,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0001928",
     "Application_Number": "LCA18-0001928",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0001931",
-    "Application_Number": "LCA18-0001931",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0001933",
@@ -6880,7 +6565,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001942",
     "Application_Number": "LCA18-0001942",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001943",
@@ -6908,14 +6593,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0001949",
-    "Application_Number": "LCA18-0001949",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001950",
     "Application_Number": "LCA18-0001950",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001951",
@@ -6946,11 +6626,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0001956",
     "Application_Number": "LCA18-0001956",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0001957",
-    "Application_Number": "LCA18-0001957",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0001958",
@@ -6985,7 +6660,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001966",
     "Application_Number": "LCA18-0001966",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0001971",
@@ -7040,7 +6715,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001982",
     "Application_Number": "LCA18-0001982",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001983",
@@ -7055,7 +6730,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001985",
     "Application_Number": "LCA18-0001985",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0001986",
@@ -7088,11 +6763,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0001994",
-    "Application_Number": "LCA18-0001994",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0001995",
     "Application_Number": "LCA18-0001995",
     "Premises Review Status": "Incomplete"
@@ -7110,7 +6780,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0001999",
     "Application_Number": "LCA18-0001999",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002000",
@@ -7140,11 +6810,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002006",
     "Application_Number": "LCA18-0002006",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002007",
-    "Application_Number": "LCA18-0002007",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -7198,11 +6863,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002019",
-    "Application_Number": "LCA18-0002019",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002021",
     "Application_Number": "LCA18-0002021",
     "Premises Review Status": "Complete"
@@ -7245,7 +6905,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002030",
     "Application_Number": "LCA18-0002030",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002031",
@@ -7320,7 +6980,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002051",
     "Application_Number": "LCA18-0002051",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002053",
@@ -7358,11 +7018,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0002064",
-    "Application_Number": "LCA18-0002064",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002065",
     "Application_Number": "LCA18-0002065",
     "Premises Review Status": "Complete"
@@ -7388,11 +7043,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002070",
-    "Application_Number": "LCA18-0002070",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002071",
     "Application_Number": "LCA18-0002071",
     "Premises Review Status": "Complete"
@@ -7411,11 +7061,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0002076",
     "Application_Number": "LCA18-0002076",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0002077",
-    "Application_Number": "LCA18-0002077",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0002080",
@@ -7473,11 +7118,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002098",
-    "Application_Number": "LCA18-0002098",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002099",
     "Application_Number": "LCA18-0002099",
     "Premises Review Status": "Incomplete"
@@ -7518,11 +7158,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002109",
-    "Application_Number": "LCA18-0002109",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002110",
     "Application_Number": "LCA18-0002110",
     "Premises Review Status": "Complete"
@@ -7560,12 +7195,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002117",
     "Application_Number": "LCA18-0002117",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002118",
-    "Application_Number": "LCA18-0002118",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002119",
@@ -7575,11 +7205,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002121",
     "Application_Number": "LCA18-0002121",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002122",
-    "Application_Number": "LCA18-0002122",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -7765,7 +7390,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002161",
     "Application_Number": "LCA18-0002161",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002162",
@@ -7960,7 +7585,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002208",
     "Application_Number": "LCA18-0002208",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
@@ -7985,7 +7610,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002213",
     "Application_Number": "LCA18-0002213",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
@@ -8065,11 +7690,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA18-0002229",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA18-0002230",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -8528,11 +8148,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002330",
-    "Application_Number": "LCA18-0002330",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002331",
     "Application_Number": "LCA18-0002331",
     "Premises Review Status": "Complete"
@@ -8545,11 +8160,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002333",
     "Application_Number": "LCA18-0002333",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002334",
-    "Application_Number": "LCA18-0002334",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -9048,11 +8658,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002439",
-    "Application_Number": "LCA18-0002439",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002441",
     "Application_Number": "LCA18-0002441",
     "Premises Review Status": "Incomplete"
@@ -9060,11 +8665,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002442",
     "Application_Number": "LCA18-0002442",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002443",
-    "Application_Number": "LCA18-0002443",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -9130,7 +8730,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002456",
     "Application_Number": "LCA18-0002456",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002457",
@@ -9140,12 +8740,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002458",
     "Application_Number": "LCA18-0002458",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002459",
     "Application_Number": "LCA18-0002459",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002460",
@@ -9268,11 +8868,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0002496",
-    "Application_Number": "LCA18-0002496",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002497",
     "Application_Number": "LCA18-0002497",
     "Premises Review Status": "Complete"
@@ -9390,7 +8985,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002522",
     "Application_Number": "LCA18-0002522",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002523",
@@ -9410,7 +9005,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002527",
     "Application_Number": "LCA18-0002527",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002528",
@@ -9421,11 +9016,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0002529",
     "Application_Number": "LCA18-0002529",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0002530",
-    "Application_Number": "LCA18-0002530",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0002531",
@@ -9510,11 +9100,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002551",
     "Application_Number": "LCA18-0002551",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002552",
-    "Application_Number": "LCA18-0002552",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -9625,7 +9210,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002578",
     "Application_Number": "LCA18-0002578",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002579",
@@ -9813,11 +9398,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002620",
-    "Application_Number": "LCA18-0002620",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002621",
     "Application_Number": "LCA18-0002621",
     "Premises Review Status": "Incomplete"
@@ -9920,7 +9500,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002646",
     "Application_Number": "LCA18-0002646",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002649",
@@ -9991,6 +9571,11 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0002667",
     "Application_Number": "LCA18-0002667",
     "Premises Review Status": "Incomplete"
+  },
+  {
+    "License_Number": "CCL18-0002668",
+    "Application_Number": "LCA18-0002668",
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002669",
@@ -10070,7 +9655,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002689",
     "Application_Number": "LCA18-0002689",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002690",
@@ -10090,11 +9675,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002693",
     "Application_Number": "LCA18-0002693",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002694",
-    "Application_Number": "LCA18-0002694",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -10243,16 +9823,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002741",
-    "Application_Number": "LCA18-0002741",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002742",
-    "Application_Number": "LCA18-0002742",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002743",
     "Application_Number": "LCA18-0002743",
     "Premises Review Status": "Complete"
@@ -10265,11 +9835,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002745",
     "Application_Number": "LCA18-0002745",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002746",
-    "Application_Number": "LCA18-0002746",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -10385,11 +9950,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002772",
     "Application_Number": "LCA18-0002772",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002773",
-    "Application_Number": "LCA18-0002773",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -10510,12 +10070,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002814",
     "Application_Number": "LCA18-0002814",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002815",
     "Application_Number": "LCA18-0002815",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002816",
@@ -10540,12 +10100,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002830",
     "Application_Number": "LCA18-0002830",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002831",
     "Application_Number": "LCA18-0002831",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002838",
@@ -10555,7 +10115,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002841",
     "Application_Number": "LCA18-0002841",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002842",
@@ -10653,11 +10213,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0002887",
-    "Application_Number": "LCA18-0002887",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002888",
     "Application_Number": "LCA18-0002888",
     "Premises Review Status": "Incomplete"
@@ -10733,16 +10288,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002908",
-    "Application_Number": "LCA18-0002908",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002909",
-    "Application_Number": "LCA18-0002909",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002910",
     "Application_Number": "LCA18-0002910",
     "Premises Review Status": "Incomplete"
@@ -10770,7 +10315,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002920",
     "Application_Number": "LCA18-0002920",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002921",
@@ -10788,24 +10333,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0002932",
-    "Application_Number": "LCA18-0002932",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002933",
-    "Application_Number": "LCA18-0002933",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002934",
-    "Application_Number": "LCA18-0002934",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002935",
     "Application_Number": "LCA18-0002935",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002936",
@@ -10820,7 +10350,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002938",
     "Application_Number": "LCA18-0002938",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002939",
@@ -10910,7 +10440,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002962",
     "Application_Number": "LCA18-0002962",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002963",
@@ -10945,7 +10475,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002970",
     "Application_Number": "LCA18-0002970",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002971",
@@ -10983,21 +10513,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0002979",
-    "Application_Number": "LCA18-0002979",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002980",
-    "Application_Number": "LCA18-0002980",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0002982",
-    "Application_Number": "LCA18-0002982",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0002983",
     "Application_Number": "LCA18-0002983",
     "Premises Review Status": "Incomplete"
@@ -11020,12 +10535,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0002987",
     "Application_Number": "LCA18-0002987",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002988",
     "Application_Number": "lca18-0002988",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0002989",
@@ -11068,18 +10583,13 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0003004",
-    "Application_Number": "LCA18-0003004",
-    "Premises Review Status": "Incomplete"
+    "License_Number": "CCL18-0003003",
+    "Application_Number": "LCA18-0003003",
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
     "Application_Number": "LCA18-0003006",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003008",
-    "Application_Number": "LCA18-0003008",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -11113,11 +10623,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0003017",
-    "Application_Number": "LCA18-0003017",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0003018",
     "Application_Number": "LCA18-0003018",
     "Premises Review Status": "Complete"
@@ -11136,11 +10641,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0003022",
     "Application_Number": "LCA18-0003022",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0003023",
-    "Application_Number": "LCA18-0003023",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0003024",
@@ -11200,22 +10700,22 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003037",
     "Application_Number": "LCA18-0003037",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003038",
     "Application_Number": "LCA18-0003038",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003039",
     "Application_Number": "lca18-0003039",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003040",
     "Application_Number": "lca18-0003040",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003041",
@@ -11240,7 +10740,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003045",
     "Application_Number": "LCA18-0003045",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003046",
@@ -11270,7 +10770,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003053",
     "Application_Number": "LCA18-0003053",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003054",
@@ -11305,7 +10805,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003063",
     "Application_Number": "LCA18-0003063",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003064",
@@ -11335,12 +10835,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003074",
     "Application_Number": "LCA18-0003074",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003075",
-    "Application_Number": "LCA18-0003075",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003076",
@@ -11400,7 +10895,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003087",
     "Application_Number": "LCA18-0003087",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003088",
@@ -11410,11 +10905,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003090",
     "Application_Number": "LCA18-0003090",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003091",
-    "Application_Number": "LCA18-0003091",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -11443,6 +10933,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL18-0003098",
+    "Application_Number": "LCA18-0003098",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL18-0003099",
     "Application_Number": "LCA18-0003099",
     "Premises Review Status": "Incomplete"
@@ -11455,16 +10950,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003101",
     "Application_Number": "LCA18-0003101",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003102",
-    "Application_Number": "LCA18-0003102",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003103",
-    "Application_Number": "LCA18-0003103",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -11483,9 +10968,19 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL18-0003109",
+    "Application_Number": "LCA18-0003109",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL18-0003110",
     "Application_Number": "LCA18-0003110",
     "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL18-0003112",
+    "Application_Number": "LCA18-0003112",
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0003114",
@@ -11498,6 +10993,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL18-0003118",
+    "Application_Number": "LCA18-0003118",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL18-0003119",
     "Application_Number": "LCA18-0003119",
     "Premises Review Status": "Complete"
@@ -11505,12 +11005,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003120",
     "Application_Number": "LCA18-0003120",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003121",
     "Application_Number": "LCA18-0003121",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003122",
@@ -11540,7 +11040,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003128",
     "Application_Number": "LCA18-0003128",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003129",
@@ -11595,7 +11095,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003141",
     "Application_Number": "LCA18-0003141",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003142",
@@ -11710,7 +11210,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003167",
     "Application_Number": "LCA18-0003167",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003168",
@@ -11720,7 +11220,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003169",
     "Application_Number": "LCA18-0003169",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003170",
@@ -11755,7 +11255,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003179",
     "Application_Number": "LCA18-0003179",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003181",
@@ -11766,6 +11266,11 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0003182",
     "Application_Number": "LCA18-0003182",
     "Premises Review Status": "Incomplete"
+  },
+  {
+    "License_Number": "CCL18-0003183",
+    "Application_Number": "LCA18-0003183",
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003184",
@@ -11815,11 +11320,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003194",
     "Application_Number": "LCA18-0003194",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003196",
-    "Application_Number": "LCA18-0003196",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -11955,17 +11455,17 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003228",
     "Application_Number": "LCA18-0003228",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003229",
     "Application_Number": "LCA18-0003229",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003230",
     "Application_Number": "LCA18-0003230",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003231",
@@ -11985,7 +11485,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003234",
     "Application_Number": "LCA18-0003234",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003235",
@@ -12105,22 +11605,22 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003259",
     "Application_Number": "LCA18-0003259",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003260",
     "Application_Number": "LCA18-0003260",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003261",
     "Application_Number": "LCA18-0003261",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003262",
     "Application_Number": "LCA18-0003262",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003263",
@@ -12200,12 +11700,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003279",
     "Application_Number": "LCA18-0003279",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003281",
     "Application_Number": "LCA18-0003281",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003282",
@@ -12358,6 +11858,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL18-0003313",
+    "Application_Number": "LCA18-0003313",
+    "Premises Review Status": "Incomplete"
+  },
+  {
     "License_Number": "CCL18-0003314",
     "Application_Number": "LCA18-0003314",
     "Premises Review Status": "Complete"
@@ -12400,11 +11905,16 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003324",
     "Application_Number": "LCA18-0003324",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003325",
     "Application_Number": "LCA18-0003325",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL18-0003327",
+    "Application_Number": "LCA18-0003327",
     "Premises Review Status": "Complete"
   },
   {
@@ -12530,7 +12040,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003363",
     "Application_Number": "LCA18-0003363",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003364",
@@ -12550,11 +12060,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003367",
     "Application_Number": "LCA18-0003367",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003368",
-    "Application_Number": "LCA18-0003368",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -12610,7 +12115,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003385",
     "Application_Number": "LCA18-0003385",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003386",
@@ -12695,7 +12200,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003403",
     "Application_Number": "LCA18-0003403",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003404",
@@ -12810,12 +12315,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003426",
     "Application_Number": "LCA18-0003426",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003427",
     "Application_Number": "LCA18-0003427",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003428",
@@ -12918,11 +12423,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0003448",
-    "Application_Number": "LCA18-0003448",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0003449",
     "Application_Number": "LCA18-0003449",
     "Premises Review Status": "Complete"
@@ -12933,69 +12433,14 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0003451",
-    "Application_Number": "LCA18-0003451",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003452",
-    "Application_Number": "LCA18-0003452",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003453",
-    "Application_Number": "LCA18-0003453",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003455",
-    "Application_Number": "LCA18-0003455",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0003456",
     "Application_Number": "LCA18-0003456",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0003458",
-    "Application_Number": "LCA18-0003458",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003459",
-    "Application_Number": "LCA18-0003459",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003460",
-    "Application_Number": "LCA18-0003460",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003461",
-    "Application_Number": "LCA18-0003461",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0003462",
     "Application_Number": "LCA18-0003462",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0003465",
-    "Application_Number": "LCA18-0003465",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003466",
-    "Application_Number": "LCA18-0003466",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL18-0003467",
-    "Application_Number": "LCA18-0003467",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL18-0003468",
@@ -13031,11 +12476,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL18-0003476",
     "Application_Number": "LCA18-0003476",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL18-0003477",
-    "Application_Number": "LCA18-0003477",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "",
@@ -13235,7 +12675,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003521",
     "Application_Number": "LCA18-0003521",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003523",
@@ -13348,11 +12788,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0003546",
-    "Application_Number": "LCA18-0003546",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0003547",
     "Application_Number": "LCA18-0003547",
     "Premises Review Status": "Complete"
@@ -13435,7 +12870,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003564",
     "Application_Number": "LCA18-0003564",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003565",
@@ -13460,7 +12895,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003569",
     "Application_Number": "LCA18-0003569",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003570",
@@ -13470,12 +12905,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003571",
     "Application_Number": "LCA18-0003571",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003572",
     "Application_Number": "LCA18-0003572",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003573",
@@ -14128,11 +13563,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL18-0003731",
-    "Application_Number": "LCA18-0003731",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL18-0003732",
     "Application_Number": "LCA18-0003732",
     "Premises Review Status": "Incomplete"
@@ -14165,7 +13595,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003747",
     "Application_Number": "LCA18-0003747",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003749",
@@ -14283,11 +13713,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL18-0003779",
-    "Application_Number": "LCA18-0003779",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA18-0003781",
     "Premises Review Status": "Complete"
@@ -14365,7 +13790,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003806",
     "Application_Number": "LCA18-0003806",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL18-0003807",
@@ -14383,6 +13808,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL18-0003816",
+    "Application_Number": "LCA18-0003816",
+    "Premises Review Status": "Incomplete"
+  },
+  {
     "License_Number": "CCL18-0003817",
     "Application_Number": "LCA18-0003817",
     "Premises Review Status": "Complete"
@@ -14395,6 +13825,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL18-0003820",
     "Application_Number": "LCA18-0003820",
+    "Premises Review Status": "Incomplete"
+  },
+  {
+    "License_Number": "CCL18-0003821",
+    "Application_Number": "LCA18-0003821",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -14420,11 +13855,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000014",
     "Application_Number": "LCA19-0000014",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0000020",
-    "Application_Number": "LCA19-0000020",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -14565,7 +13995,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000056",
     "Application_Number": "LCA19-0000056",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000057",
@@ -14660,7 +14090,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000078",
     "Application_Number": "LCA19-0000078",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000079",
@@ -14740,7 +14170,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000133",
     "Application_Number": "LCA19-0000133",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000134",
@@ -14830,7 +14260,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000154",
     "Application_Number": "LCA19-0000154",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000155",
@@ -14865,7 +14295,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000165",
     "Application_Number": "LCA19-0000165",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000166",
@@ -14880,7 +14310,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000168",
     "Application_Number": "LCA19-0000168",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000169",
@@ -14960,12 +14390,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000185",
     "Application_Number": "LCA19-0000185",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000186",
     "Application_Number": "LCA19-0000186",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000187",
@@ -15050,12 +14480,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000204",
     "Application_Number": "LCA19-0000204",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000205",
     "Application_Number": "LCA19-0000205",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000206",
@@ -15180,11 +14610,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000234",
     "Application_Number": "LCA19-0000234",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0000235",
-    "Application_Number": "LCA19-0000235",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -15323,11 +14748,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0000266",
-    "Application_Number": "LCA19-0000266",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0000267",
     "Application_Number": "LCA19-0000267",
     "Premises Review Status": "Incomplete"
@@ -15335,12 +14755,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000268",
     "Application_Number": "LCA19-0000268",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000269",
     "Application_Number": "LCA19-0000269",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000270",
@@ -15375,7 +14795,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000276",
     "Application_Number": "LCA19-0000276",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0000277",
@@ -15530,7 +14950,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000317",
     "Application_Number": "LCA19-0000317",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000318",
@@ -15660,7 +15080,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000349",
     "Application_Number": "LCA19-0000349",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000351",
@@ -15768,7 +15188,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0000433",
     "Application_Number": "LCA19-0000433",
     "Premises Review Status": "Complete"
   },
@@ -15800,7 +15220,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000454",
     "Application_Number": "LCA19-0000454",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
@@ -15815,17 +15235,17 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000462",
     "Application_Number": "LCA19-0000462",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000463",
     "Application_Number": "LCA19-0000463",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000465",
     "Application_Number": "LCA19-0000465",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000469",
@@ -15845,7 +15265,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000488",
     "Application_Number": "LCA19-0000488",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000495",
@@ -16023,11 +15443,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0000550",
-    "Application_Number": "LCA19-0000550",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0000551",
     "Application_Number": "LCA19-0000551",
     "Premises Review Status": "Complete"
@@ -16175,12 +15590,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000650",
     "Application_Number": "LCA19-0000650",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000651",
     "Application_Number": "LCA19-0000651",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000655",
@@ -16200,12 +15615,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000661",
     "Application_Number": "LCA19-0000661",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000662",
     "Application_Number": "LCA19-0000662",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000665",
@@ -16235,7 +15650,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000674",
     "Application_Number": "LCA19-0000674",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000675",
@@ -16250,17 +15665,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000677",
     "Application_Number": "LCA19-0000677",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000682",
     "Application_Number": "LCA19-0000682",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0000683",
-    "Application_Number": "LCA19-0000683",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000688",
@@ -16310,11 +15720,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000704",
     "Application_Number": "LCA19-0000704",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0000705",
-    "Application_Number": "LCA19-0000705",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -16381,16 +15786,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0000719",
     "Application_Number": "LCA19-0000719",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0000720",
-    "Application_Number": "LCA19-0000720",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0000722",
-    "Application_Number": "LCA19-0000722",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0000747",
@@ -16495,12 +15890,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000806",
     "Application_Number": "LCA19-0000806",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000808",
     "Application_Number": "LCA19-0000808",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000809",
@@ -16525,7 +15920,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000818",
     "Application_Number": "LCA19-0000818",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000820",
@@ -16725,27 +16120,27 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000899",
     "Application_Number": "LCA19-0000899",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000900",
     "Application_Number": "LCA19-0000900",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000901",
     "Application_Number": "LCA19-0000901",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000902",
     "Application_Number": "LCA19-0000902",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000903",
     "Application_Number": "LCA19-0000903",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000905",
@@ -16895,7 +16290,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0000998",
     "Application_Number": "LCA19-0000998",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0000999",
@@ -16930,7 +16325,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001006",
     "Application_Number": "LCA19-0001006",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001008",
@@ -16986,11 +16381,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0001019",
     "Application_Number": "LCA19-0001019",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0001020",
-    "Application_Number": "LCA19-0001020",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001022",
@@ -17060,7 +16450,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001083",
     "Application_Number": "LCA19-0001083",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001085",
@@ -17110,17 +16500,17 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001095",
     "Application_Number": "LCA19-0001095",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001096",
     "Application_Number": "LCA19-0001096",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001098",
     "Application_Number": "LCA19-0001098",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001103",
@@ -17185,7 +16575,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001125",
     "Application_Number": "LCA19-0001125",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001126",
@@ -17210,7 +16600,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001136",
     "Application_Number": "LCA19-0001136",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001137",
@@ -17315,7 +16705,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001186",
     "Application_Number": "LCA19-0001186",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001187",
@@ -17325,7 +16715,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001188",
     "Application_Number": "LCA19-0001188",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001189",
@@ -17383,11 +16773,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001212",
-    "Application_Number": "LCA19-0001212",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001217",
     "Application_Number": "LCA19-0001217",
     "Premises Review Status": "Incomplete"
@@ -17420,12 +16805,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001236",
     "Application_Number": "LCA19-0001236",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001237",
     "Application_Number": "LCA19-0001237",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001238",
@@ -17515,7 +16900,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001267",
     "Application_Number": "LCA19-0001267",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001269",
@@ -17743,18 +17128,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001334",
-    "Application_Number": "LCA19-0001334",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001336",
     "Application_Number": "LCA19-0001336",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001337",
-    "Application_Number": "LCA19-0001337",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -17843,11 +17218,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001364",
-    "Application_Number": "LCA19-0001364",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001365",
     "Application_Number": "LCA19-0001365",
     "Premises Review Status": "Incomplete"
@@ -17910,11 +17280,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001388",
     "Application_Number": "LCA19-0001388",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001390",
-    "Application_Number": "LCA19-0001390",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -18000,11 +17365,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001430",
     "Application_Number": "LCA19-0001430",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001432",
-    "Application_Number": "LCA19-0001432",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -18108,11 +17468,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0001460",
-    "Application_Number": "LCA19-0001460",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001461",
     "Application_Number": "LCA19-0001461",
     "Premises Review Status": "Complete"
@@ -18136,11 +17491,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0001465",
     "Application_Number": "LCA19-0001465",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0001466",
-    "Application_Number": "LCA19-0001466",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001467",
@@ -18313,11 +17663,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001521",
-    "Application_Number": "LCA19-0001521",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001523",
     "Application_Number": "LCA19-0001523",
     "Premises Review Status": "Complete"
@@ -18328,11 +17673,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0001525",
-    "Application_Number": "LCA19-0001525",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001526",
     "Application_Number": "LCA19-0001526",
     "Premises Review Status": "Complete"
@@ -18341,16 +17681,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0001527",
     "Application_Number": "LCA19-0001527",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0001528",
-    "Application_Number": "LCA19-0001528",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001530",
-    "Application_Number": "LCA19-0001530",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001531",
@@ -18388,19 +17718,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001544",
-    "Application_Number": "LCA19-0001544",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001545",
     "Application_Number": "LCA19-0001545",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0001546",
-    "Application_Number": "LCA19-0001546",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001549",
@@ -18423,11 +17743,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001555",
-    "Application_Number": "LCA19-0001555",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001561",
     "Application_Number": "LCA19-0001561",
     "Premises Review Status": "Complete"
@@ -18435,7 +17750,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001562",
     "Application_Number": "LCA19-0001562",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001563",
@@ -18493,11 +17808,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0001584",
-    "Application_Number": "LCA19-0001584",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001585",
     "Application_Number": "LCA19-0001585",
     "Premises Review Status": "Complete"
@@ -18548,11 +17858,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0001598",
-    "Application_Number": "LCA19-0001598",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA19-0001600",
     "Premises Review Status": "Complete"
@@ -18598,14 +17903,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001620",
-    "Application_Number": "LCA19-0001620",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001621",
     "Application_Number": "LCA19-0001621",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001622",
@@ -18618,9 +17918,14 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL19-0001626",
+    "Application_Number": "LCA19-0001626",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL19-0001627",
     "Application_Number": "LCA19-0001627",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001628",
@@ -18673,11 +17978,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001650",
-    "Application_Number": "LCA19-0001650",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001651",
     "Application_Number": "LCA19-0001651",
     "Premises Review Status": "Incomplete"
@@ -18685,7 +17985,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001652",
     "Application_Number": "LCA19-0001652",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001654",
@@ -18718,14 +18018,14 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0001660",
     "Application_Number": "LCA19-0001660",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0001661",
     "Application_Number": "LCA19-0001661",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001662",
@@ -18798,11 +18098,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001691",
-    "Application_Number": "LCA19-0001691",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001692",
     "Application_Number": "LCA19-0001692",
     "Premises Review Status": "Incomplete"
@@ -18828,11 +18123,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0001700",
-    "Application_Number": "LCA19-0001700",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001701",
     "Application_Number": "LCA19-0001701",
     "Premises Review Status": "Complete"
@@ -18848,24 +18138,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001710",
-    "Application_Number": "LCA19-0001710",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001711",
-    "Application_Number": "LCA19-0001711",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001712",
     "Application_Number": "LCA19-0001712",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0001713",
-    "Application_Number": "LCA19-0001713",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001714",
@@ -18875,7 +18150,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001715",
     "Application_Number": "LCA19-0001715",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001716",
@@ -18890,7 +18165,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001719",
     "Application_Number": "LCA19-0001719",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001720",
@@ -18900,22 +18175,22 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001722",
     "Application_Number": "LCA19-0001722",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001723",
     "Application_Number": "LCA19-0001723",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001724",
     "Application_Number": "LCA19-0001724",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001725",
     "Application_Number": "LCA19-0001725",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001726",
@@ -18925,7 +18200,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001727",
     "Application_Number": "LCA19-0001727",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001728",
@@ -18940,11 +18215,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001730",
     "Application_Number": "LCA19-0001730",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001731",
-    "Application_Number": "LCA19-0001731",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -18980,7 +18250,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001741",
     "Application_Number": "LCA19-0001741",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001742",
@@ -18990,7 +18260,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001743",
     "Application_Number": "LCA19-0001743",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001744",
@@ -19000,7 +18270,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001745",
     "Application_Number": "LCA19-0001745",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001746",
@@ -19020,7 +18290,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001749",
     "Application_Number": "LCA19-0001749",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001750",
@@ -19030,7 +18300,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001751",
     "Application_Number": "LCA19-0001751",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001752",
@@ -19090,7 +18360,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001772",
     "Application_Number": "LCA19-0001772",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001775",
@@ -19155,12 +18425,17 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001797",
     "Application_Number": "LCA19-0001797",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001805",
     "Application_Number": "LCA19-0001805",
     "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL19-0001806",
+    "Application_Number": "LCA19-0001806",
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001807",
@@ -19260,7 +18535,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001833",
     "Application_Number": "LCA19-0001833",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001834",
@@ -19306,11 +18581,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0001849",
     "Application_Number": "LCA19-0001849",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0001851",
-    "Application_Number": "LCA19-0001851",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001852",
@@ -19460,12 +18730,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001904",
     "Application_Number": "LCA19-0001904",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001905",
-    "Application_Number": "LCA19-0001905",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0001906",
@@ -19481,11 +18746,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0001908",
     "Application_Number": "LCA19-0001908",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0001912",
-    "Application_Number": "LCA19-0001912",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001913",
@@ -19543,24 +18803,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001928",
-    "Application_Number": "LCA19-0001928",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001931",
     "Application_Number": "LCA19-0001931",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0001934",
-    "Application_Number": "LCA19-0001934",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001937",
-    "Application_Number": "LCA19-0001937",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001940",
@@ -19575,7 +18820,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0001943",
     "Application_Number": "LCA19-0001943",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0001944",
@@ -19593,23 +18838,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0001947",
-    "Application_Number": "LCA19-0001947",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001948",
-    "Application_Number": "LCA19-0001948",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0001952",
     "Application_Number": "LCA19-0001952",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0001962",
-    "Application_Number": "LCA19-0001962",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -19730,7 +18960,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0002044",
     "Application_Number": "LCA19-0002044",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0002049",
@@ -19770,7 +19000,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0002064",
     "Application_Number": "LCA19-0002064",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0002065",
@@ -19983,103 +19213,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002129",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002131",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002132",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002133",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002134",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002135",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0002136",
     "Application_Number": "LCA19-0002136",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002138",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002139",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002140",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002141",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002142",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002143",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002144",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002145",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002146",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002147",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002151",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002154",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002155",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -20088,18 +19223,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002157",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0002158",
     "Application_Number": "LCA19-0002158",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002159",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -20113,23 +19238,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002163",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0002164",
     "Application_Number": "LCA19-0002164",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002165",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002169",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -20151,26 +19261,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0002189",
     "Application_Number": "LCA19-0002189",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002190",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002191",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002194",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA19-0002195",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0002205",
@@ -20548,6 +19638,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL19-0002344",
+    "Application_Number": "LCA19-0002344",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL19-0002345",
     "Application_Number": "LCA19-0002345",
     "Premises Review Status": "Incomplete"
@@ -20833,9 +19928,14 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL19-0002450",
+    "Application_Number": "LCA19-0002450",
+    "Premises Review Status": "Incomplete"
+  },
+  {
     "License_Number": "CCL19-0002451",
     "Application_Number": "LCA19-0002451",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0002453",
@@ -20853,13 +19953,28 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL19-0002459",
+    "Application_Number": "LCA19-0002459",
+    "Premises Review Status": "Incomplete"
+  },
+  {
     "License_Number": "CCL19-0002469",
     "Application_Number": "LCA19-0002469",
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL19-0002470",
+    "Application_Number": "LCA19-0002470",
+    "Premises Review Status": "Incomplete"
+  },
+  {
     "License_Number": "CCL19-0002471",
     "Application_Number": "LCA19-0002471",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL19-0002472",
+    "Application_Number": "LCA19-0002472",
     "Premises Review Status": "Complete"
   },
   {
@@ -20930,7 +20045,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0002494",
     "Application_Number": "LCA19-0002494",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "",
@@ -20943,23 +20058,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0002497",
-    "Application_Number": "LCA19-0002497",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0002498",
-    "Application_Number": "lca19-0002498",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA19-0002499",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0002500",
-    "Application_Number": "lca19-0002500",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -21423,11 +20523,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0002638",
-    "Application_Number": "lca19-0002638",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0002639",
     "Application_Number": "LCA19-0002639",
     "Premises Review Status": "Complete"
@@ -21745,7 +20840,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0002768",
     "Application_Number": "LCA19-0002768",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0002771",
@@ -22338,11 +21433,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0002951",
-    "Application_Number": "LCA19-0002951",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA19-0002954",
     "Premises Review Status": "Incomplete"
@@ -22355,11 +21445,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA19-0002956",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0002960",
-    "Application_Number": "LCA19-0002960",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -22376,11 +21461,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0002970",
     "Application_Number": "LCA19-0002970",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0002972",
-    "Application_Number": "LCA19-0002972",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0002973",
@@ -22720,7 +21800,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003065",
     "Application_Number": "LCA19-0003065",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003066",
@@ -23133,11 +22213,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0003214",
-    "Application_Number": "LCA19-0003214",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0003241",
     "Application_Number": "LCA19-0003241",
     "Premises Review Status": "Complete"
@@ -23330,7 +22405,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003298",
     "Application_Number": "LCA19-0003298",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003299",
@@ -23401,11 +22476,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0003355",
     "Application_Number": "LCA19-0003355",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0003361",
-    "Application_Number": "LCA19-0003361",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0003366",
@@ -23655,7 +22725,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003504",
     "Application_Number": "LCA19-0003504",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0003505",
@@ -23810,7 +22880,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003552",
     "Application_Number": "LCA19-0003552",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0003554",
@@ -23820,7 +22890,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003555",
     "Application_Number": "LCA19-0003555",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0003559",
@@ -23843,6 +22913,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL19-0003567",
+    "Application_Number": "LCA19-0003567",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL19-0003571",
     "Application_Number": "LCA19-0003571",
     "Premises Review Status": "Incomplete"
@@ -23855,7 +22930,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003574",
     "Application_Number": "LCA19-0003574",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003575",
@@ -23905,7 +22980,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003587",
     "Application_Number": "LCA19-0003587",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003588",
@@ -23935,7 +23010,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003595",
     "Application_Number": "LCA19-0003595",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003596",
@@ -23950,11 +23025,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003598",
     "Application_Number": "LCA19-0003598",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0003599",
-    "Application_Number": "LCA19-0003599",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -23973,11 +23043,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0003606",
-    "Application_Number": "LCA19-0003606",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0003610",
     "Application_Number": "LCA19-0003610",
     "Premises Review Status": "Incomplete"
@@ -23985,7 +23050,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003611",
     "Application_Number": "LCA19-0003611",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
@@ -24065,7 +23130,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003639",
     "Application_Number": "LCA19-0003639",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003640",
@@ -24188,11 +23253,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0003717",
-    "Application_Number": "LCA19-0003717",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA19-0003733",
     "Premises Review Status": "Complete"
@@ -24210,7 +23270,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003738",
     "Application_Number": "LCA19-0003738",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003739",
@@ -24340,7 +23400,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003774",
     "Application_Number": "LCA19-0003774",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003775",
@@ -24443,11 +23503,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0003815",
-    "Application_Number": "LCA19-0003815",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0003816",
     "Application_Number": "LCA19-0003816",
     "Premises Review Status": "Incomplete"
@@ -24510,11 +23565,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003832",
     "Application_Number": "LCA19-0003832",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0003833",
-    "Application_Number": "LCA19-0003833",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -24585,7 +23635,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003860",
     "Application_Number": "LCA19-0003860",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003865",
@@ -24630,12 +23680,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003890",
     "Application_Number": "LCA19-0003890",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0003891",
     "Application_Number": "LCA19-0003891",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0003892",
@@ -24670,11 +23720,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003907",
     "Application_Number": "lca19-0003907",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0003909",
-    "Application_Number": "LCA19-0003909",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -24738,14 +23783,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0003938",
-    "Application_Number": "lca19-0003938",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0003939",
     "Application_Number": "LCA19-0003939",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0003942",
@@ -24820,7 +23860,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0003961",
     "Application_Number": "LCA19-0003961",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0003962",
@@ -25068,7 +24108,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0004036",
     "Application_Number": "LCA19-0004036",
     "Premises Review Status": "Complete"
   },
@@ -25080,11 +24120,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004038",
     "Application_Number": "LCA19-0004038",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0004044",
-    "Application_Number": "LCA19-0004044",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -25183,11 +24218,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0004081",
-    "Application_Number": "LCA19-0004081",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0004083",
     "Application_Number": "LCA19-0004083",
     "Premises Review Status": "Incomplete"
@@ -25195,6 +24225,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004084",
     "Application_Number": "LCA19-0004084",
+    "Premises Review Status": "Incomplete"
+  },
+  {
+    "License_Number": "CCL19-0004085",
+    "Application_Number": "LCA19-0004085",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -25220,7 +24255,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004092",
     "Application_Number": "LCA19-0004092",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0004098",
@@ -25338,6 +24373,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL19-0004126",
+    "Application_Number": "LCA19-0004126",
+    "Premises Review Status": "Incomplete"
+  },
+  {
     "License_Number": "CCL19-0004129",
     "Application_Number": "LCA19-0004129",
     "Premises Review Status": "Complete"
@@ -25358,7 +24398,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0004136",
     "Application_Number": "LCA19-0004136",
     "Premises Review Status": "Complete"
   },
@@ -26108,6 +25148,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL19-0004440",
+    "Application_Number": "LCA19-0004440",
+    "Premises Review Status": "Incomplete"
+  },
+  {
     "License_Number": "CCL19-0004444",
     "Application_Number": "LCA19-0004444",
     "Premises Review Status": "Incomplete"
@@ -26126,11 +25171,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0004447",
     "Application_Number": "LCA19-0004447",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL19-0004448",
-    "Application_Number": "LCA19-0004448",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0004449",
@@ -26275,7 +25315,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004552",
     "Application_Number": "LCA19-0004552",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0004553",
@@ -26425,7 +25465,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004617",
     "Application_Number": "LCA19-0004617",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0004618",
@@ -26445,7 +25485,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004621",
     "Application_Number": "LCA19-0004621",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0004623",
@@ -26680,7 +25720,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004727",
     "Application_Number": "LCA19-0004727",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0004728",
@@ -26700,6 +25740,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004737",
     "Application_Number": "LCA19-0004737",
+    "Premises Review Status": "Incomplete"
+  },
+  {
+    "License_Number": "CCL19-0004744",
+    "Application_Number": "LCA19-0004744",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -26745,7 +25790,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004756",
     "Application_Number": "LCA19-0004756",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0004757",
@@ -26918,6 +25963,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL19-0004810",
+    "Application_Number": "LCA19-0004810",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL19-0004811",
     "Application_Number": "LCA19-0004811",
     "Premises Review Status": "Incomplete"
@@ -26940,7 +25990,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004816",
     "Application_Number": "LCA19-0004816",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0004817",
@@ -26951,6 +26001,16 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL19-0004818",
     "Application_Number": "LCA19-0004818",
     "Premises Review Status": "Incomplete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA19-0004819",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA19-0004820",
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0004821",
@@ -26965,11 +26025,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004825",
     "Application_Number": "LCA19-0004825",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0004826",
-    "Application_Number": "LCA19-0004826",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -27015,7 +26070,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004837",
     "Application_Number": "LCA19-0004837",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0004838",
@@ -27163,7 +26218,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0004877",
     "Application_Number": "LCA19-0004877",
     "Premises Review Status": "Complete"
   },
@@ -27230,7 +26285,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004902",
     "Application_Number": "LCA19-0004902",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0004905",
@@ -27310,12 +26365,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0004922",
     "Application_Number": "LCA19-0004922",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0004923",
     "Application_Number": "LCA19-0004923",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0004924",
@@ -27585,7 +26640,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005004",
     "Application_Number": "LCA19-0005004",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0005005",
@@ -27610,7 +26665,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005012",
     "Application_Number": "LCA19-0005012",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0005016",
@@ -27645,7 +26700,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005024",
     "Application_Number": "LCA19-0005024",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "",
@@ -27948,11 +27003,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0005113",
-    "Application_Number": "LCA19-0005113",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL19-0005114",
     "Application_Number": "LCA19-0005114",
     "Premises Review Status": "Complete"
@@ -27963,7 +27013,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005120",
     "Application_Number": "LCA19-0005120",
     "Premises Review Status": "Complete"
   },
@@ -28023,11 +27073,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0005135",
-    "Application_Number": "LCA19-0005135",
-    "Premises Review Status": "Complete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA19-0005138",
     "Premises Review Status": "Complete"
@@ -28053,12 +27098,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005145",
     "Application_Number": "LCA19-0005145",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005146",
     "Application_Number": "LCA19-0005146",
     "Premises Review Status": "Complete"
   },
@@ -28068,12 +27113,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005153",
     "Application_Number": "LCA19-0005153",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005154",
     "Application_Number": "LCA19-0005154",
     "Premises Review Status": "Complete"
   },
@@ -28118,7 +27163,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005170",
     "Application_Number": "LCA19-0005170",
     "Premises Review Status": "Complete"
   },
@@ -28215,7 +27260,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005194",
     "Application_Number": "LCA19-0005194",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0005197",
@@ -28285,7 +27330,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005223",
     "Application_Number": "LCA19-0005223",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0005224",
@@ -28420,7 +27465,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005268",
     "Application_Number": "LCA19-0005268",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0005270",
@@ -28440,6 +27485,26 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005274",
     "Application_Number": "LCA19-0005274",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL19-0005277",
+    "Application_Number": "LCA19-0005277",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL19-0005278",
+    "Application_Number": "LCA19-0005278",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL19-0005279",
+    "Application_Number": "LCA19-0005279",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL19-0005280",
+    "Application_Number": "LCA19-0005280",
     "Premises Review Status": "Complete"
   },
   {
@@ -28508,6 +27573,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL19-0005307",
+    "Application_Number": "LCA19-0005307",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL19-0005308",
     "Application_Number": "LCA19-0005308",
     "Premises Review Status": "Complete"
@@ -28553,42 +27623,42 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005320",
     "Application_Number": "LCA19-0005320",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005321",
     "Application_Number": "LCA19-0005321",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005322",
     "Application_Number": "LCA19-0005322",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005323",
     "Application_Number": "LCA19-0005323",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005324",
     "Application_Number": "LCA19-0005324",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005325",
     "Application_Number": "LCA19-0005325",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005326",
     "Application_Number": "LCA19-0005326",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005327",
     "Application_Number": "LCA19-0005327",
     "Premises Review Status": "Complete"
   },
@@ -28598,27 +27668,27 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005329",
     "Application_Number": "LCA19-0005329",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005330",
     "Application_Number": "LCA19-0005330",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005331",
     "Application_Number": "LCA19-0005331",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005332",
     "Application_Number": "LCA19-0005332",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005333",
     "Application_Number": "LCA19-0005333",
     "Premises Review Status": "Complete"
   },
@@ -28758,7 +27828,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005372",
     "Application_Number": "LCA19-0005372",
     "Premises Review Status": "Complete"
   },
@@ -28870,7 +27940,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005404",
     "Application_Number": "LCA19-0005404",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0005405",
@@ -28885,7 +27955,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005409",
     "Application_Number": "LCA19-0005409",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL19-0005411",
@@ -29003,12 +28073,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005443",
     "Application_Number": "LCA19-0005443",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005444",
     "Application_Number": "LCA19-0005444",
     "Premises Review Status": "Complete"
   },
@@ -29035,11 +28105,6 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA19-0005449",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL19-0005452",
-    "Application_Number": "LCA19-0005452",
     "Premises Review Status": "Incomplete"
   },
   {
@@ -29070,7 +28135,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL19-0005458",
     "Application_Number": "LCA19-0005458",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL19-0005460",
@@ -29108,11 +28173,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL19-0005468",
-    "Application_Number": "LCA19-0005468",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "",
     "Application_Number": "LCA19-0005469",
     "Premises Review Status": "Complete"
@@ -29143,7 +28203,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005477",
     "Application_Number": "LCA19-0005477",
     "Premises Review Status": "Complete"
   },
@@ -29368,7 +28428,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005529",
     "Application_Number": "LCA19-0005529",
     "Premises Review Status": "Complete"
   },
@@ -29533,7 +28593,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005563",
     "Application_Number": "LCA19-0005563",
     "Premises Review Status": "complete"
   },
@@ -29543,7 +28603,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005565",
     "Application_Number": "LCA19-0005565",
     "Premises Review Status": "Complete"
   },
@@ -29573,12 +28633,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "CCL19-0005575",
-    "Application_Number": "LCA19-0005575",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
+    "License_Number": "CCL19-0005576",
     "Application_Number": "LCA19-0005576",
     "Premises Review Status": "Complete"
   },
@@ -29768,12 +28823,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005616",
     "Application_Number": "LCA19-0005616",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005617",
     "Application_Number": "LCA19-0005617",
     "Premises Review Status": "Complete"
   },
@@ -29783,7 +28838,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL19-0005622",
     "Application_Number": "LCA19-0005622",
     "Premises Review Status": "Complete"
   },
@@ -29908,6 +28963,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
+    "License_Number": "CCL20-0000001",
+    "Application_Number": "LCA20-0000001",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL20-0000002",
     "Application_Number": "LCA20-0000002",
     "Premises Review Status": "Incomplete"
@@ -29918,9 +28978,14 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL20-0000004",
+    "Application_Number": "LCA20-0000004",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL20-0000005",
     "Application_Number": "LCA20-0000005",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000007",
@@ -30258,11 +29323,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0000096",
-    "Application_Number": "LCA20-0000096",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL20-0000097",
     "Application_Number": "LCA20-0000097",
     "Premises Review Status": "Complete"
@@ -30273,9 +29333,14 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000101",
+    "Application_Number": "LCA20-0000101",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0000102",
     "Application_Number": "LCA20-0000102",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000103",
@@ -30288,7 +29353,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000105",
     "Application_Number": "LCA20-0000105",
     "Premises Review Status": "Complete"
   },
@@ -30358,7 +29423,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000130",
     "Application_Number": "LCA20-0000130",
     "Premises Review Status": "Complete"
   },
@@ -30415,6 +29480,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA20-0000144",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0000145",
     "Premises Review Status": "Complete"
   },
   {
@@ -30483,7 +29553,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000165",
     "Application_Number": "LCA20-0000165",
     "Premises Review Status": "Complete"
   },
@@ -30516,11 +29586,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL20-0000174",
     "Application_Number": "LCA20-0000174",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL20-0000175",
-    "Application_Number": "LCA20-0000175",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0000176",
@@ -30668,7 +29733,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000228",
     "Application_Number": "LCA20-0000228",
     "Premises Review Status": "Complete"
   },
@@ -30893,12 +29958,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000294",
     "Application_Number": "LCA20-0000294",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000295",
     "Application_Number": "LCA20-0000295",
     "Premises Review Status": "Complete"
   },
@@ -30973,9 +30038,14 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0000325",
-    "Application_Number": "LCA20-0000325",
-    "Premises Review Status": "Incomplete"
+    "License_Number": "CCL20-0000320",
+    "Application_Number": "LCA20-0000320",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0000323",
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
@@ -30986,16 +30056,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL20-0000327",
     "Application_Number": "LCA20-0000327",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL20-0000328",
-    "Application_Number": "LCA20-0000328",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA20-0000329",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0000330",
@@ -31028,7 +30088,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000339",
     "Application_Number": "LCA20-0000339",
     "Premises Review Status": "Complete"
   },
@@ -31053,24 +30113,24 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000347",
     "Application_Number": "LCA20-0000347",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000350",
     "Application_Number": "LCA20-0000350",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000351",
     "Application_Number": "LCA20-0000351",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000352",
     "Application_Number": "LCA20-0000352",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0000353",
@@ -31113,11 +30173,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
-    "Application_Number": "LCA20-0000366",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL20-0000369",
     "Application_Number": "LCA20-0000369",
     "Premises Review Status": "Complete"
@@ -31133,7 +30188,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000372",
     "Application_Number": "LCA20-0000372",
     "Premises Review Status": "Complete"
   },
@@ -31143,13 +30198,8 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000376",
     "Application_Number": "LCA20-0000376",
-    "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL20-0000377",
-    "Application_Number": "LCA20-0000377",
     "Premises Review Status": "Complete"
   },
   {
@@ -31168,6 +30218,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "",
+    "Application_Number": "LCA20-0000384",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL20-0000385",
     "Application_Number": "LCA20-0000385",
     "Premises Review Status": "Complete"
@@ -31175,7 +30230,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0000387",
     "Application_Number": "LCA20-0000387",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000389",
@@ -31208,7 +30263,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000396",
     "Application_Number": "LCA20-0000396",
     "Premises Review Status": "complete"
   },
@@ -31218,7 +30273,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000398",
     "Application_Number": "LCA20-0000398",
     "Premises Review Status": "Complete"
   },
@@ -31233,7 +30288,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000407",
     "Application_Number": "LCA20-0000407",
     "Premises Review Status": "Complete"
   },
@@ -31250,7 +30305,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0000411",
     "Application_Number": "LCA20-0000411",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000416",
@@ -31348,7 +30403,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000441",
     "Application_Number": "LCA20-0000441",
     "Premises Review Status": "complete"
   },
@@ -31383,7 +30438,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000453",
     "Application_Number": "LCA20-0000453",
     "Premises Review Status": "Complete"
   },
@@ -31408,11 +30463,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0000461",
-    "Application_Number": "LCA20-0000461",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL20-0000462",
     "Application_Number": "LCA20-0000462",
     "Premises Review Status": "Complete"
@@ -31423,7 +30473,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000464",
     "Application_Number": "LCA20-0000464",
     "Premises Review Status": "Complete"
   },
@@ -31448,7 +30498,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000472",
     "Application_Number": "LCA20-0000472",
     "Premises Review Status": "Complete"
   },
@@ -31458,14 +30508,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000478",
     "Application_Number": "LCA20-0000478",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL20-0000479",
-    "Application_Number": "LCA20-0000479",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0000480",
@@ -31488,7 +30533,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000484",
     "Application_Number": "LCA20-0000484",
     "Premises Review Status": "Complete"
   },
@@ -31518,7 +30563,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000499",
     "Application_Number": "LCA20-0000499",
     "Premises Review Status": "Complete"
   },
@@ -31553,29 +30598,9 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0000510",
-    "Application_Number": "LCA20-0000510",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL20-0000511",
-    "Application_Number": "LCA20-0000511",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL20-0000512",
     "Application_Number": "LCA20-0000512",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL20-0000513",
-    "Application_Number": "LCA20-0000513",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL20-0000514",
-    "Application_Number": "LCA20-0000514",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0000518",
@@ -31623,11 +30648,6 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0000529",
-    "Application_Number": "LCA20-0000529",
-    "Premises Review Status": "Incomplete"
-  },
-  {
     "License_Number": "CCL20-0000530",
     "Application_Number": "LCA20-0000530",
     "Premises Review Status": "Complete"
@@ -31638,22 +30658,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000532",
     "Application_Number": "LCA20-0000532",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0000533",
-    "Application_Number": "LCA20-0000533",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "CCL20-0000534",
-    "Application_Number": "LCA20-0000534",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
+    "License_Number": "CCL20-0000553",
     "Application_Number": "LCA20-0000553",
     "Premises Review Status": "Complete"
   },
@@ -31693,7 +30703,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000566",
     "Application_Number": "LCA20-0000566",
     "Premises Review Status": "Complete"
   },
@@ -31713,7 +30723,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000570",
     "Application_Number": "LCA20-0000570",
     "Premises Review Status": "Complete"
   },
@@ -31813,7 +30823,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000592",
     "Application_Number": "LCA20-0000592",
     "Premises Review Status": "Complete"
   },
@@ -31908,7 +30918,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000616",
     "Application_Number": "LCA20-0000616",
     "Premises Review Status": "Complete"
   },
@@ -31974,6 +30984,11 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0000630",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
     "Application_Number": "LCA20-0000639",
     "Premises Review Status": "Complete"
   },
@@ -32033,7 +31048,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000656",
     "Application_Number": "LCA20-0000656",
     "Premises Review Status": "Complete"
   },
@@ -32053,7 +31068,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000662",
     "Application_Number": "LCA20-0000662",
     "Premises Review Status": "Complete"
   },
@@ -32098,12 +31113,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000674",
     "Application_Number": "LCA20-0000674",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000677",
     "Application_Number": "LCA20-0000677",
     "Premises Review Status": "Complete"
   },
@@ -32113,7 +31128,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000680",
     "Application_Number": "LCA20-0000680",
     "Premises Review Status": "Complete"
   },
@@ -32123,7 +31138,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000683",
     "Application_Number": "LCA20-0000683",
     "Premises Review Status": "Complete"
   },
@@ -32143,7 +31158,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0000688",
+    "License_Number": "DUB20-00000-0",
     "Application_Number": "LCA20-0000688",
     "Premises Review Status": "Complete"
   },
@@ -32333,32 +31348,32 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000734",
     "Application_Number": "LCA20-0000734",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000735",
     "Application_Number": "LCA20-0000735",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000736",
     "Application_Number": "LCA20-0000736",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000737",
     "Application_Number": "LCA20-0000737",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000738",
     "Application_Number": "LCA20-0000738",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000739",
     "Application_Number": "LCA20-0000739",
     "Premises Review Status": "Complete"
   },
@@ -32371,11 +31386,6 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL20-0000741",
     "Application_Number": "LCA20-0000741",
     "Premises Review Status": "Complete"
-  },
-  {
-    "License_Number": "CCL20-0000743",
-    "Application_Number": "LCA20-0000743",
-    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0000744",
@@ -32393,7 +31403,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000755",
     "Application_Number": "LCA20-0000755",
     "Premises Review Status": "Complete"
   },
@@ -32463,7 +31473,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000775",
     "Application_Number": "LCA20-0000775",
     "Premises Review Status": "Complete"
   },
@@ -32478,7 +31488,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000778",
     "Application_Number": "LCA20-0000778",
     "Premises Review Status": "Complete"
   },
@@ -32493,7 +31503,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000783",
     "Application_Number": "LCA20-0000783",
     "Premises Review Status": "Complete"
   },
@@ -32533,7 +31543,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000794",
     "Application_Number": "LCA20-0000794",
     "Premises Review Status": "Complete"
   },
@@ -32548,6 +31558,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL20-0000797",
+    "Application_Number": "LCA20-0000797",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL20-0000798",
     "Application_Number": "LCA20-0000798",
     "Premises Review Status": "Complete"
@@ -32558,7 +31573,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000800",
     "Application_Number": "LCA20-0000800",
     "Premises Review Status": "Complete"
   },
@@ -32640,7 +31655,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0000818",
     "Application_Number": "LCA20-0000818",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0000819",
@@ -32783,7 +31798,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000856",
     "Application_Number": "LCA20-0000856",
     "Premises Review Status": "Complete"
   },
@@ -33093,7 +32108,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000923",
     "Application_Number": "LCA20-0000923",
     "Premises Review Status": "Complete"
   },
@@ -33108,7 +32123,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000926",
     "Application_Number": "LCA20-0000926",
     "Premises Review Status": "Complete"
   },
@@ -33158,7 +32173,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000936",
     "Application_Number": "LCA20-0000936",
     "Premises Review Status": "Complete"
   },
@@ -33218,7 +32233,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000950",
     "Application_Number": "LCA20-0000950",
     "Premises Review Status": "Complete"
   },
@@ -33303,7 +32318,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000967",
     "Application_Number": "LCA20-0000967",
     "Premises Review Status": "Complete"
   },
@@ -33328,7 +32343,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000972",
     "Application_Number": "LCA20-0000972",
     "Premises Review Status": "Complete"
   },
@@ -33353,12 +32368,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000978",
     "Application_Number": "LCA20-0000978",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000979",
     "Application_Number": "LCA20-0000979",
     "Premises Review Status": "Complete"
   },
@@ -33368,52 +32383,52 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000981",
     "Application_Number": "LCA20-0000981",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000982",
     "Application_Number": "LCA20-0000982",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000983",
     "Application_Number": "LCA20-0000983",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000984",
     "Application_Number": "LCA20-0000984",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000985",
     "Application_Number": "LCA20-0000985",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000986",
     "Application_Number": "LCA20-0000986",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000987",
     "Application_Number": "LCA20-0000987",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000988",
     "Application_Number": "LCA20-0000988",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000989",
     "Application_Number": "LCA20-0000989",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000990",
     "Application_Number": "LCA20-0000990",
     "Premises Review Status": "Complete"
   },
@@ -33423,12 +32438,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000992",
     "Application_Number": "LCA20-0000992",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0000993",
     "Application_Number": "LCA20-0000993",
     "Premises Review Status": "Complete"
   },
@@ -33468,12 +32483,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
-    "Application_Number": "LCA20-0001003",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
+    "License_Number": "CCL20-0001004",
     "Application_Number": "LCA20-0001004",
     "Premises Review Status": "Complete"
   },
@@ -33483,102 +32493,102 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001006",
     "Application_Number": "LCA20-0001006",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001007",
     "Application_Number": "LCA20-0001007",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001008",
     "Application_Number": "LCA20-0001008",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001009",
     "Application_Number": "LCA20-0001009",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001010",
     "Application_Number": "LCA20-0001010",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001011",
     "Application_Number": "LCA20-0001011",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001012",
     "Application_Number": "LCA20-0001012",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001013",
     "Application_Number": "LCA20-0001013",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001014",
     "Application_Number": "LCA20-0001014",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001015",
     "Application_Number": "LCA20-0001015",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001016",
     "Application_Number": "LCA20-0001016",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001017",
     "Application_Number": "LCA20-0001017",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001018",
     "Application_Number": "LCA20-0001018",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001019",
     "Application_Number": "LCA20-0001019",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001020",
     "Application_Number": "LCA20-0001020",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001021",
     "Application_Number": "LCA20-0001021",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001022",
     "Application_Number": "LCA20-0001022",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001023",
     "Application_Number": "LCA20-0001023",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001024",
     "Application_Number": "LCA20-0001024",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001025",
     "Application_Number": "LCA20-0001025",
     "Premises Review Status": "Complete"
   },
@@ -33588,7 +32598,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001029",
     "Application_Number": "LCA20-0001029",
     "Premises Review Status": "Complete"
   },
@@ -33600,6 +32610,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001033",
     "Application_Number": "LCA20-0001033",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001034",
     "Premises Review Status": "Complete"
   },
   {
@@ -33668,7 +32683,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001054",
     "Application_Number": "LCA20-0001054",
     "Premises Review Status": "Complete"
   },
@@ -33708,7 +32723,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001062",
     "Application_Number": "LCA20-0001062",
     "Premises Review Status": "Complete"
   },
@@ -33723,12 +32738,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001070",
     "Application_Number": "LCA20-0001070",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001072",
     "Application_Number": "LCA20-0001072",
     "Premises Review Status": "Complete"
   },
@@ -33755,12 +32770,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001079",
     "Application_Number": "LCA20-0001079",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001080",
     "Application_Number": "LCA20-0001080",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001081",
@@ -33838,8 +32853,13 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001096",
     "Application_Number": "LCA20-0001096",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001098",
     "Premises Review Status": "Complete"
   },
   {
@@ -33850,12 +32870,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001100",
     "Application_Number": "LCA20-0001100",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001101",
     "Application_Number": "LCA20-0001101",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001102",
@@ -33865,12 +32885,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001103",
     "Application_Number": "LCA20-0001103",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001104",
     "Application_Number": "LCA20-0001104",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001105",
@@ -33890,12 +32910,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001108",
     "Application_Number": "LCA20-0001108",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001109",
     "Application_Number": "LCA20-0001109",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001110",
@@ -33918,12 +32938,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001114",
     "Application_Number": "LCA20-0001114",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001115",
     "Application_Number": "LCA20-0001115",
     "Premises Review Status": "Complete"
   },
@@ -33933,7 +32953,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001117",
     "Application_Number": "LCA20-0001117",
     "Premises Review Status": "Complete"
   },
@@ -33953,12 +32973,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001127",
     "Application_Number": "LCA20-0001127",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001129",
     "Application_Number": "LCA20-0001129",
     "Premises Review Status": "Complete"
   },
@@ -33978,7 +32998,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001143",
     "Application_Number": "LCA20-0001143",
     "Premises Review Status": "Complete"
   },
@@ -34028,8 +33048,13 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001156",
     "Application_Number": "LCA20-0001156",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001158",
+    "Application_Number": "LCA20-0001158",
     "Premises Review Status": "Complete"
   },
   {
@@ -34048,7 +33073,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001162",
     "Application_Number": "LCA20-0001162",
     "Premises Review Status": "Complete"
   },
@@ -34068,7 +33093,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001166",
     "Application_Number": "LCA20-0001166",
     "Premises Review Status": "Complete"
   },
@@ -34088,7 +33113,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001172",
     "Application_Number": "LCA20-0001172",
     "Premises Review Status": "Complete"
   },
@@ -34098,7 +33123,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001175",
     "Application_Number": "LCA20-0001175",
     "Premises Review Status": "Complete"
   },
@@ -34128,52 +33153,67 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001184",
+    "Application_Number": "LCA20-0001184",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001185",
+    "Application_Number": "LCA20-0001185",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001187",
+    "Application_Number": "LCA20-0001187",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001189",
     "Application_Number": "LCA20-0001189",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001190",
     "Application_Number": "LCA20-0001190",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001191",
     "Application_Number": "LCA20-0001191",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001192",
     "Application_Number": "LCA20-0001192",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001193",
     "Application_Number": "LCA20-0001193",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001194",
     "Application_Number": "LCA20-0001194",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001195",
     "Application_Number": "LCA20-0001195",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001196",
     "Application_Number": "LCA20-0001196",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001197",
     "Application_Number": "LCA20-0001197",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001198",
     "Application_Number": "LCA20-0001198",
     "Premises Review Status": "Complete"
   },
@@ -34183,57 +33223,57 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001200",
     "Application_Number": "LCA20-0001200",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001201",
     "Application_Number": "LCA20-0001201",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001202",
     "Application_Number": "LCA20-0001202",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001203",
     "Application_Number": "LCA20-0001203",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001204",
     "Application_Number": "LCA20-0001204",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001205",
     "Application_Number": "LCA20-0001205",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001206",
     "Application_Number": "LCA20-0001206",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001207",
     "Application_Number": "LCA20-0001207",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001208",
     "Application_Number": "LCA20-0001208",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001209",
     "Application_Number": "LCA20-0001209",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001210",
     "Application_Number": "LCA20-0001210",
     "Premises Review Status": "Complete"
   },
@@ -34248,143 +33288,153 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001213",
     "Application_Number": "LCA20-0001213",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001214",
     "Application_Number": "LCA20-0001214",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001215",
     "Application_Number": "LCA20-0001215",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001216",
     "Application_Number": "LCA20-0001216",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001217",
     "Application_Number": "LCA20-0001217",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001218",
     "Application_Number": "LCA20-0001218",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001219",
     "Application_Number": "LCA20-0001219",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001220",
     "Application_Number": "LCA20-0001220",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0001221",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001222",
     "Application_Number": "LCA20-0001222",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001223",
     "Application_Number": "LCA20-0001223",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001224",
     "Application_Number": "LCA20-0001224",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001225",
     "Application_Number": "LCA20-0001225",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001226",
     "Application_Number": "LCA20-0001226",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001227",
     "Application_Number": "LCA20-0001227",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001228",
     "Application_Number": "LCA20-0001228",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001229",
     "Application_Number": "LCA20-0001229",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001230",
     "Application_Number": "LCA20-0001230",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001231",
     "Application_Number": "LCA20-0001231",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001232",
     "Application_Number": "LCA20-0001232",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001233",
     "Application_Number": "LCA20-0001233",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001234",
     "Application_Number": "LCA20-0001234",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001235",
     "Application_Number": "LCA20-0001235",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001236",
     "Application_Number": "LCA20-0001236",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001237",
     "Application_Number": "LCA20-0001237",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001238",
     "Application_Number": "LCA20-0001238",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001239",
     "Application_Number": "LCA20-0001239",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001241",
     "Application_Number": "LCA20-0001241",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001242",
     "Application_Number": "LCA20-0001242",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001243",
     "Premises Review Status": "Complete"
   },
   {
@@ -34393,12 +33443,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001246",
     "Application_Number": "LCA20-0001246",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001247",
     "Application_Number": "LCA20-0001247",
     "Premises Review Status": "Complete"
   },
@@ -34408,7 +33458,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001249",
     "Application_Number": "LCA20-0001249",
     "Premises Review Status": "Complete"
   },
@@ -34428,13 +33478,23 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001257",
     "Application_Number": "LCA20-0001257",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001258",
     "Application_Number": "LCA20-0001258",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001260",
+    "Application_Number": "LCA20-0001260",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001262",
+    "Application_Number": "LCA20-0001262",
     "Premises Review Status": "Complete"
   },
   {
@@ -34468,8 +33528,23 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL20-0001269",
+    "Application_Number": "LCA20-0001269",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL20-0001270",
     "Application_Number": "LCA20-0001270",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001271",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001272",
+    "Application_Number": "LCA20-0001272",
     "Premises Review Status": "Complete"
   },
   {
@@ -34493,13 +33568,18 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001281",
     "Application_Number": "LCA20-0001281",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001282",
     "Application_Number": "LCA20-0001282",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001283",
     "Premises Review Status": "Complete"
   },
   {
@@ -34578,7 +33658,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001302",
     "Application_Number": "LCA20-0001302",
     "Premises Review Status": "Complete"
   },
@@ -34624,8 +33704,13 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0001320",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001321",
     "Application_Number": "LCA20-0001321",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001322",
@@ -34633,7 +33718,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001323",
     "Application_Number": "LCA20-0001323",
     "Premises Review Status": "Complete"
   },
@@ -34648,17 +33733,17 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001326",
     "Application_Number": "LCA20-0001326",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001327",
     "Application_Number": "LCA20-0001327",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001328",
     "Application_Number": "LCA20-0001328",
     "Premises Review Status": "Complete"
   },
@@ -34668,12 +33753,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001332",
     "Application_Number": "LCA20-0001332",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001333",
     "Application_Number": "LCA20-0001333",
     "Premises Review Status": "Complete"
   },
@@ -34683,12 +33768,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001335",
     "Application_Number": "LCA20-0001335",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001336",
     "Application_Number": "LCA20-0001336",
     "Premises Review Status": "Complete"
   },
@@ -34698,8 +33783,18 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001340",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL20-0001341",
     "Application_Number": "LCA20-0001341",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001342",
     "Premises Review Status": "Complete"
   },
   {
@@ -34708,8 +33803,13 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001345",
     "Application_Number": "LCA20-0001345",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001346",
     "Premises Review Status": "Complete"
   },
   {
@@ -34725,6 +33825,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001349",
     "Application_Number": "LCA20-0001349",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001350",
     "Premises Review Status": "Complete"
   },
   {
@@ -34755,6 +33860,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001359",
     "Application_Number": "LCA20-0001359",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001360",
+    "Application_Number": "LCA20-0001360",
     "Premises Review Status": "Complete"
   },
   {
@@ -34798,12 +33908,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001373",
     "Application_Number": "LCA20-0001373",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "DUB21-00000-0",
     "Application_Number": "LCA20-0001376",
     "Premises Review Status": "Complete"
   },
@@ -34818,7 +33928,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001379",
     "Application_Number": "LCA20-0001379",
     "Premises Review Status": "Complete"
   },
@@ -34828,12 +33938,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001381",
     "Application_Number": "LCA20-0001381",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001382",
     "Application_Number": "LCA20-0001382",
     "Premises Review Status": "Complete"
   },
@@ -34863,7 +33973,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001388",
     "Application_Number": "LCA20-0001388",
     "Premises Review Status": "Complete"
   },
@@ -34943,7 +34053,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001404",
     "Application_Number": "LCA20-0001404",
     "Premises Review Status": "Complete"
   },
@@ -34963,7 +34073,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001409",
     "Application_Number": "LCA20-0001409",
     "Premises Review Status": "Complete"
   },
@@ -34978,7 +34088,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001412",
     "Application_Number": "LCA20-0001412",
     "Premises Review Status": "Complete"
   },
@@ -35098,7 +34208,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001437",
     "Application_Number": "LCA20-0001437",
     "Premises Review Status": "Complete"
   },
@@ -35108,7 +34218,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001439",
     "Application_Number": "LCA20-0001439",
     "Premises Review Status": "Complete"
   },
@@ -35118,7 +34228,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001441",
     "Application_Number": "LCA20-0001441",
     "Premises Review Status": "Complete"
   },
@@ -35133,12 +34243,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001444",
     "Application_Number": "LCA20-0001444",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001445",
     "Application_Number": "LCA20-0001445",
     "Premises Review Status": "Complete"
   },
@@ -35178,7 +34288,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001454",
     "Application_Number": "LCA20-0001454",
     "Premises Review Status": "Complete"
   },
@@ -35196,6 +34306,11 @@ var PREMISEREVIEWarray =
     "License_Number": "CCL20-0001457",
     "Application_Number": "LCA20-0001457",
     "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001458",
+    "Application_Number": "LCA20-0001458",
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001459",
@@ -35225,6 +34340,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001530",
     "Application_Number": "LCA20-0001530",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001531",
     "Premises Review Status": "Complete"
   },
   {
@@ -35265,7 +34385,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001539",
     "Application_Number": "LCA20-0001539",
-    "Premises Review Status": "Complete"
+    "Premises Review Status": "Incomplete"
   },
   {
     "License_Number": "CCL20-0001540",
@@ -35303,7 +34423,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001547",
     "Application_Number": "LCA20-0001547",
     "Premises Review Status": "Complete"
   },
@@ -35345,7 +34465,7 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA20-0001557",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001558",
@@ -35355,7 +34475,17 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA20-0001559",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001560",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001561",
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001564",
@@ -35408,8 +34538,13 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001574",
     "Application_Number": "LCA20-0001574",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001575",
     "Premises Review Status": "Complete"
   },
   {
@@ -35443,12 +34578,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001587",
     "Application_Number": "LCA20-0001587",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001589",
     "Application_Number": "LCA20-0001589",
     "Premises Review Status": "Complete"
   },
@@ -35518,7 +34653,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001611",
     "Application_Number": "LCA20-0001611",
     "Premises Review Status": "Complete"
   },
@@ -35543,7 +34678,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001616",
     "Application_Number": "LCA20-0001616",
     "Premises Review Status": "Complete"
   },
@@ -35583,7 +34718,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001627",
     "Application_Number": "LCA20-0001627",
     "Premises Review Status": "Complete"
   },
@@ -35638,7 +34773,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001639",
     "Application_Number": "LCA20-0001639",
     "Premises Review Status": "Complete"
   },
@@ -35713,17 +34848,17 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001658",
     "Application_Number": "LCA20-0001658",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001659",
     "Application_Number": "LCA20-0001659",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001660",
     "Application_Number": "LCA20-0001660",
     "Premises Review Status": "Complete"
   },
@@ -35735,6 +34870,11 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "CCL20-0001664",
     "Application_Number": "LCA20-0001664",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001675",
     "Premises Review Status": "Complete"
   },
   {
@@ -35773,27 +34913,27 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001683",
     "Application_Number": "LCA20-0001683",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001685",
     "Application_Number": "LCA20-0001685",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001686",
     "Application_Number": "LCA20-0001686",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001687",
     "Application_Number": "LCA20-0001687",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001688",
     "Application_Number": "LCA20-0001688",
     "Premises Review Status": "Complete"
   },
@@ -35803,7 +34943,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001690",
+    "Application_Number": "LCA20-0001690",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001700",
     "Application_Number": "LCA20-0001700",
     "Premises Review Status": "Complete"
   },
@@ -35818,12 +34963,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001705",
     "Application_Number": "LCA20-0001705",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001706",
     "Application_Number": "LCA20-0001706",
     "Premises Review Status": "Complete"
   },
@@ -35838,12 +34983,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001711",
     "Application_Number": "LCA20-0001711",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001714",
     "Application_Number": "LCA20-0001714",
     "Premises Review Status": "Complete"
   },
@@ -35853,22 +34998,17 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
-    "Application_Number": "LCA20-0001716",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
+    "License_Number": "CCL20-0001718",
     "Application_Number": "LCA20-0001718",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001719",
     "Application_Number": "LCA20-0001719",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001722",
     "Application_Number": "LCA20-0001722",
     "Premises Review Status": "Complete"
   },
@@ -35879,7 +35019,17 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0001726",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
     "Application_Number": "LCA20-0001727",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001728",
+    "Application_Number": "LCA20-0001728",
     "Premises Review Status": "Complete"
   },
   {
@@ -35888,7 +35038,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0001730",
+    "License_Number": "",
     "Application_Number": "LCA20-0001730",
     "Premises Review Status": "Complete"
   },
@@ -35898,7 +35048,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001732",
+    "Application_Number": "LCA20-0001732",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001733",
     "Application_Number": "LCA20-0001733",
     "Premises Review Status": "Complete"
   },
@@ -35908,18 +35063,28 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001735",
     "Application_Number": "LCA20-0001735",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001738",
     "Application_Number": "LCA20-0001738",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001740",
     "Application_Number": "LCA20-0001740",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001743",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001744",
     "Premises Review Status": "Complete"
   },
   {
@@ -35928,12 +35093,17 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001748",
     "Application_Number": "LCA20-0001748",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001753",
+    "Application_Number": "LCA20-0001753",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001756",
     "Application_Number": "LCA20-0001756",
     "Premises Review Status": "Complete"
   },
@@ -35943,7 +35113,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001761",
+    "Application_Number": "LCA20-0001761",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001768",
     "Application_Number": "LCA20-0001768",
     "Premises Review Status": "Complete"
   },
@@ -35963,6 +35138,11 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL20-0001774",
+    "Application_Number": "LCA20-0001774",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL20-0001775",
     "Application_Number": "LCA20-0001775",
     "Premises Review Status": "Complete"
@@ -35973,7 +35153,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "CCL20-0001777",
+    "License_Number": "",
     "Application_Number": "LCA20-0001777",
     "Premises Review Status": "Complete"
   },
@@ -36008,23 +35188,48 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001788",
     "Application_Number": "LCA20-0001788",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
-    "Application_Number": "LCA20-0001794",
+    "License_Number": "CCL20-0001790",
+    "Application_Number": "LCA20-0001790",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001791",
+    "Application_Number": "LCA20-0001791",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001792",
+    "Application_Number": "LCA20-0001792",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0001793",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001794",
+    "Application_Number": "LCA20-0001794",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001797",
     "Application_Number": "LCA20-0001797",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001798",
     "Application_Number": "LCA20-0001798",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001801",
+    "Application_Number": "LCA20-0001801",
     "Premises Review Status": "Complete"
   },
   {
@@ -36048,7 +35253,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001806",
     "Application_Number": "LCA20-0001806",
     "Premises Review Status": "Complete"
   },
@@ -36068,12 +35273,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001813",
     "Application_Number": "LCA20-0001813",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001815",
     "Application_Number": "LCA20-0001815",
     "Premises Review Status": "Complete"
   },
@@ -36083,12 +35288,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001817",
     "Application_Number": "LCA20-0001817",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001818",
     "Application_Number": "LCA20-0001818",
     "Premises Review Status": "Incomplete"
   },
@@ -36098,27 +35303,27 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001824",
     "Application_Number": "LCA20-0001824",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001825",
     "Application_Number": "LCA20-0001825",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001828",
     "Application_Number": "LCA20-0001828",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001829",
     "Application_Number": "LCA20-0001829",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001830",
     "Application_Number": "LCA20-0001830",
     "Premises Review Status": "Complete"
   },
@@ -36128,12 +35333,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001835",
     "Application_Number": "LCA20-0001835",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001836",
     "Application_Number": "LCA20-0001836",
     "Premises Review Status": "Complete"
   },
@@ -36143,17 +35348,17 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001838",
     "Application_Number": "LCA20-0001838",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001839",
     "Application_Number": "LCA20-0001839",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001840",
     "Application_Number": "LCA20-0001840",
     "Premises Review Status": "Complete"
   },
@@ -36163,72 +35368,82 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001845",
     "Application_Number": "LCA20-0001845",
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL20-0001849",
+    "Application_Number": "LCA20-0001849",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "",
+    "Application_Number": "LCA20-0001851",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001852",
     "Application_Number": "LCA20-0001852",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001853",
     "Application_Number": "LCA20-0001853",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001854",
     "Application_Number": "LCA20-0001854",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001857",
     "Application_Number": "LCA20-0001857",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001859",
     "Application_Number": "LCA20-0001859",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001861",
     "Application_Number": "LCA20-0001861",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001862",
     "Application_Number": "LCA20-0001862",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001863",
     "Application_Number": "LCA20-0001863",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001865",
     "Application_Number": "LCA20-0001865",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001866",
     "Application_Number": "LCA20-0001866",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001867",
     "Application_Number": "LCA20-0001867",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001868",
     "Application_Number": "LCA20-0001868",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001869",
     "Application_Number": "LCA20-0001869",
     "Premises Review Status": "Complete"
   },
@@ -36238,142 +35453,182 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001877",
     "Application_Number": "LCA20-0001877",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001879",
     "Application_Number": "LCA20-0001879",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001880",
     "Application_Number": "LCA20-0001880",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001881",
     "Application_Number": "LCA20-0001881",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001882",
     "Application_Number": "LCA20-0001882",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001883",
     "Application_Number": "LCA20-0001883",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001884",
     "Application_Number": "LCA20-0001884",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001886",
     "Application_Number": "LCA20-0001886",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001887",
     "Application_Number": "LCA20-0001887",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001888",
     "Application_Number": "LCA20-0001888",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001889",
     "Application_Number": "LCA20-0001889",
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL20-0001890",
+    "Application_Number": "LCA20-0001890",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "",
+    "Application_Number": "LCA20-0001894",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001895",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001896",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001898",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001899",
     "Application_Number": "LCA20-0001899",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001901",
     "Application_Number": "LCA20-0001901",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001902",
     "Application_Number": "LCA20-0001902",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001903",
     "Application_Number": "LCA20-0001903",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001904",
     "Application_Number": "LCA20-0001904",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001905",
     "Application_Number": "LCA20-0001905",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001907",
     "Application_Number": "LCA20-0001907",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001909",
     "Application_Number": "LCA20-0001909",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001910",
     "Application_Number": "LCA20-0001910",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001911",
     "Application_Number": "LCA20-0001911",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001912",
     "Application_Number": "LCA20-0001912",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001913",
     "Application_Number": "LCA20-0001913",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001915",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "CCL20-0001916",
     "Application_Number": "LCA20-0001916",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001919",
+    "Application_Number": "LCA20-0001919",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001922",
     "Application_Number": "LCA20-0001922",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0001923",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001924",
     "Application_Number": "LCA20-0001924",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001926",
     "Application_Number": "LCA20-0001926",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001927",
     "Application_Number": "LCA20-0001927",
     "Premises Review Status": "Complete"
   },
@@ -36393,12 +35648,12 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001937",
     "Application_Number": "LCA20-0001937",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001938",
     "Application_Number": "LCA20-0001938",
     "Premises Review Status": "Complete"
   },
@@ -36408,27 +35663,27 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001942",
     "Application_Number": "LCA20-0001942",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001943",
     "Application_Number": "LCA20-0001943",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001944",
     "Application_Number": "LCA20-0001944",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001945",
     "Application_Number": "LCA20-0001945",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001946",
     "Application_Number": "LCA20-0001946",
     "Premises Review Status": "Complete"
   },
@@ -36443,13 +35698,28 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001957",
     "Application_Number": "LCA20-0001957",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001958",
     "Application_Number": "LCA20-0001958",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001960",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001961",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001962",
     "Premises Review Status": "Complete"
   },
   {
@@ -36458,12 +35728,47 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0001973",
     "Application_Number": "LCA20-0001973",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0001974",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001975",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001976",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001977",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001978",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001979",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001980",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0001981",
     "Application_Number": "LCA20-0001981",
     "Premises Review Status": "Complete"
   },
@@ -36473,8 +35778,48 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001992",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001996",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001997",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001998",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0001999",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002000",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002004",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "CCL20-0002005",
     "Application_Number": "LCA20-0002005",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002006",
     "Premises Review Status": "Complete"
   },
   {
@@ -36494,11 +35839,26 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002011",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002012",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002013",
     "Application_Number": "LCA20-0002013",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002014",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002016",
     "Application_Number": "LCA20-0002016",
     "Premises Review Status": "Complete"
   },
@@ -36509,86 +35869,141 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002028",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002030",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002031",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002032",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002036",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002038",
+    "Application_Number": "LCA20-0002038",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002039",
     "Application_Number": "LCA20-0002039",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002040",
     "Application_Number": "LCA20-0002040",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002042",
     "Application_Number": "LCA20-0002042",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002043",
+    "Application_Number": "LCA20-0002043",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002046",
     "Application_Number": "LCA20-0002046",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002048",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002049",
     "Application_Number": "LCA20-0002049",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002050",
     "Application_Number": "LCA20-0002050",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002051",
     "Application_Number": "LCA20-0002051",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002054",
     "Application_Number": "LCA20-0002054",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002056",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002061",
+    "Application_Number": "LCA20-0002061",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002063",
     "Application_Number": "LCA20-0002063",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
     "Application_Number": "LCA20-0002065",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002067",
+    "Application_Number": "LCA20-0002067",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002068",
     "Application_Number": "LCA20-0002068",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002085",
     "Application_Number": "LCA20-0002085",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002086",
     "Application_Number": "LCA20-0002086",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002087",
     "Application_Number": "LCA20-0002087",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002088",
     "Application_Number": "LCA20-0002088",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002089",
     "Application_Number": "LCA20-0002089",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002091",
     "Application_Number": "LCA20-0002091",
     "Premises Review Status": "Complete"
   },
@@ -36598,8 +36013,13 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002096",
     "Application_Number": "LCA20-0002096",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002097",
     "Premises Review Status": "Complete"
   },
   {
@@ -36608,8 +36028,13 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002106",
     "Application_Number": "LCA20-0002106",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002119",
+    "Application_Number": "LCA20-0002119",
     "Premises Review Status": "Complete"
   },
   {
@@ -36619,16 +36044,21 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002122",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002123",
     "Application_Number": "LCA20-0002123",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
     "Application_Number": "LCA20-0002125",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002126",
     "Application_Number": "LCA20-0002126",
     "Premises Review Status": "Complete"
   },
@@ -36638,92 +36068,112 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002128",
+    "Application_Number": "LCA20-0002128",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002129",
+    "Application_Number": "LCA20-0002129",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002130",
     "Application_Number": "LCA20-0002130",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002131",
     "Application_Number": "LCA20-0002131",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002132",
     "Application_Number": "LCA20-0002132",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002133",
     "Application_Number": "LCA20-0002133",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002134",
     "Application_Number": "LCA20-0002134",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002135",
     "Application_Number": "LCA20-0002135",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002136",
     "Application_Number": "LCA20-0002136",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002137",
     "Application_Number": "LCA20-0002137",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002138",
+    "Application_Number": "LCA20-0002138",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002140",
     "Application_Number": "LCA20-0002140",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002141",
+    "Application_Number": "LCA20-0002141",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002143",
     "Application_Number": "LCA20-0002143",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002154",
     "Application_Number": "LCA20-0002154",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002159",
     "Application_Number": "LCA20-0002159",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002163",
     "Application_Number": "LCA20-0002163",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002169",
     "Application_Number": "LCA20-0002169",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002173",
     "Application_Number": "LCA20-0002173",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002174",
     "Application_Number": "LCA20-0002174",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002175",
     "Application_Number": "LCA20-0002175",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002176",
     "Application_Number": "LCA20-0002176",
     "Premises Review Status": "Complete"
   },
@@ -36733,27 +36183,27 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002178",
     "Application_Number": "LCA20-0002178",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002179",
     "Application_Number": "LCA20-0002179",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002180",
     "Application_Number": "LCA20-0002180",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002181",
     "Application_Number": "LCA20-0002181",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002182",
     "Application_Number": "LCA20-0002182",
     "Premises Review Status": "Complete"
   },
@@ -36768,52 +36218,62 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002186",
     "Application_Number": "LCA20-0002186",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002187",
     "Application_Number": "LCA20-0002187",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002188",
     "Application_Number": "LCA20-0002188",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002189",
     "Application_Number": "LCA20-0002189",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002190",
     "Application_Number": "LCA20-0002190",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002191",
     "Application_Number": "LCA20-0002191",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002192",
     "Application_Number": "LCA20-0002192",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002193",
+    "Application_Number": "LCA20-0002193",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002194",
     "Application_Number": "LCA20-0002194",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002196",
+    "Application_Number": "LCA20-0002196",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002197",
     "Application_Number": "LCA20-0002197",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002198",
     "Application_Number": "LCA20-0002198",
     "Premises Review Status": "Complete"
   },
@@ -36828,88 +36288,148 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002206",
+    "Application_Number": "LCA20-0002206",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002207",
+    "Application_Number": "LCA20-0002207",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002208",
     "Application_Number": "LCA20-0002208",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002212",
+    "Application_Number": "LCA20-0002212",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002215",
     "Application_Number": "LCA20-0002215",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002216",
     "Application_Number": "LCA20-0002216",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
     "Application_Number": "LCA20-0002220",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002227",
     "Application_Number": "LCA20-0002227",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002228",
+    "Premises Review Status": "Incomplete"
+  },
+  {
+    "License_Number": "CCL20-0002229",
     "Application_Number": "LCA20-0002229",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002230",
     "Application_Number": "LCA20-0002230",
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL20-0002232",
+    "Application_Number": "LCA20-0002232",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002233",
+    "Application_Number": "LCA20-0002233",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002234",
+    "Application_Number": "LCA20-0002234",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "",
+    "Application_Number": "LCA20-0002236",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002237",
     "Application_Number": "LCA20-0002237",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002238",
     "Application_Number": "LCA20-0002238",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002239",
+    "Application_Number": "LCA20-0002239",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002243",
     "Application_Number": "LCA20-0002243",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002244",
     "Application_Number": "LCA20-0002244",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002245",
     "Application_Number": "LCA20-0002245",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002246",
     "Application_Number": "LCA20-0002246",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002247",
     "Application_Number": "LCA20-0002247",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002248",
     "Application_Number": "LCA20-0002248",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002249",
     "Application_Number": "LCA20-0002249",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002250",
     "Application_Number": "LCA20-0002250",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002251",
+    "Application_Number": "LCA20-0002251",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002257",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002261",
+    "Application_Number": "LCA20-0002261",
     "Premises Review Status": "Complete"
   },
   {
@@ -36920,45 +36440,185 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA20-0002264",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA20-0002265",
-    "Premises Review Status": "Incomplete"
-  },
-  {
-    "License_Number": "",
-    "Application_Number": "LCA20-0002266",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002265",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002266",
+    "Application_Number": "LCA20-0002266",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002267",
     "Application_Number": "LCA20-0002267",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
-    "Application_Number": "LCA20-0002299",
-    "Premises Review Status": "Incomplete"
+    "Application_Number": "LCA20-0002272",
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002274",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002275",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002276",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002277",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002278",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002279",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002280",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002281",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002282",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002283",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002284",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002285",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002286",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002287",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002288",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002289",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002290",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002291",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002292",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002293",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002294",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002295",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002296",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002299",
+    "Application_Number": "LCA20-0002299",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002306",
     "Application_Number": "LCA20-0002306",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002307",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002308",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002310",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002311",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002314",
     "Application_Number": "LCA20-0002314",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002315",
     "Application_Number": "LCA20-0002315",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002316",
     "Application_Number": "LCA20-0002316",
     "Premises Review Status": "Complete"
   },
@@ -37015,7 +36675,12 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA20-0002330",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002334",
+    "Application_Number": "LCA20-0002334",
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
@@ -37023,7 +36688,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002355",
     "Application_Number": "LCA20-0002355",
     "Premises Review Status": "Complete"
   },
@@ -37033,8 +36698,33 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002362",
+    "Application_Number": "LCA20-0002362",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002371",
     "Application_Number": "LCA20-0002371",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002375",
+    "Application_Number": "LCA20-0002375",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002376",
+    "Application_Number": "LCA20-0002376",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002377",
+    "Application_Number": "LCA20-0002377",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002378",
+    "Application_Number": "LCA20-0002378",
     "Premises Review Status": "Complete"
   },
   {
@@ -37044,6 +36734,11 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002380",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002387",
     "Application_Number": "LCA20-0002387",
     "Premises Review Status": "Complete"
   },
@@ -37053,7 +36748,7 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Incomplete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002420",
     "Application_Number": "LCA20-0002420",
     "Premises Review Status": "Complete"
   },
@@ -37063,42 +36758,52 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002425",
     "Application_Number": "LCA20-0002425",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002426",
     "Application_Number": "LCA20-0002426",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002428",
     "Application_Number": "LCA20-0002428",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002430",
+    "Application_Number": "LCA20-0002430",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002431",
     "Application_Number": "LCA20-0002431",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
     "Application_Number": "LCA20-0002434",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002435",
     "Application_Number": "LCA20-0002435",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002441",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002454",
     "Application_Number": "LCA20-0002454",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002470",
     "Application_Number": "LCA20-0002470",
     "Premises Review Status": "Complete"
   },
@@ -37109,6 +36814,21 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002476",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002480",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002481",
+    "Application_Number": "LCA20-0002481",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002487",
     "Application_Number": "LCA20-0002487",
     "Premises Review Status": "Complete"
   },
@@ -37133,8 +36853,38 @@ var PREMISEREVIEWarray =
     "Premises Review Status": "Complete"
   },
   {
+    "License_Number": "CCL20-0002504",
+    "Application_Number": "LCA20-0002504",
+    "Premises Review Status": "Complete"
+  },
+  {
     "License_Number": "",
+    "Application_Number": "LCA20-0002513",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002514",
     "Application_Number": "LCA20-0002514",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002516",
+    "Application_Number": "LCA20-0002516",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002517",
+    "Application_Number": "LCA20-0002517",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002518",
+    "Application_Number": "LCA20-0002518",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002519",
+    "Application_Number": "LCA20-0002519",
     "Premises Review Status": "Complete"
   },
   {
@@ -37149,11 +36899,96 @@ var PREMISEREVIEWarray =
   },
   {
     "License_Number": "",
-    "Application_Number": "LCA20-0002555",
+    "Application_Number": "LCA20-0002533",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002551",
+    "Application_Number": "LCA20-0002551",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002555",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002557",
+    "Application_Number": "LCA20-0002557",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002558",
+    "Application_Number": "LCA20-0002558",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002559",
+    "Application_Number": "LCA20-0002559",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002560",
+    "Application_Number": "LCA20-0002560",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002561",
+    "Application_Number": "LCA20-0002561",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002562",
+    "Application_Number": "LCA20-0002562",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002563",
+    "Application_Number": "LCA20-0002563",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002565",
+    "Application_Number": "LCA20-0002565",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002566",
+    "Application_Number": "LCA20-0002566",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002567",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002568",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002569",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002570",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002571",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002579",
+    "Application_Number": "LCA20-0002579",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002587",
     "Application_Number": "LCA20-0002587",
     "Premises Review Status": "Complete"
   },
@@ -37165,43 +37000,1268 @@ var PREMISEREVIEWarray =
   {
     "License_Number": "",
     "Application_Number": "LCA20-0002593",
-    "Premises Review Status": "Incomplete"
+    "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002598",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002607",
     "Application_Number": "LCA20-0002607",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002620",
+    "Application_Number": "LCA20-0002620",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002625",
     "Application_Number": "LCA20-0002625",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002632",
     "Application_Number": "LCA20-0002632",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002633",
+    "Application_Number": "LCA20-0002633",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002676",
+    "Application_Number": "LCA20-0002676",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002832",
     "Application_Number": "LCA20-0002832",
     "Premises Review Status": "Complete"
   },
   {
-    "License_Number": "",
+    "License_Number": "CCL20-0002835",
+    "Application_Number": "LCA20-0002835",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002836",
+    "Application_Number": "LCA20-0002836",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002837",
+    "Application_Number": "LCA20-0002837",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002839",
+    "Application_Number": "LCA20-0002839",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002840",
+    "Application_Number": "LCA20-0002840",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002841",
+    "Application_Number": "LCA20-0002841",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002842",
+    "Application_Number": "LCA20-0002842",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002843",
+    "Application_Number": "LCA20-0002843",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002844",
+    "Application_Number": "LCA20-0002844",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002845",
+    "Application_Number": "LCA20-0002845",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002846",
+    "Application_Number": "LCA20-0002846",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002847",
+    "Application_Number": "LCA20-0002847",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002848",
+    "Application_Number": "LCA20-0002848",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002881",
+    "Application_Number": "LCA20-0002881",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002882",
+    "Application_Number": "LCA20-0002882",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002883",
+    "Application_Number": "LCA20-0002883",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002885",
+    "Application_Number": "LCA20-0002885",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002886",
+    "Application_Number": "LCA20-0002886",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002887",
+    "Application_Number": "LCA20-0002887",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002894",
     "Application_Number": "LCA20-0002894",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
-    "Application_Number": "LCA20-0002917",
+    "Application_Number": "LCA20-0002908",
     "Premises Review Status": "Complete"
   },
   {
     "License_Number": "",
+    "Application_Number": "LCA20-0002909",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002910",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002911",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002899",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002917",
+    "Application_Number": "LCA20-0002917",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002918",
     "Application_Number": "LCA20-0002918",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002928",
+    "Application_Number": "LCA20-0002928",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002929",
+    "Application_Number": "LCA20-0002929",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002967",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002968",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002970",
+    "Application_Number": "LCA20-0002970",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002971",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002987",
+    "Application_Number": "LCA20-0002987",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0003059",
+    "Application_Number": "LCA20-0003059",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002592",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002594",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002595",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002597",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002599",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002600",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002601",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002602",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002603",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002604",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002605",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002606",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002608",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002609",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002610",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002611",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002612",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002613",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003099",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002614",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002615",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002616",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002617",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002618",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002619",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002631",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002634",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002636",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002644",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002646",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002647",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002415",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002651",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002652",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002653",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003148",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003149",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003150",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0003151",
+    "Application_Number": "LCA20-0003151",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003156",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003171",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0003179",
+    "Application_Number": "LCA20-0003179",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0003225",
+    "Application_Number": "LCA20-0003225",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002825",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0002985",
+    "Application_Number": "LCA20-0002985",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0003101",
+    "Application_Number": "LCA20-0003101",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "CCL20-0003102",
+    "Application_Number": "LCA20-0003102",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003120",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003124",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003135",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003143",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003145",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003146",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0003147",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002654",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002656",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002657",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002658",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002662",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002664",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002666",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002667",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002668",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002669",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002670",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002671",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002672",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002673",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002674",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002675",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002677",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002678",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002679",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002680",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002681",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002682",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002683",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002684",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002685",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002686",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002687",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002688",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002689",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002690",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002691",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002692",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002693",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002694",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002696",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002697",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002698",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002702",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002699",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002700",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002701",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002703",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002704",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002705",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002706",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002707",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002709",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002708",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002711",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002712",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002713",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002714",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002715",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002716",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002717",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002718",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002723",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002719",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002720",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002721",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002722",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002724",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002725",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002726",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002727",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002730",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002744",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002748",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002764",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002773",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002799",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002802",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002818",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002728",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002729",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002731",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002732",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002733",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002735",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002739",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002745",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002754",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002734",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002736",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002737",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002746",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002749",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002755",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002759",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002738",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002740",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002741",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002742",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002743",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002747",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002750",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002766",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002751",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002752",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002753",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002756",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002757",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002758",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002760",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002761",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002762",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002763",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002765",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002776",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002780",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002782",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002786",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002807",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002808",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002809",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002810",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002811",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002812",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002813",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002814",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002815",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002816",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002819",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002820",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002790",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002791",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002792",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002793",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002794",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002795",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002796",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002797",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002798",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002800",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002801",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002803",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002804",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002767",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002805",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002768",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002769",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002770",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002771",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002772",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002774",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002775",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002777",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002779",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002781",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002783",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002806",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002784",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002785",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002787",
+    "Premises Review Status": "Complete"
+  },
+  {
+    "License_Number": "",
+    "Application_Number": "LCA20-0002788",
     "Premises Review Status": "Complete"
   }
 ];
-return PREMISEREVIEWarray;
+ return PREMISEREVIEWarray;
 }
