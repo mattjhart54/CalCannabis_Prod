@@ -20088,5 +20088,6 @@ var WATERRIGHTarray =[
     "Currently used for Cannabis?": "Yes"
   }
 ];
+  
  return WATERRIGHTarray;
 }
