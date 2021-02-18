@@ -2837,7 +2837,7 @@ var LSAarray =
   {
     "License_Number": "CCL18-0000483",
     "Application_Number": "LCA18-0000483",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -16949,7 +16949,7 @@ var LSAarray =
   {
     "License_Number": "CCL18-0002907",
     "Application_Number": "LCA18-0002907",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -23213,7 +23213,7 @@ var LSAarray =
   {
     "License_Number": "CCL18-0003821",
     "Application_Number": "LCA18-0003821",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Provisional",
     "Notes": "fixed"
@@ -30453,7 +30453,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0001664",
     "Application_Number": "LCA19-0001664",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -30469,7 +30469,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0001666",
     "Application_Number": "LCA19-0001666",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -36685,7 +36685,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0003413",
     "Application_Number": "LCA19-0003413",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -37965,7 +37965,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0003717",
     "Application_Number": "LCA19-0003717",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -43757,7 +43757,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0005032",
     "Application_Number": "LCA19-0005032",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -45541,7 +45541,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0005369",
     "Application_Number": "LCA19-0005369",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": "No proof of submission."
@@ -45597,7 +45597,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0005379",
     "Application_Number": "LCA19-0005379",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -46157,7 +46157,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0005472",
     "Application_Number": "LCA19-0005472",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "annual",
     "Notes": ""
@@ -46901,7 +46901,7 @@ var LSAarray =
   {
     "License_Number": "CCL19-0005576",
     "Application_Number": "LCA19-0005576",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -48085,7 +48085,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000100",
     "Application_Number": "LCA20-0000100",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -48173,7 +48173,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000115",
     "Application_Number": "LCA20-0000115",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "annual",
     "Notes": ""
@@ -48349,7 +48349,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000146",
     "Application_Number": "LCA20-0000146",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -48389,7 +48389,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000151",
     "Application_Number": "LCA20-0000151",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -48437,7 +48437,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000159",
     "Application_Number": "LCA20-0000159",
-    "APN_Matches_Premises": "no",
+    "APN_Matches_Premises": "No",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -48549,7 +48549,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000183",
     "Application_Number": "LCA20-0000183",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "annual",
     "Notes": ""
@@ -48589,7 +48589,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000188",
     "Application_Number": "LCA20-0000188",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -48597,7 +48597,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000190",
     "Application_Number": "LCA20-0000190",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -48717,7 +48717,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000218",
     "Application_Number": "LCA20-0000218",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -48925,7 +48925,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000252",
     "Application_Number": "LCA20-0000252",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "annual",
     "Notes": ""
@@ -48933,7 +48933,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000254",
     "Application_Number": "LCA20-0000254",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -49405,7 +49405,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000344",
     "Application_Number": "LCA20-0000344",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -49677,16 +49677,16 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000395",
     "Application_Number": "LCA20-0000395",
-    "APN_Matches_Premises": "yes",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Premises": "Yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
   {
     "License_Number": "CCL20-0000396",
     "Application_Number": "LCA20-0000396",
-    "APN_Matches_Premises": "yes",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Premises": "Yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -49909,7 +49909,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000441",
     "Application_Number": "LCA20-0000441",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -50406,7 +50406,7 @@ var LSAarray =
     "License_Number": "CCL20-0000535",
     "Application_Number": "LCA20-0000535",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50414,7 +50414,7 @@ var LSAarray =
     "License_Number": "CCL20-0000536",
     "Application_Number": "LCA20-0000536",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50422,7 +50422,7 @@ var LSAarray =
     "License_Number": "CCL20-0000537",
     "Application_Number": "LCA20-0000537",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50430,7 +50430,7 @@ var LSAarray =
     "License_Number": "CCL20-0000538",
     "Application_Number": "LCA20-0000538",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50438,7 +50438,7 @@ var LSAarray =
     "License_Number": "CCL20-0000539",
     "Application_Number": "LCA20-0000539",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50446,7 +50446,7 @@ var LSAarray =
     "License_Number": "CCL20-0000540",
     "Application_Number": "LCA20-0000540",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50454,7 +50454,7 @@ var LSAarray =
     "License_Number": "CCL20-0000541",
     "Application_Number": "LCA20-0000541",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50462,7 +50462,7 @@ var LSAarray =
     "License_Number": "CCL20-0000542",
     "Application_Number": "LCA20-0000542",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50470,7 +50470,7 @@ var LSAarray =
     "License_Number": "CCL20-0000543",
     "Application_Number": "LCA20-0000543",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50478,7 +50478,7 @@ var LSAarray =
     "License_Number": "CCL20-0000544",
     "Application_Number": "LCA20-0000544",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50486,7 +50486,7 @@ var LSAarray =
     "License_Number": "CCL20-0000545",
     "Application_Number": "LCA20-0000545",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50494,7 +50494,7 @@ var LSAarray =
     "License_Number": "CCL20-0000546",
     "Application_Number": "LCA20-0000546",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50502,7 +50502,7 @@ var LSAarray =
     "License_Number": "CCL20-0000547",
     "Application_Number": "LCA20-0000547",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50510,7 +50510,7 @@ var LSAarray =
     "License_Number": "CCL20-0000548",
     "Application_Number": "LCA20-0000548",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50518,7 +50518,7 @@ var LSAarray =
     "License_Number": "CCL20-0000549",
     "Application_Number": "LCA20-0000549",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50526,7 +50526,7 @@ var LSAarray =
     "License_Number": "CCL20-0000550",
     "Application_Number": "LCA20-0000550",
     "APN_Matches_Premises": "N/A",
-    "APN_Matches_Adjacent_Parcel": "yes",
+    "APN_Matches_Adjacent_Parcel": "Yes",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
   },
@@ -50709,7 +50709,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000580",
     "Application_Number": "LCA20-0000580",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -50829,7 +50829,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000597",
     "Application_Number": "LCA20-0000597",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -50933,7 +50933,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000613",
     "Application_Number": "LCA20-0000613",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "provisional",
     "Notes": ""
@@ -51973,7 +51973,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000795",
     "Application_Number": "LCA20-0000795",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -52013,7 +52013,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000800",
     "Application_Number": "LCA20-0000800",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53045,7 +53045,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000946",
     "Application_Number": "LCA20-0000946",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53069,7 +53069,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000951",
     "Application_Number": "LCA20-0000951",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53277,7 +53277,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000978",
     "Application_Number": "LCA20-0000978",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53285,7 +53285,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000979",
     "Application_Number": "LCA20-0000979",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53301,7 +53301,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000981",
     "Application_Number": "LCA20-0000981",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53309,7 +53309,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000982",
     "Application_Number": "LCA20-0000982",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53317,7 +53317,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000983",
     "Application_Number": "LCA20-0000983",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53325,7 +53325,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000984",
     "Application_Number": "LCA20-0000984",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53333,7 +53333,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000985",
     "Application_Number": "LCA20-0000985",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53341,7 +53341,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000986",
     "Application_Number": "LCA20-0000986",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53349,7 +53349,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000987",
     "Application_Number": "LCA20-0000987",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53357,7 +53357,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000988",
     "Application_Number": "LCA20-0000988",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53365,7 +53365,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000989",
     "Application_Number": "LCA20-0000989",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53373,7 +53373,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000990",
     "Application_Number": "LCA20-0000990",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53389,7 +53389,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000992",
     "Application_Number": "LCA20-0000992",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53397,7 +53397,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0000993",
     "Application_Number": "LCA20-0000993",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53469,7 +53469,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001004",
     "Application_Number": "LCA20-0001004",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53485,7 +53485,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001006",
     "Application_Number": "LCA20-0001006",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53493,7 +53493,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001007",
     "Application_Number": "LCA20-0001007",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53501,7 +53501,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001008",
     "Application_Number": "LCA20-0001008",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53509,7 +53509,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001009",
     "Application_Number": "LCA20-0001009",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53517,7 +53517,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001010",
     "Application_Number": "LCA20-0001010",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53525,7 +53525,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001011",
     "Application_Number": "LCA20-0001011",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53533,7 +53533,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001012",
     "Application_Number": "LCA20-0001012",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53541,7 +53541,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001013",
     "Application_Number": "LCA20-0001013",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53549,7 +53549,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001014",
     "Application_Number": "LCA20-0001014",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53557,7 +53557,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001015",
     "Application_Number": "LCA20-0001015",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53565,7 +53565,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001016",
     "Application_Number": "LCA20-0001016",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53573,7 +53573,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001017",
     "Application_Number": "LCA20-0001017",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53581,7 +53581,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001018",
     "Application_Number": "LCA20-0001018",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53589,7 +53589,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001019",
     "Application_Number": "LCA20-0001019",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53597,7 +53597,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001020",
     "Application_Number": "LCA20-0001020",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53605,7 +53605,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001021",
     "Application_Number": "LCA20-0001021",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53613,7 +53613,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001022",
     "Application_Number": "LCA20-0001022",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53621,7 +53621,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001023",
     "Application_Number": "LCA20-0001023",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53629,7 +53629,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001024",
     "Application_Number": "LCA20-0001024",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53637,7 +53637,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001025",
     "Application_Number": "LCA20-0001025",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -53901,7 +53901,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001073",
     "Application_Number": "LCA20-0001073",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "annual",
     "Notes": ""
@@ -54461,7 +54461,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001150",
     "Application_Number": "LCA20-0001150",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -54469,7 +54469,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001152",
     "Application_Number": "LCA20-0001152",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "annual",
     "Notes": ""
@@ -55525,7 +55525,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001308",
     "Application_Number": "LCA20-0001308",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -56277,7 +56277,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001426",
     "Application_Number": "LCA20-0001426",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -56501,7 +56501,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001455",
     "Application_Number": "LCA20-0001455",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
@@ -56877,7 +56877,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001572",
     "Application_Number": "LCA20-0001572",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -56885,7 +56885,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001573",
     "Application_Number": "LCA20-0001573",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "",
     "CDFW_Review_Status": "Provisional",
     "Notes": ""
@@ -58853,7 +58853,7 @@ var LSAarray =
   {
     "License_Number": "CCL20-0001982",
     "Application_Number": "LCA20-0001982",
-    "APN_Matches_Premises": "yes",
+    "APN_Matches_Premises": "Yes",
     "APN_Matches_Adjacent_Parcel": "N/A",
     "CDFW_Review_Status": "Annual",
     "Notes": ""
