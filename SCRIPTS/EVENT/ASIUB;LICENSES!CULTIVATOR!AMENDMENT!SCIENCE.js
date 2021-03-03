@@ -1,6 +1,6 @@
 try{
 	statusArray = [];
-	if(matches(AInfo["LSA Review Status-NEW"],"Annual", "Provisional")) {
+/*	if(matches(AInfo["LSA Review Status-NEW"],"Annual", "Provisional")) {
 		var lsaCheck = true;
 		if(!matches(AInfo["APN Matches Premises-LSA-NEW"],"Yes","N/A","No")) {
 			lsaCheck = false;
@@ -29,7 +29,8 @@ try{
 				statusArray.push(SOURCEOFWATERSUPPLY[xx]["Type of Water Supply"]);
 			}
 		}
-	}		
+	}
+*/
 	if(AInfo["Water Rights Review Status-NEW"] == "Complete") {
 		if (WATERRIGHTS.length > 0){
 			wrLines = 0;
