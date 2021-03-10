@@ -43,6 +43,24 @@ try {
 				editAppSpecific("Other Source Description",AInfo["OSD Update"],parentCapId);
 			}
 		}
+		editAppSpecific("On-site Composting of Cannabis Waste",AInfo["On-site Composting of Cannabis Waste-NEW"],parentCapId);
+		editAppSpecific("Local Agency Franchised or Contracted/Permitted Waste Hauler",AInfo["Local Agency Franchised or Contracted/Permitted Waste Hauler-NEW"],parentCapId);
+		editAppSpecific("Self-Haul to a Manned Fully Permitted Solid Waste Landfill/Transform Facility",AInfo["Self-Haul to a Manned Fully Permitted Solid Waste Landfill/Transform Facility-NEW"],parentCapId);
+		editAppSpecific("Self-Haul to a Manned Fully Permitted Composting Facility/Operation",AInfo["Self-Haul to a Manned Fully Permitted Composting Facility/Operation-NEW"],parentCapId);
+		editAppSpecific("Self-Haul to a Manned Fully Permitted In-Vessel Digestion Facility/Operation",AInfo["Self-Haul to a Manned Fully Permitted In-Vessel Digestion Facility/Operation-NEW"],parentCapId);
+		editAppSpecific("Self-Haul to a Manned Fully Permitted Transfer/Processing Facility/Operation ",AInfo["Self-Haul to a Manned Fully Permitted Transfer/Processing Facility/Operation -NEW"],parentCapId);
+		editAppSpecific("OSelf-Haul to a Manned Fully Permitted Chip-and-Grind Operation or Facility",AInfo["Self-Haul to a Manned Fully Permitted Chip-and-Grind Operation or FacilityNEW"],parentCapId);
+		editAppSpecific("Self-Haul to a Recycling Center That Meets Regulations Requirements",AInfo["Self-Haul to a Recycling Center That Meets Regulations Requirements-NEW"],parentCapId);
+		editAppSpecific("Reintroduction of cannabis waste back into Agricultural operations",AInfo["Reintroduction of cannabis waste back into Agricultural operations-NEW"],parentCapId);		
+		editAppSpecific("Other",AInfo["Other-NEW"],parentCapId);
+		if(matches(AInfo["Other-NEW"],null,"",undefined)){
+			editAppSpecific("Other Waste Management Method","",parentCapId);
+		}
+		else {
+			if(!matches(AInfo["Other Waste Management Method-NEW"],null,"",undefined)) {
+				editAppSpecific("Other Waste Management Method",AInfo["Other Waste Management Method-NEW"],parentCapId);
+			}
+		}
 		//Story 6622 Copy New Value Fields to license
 		var recordASIGroup = aa.appSpecificInfo.getByCapID(capId);
 		if (recordASIGroup.getSuccess()){
@@ -148,8 +166,17 @@ try {
 		}
 		logDebug("Not copying the following Tables: " + ignoreTableArray);
 		copyASITables(capId,parentCapId,ignoreTableArray);
-		runReportAttach(capId,"Scientific Review Checklist","altID",capId.getCustomID());		
-		//End Story 6622 
+//		runReportAttach(capId,"Scientific Review Checklist","altID",capId.getCustomID());
+		var saAltId = capId.getCustomID();
+		var licAltId = parentCapId.getCustomID();
+		var scriptName = "asyncRunScientificChecklist";
+		var envParameters = aa.util.newHashMap();
+		envParameters.put("saCap",saAltId);
+		envParameters.put("licCap",licAltId); 
+		envParameters.put("reportName","Scientific Review Checklist"); 
+		envParameters.put("currentUserID",currentUserID);
+		aa.runAsyncScript(scriptName, envParameters);
+//End Story 6622 
 		var rFiles = [];
 		if(updateCat) {
 			addToCat(parentCapId);
