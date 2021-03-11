@@ -27,10 +27,12 @@ try{
 	if (typeof(SOURCEOFWATERSUPPLY) == "object"){
 		if(SOURCEOFWATERSUPPLY.length > 0){
 			for(xx in SOURCEOFWATERSUPPLY){
-				statusArray.push(SOURCEOFWATERSUPPLY[xx]["Type of Water Supply"]);
+				if(SOURCEOFWATERSUPPLY[xx]["Status"] != "Delete"){
+					statusArray.push(SOURCEOFWATERSUPPLY[xx]["Type of Water Supply"]);
+				}
 			}
 		}
-	}
+	}		
 	if(AInfo["Water Rights Review Status-NEW"] == "Complete") {
 		if (WATERRIGHTS.length > 0){
 			wrLines = 0;
