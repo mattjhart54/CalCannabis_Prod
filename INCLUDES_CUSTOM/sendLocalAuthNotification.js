@@ -1,26 +1,19 @@
 function sendLocalAuthNotification() {
 	try{
+		var br = "<BR>";
 		editAppSpecific("Local Authority Notification Sent", jsDateToASIDate(new Date()));
-		if(wfStatus == "Local Auth Sent - 10") {
+		if(wfStatus == "10 day Auth") {
 			editAppSpecific("Local Authority Notification Expires", dateAdd(jsDateToASIDate(new Date()),10));
 		}
 		else {
 			editAppSpecific("Local Authority Notification Expires", dateAdd(jsDateToASIDate(new Date()),60,"Y"));
 		}
 		//lwacht: 180426: story 5436: reset the assigned task
-		var asgnDateAR = getAssignedDate("Administrative Review");
-		var asgnDateOR = getAssignedDate("Owner Application Reviews");
-		deactivateTask("Administrative Review");
-		deactivateTask("Owner Application Reviews");
+		var asgnDateAR = getAssignedDate("Local Verification Review");
 		if(asgnDateAR){
-			updateTaskAssignedDate("Administrative Review", asgnDateAR);
+			updateTaskAssignedDate("Local Verification Review", asgnDateAR);
 		}else{
-			logDebug("No assigned date found for Administrative Review");
-		}
-		if(asgnDateOR){
-			updateTaskAssignedDate("Owner Application Reviews", asgnDateOR);
-		}else{
-			logDebug("No assigned date found for Owner Application Reviews");
+			logDebug("No assigned date found for Local Verification Review");
 		}
 		//lwacht: 180426: story 5436: end
 		if(AInfo["Local Authority Type"] == "County")
@@ -52,7 +45,7 @@ function sendLocalAuthNotification() {
 					if(!matches(PREMISESADDRESSES[x]["Premises City"], null,"",undefined)) {
 						msgAddr = msgAddr + ", " + PREMISESADDRESSES[x]["Premises City"];
 					}
-					msgAddr = msgAddr + ", " + PREMISESADDRESSES[x]["Premises County"] + ";   ";
+					msgAddr = msgAddr + ", " + PREMISESADDRESSES[x]["Premises County"] + ";  ";
 
 				}
 			}
@@ -61,7 +54,7 @@ function sendLocalAuthNotification() {
 			}
 	// MHART 08/07/18 Story 5617 and 5618:  End
 		
-			if(wfStatus == "Local Auth Sent - 10") {
+			if(wfStatus == "10 day Auth") {
 				addParameter(eParams, "$$days$$", "10 calendar");
 				updateAppStatus("Pending Local Authorization 10");
 			}
