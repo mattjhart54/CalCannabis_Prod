@@ -187,6 +187,7 @@ try{
 		//lwacht: 180426: story 5436: reset the assigned task
 		var asgnDateAR = getAssignedDate("Administrative Review");
 		var asgnDateOR = getAssignedDate("Owner Application Reviews");
+		deactivateTask("Local Verification Review");
 		activateTask("Administrative Review");
 		activateTask("Owner Application Reviews");
 		editAppSpecific("Local Authority Response", "No Response");
