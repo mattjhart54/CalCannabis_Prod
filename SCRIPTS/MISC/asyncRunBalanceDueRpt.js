@@ -54,7 +54,6 @@ try{
 	var recNum = "" + aa.env.getValue("recNum");
 	var currentUserID = "" + aa.env.getValue("currentUserID");
 	var contType = "" + aa.env.getValue("contType");
-	var sysFromEmail = "" + aa.env.getValue("fromEmail");
 	var br = "<BR>";
 	var eTxt = "";
 	var sDate = new Date();
@@ -144,7 +143,7 @@ try{
 } catch(err){
 	logDebug("An error has occurred in asyncRunBalanceDueRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunBalanceDueRpt: ",  licCapId + br + "altId: " + recNum + br + eTxt);
+	aa.sendMail("noreply@cannabis.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunBalanceDueRpt: ",  licCapId + br + "altId: " + recNum + br + eTxt);
 }
  function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
 {
