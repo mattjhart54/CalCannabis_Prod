@@ -43,14 +43,16 @@ function getMasterScriptText(vScriptName) {
 }
 try{
 //---------------------------------------
-	//aa.env.setValue("licCap", "LCA18-0000355");
-	//aa.env.setValue("currentUserID", "MHART");
-	//aa.env.setValue("invNbr",907);
+//	aa.env.setValue("licCap", "CCL19-0000253-R01");
+//	aa.env.setValue("currentUserID", "MHART");
+//  aa.env.setValue("capId", "DUB20-00000-000T9");
+//	aa.env.setValue("invNbr",2015);
 	var licCap = "" + aa.env.getValue("licCap");
+//	var capID = "" + aa.env.getValue("capId");
 	var invNbr = "" + aa.env.getValue("invNbr");	
 	var currentUserID = "" + aa.env.getValue("currentUserID");
 	var reportName = "CDFA_INVOICE_PARAMS";
-	var fromEmail = "calcannabislicensing@cdfa.ca.gov"
+	var fromEmail = "noreply@cannabis.ca.gov"
 	var br = "<BR>";
 	var eTxt = "";
 	var sDate = new Date();
@@ -63,6 +65,9 @@ try{
 	}
 	var rFiles = [];
 	var report = reportResult.getOutput(); 
+//	sca = capID.split("-");
+//	capId = aa.cap.getCapID(sca[0],sca[1],sca[2]).getOutput();
+//	var tmpID = capId;
 	var tmpID = aa.cap.getCapID(licCap).getOutput(); 
 	cap = aa.cap.getCap(tmpID).getOutput();
 	appTypeResult = cap.getCapType();
@@ -113,9 +118,9 @@ try{
 	var thisTime = thisDate.getTime();
 	var eTime = (thisTime - sTime) / 1000
 } catch(err){
-	logDebug("An error has occurred in asyncRunSubmittedApplicRpt: " + err.message);
+	logDebug("An error has occurred in asyncRunInvoiceParamsRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunSubmittedApplicRpt: ",  tmpID + br + "altId: " + licCap + br +  eTxt);
+	aa.sendMail("noreply@cannabis.ca.gov", "jshear@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunInvoiceParamsRpt: ",  tmpID + br + "altId: " + licCap + br +  eTxt);
 }
  function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
 {
