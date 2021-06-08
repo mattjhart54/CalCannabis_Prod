@@ -1,5 +1,4 @@
 try {
-
 	//mhart: 012320: story 6378: check License cases before submittal
 	var AInfo = [];
 	loadAppSpecific(AInfo);
