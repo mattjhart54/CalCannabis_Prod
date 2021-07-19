@@ -107,9 +107,9 @@ function sendLocalAuthNotification() {
 				addParameter(eParams, "$$licType1$$", licType1);
 				addParameter(eParams, "$$licType2$$", licType2);
 				if(wfStatus == "Local Auth Sent - 10")
-					sendNotification("localauth@cannabis.ca.gov",locEmail,sysEmailCC,"LIC_CC_NOTIFY_LOC_AUTH_10",eParams, rFiles,capId);
+					sendNotification("localverification@cannabis.ca.gov",locEmail,sysEmailCC,"LIC_CC_NOTIFY_LOC_AUTH_10",eParams, rFiles,capId);
 				else
-					sendNotification("localauth@cannabis.ca.gov",locEmail,sysEmailCC,"LIC_CC_NOTIFY_LOC_AUTH_60",eParams, rFiles,capId);				
+					sendNotification("localverification@cannabis.ca.gov",locEmail,sysEmailCC,"LIC_CC_NOTIFY_LOC_AUTH_60",eParams, rFiles,capId);				
 			}
 		}
 		else {
