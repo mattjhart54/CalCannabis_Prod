@@ -94,7 +94,7 @@ try {
 		if(!contactFnd){
 			cancel = true;
 			showMessage = true;
-			logMessage("  Warning: Only the Designated Responsible party can submit a science amendment.");
+			logMessage("  Warning: Only the Designated Responsible party can submit a science amendment. " + parentCapId.getCustomID());
 		}
 	}else{
 		logDebug("An error occurred retrieving the current user: " + resCurUser.getErrorMessage());
