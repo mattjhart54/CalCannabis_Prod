@@ -96,9 +96,43 @@ try {
 			cancel = true;
 			showMessage = true;
 			logMessage("  Warning: Only the Designated Responsible party can submit a science amendment.");
-		}	
-	}
-	else{
+		}else{
+			cIds = getChildren("Licenses/Cultivator/Amendment/Science",parentCapId);
+			var approvedStatus = true;
+			var amendArray = new Array();
+			var recCnt = 0;
+			for(x in cIds) {
+				var recId = "" + cIds[x];
+				if(recId.substring(2,5) != "EST") {
+					var recId = cIds[x];
+					logDebug(recId.getCustomID());
+					thisCap = aa.cap.getCap(recId).getOutput();		
+					var thisCapStatus = thisCap.getCapStatus();
+					if (!matches(thisCapStatus,"Transition Amendment Approved","Amendment Rejected","Amendment Approved")){
+						approvedStatus = false;
+						if (amendArray.indexOf(recId) < 0) {
+							amendArray.push(recId);
+						}
+					}
+				}
+			}
+			if(!approvedStatus){
+				if(amendArray.length > 1){
+					approvedStatusMessage= "The license for which you are trying to create a Science Amendment already has an active Science Amendment. Navigate back to your licenses page to upload new documents to one of the Science Amendments open for review associated to this license. If you have questions please email environmentalreview@cannabis.ca.gov or call 1-844-61-CA-DCC (1-844-612-2322)."
+				}else{
+					var str = String(recId.getCustomID());
+					var summaryDeepLink1 = acaUrl + "/Cap/CapDetail.aspx?Module=Licenses&TabName=Licenses&capID1=";
+					var summaryDeepLink2 = recId.getID1() + "&capID2=" + recId.getID2() + "&capID3=" + recId.getID3() + "&agencyCode=CALCANNABIS";
+					var fullSummaryDeepLink = summaryDeepLink1 + summaryDeepLink2;
+					var result = str.link(fullSummaryDeepLink);
+					approvedStatusMessage="The license for which you are trying to create a Science Amendment already has an active Science Amendment. Navigate back to your licenses page to upload new documents to the Science Amendment open for review associated to this license." + result + " If you have questions please email environmentalreview@cannabis.ca.gov or call 1-844-61-CA-DCC (1-844-612-2322)."
+				}
+				cancel = true;
+				showMessage = true;
+				logMessage(approvedStatusMessage);
+			}
+		}				
+	}else{
 		logDebug("An error occurred retrieving the current user: " + resCurUser.getErrorMessage());
 		aa.sendMail(sysFromEmail, debugEmail, "", "An error occurred retrieving the current user: ACA_ONLOAD_OWNER_APP_UPDATE: " + startDate, "capId: " + capId + br + resCurUser.getErrorMessage() + br + currEnv);
 	}
