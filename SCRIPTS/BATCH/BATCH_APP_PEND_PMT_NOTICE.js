@@ -81,7 +81,7 @@ aa.env.setValue("task", "Application Disposition");
 aa.env.setValue("sendEmailNotifications","Y");
 aa.env.setValue("emailTemplate","LCA_GENERAL_NOTIFICATION");
 aa.env.setValue("sendEmailToContactTypes", "Designated Responsible Party");
-aa.env.setValue("sysFromEmail", "calcannabislicensing@cdfa.ca.gov");
+aa.env.setValue("sysFromEmail", "noreply@cannabis.ca.gov");
 aa.env.setValue("emailAddress", "mhart@trustvip.com");
 aa.env.setValue("reportName", "Payment Due Notification");
 aa.env.setValue("setNonEmailPrefix", "NO_PMT_30");
@@ -95,6 +95,7 @@ var appCategory = getParam("recordCategory");
 var appStatus = getParam("appStatus");
 var asiField = getParam("asiField");
 var asiGroup = getParam("asiGroup");
+var eRegDate = getParam("eRegsEffectiveDate");
 var task = getParam("task");
 var sendEmailToContactTypes = getParam("sendEmailToContactTypes");
 var emailTemplate = getParam("emailTemplate");
@@ -182,13 +183,18 @@ try{
 			logDebug("Could not get record capId: " + altId);
 			continue;
 		}
-		cap = aa.cap.getCap(capId).getOutput();	
+		cap = aa.cap.getCap(capId).getOutput();
 		fileDateObj = cap.getFileDate();
 		fileDate = "" + fileDateObj.getMonth() + "/" + fileDateObj.getDayOfMonth() + "/" + fileDateObj.getYear();
 		fileDateYYYYMMDD = dateFormatted(fileDateObj.getMonth(),fileDateObj.getDayOfMonth(),fileDateObj.getYear(),"YYYY-MM-DD");
 		appTypeResult = cap.getCapType();	
 		appTypeString = appTypeResult.toString();	
 		appTypeArray = appTypeString.split("/");
+		var taskDate = getAssignedDate("Final Review");
+		var eRegJSDate = new Date(eRegDate);
+		if (taskDate < eRegJSDate){
+			rptName = "Payment Due Notification";
+		}
 		var capStatus = cap.getCapStatus();
 		var capDetailObjResult = aa.cap.getCapDetail(capId);		
 		if (!capDetailObjResult.getSuccess()){
@@ -211,35 +217,37 @@ try{
 			}
 			capCount++;
 			logDebug("----Processing record " + altId + br);
-			if (sendEmailNotifications == "Y" && sendEmailToContactTypes.length > 0 && emailTemplate.length > 0) {
-				var conTypeArray = sendEmailToContactTypes.split(",");
-				var	conArray = getContactArray(capId);
-				for (thisCon in conArray) {
-					var conEmail = false;
-					thisContact = conArray[thisCon];
-					if (exists(thisContact["contactType"],conTypeArray)){
-						pContact = getContactObj(capId,thisContact["contactType"]);
-						var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ pContact.capContact.getPreferredChannel());
-						if(!matches(priChannel,null,"",undefined) && priChannel.indexOf("Postal") >-1 && setNonEmailPrefix != ""){
-							if(setCreated == false) {
-							   //Create NonEmail Set
-								var vNonEmailSet =  createExpirationSet(setNonEmailPrefix);
-								var sNonEmailSet = vNonEmailSet.toUpperCase();
-								var setHeaderSetType = aa.set.getSetByPK(sNonEmailSet).getOutput();
-								setHeaderSetType.setRecordSetType("License Notifications");
-								setHeaderSetType.setSetStatus("New");
-								updResult = aa.set.updateSetHeader(setHeaderSetType);          
-								setCreated = true;
+			if (!matches(rptName,null,undefined,"")){
+				if (sendEmailNotifications == "Y" && sendEmailToContactTypes.length > 0 && emailTemplate.length > 0) {
+					var conTypeArray = sendEmailToContactTypes.split(",");
+					var	conArray = getContactArray(capId);
+					for (thisCon in conArray) {
+						var conEmail = false;
+						thisContact = conArray[thisCon];
+						if (exists(thisContact["contactType"],conTypeArray)){
+							pContact = getContactObj(capId,thisContact["contactType"]);
+							var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ pContact.capContact.getPreferredChannel());
+							if(!matches(priChannel,null,"",undefined) && priChannel.indexOf("Postal") >-1 && setNonEmailPrefix != ""){
+								if(setCreated == false) {
+								   //Create NonEmail Set
+									var vNonEmailSet =  createExpirationSet(setNonEmailPrefix);
+									var sNonEmailSet = vNonEmailSet.toUpperCase();
+									var setHeaderSetType = aa.set.getSetByPK(sNonEmailSet).getOutput();
+									setHeaderSetType.setRecordSetType("License Notifications");
+									setHeaderSetType.setSetStatus("New");
+									updResult = aa.set.updateSetHeader(setHeaderSetType);          
+									setCreated = true;
+								}
+								setAddResult=aa.set.add(sNonEmailSet,capId);
+							//lwacht: 171122: emailing all contacts, regardless of preferred channel
 							}
-							setAddResult=aa.set.add(sNonEmailSet,capId);
-						//lwacht: 171122: emailing all contacts, regardless of preferred channel
+							conEmail = thisContact["email"];
+							if (conEmail) {
+								runReportAttach(capId,rptName, "p1value", capId.getCustomID()); 
+								emailRptContact("BATCH", emailTemplate, rptName, false, "Disqualified", capId, thisContact["contactType"]);
+							}
+							//lwacht: 171122: end
 						}
-						conEmail = thisContact["email"];
-						if (conEmail) {
-							runReportAttach(capId,rptName, "p1value", capId.getCustomID()); 
-							emailRptContact("BATCH", emailTemplate, rptName, false, "Disqualified", capId, thisContact["contactType"]);
-						}
-						//lwacht: 171122: end
 					}
 				}
 			}
@@ -320,3 +328,33 @@ function createExpirationSet( prefix ){
 	}
 }
 
+function getAssignedDate(taskName){
+	try{
+		var workflowResult = aa.workflow.getTasks(capId);
+		if (workflowResult.getSuccess()){
+			var wfObj = workflowResult.getOutput();
+			for (i in wfObj) {
+				fTask = wfObj[i];
+				wfTask = fTask.getTaskDescription();
+				if(wfTask==taskName){
+					var asgnDate = fTask.getAssignmentDate();
+					if(isNaN(asgnDate)){
+						logDebug("Assigned date for " + taskName + ": " + convertDate(asgnDate));
+						return convertDate(fTask.getAssignmentDate());
+					}else{
+						logDebug("No assigned date for " + taskName + " (" + asgnDate + ")");
+						return false;
+					}
+				}
+			}
+		}else{ 
+			logMessage("**ERROR: Failed to get workflow object: " + workflowResult.getErrorMessage()); 
+			return false; 
+		}
+		logDebug("Task " + taskName + " not found.  Returning false.");
+		return false;
+	}catch (err){
+		logDebug("A JavaScript Error occurred: getAssignedDate " + err.message);
+		logDebug(err.stack);
+	}
+}
