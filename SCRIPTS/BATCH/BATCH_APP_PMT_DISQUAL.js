@@ -163,6 +163,7 @@ try{
 	var capFilterBalance = 0;
 	var capFilterStatus = 0;
 	var capCount = 0;
+	var rptParam = "";
 	setCreated = false
 
  	var capResult = aa.cap.getCapIDsByAppSpecificInfoDateRange(asiGroup, asiField, dFromDate, dToDate);
@@ -181,6 +182,7 @@ try{
 			break; 
 		}
 */		
+		rptParam = rptName;
     	capId = myCaps[myCapsXX].getCapID();
    		//capId = getCapIdByIDs(thisCapId.getID1(), thisCapId.getID2(), thisCapId.getID3()); 
 		altId = capId.getCustomID();
@@ -195,10 +197,10 @@ try{
 		appTypeResult = cap.getCapType();	
 		appTypeString = appTypeResult.toString();	
 		appTypeArray = appTypeString.split("/");
-		var taskDate = getAssignedDate("Final Review")
+		var taskDate = getDispositionDate("Final Review");
 		var eRegJSDate = new Date(eRegDate);
 		if (taskDate < eRegJSDate){
-			rptName = "Disqualification No License Fee Paid";
+			rptParam = "Disqualification License Fee Not Paid";
 			disqualStatus = "Disqualified - No payment within 90 days";
 		}else{
 			disqualStatus = "Disqualified - No payment within 60 days";
@@ -255,8 +257,8 @@ try{
 						}
 						conEmail = thisContact["email"];
 						if (conEmail) {
-							runReportAttach(capId,rptName, "p1value", capId.getCustomID()); 
-							emailRptContact("BATCH", emailTemplate, rptName, false, "Disqualified", capId, thisContact["contactType"]);
+							runReportAttach(capId,rptParam, "p1value", capId.getCustomID()); 
+							emailRptContact("BATCH", emailTemplate, rptParam, false, "Disqualified", capId, thisContact["contactType"]);
 						}
 						//lwacht: 171122: end
 					}
