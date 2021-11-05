@@ -77,7 +77,7 @@ aa.env.setValue("asiGroup", "INTERNAL");
 aa.env.setValue("sendEmailNotifications","Y");
 aa.env.setValue("emailTemplate","LCA_GENERAL_NOTIFICATION");
 aa.env.setValue("sendEmailToContactTypes", "Designated Responsible Party");
-aa.env.setValue("sysFromEmail", "calcannabislicensing@cdfa.ca.gov");
+aa.env.setValue("sysFromEmail", "noreply@cannabis.ca.gov");
 aa.env.setValue("setNonEmailPrefix", "30_DAY_DISQUAL_NOTICE");
 aa.env.setValue("reportName", "30 Day Deficiency Notification Letter");
 aa.env.setValue("sendEmailAddressType", "Mailing");
@@ -88,6 +88,7 @@ var daySpan = getParam("daySpan");
 var emailAddress = getParam("emailAddress");			// email to send report
 var asiField = getParam("asiField");
 var asiGroup = getParam("asiGroup");
+var eRegDate = getParam("eRegsEffectiveDate");
 var sendEmailNotifications = getParam("sendEmailNotifications");
 var emailTemplate = getParam("emailTemplate");
 var sendEmailToContactTypes = getParam("sendEmailToContactTypes");
@@ -142,6 +143,7 @@ function mainProcess() {
 try{
 	var capFilterType = 0;
 	var capFilterStatus = 0;
+	var capFilterTaskDate= 0;
 	var capCount = 0;
 	var setCreated = false;
 	var capResult = aa.cap.getCapIDsByAppSpecificInfoDateRange(asiGroup, asiField, dFromDate, dToDate);
@@ -190,10 +192,39 @@ try{
 			logDebug("     " +"skipping, due to application status of " + capStatus)
 			continue;
 		}
+		
+		//getting last task date for "Deficiency Letter Sent Status"
+		var workflowResult = aa.workflow.getTasks(capId);
+		if (workflowResult.getSuccess()){
+			var wfObj = workflowResult.getOutput();
+			for (i in wfObj) {
+				fTask = wfObj[i];
+				wfTask = fTask.getTaskDescription();
+				if(matches(wfTask,"Administrative Manager Review","Science Manager Review")){
+					if (fTask.getDisposition().equals("Deficiency Letter Sent")){
+						var dispDate = fTask.getDispositionDate();
+						var taskDate = convertDate(fTask.getAssignmentDate());
+						if(isNaN(dispDate)){
+							var taskDate = convertDate(fTask.getAssignmentDate());
+						}
+					}
+				}
+			}
+		}else{ 
+			logMessage("**ERROR: Failed to get workflow object: " + workflowResult.getErrorMessage());
+			++capFilterTaskDate;
+			continue;
+		}
+		//filter by eRegs Date
+		var eRegJSDate = new Date(eRegDate);
+		if (taskDate < eRegJSDate){
+			logDebug(altId + " skipping, due to Task Date. taskDate: " + taskDate + " eRegJSDate: " + eRegJSDate);
+			++capFilterTaskDate;
+			continue;
+		}
+			
 		capCount++;
 		logDebug("----Processing record " + altId + br);
-		
- 
 		if (sendEmailNotifications == "Y" && sendEmailToContactTypes.length > 0 && emailTemplate.length > 0) {
 			var conTypeArray = sendEmailToContactTypes.split(",");
 			var	conArray = getContactArray(capId);
@@ -267,7 +298,7 @@ try{
 							}
 							conEmail = thisContact["email"];
 							if (conEmail) {
-								runReportAttach(childCapId,"30 Day Deficiency Notification Letter - Owner", "altId", childCapId.getCustomID(), "contactType", "Owner", "addressType", "Home"); 
+								runReportAttach(childCapId,"90 Day Deficiency Notification Letter - Owner", "altId", childCapId.getCustomID(), "contactType", "Owner", "addressType", "Home"); 
 								holdId = capId;
 								capId = childCapId;
 								emailRptContact("BATCH", emailTemplate, "", false, "Deficiency Letter Sent", childCapId, thisContact["contactType"]);
@@ -287,6 +318,7 @@ try{
 	logDebug("Total CAPS qualified : " + myCaps.length);
 	logDebug("Ignored due to application type: " + capFilterType);
 	logDebug("Ignored due to CAP Status: " + capFilterStatus);
+	logDebug("Ignored due to eRegs Date: " + capFilterTaskDate);
 	logDebug("Total CAPS processed: " + capCount);
 
 }catch (err){

@@ -1,11 +1,10 @@
 /*------------------------------------------------------------------------------------------------------/
-| Program: BATCH_APP_DISQUALIFY_RECORDS
+| Program: BATCH_APP_DISQUAL_90_DAY_NOTICE
 | Client:  CDFA_CalCannabis
 |
 | Version 1.0 - Base Version. 
 |
-| Script to run nightly to disqualify applications where requested additional information was not supplied
-| within the required 90 day period. 
+| Script to run nightly to send thirty day notification on applications requiring more information
 | Batch job name: LCA_App_Disqual_Notif
 /------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------/
@@ -69,29 +68,37 @@ logDebug("Batch job ID not found " + batchJobResult.getErrorMessage());
 |
 /------------------------------------------------------------------------------------------------------*/
 /* test parameters
-aa.env.setValue("newAppStatus", "Disqualified");
 aa.env.setValue("appStatus", "Additional Information Needed");
+aa.env.setValue("lookAheadDays", "25");
+aa.env.setValue("daySpan", "12");
 aa.env.setValue("emailAddress", "mhart@trustvip.com");
+aa.env.setValue("asiField", "App Expiry Date");
+aa.env.setValue("asiGroup", "INTERNAL");
 aa.env.setValue("sendEmailNotifications","Y");
 aa.env.setValue("emailTemplate","LCA_GENERAL_NOTIFICATION");
 aa.env.setValue("sendEmailToContactTypes", "Designated Responsible Party");
 aa.env.setValue("sysFromEmail", "noreply@cannabis.ca.gov");
-aa.env.setValue("setNonEmailPrefix", "FINAL_DISQUALIF");
-aa.env.setValue("reportName", "Final Deficiency Disqualification Letter");
+aa.env.setValue("setNonEmailPrefix", "30_DAY_DISQUAL_NOTICE");
+aa.env.setValue("reportName", "30 Day Deficiency Notification Letter");
 aa.env.setValue("sendEmailAddressType", "Mailing");
 */
-var emailAddress = getParam("emailAddress");
 var appStatus = getParam("appStatus");
-var newAppStatus = getParam("newAppStatus");
-var sendEmailToContactTypes = getParam("sendEmailToContactTypes");
-var emailTemplate = getParam("emailTemplate");
+var lookAheadDays = getParam("lookAheadDays");
+var daySpan = getParam("daySpan");
+var emailAddress = getParam("emailAddress");			// email to send report
+var asiField = getParam("asiField");
+var asiGroup = getParam("asiGroup");
+var eRegDate = getParam("eRegsEffectiveDate");
 var sendEmailNotifications = getParam("sendEmailNotifications");
+var emailTemplate = getParam("emailTemplate");
+var sendEmailToContactTypes = getParam("sendEmailToContactTypes");
 var sysFromEmail = getParam("sysFromEmail");
 var setNonEmailPrefix = getParam("setNonEmailPrefix");
 var rptName = getParam("reportName");
 var addrType = getParam("sendEmailAddressType");
-var eRegDate = getParam("eRegsEffectiveDate");
-
+var skipAppStatus = getParam("skipAppStatus").split(","); //   Skip records with one of these application statuses
+var skipAppStatusCont = getParam("skipAppStatusCont").split(","); //   Skip records with one of these application statuses - Used for overflow
+var skipAppStatusArray = skipAppStatus.concat(skipAppStatusCont); //used to concatenate skipAppStatus and skipAppStatusCont
 /*----------------------------------------------------------------------------------------------------/
 |
 | End: BATCH PARAMETERS
@@ -106,6 +113,13 @@ var useAppSpecificGroupName = false;
 var startTime = startDate.getTime();			// Start timer
 var currentUserID = "ADMIN";
 var systemUserObj = aa.person.getUser("ADMIN").getOutput();
+var fromDate = dateAdd(null,parseInt(lookAheadDays));
+var toDate = dateAdd(null,parseInt(lookAheadDays)+parseInt(daySpan));
+fromJSDate = new Date(fromDate);
+toJSDate = new Date(toDate);
+var dFromDate = aa.date.parseDate(fromDate);
+var dToDate = aa.date.parseDate(toDate);
+logDebug("fromDate: " + fromDate + "  toDate: " + toDate);
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========Main=Loop================>
@@ -125,56 +139,36 @@ if (showDebug) {
 | <===========END=Main=Loop================>
 /-----------------------------------------------------------------------------------------------------*/
 
-
-
 function mainProcess() {
 try{
-	projectbiz = aa.proxyInvoker.newInstance("com.accela.aa.aamain.cap.ProjectBusiness").getOutput();
-	acaDocBiz = aa.proxyInvoker.newInstance("com.accela.aa.ads.ads.EDMS4ACABusiness").getOutput();
-	
-	var capFilterDate = 0;
-	var capFilterAppType = 0
-	var capFilterOverride = 0
+	var capFilterType = 0;
+	var capFilterStatus = 0;
+	var capFilterTaskDate= 0;
 	var capCount = 0;
-	var updateFailed = 0;
 	var setCreated = false;
-	var currDate = new Date();
-	var capList = new Array();
-	capTypeModel = aa.cap.getCapTypeModel().getOutput();
-	capModel = aa.cap.getCapModel().getOutput();
-	capModel.setCapType(capTypeModel);
-	capModel.setCapStatus(appStatus);
-
-// query a list of records based on the above criteria
-	capListResult = aa.cap.getCapIDListByCapModel(capModel);
-	if (capListResult.getSuccess()) {
-		capList = capListResult.getOutput();
-	}else{
-		logDebug("Error retrieving records: " + capListResult.getErrorMessage());
-		}
-	if (capList.length > 0) {
-		logDebug("Found " + capList.length + " records to process");
+	var capResult = aa.cap.getCapIDsByAppSpecificInfoDateRange(asiGroup, asiField, dFromDate, dToDate);
+	if (capResult.getSuccess()) {
+		myCaps = capResult.getOutput();
 	}else { 
-		logDebug("No records found to process.") ;
+		logDebug("Error: Getting records, reason is: " + capResult.getErrorMessage()) ;
 		return false;
 	}
-	for (myCapsXX in capList) {
-/* MJH Story 5843 - Remove timeout logic
-		if (elapsed() > maxSeconds) { // only continue if time hasn't expired
+	logDebug("Found " + myCaps.length + " records to process");
+	for (myCapsXX in myCaps) {
+// MJH Story 5843 - Remove timeout logic
+/*		if (elapsed() > maxSeconds) { // only continue if time hasn't expired
 			logDebug("WARNING: A script timeout has caused partial completion of this process.  Please re-run.  " + elapsed() + " seconds elapsed, " + maxSeconds + " allowed.") ;
 			timeExpired = true ;
 			break; 
 		}
 */
-		capId = aa.cap.getCapID(capList[myCapsXX].ID1, capList[myCapsXX].ID2, capList[myCapsXX].ID3).getOutput();
+		capId = myCaps[myCapsXX].getCapID();
+	//capId = getCapIdByIDs(thisCapId.getID1(), thisCapId.getID2(), thisCapId.getID3()); 
 		if (!capId) {
 			logDebug("Could not get Cap ID");
 			continue;
 		}
 		altId = capId.getCustomID();
-		
-//		if(altId != "LCA18-0000029") continue;
-	
 		cap = aa.cap.getCap(capId).getOutput();	
 		fileDateObj = cap.getFileDate();
 		fileDate = "" + fileDateObj.getMonth() + "/" + fileDateObj.getDayOfMonth() + "/" + fileDateObj.getYear();
@@ -183,91 +177,54 @@ try{
 		appTypeString = appTypeResult.toString();	
 		appTypeArray = appTypeString.split("/");
 		var capStatus = cap.getCapStatus();
-		if(appTypeArray[3] == "Owner Application" || appTypeArray[2] == "Amendment") {
-				capFilterAppType++;
-				continue;
-		}
-		var AInfo = [];
-		loadAppSpecific(AInfo);
-		expDate = dateAdd(getAppSpecific("App Expiry Date"),1);
-		appExpDate = new Date(expDate);
-		if(appExpDate >= currDate) {
-			capFilterDate++;
-			continue;
-		 }
-		if(isTaskActive("Administrative Manager Review") && matches(AInfo["Admin Deficiency Letter Sent"], null, "", undefined)) {
-			capFilterDate++;
-			continue;
-		}
-		if(isTaskActive("Science Manager Review") && matches(AInfo["Science Deficiency Letter Sent"], null, "", undefined)) {
-			capFilterDate++;
-			continue;
-		}
-	// MJH: 190213 Story 5842 - Bypass if pending amendments and the exclude field is checked		
-		if(AInfo["Exclude from Disqualification"] == "CHECKED") {
-			capFilterOverride++;
-			continue;
-		}
-		logDebug("----Processing record " + altId + br);
-		capCount++;
-		if (newAppStatus && newAppStatus != ""){
-			updateAppStatus(newAppStatus, "set by " + batchJobName +  " batch");
-			if(!appHasCondition("Application Condition","Applied","Application Hold",null)){
-				addStdCondition("Application Condition","Application Hold");
-			}			
-		} 
-	//MJH: 190213 Story 5842 - Close Amendment records when application Disqualified. 
-			holdId = capId;
-			childArray = getChildren("Licenses/Cultivator/Medical/Amendment");
-			for (x in childArray) {
-				capId = childArray[x];
-				var childIdStatusClass = getCapIdStatusClass(capId);
-				if(childIdStatusClass == "INCOMPLETE CAP") {
-					capModelChild = aa.cap.getCapViewBySingle4ACA(capId);
-					if(capModelChild) {
-						convert2RealCAP2(capModelChild, "", altId);
-					}
-					else {
-						logDebug("Failed to get cap model for " + capId.getCustomID() + ". Status not set to Disqualify");
-						updateFailed++;
-					}
-				}
-				else {
-					updateAppStatus(newAppStatus, "set by " + batchJobName +  " batch");
-					deactivateTask("Amendment Review");
-				}
-			}
-			capId = holdId;
-	//MJH: 1902013 Story 5842 - Close Owner and Owner Amendment records when application Disqualified. 		
-			ownArray = getChildren("Licenses/Cultivator/Medical/Owner Application");
-			for (x in ownArray) {
-				capId = ownArray[x];
-				ownAltId = capId.getCustomID();
-				updateAppStatus(newAppStatus, "set by " + batchJobName +  " batch");
-				deactivateTask("Owner Application Review");
-				ownAmendArray = getChildren("Licenses/Cultivator/Owner/Amendment");
-				for (x in ownAmendArray) {
-					capId = ownAmendArray[x];
-					var childIdStatusClass = getCapIdStatusClass(capId);
-					if(childIdStatusClass == "INCOMPLETE CAP") {
-						capModelChild = aa.cap.getCapViewBySingle4ACA(capId);
-						if(capModelChild) {
-							convert2RealCAP2(capModelChild, "", ownAltId);
-						}
-						else {
-							logDebug("Failed to get cap model for " + capId.getCustomID() + ". Status not set to Disqualify");
-							updateFailed++;
-						}
-					}
-					else {
-						updateAppStatus(newAppStatus, "set by " + batchJobName +  " batch");
-						deactivateTask("Amendment Review");
-					}
-				}
-			}
-			capId = holdId;
+		
+//	if(altId != "LCA18-0000136") continue;
 
-	//MJH: 180809 Story 5842 - End 
+//MJH 20190219 User Story 5838 - Removed logic to close owner records.  Added logic to send email notifications to Owners.
+		if (capStatus != appStatus) {
+			capFilterType++;
+			logDebug(altId + ": skipping due to application status of " + capStatus)
+			continue;
+		}
+		// Filter by CAP Status
+		if (exists(capStatus, skipAppStatusArray)) {
+			capFilterStatus++;
+			logDebug("     " +"skipping, due to application status of " + capStatus)
+			continue;
+		}
+		
+		//getting last task date for "Deficiency Letter Sent Status"
+		var workflowResult = aa.workflow.getTasks(capId);
+		if (workflowResult.getSuccess()){
+			var wfObj = workflowResult.getOutput();
+			for (i in wfObj) {
+				fTask = wfObj[i];
+				wfTask = fTask.getTaskDescription();
+				if(matches(wfTask,"Administrative Manager Review","Science Manager Review")){
+					if (fTask.getDisposition().equals("Deficiency Letter Sent")){
+						var dispDate = fTask.getDispositionDate();
+						var taskDate = convertDate(fTask.getAssignmentDate());
+						if(isNaN(dispDate)){
+							var taskDate = convertDate(fTask.getAssignmentDate());
+						}
+					}
+				}
+			}
+		}else{ 
+			logMessage("**ERROR: Failed to get workflow object: " + workflowResult.getErrorMessage());
+			++capFilterTaskDate;
+			continue;
+		}
+		//filter by eRegs Date
+		var eRegJSDate = new Date(eRegDate);
+		if (taskDate < eRegJSDate){
+			logDebug(altId + " skipping, due to Task Date. taskDate: " + taskDate + " eRegJSDate: " + eRegJSDate);
+			++capFilterTaskDate;
+			continue;
+		}
+			
+		capCount++;
+		logDebug("----Processing record " + altId + br);
 		if (sendEmailNotifications == "Y" && sendEmailToContactTypes.length > 0 && emailTemplate.length > 0) {
 			var conTypeArray = sendEmailToContactTypes.split(",");
 			var	conArray = getContactArray(capId);
@@ -299,33 +256,8 @@ try{
 					}
 					conEmail = thisContact["email"];
 					if (conEmail) {
-						//Story 7031 - getting last task date for "Deficiency Letter Sent Status" in order to determine which report to send
-						var workflowResult = aa.workflow.getTasks(capId);
-						if (workflowResult.getSuccess()){
-							var wfObj = workflowResult.getOutput();
-							for (i in wfObj) {
-								fTask = wfObj[i];
-								wfTask = fTask.getTaskDescription();
-								if(matches(wfTask,"Administrative Manager Review","Science Manager Review")){
-									if (fTask.getDisposition().equals("Deficiency Letter Sent")){
-										var dispDate = fTask.getDispositionDate();
-										var taskDate = convertDate(fTask.getAssignmentDate());
-										if(isNaN(dispDate)){
-											var taskDate = convertDate(fTask.getAssignmentDate());
-										}
-										var eRegJSDate = new Date(eRegDate);
-										if (taskDate < eRegJSDate){
-											rptName = "Final Deficiency Disqualification Letter";
-										}
-									}
-								}
-							}
-						}else{ 
-							logMessage("**ERROR: Failed to get workflow object: " + workflowResult.getErrorMessage());
-						}
-						//Story 7031 - End
-						runReportAttach(capId,rptName, "altId", capId.getCustomID(), "contactType", thisContact["contactType"], "addressType", addrType); 
-						emailRptContact("BATCH", emailTemplate, "", false, "Deficiency Letter Sent", capId, thisContact["contactType"], "p1value", capId.getCustomID());
+						runReportAttach(capId,rptName, "p1Value", capId.getCustomID(), "p2Value", thisContact["contactType"], "p3Value", addrType); 
+						emailRptContact("BATCH", emailTemplate, "", false, "Deficiency Letter Sent", capId, thisContact["contactType"]);
 						logDebug(altId + ": Sent Email template " + emailTemplate + " to " + thisContact["contactType"] + " : " + conEmail);
 					}
 				}
@@ -333,23 +265,66 @@ try{
 			if(!contactFound){
 				logDebug("No contact found for notification: " + altId);
 			}
+			childArray = getChildren("Licenses/Cultivator/Medical/Owner Application");
+			for (x in childArray) {
+				childCapId = childArray[x];
+				childCap = aa.cap.getCap(childCapId).getOutput();	
+				var childCapStatus = childCap.getCapStatus();
+				if(childCapStatus == appStatus) {
+					var	conArray = getContactArray(childCapId);
+					for (thisCon in conArray) {
+						var conEmail = false;
+						thisContact = conArray[thisCon];
+						if(thisContact["contactType"] == "Owner"){
+							pContact = getContactObj(childCapId,thisContact["contactType"]);
+							var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ pContact.capContact.getPreferredChannel());
+							if((matches(priChannel,null,"",undefined) || priChannel.indexOf("Postal") >-1) && setNonEmailPrefix != ""){
+								if(setCreated == false) {
+								//Create NonEmail Set
+									var vNonEmailSet =  createExpirationSet(setNonEmailPrefix);
+									if(vNonEmailSet){
+										var sNonEmailSet = vNonEmailSet.toUpperCase();
+										var setHeaderSetType = aa.set.getSetByPK(sNonEmailSet).getOutput();
+										setHeaderSetType.setRecordSetType("License Notifications");
+										setHeaderSetType.setSetStatus("New");
+										updResult = aa.set.updateSetHeader(setHeaderSetType);          
+										setCreated = true;
+									}else{
+										logDebug("Could not create set.  Stopping processing.");
+										break;
+									}
+								}
+								setAddResult=aa.set.add(sNonEmailSet,childCapId);
+							}
+							conEmail = thisContact["email"];
+							if (conEmail) {
+								runReportAttach(childCapId,"90 Day Deficiency Notification Letter - Owner", "p1Value", childCapId.getCustomID(), "p2Value", "Owner", "p3Value", "Home"); 
+								holdId = capId;
+								capId = childCapId;
+								emailRptContact("BATCH", emailTemplate, "", false, "Deficiency Letter Sent", childCapId, thisContact["contactType"]);
+								capId = holdId;
+								logDebug(altId + ": Sent Email template " + emailTemplate + " to " + thisContact["contactType"] + " : " + conEmail);
+							}
+						}
+					}	
+				}
+			}
 		}
+//MJH: 20190219 Story 5838 - End
 	}
 	if(setCreated){
 		aa.sendMail(sysFromEmail, emailAddress, "", sNonEmailSet + " Set Created ", "Records in this set will need to be sent the '" + rptName + "'.");
 	}
-	logDebug("Total CAPS qualified : " + capList.length);
-	logDebug("Ignored due to Application Expiration Date: " + capFilterDate);
-	logDebug("Ignored due to Record Type: " + capFilterAppType);
-	logDebug("Ignored due to Override: " + capFilterOverride);
+	logDebug("Total CAPS qualified : " + myCaps.length);
+	logDebug("Ignored due to application type: " + capFilterType);
+	logDebug("Ignored due to CAP Status: " + capFilterStatus);
+	logDebug("Ignored due to eRegs Date: " + capFilterTaskDate);
 	logDebug("Total CAPS processed: " + capCount);
-	logDebug("Status Update Failed: " + updateFailed);
 
 }catch (err){
 	logDebug("ERROR: " + err.message + " In " + batchJobName);
 	logDebug("Stack: " + err.stack);
-}
-}
+}}
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========Internal Functions and Classes (Used by this script)
@@ -409,62 +384,5 @@ function createExpirationSet( prefix ){
 		}
 	}
 }
-function convert2RealCAP2(capModel, transactions, parentId)
-{
-	var originalCAPID = capModel.getCapID();
-	var originalRecId = capModel.getCapID().getCustomID();
-	var originalCAP = capModel;
-	var capWithTemplateResult = aa.cap.getCapWithTemplateAttributes(capModel);
-	var capWithTemplate = null;
-	if (capWithTemplateResult.getSuccess()) 	{
-		capWithTemplate = capWithTemplateResult.getOutput();
-	}
-	else {
-		logDebug(capWithTemplateResult.getErrorMessage());
-		return null;
-	}
-	
-// 2. Convert asi group.
-	aa.cap.convertAppSpecificInfoGroups2appSpecificInfos4ACA(capModel);
-	if (capModel.getAppSpecificTableGroupModel() != null) {
-			aa.cap.convertAppSpecTableField2Value4ACA(capModel);
-	}
-	
-// 3. Trigger event before convert to real CAP.
-	aa.cap.runEMSEScriptBeforeCreateRealCap(capModel, null);
-	
-// 4. Convert to real CAP.
-	convertResult = aa.cap.createRegularCapModel4ACA(capModel, null, false, false);
-	if (convertResult.getSuccess()) {
-		capModel = convertResult.getOutput();
-		logDebug("Commit OK: Convert partial CAP to real CAP successful: " + originalRecId + " to " + capModel.getCapID().getCustomID());
-	}
-	else {
-		logDebug(convertResult.getErrorMessage());
-		return null;
-	}
-// 5. Transfer docs
-	var targetCaps = aa.util.newArrayList();
-	targetCaps.add(capModel.getCapID());
-	acaDocBiz.transferDocument(aa.getServiceProviderCode(), originalCAPID, targetCaps,"Licenses", "ADMIN");
-	
-// 6. Create template after convert to real CAP.
-	aa.cap.createTemplateAttributes(capWithTemplate, capModel);
 
-// update record after convert to real CAP.
-
-	holdChildId = capId;
-	capId = capModel.getCapID();
-	updateAppStatus(newAppStatus, "set by " + batchJobName +  " batch", capId);
-	deactivateTask("Amendment Review");
-	newAltId = getAppSpecific("AltId", capId);
-	var updAltId = aa.cap.updateCapAltID(capId,newAltId);
-	if(!updAltId.getSuccess()){
-		logDebug("Error updating Alt Id: " + newAltId + ":: " +updAltId.getErrorMessage());
-	}else{
-		logDebug("Deficiency record ID updated to : " + newAltId);
-	}
-	addParent(parentId);
-	capid = holdChildId;
-}
 
