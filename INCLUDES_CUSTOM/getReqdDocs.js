@@ -107,6 +107,7 @@ try{
 	//lwacht 171127: changed condition and doc name
 	var pwrGenerator = {condition : "Power Source - Generator 50HP or Greater", document : "Power Source – Generator 50 HP or greater"};
 	
+	
 	//owner documents
     var governmentIssuedID = {condition : "Government Issued ID", document : "Government Issued ID"};
     var fingerprintApp = {condition : "Electronic Fingerprint Application", document : "Electronic Fingerprint Application"};
@@ -223,7 +224,7 @@ try{
 			}
 		}
 		
-		// Local Permit Documents
+	// Local Permit Documents
 		//arrReqdDocs_App.push(planningPermit);
 		if(AInfo["Apply for Equity Waiver"] == "Yes") {
 			arrReqdDocs_App.push(equity);
@@ -232,10 +233,9 @@ try{
 				removeCapCondition(conditionType, equity.condition);
 			}
 		}	
-	
 		arrReqdDocs_App.push(CEQA);
 	
-		// Premise Documents
+	// Premise Documents
 		arrReqdDocs_App.push(enviroStor);	
 		
 		if(AInfo["Legal Possession"] == "Own") {
@@ -253,7 +253,7 @@ try{
 			}
 		}
 
-		// Water Documents
+	// Water Documents
 		arrReqdDocs_App.push(streambedAlter);
 		arrReqdDocs_App.push(waterQuality);
 //MJH 040819 story 5916 Add code to make water bill document required		
@@ -443,7 +443,6 @@ try{
 		arrReqdDocs_Own = new Array();
 		
 	//these documents are always required
-		arrReqdDocs_Own.push(governmentIssuedID);
 		//lwacht : 180322: story ????: only require fingerprint doc when live scan is available
 		var liveScanNotActive = lookup("LIVESCAN_NOT_AVAILABLE","LIVESCAN_NOT_AVAILABLE");
 		//aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY: getReqdDocs: " + startDate, "capId: " + capId + ": " + br + liveScanNotActive);
