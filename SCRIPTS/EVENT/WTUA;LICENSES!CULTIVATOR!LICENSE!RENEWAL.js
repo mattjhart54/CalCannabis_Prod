@@ -41,10 +41,13 @@ try {
 			}
 			
 	//Run Official License Certificate and Annual/Provisional Renewal Approval Email and Set the DRP		
-			if (AInfo["License Issued Type"] == "Provisional")
+			if (AInfo["License Issued Type"] == "Provisional"){
 				var approvalLetter = "Provisional Renewal Approval";
-			else
-				var approvalLetter = "Approval Letter Renewal";
+				var emailTemplate = "LCA_RENEWAL_APPROVAL";
+			}else{
+				var approvalLetter = "";
+				var emailTemplate = "LCA_ANNUAL_RENEWAL_APPROVAL";
+			}
 			var scriptName = "asyncRunOfficialLicenseRpt";
 			var envParameters = aa.util.newHashMap();
 			envParameters.put("licType", "");
@@ -52,7 +55,7 @@ try {
 			envParameters.put("licCap",licAltId); 
 			envParameters.put("reportName","Official License Certificate");
 			envParameters.put("approvalLetter", approvalLetter);
-			envParameters.put("emailTemplate", "LCA_RENEWAL_APPROVAL");
+			envParameters.put("emailTemplate", emailTemplate);
 			envParameters.put("reason", "");
 			envParameters.put("currentUserID",currentUserID);
 			envParameters.put("contType","Designated Responsible Party");
