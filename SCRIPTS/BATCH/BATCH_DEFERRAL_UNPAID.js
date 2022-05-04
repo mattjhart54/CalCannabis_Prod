@@ -12,6 +12,7 @@
 |
 /------------------------------------------------------------------------------------------------------*/
 var emailText = "";
+var errLog = "";
 var debugText = "";
 var showDebug = false;	
 var showMessage = false;
@@ -85,7 +86,6 @@ var appStatus = getParam("appStatus");
 var newAppStatus = getParam("newAppStatus");
 var asiField = getParam("asiField");
 var asiGroup = getParam("asiGroup");
-var emailAddress = getParam("emailAddress");			// email to send report
 var setNonEmailPrefix = getParam("setNonEmailPrefix");
 var sysFromEmail = getParam("sysFromEmail");
 var fromDate = dateAdd(null,parseInt(lookAheadDays));
@@ -128,16 +128,21 @@ if (!toDate.length) { // no "to" date, assume today + number of look ahead days 
 logDebug("Date Range -- fromDate: " + fromDate + ", toDate: " + toDate)
 
 
-mainProcess();
-
-logDebug("End of Job: Elapsed Time : " + elapsed() + " Seconds");
-
-if (emailAddress.length)
-	aa.sendMail(sysFromEmail, emailAddress, "", batchJobName + " Results", emailText);
-
-if (showDebug) {
-	aa.eventLog.createEventLog("DEBUG", "Batch Process", batchJobName, aa.date.getCurrentDate(), aa.date.getCurrentDate(),"", emailText ,batchJobID);
+try {
+	mainProcess();
+	logDebug("End of Job: Elapsed Time : " + elapsed() + " Seconds");
+	if (emailAddress.length) {
+		aa.sendMail(sysFromEmail, emailAddress, "", batchJobName + " Results", emailText);
+		if(errLog != "") {
+			aa.sendMail(sysFromEmail, emailAddress, "", batchJobName + " Errors", errLog);
+		}
+	}
+} catch (err) {
+	logDebug("ERROR: BATCH_DEFERRAL_UNPAID: " + err.message + " In " + batchJobName + " Line " + err.lineNumber);
+	logDebug("Stack: " + err.stack);
 }
+
+
 //aa.print(emailText);
 /*------------------------------------------------------------------------------------------------------/
 | <===========END=Main=Loop================>
@@ -178,6 +183,8 @@ try{
 		var capStatus = cap.getCapStatus();
 		logDebug("app " + appStatus + " cap " + capStatus);
 		if (appStatus != capStatus) {
+			logDebug("----Ingnoring Record Due to Status " + altId + br);
+			capFilterStatus++
 			continue;
 		}
 		capCount++;
@@ -188,7 +195,6 @@ try{
 		}
 	}
  	logDebug("Total CAPS qualified : " + myCaps.length);
- 	logDebug("Ignored due to application type: " + capFilterType);
  	logDebug("Ignored due to CAP Status: " + capFilterStatus);
  	logDebug("Total CAPS processed: " + capCount);
 
