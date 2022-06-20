@@ -54,6 +54,7 @@ try{
 						vLicenseObj = new licenseObject(null, licId);
 						vExpDate = vLicenseObj.b1ExpDate;
 						vExpDate = new Date(vExpDate);
+						expYear = vExpDate.getFullYear();
 		// Extend license expiration by 1 year
 						vNewExpDate = new Date(vExpDate.getFullYear() + 1, vExpDate.getMonth(), vExpDate.getDate());
 		// Update license expiration date
@@ -128,8 +129,99 @@ try{
 								}
 							}
 						}
-			// Add record to the CAT set
+					// Add record to the CAT set
 						addToCat(licId);
+					//	7088: Create License Case Record for all Renewals when a Science Amendment associated to the License Parent Record has not been submitted prior to submission of a Provisional Renewal for that corresponding renewal year
+
+						var scienceArr = getChildren("Licenses/Cultivator/Amendment/Science",licId);
+						var issueDate = getAppSpecific("Valid From Date",licId);
+						var approvedRen = false;
+						var licCaseExclusion = false;
+						if (scienceArr) {
+							if (scienceArr.length > 0) {
+								for (x in scienceArr){
+									var scienceCap = scienceArr[x];
+									if (getAppSpecific("Associated Renewal",scienceCap) == "Yes"){
+										var correspondingYear = getAppSpecific("Renewal Year",scienceCap)
+										logDebug("expYear: " + expYear);
+										if (String(correspondingYear) == String(expYear)){
+											var saAppStatus = aa.cap.getCap(scienceCap).getOutput().getCapStatus();
+											var workflowResult = aa.workflow.getTasks(scienceCap);
+											if (workflowResult.getSuccess()){
+												wfObj = workflowResult.getOutput();		
+												for (i in wfObj) {
+													fTask = wfObj[i];
+													var status = fTask.getDisposition();
+													var taskDesc = fTask.getTaskDescription();
+													if((status != null && taskDesc != null) && (taskDesc == "Science Amendment Review" && status != "Physical Modification Approved")){
+														licCaseExclusion = true;
+													}
+												}
+											}else{
+												logDebug("**ERROR: Failed to get workflow object: "+wfObj );
+											}
+										}
+									}
+								}
+							}
+						}
+						if (!licCaseExclusion){
+							var licCaseId = createChild("Licenses","Cultivator","License Case","NA","",licId);
+							if (licCaseId){
+								// Set alt id for the case record based on the number of child case records linked to the license record
+								cIds = getChildren("Licenses/Cultivator/License Case/*",licId);
+								if(matches(cIds, null, "", undefined)){
+									amendNbr = "000" + 1;
+								}else{
+									var cIdLen = cIds.length
+									if(cIds.length <= 9){
+										amendNbr = "000" +  cIdLen;
+									}else{
+										if(cIds.length <= 99){
+											amendNbr = "00" +  cIdLen;
+										}else{
+											if(cIds.length <= 999){
+												amendNbr = "00" +  cIdLen;
+											}else{
+												amendNbr = cIdLen
+											}
+										}
+									}
+								}
+								licCaseAltId = licCaseId.getCustomID();
+								yy = licCaseAltId.substring(0,2);
+								newLCAltId = licId.getCustomID() + "-LC"+ yy + "-" + amendNbr;
+								var updateResult = aa.cap.updateCapAltID(licCaseId, newLCAltId);
+								if (updateResult.getSuccess()){
+									logDebug("Created License Case: " + newLCAltId + ".");
+								}else{ 
+									logDebug("Error renaming amendment record " + licCaseId);
+								}
+								// Copy the Designated resposible Party contact from the License Record to the Case record
+								//copyContactsByType_rev(licId,licCaseId,"Designated Responsible Party");
+								
+								// Copy custom fields from the license record to the Case record
+								holdId = capId;
+								capId = licId;
+								PInfo = new Array;
+								loadAppSpecific(PInfo);
+								capId = holdId;
+								editAppSpecific("License Number",licId.getCustomID(),licCaseId);
+								editAppSpecific("License Type",PInfo["License Type"],licCaseId);
+								editAppSpecific("Legal Business Name",PInfo["Legal Business Name"],licCaseId);
+								editAppSpecific("Premises City",PInfo["Premise City"],licCaseId);
+								editAppSpecific("Premises County",PInfo["Premise County"],licCaseId);
+								editAppSpecific("Local Authority Type",PInfo["Local Authority Type"],licCaseId);
+								editAppSpecific("Case Renewal Type","Renewal Allowed",licCaseId);
+								editAppSpecific("Case Description",AInfo["License Issued Type"] + " Renewal Missing Science Amendment",licCaseId);
+								editAppSpecific("Case Opened By","Science - " + AInfo["License Issued Type"],licCaseId);
+								editAppSpecific("Priority","Moderate",licCaseId);
+								editAppName("Renewal Allowed",licCaseId);
+								editCapConditionStatus("Application Condition","Provisional Renewal Missing Science Amendment","Condition Met","Not Applied");
+							}else{
+								logDebug("Failed to create License Case Record for " + licId.getCustomID());
+							}
+						}						
 					}
 				}
 			}
