@@ -4,10 +4,10 @@ try{
 	if(balanceDue<=0 && matches(capStatus, "License Issued", "Provisional License Issued")){
 		if(capStatus == "License Issued") {
 			var licType = "annual";
-			var approvalLetter = "Approval Letter"; 
+			var approvalEmail = "LCA_APPROVAL_ANNUAL_FEES_PAID"; 
 		}else {
 			var licType = "provisional"; 
-			var approvalLetter = "Approval Letter Provisional";
+			var approvalEmail = "LCA_APPROVAL_PROVISIONAL_FEES_PAID";
 		}
 		var parCapId = getParent();
 		if(parCapId){
@@ -19,8 +19,8 @@ try{
 			envParameters.put("appCap",appAltId);
 			envParameters.put("licCap",licAltId); 
 			envParameters.put("reportName","Official License Certificate"); 
-			envParameters.put("approvalLetter", approvalLetter);
-			envParameters.put("emailTemplate", "LCA_APP_APPROVAL_PAID");
+			//envParameters.put("approvalLetter", approvalLetter);
+			envParameters.put("emailTemplate", approvalEmail);
 			envParameters.put("reason", "");
 			envParameters.put("currentUserID",currentUserID);
 			envParameters.put("contType","Designated Responsible Party");
@@ -100,50 +100,12 @@ try {
 			}
 		if(!feeFound) {
 			contType = "Designated Responsible Party";
-			addrType = "Mailing";
-			var liveScanNotActive = lookup("LIVESCAN_NOT_AVAILABLE","LIVESCAN_NOT_AVAILABLE");
-			if(!matches(liveScanNotActive,true, "true")){
-				//runReportAttach(capId,"Submitted Annual Application", "Record ID", capId.getCustomID(), "Contact Type", contType, "Address Type", addrType, "servProvCode", "CALCANNABIS");
-				var scriptName = "asyncRunSubmittedApplicRpt";
-				var envParameters = aa.util.newHashMap();
-				envParameters.put("sendCap",capIDString); 
-				envParameters.put("reportName","Submitted Annual Application"); 
-				envParameters.put("contType",contType); 
-				envParameters.put("addrType",addrType); 
-				envParameters.put("currentUserID",currentUserID);
-				aa.runAsyncScript(scriptName, envParameters);
-			}else{
-				//runReportAttach(capId,"Submitted Annual App No LiveScan", "altId", capIDString, "Contact Type", contType, "Address Type", addrType);
-				var scriptName = "asyncRunSubmittedApplicRpt";
-				var envParameters = aa.util.newHashMap();
-				envParameters.put("sendCap",capIDString); 
-				envParameters.put("reportName","Submitted Annual App No LiveScan"); 
-				envParameters.put("contType",contType); 
-				envParameters.put("addrType",addrType); 
-				envParameters.put("currentUserID",currentUserID);
-				aa.runAsyncScript(scriptName, envParameters);
-			}	
-//mhart 181019 story 5756 Add record to set if preference is postal
+			//jshear 8172022 story 7216 - start
 			var priContact = getContactObj(capId,"Designated Responsible Party");
 			if(priContact){
-				var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
-				if(!matches(priChannel, "",null,"undefined", false)){
-					if(priChannel.indexOf("Postal") > -1 ){
-						var sName = createSet("APPSUBMITTED","License Notifications", "New");
-						if(sName){
-							setAddResult=aa.set.add(sName,capId);
-							if(setAddResult.getSuccess()){
-								logDebug(capId.getCustomID() + " successfully added to set " +sName);
-							}else{
-								logDebug("Error adding record to set " + sName + ". Error: " + setAddResult.getErrorMessage());
-							}
-						}
-					}else {
-						emailRptContact("PRA", "LCA_APPLICATION _SUBMITTED", "", false, capStatus, capId, contType);
-					}
-				}	
+				emailRptContact("PPA", "LCA_APPLICATION_SUBMISSION_CONFIRMATION", "", false, capStatus, capId, contType);
 			}
-//mhart 181019 story 5756 end
+			//jshear 8172022 story 7216 - start
 		}
 	}
 }catch(err){
