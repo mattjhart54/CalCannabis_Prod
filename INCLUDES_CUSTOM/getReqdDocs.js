@@ -46,10 +46,11 @@ try{
 		loadAppSpecific4ACA(AInfo); 
 		loadASITables4ACA_corrected();
 	}
-	var need_premiseDiagram = false;
+	var need_detailPremises = false;
 	var need_wastePlan = false;
 	var need_pestPlan = false;
 	var need_lightDiagram = false;	
+	var need_propertyDiagram = false;
 	//application documents
 	var conditionType = "License Required Documents";
 	var businessHOO = {condition : "Business - Hours of Operation", document : "Business - Hours of Operation"};
@@ -162,7 +163,7 @@ try{
 		//Cultivation Plan documents
 		if(matches(AInfo["License Type"],"Specialty Cottage Indoor","Specialty Cottage Mixed-Light Tier 1","Specialty Cottage Mixed-Light Tier 2",
 				"Specialty Indoor","Specialty Mixed-Light Tier 1","Specialty Mixed-Light Tier 2","Small Indoor","Small Mixed-Light Tier 1","Small Mixed-Light Tier 2",
-				"Medium Indoor","Medium Mixed-Light Tier 1","Medium Mixed-Light Tier 2")) {
+				"Medium Indoor","Medium Mixed-Light Tier 1","Medium Mixed-Light Tier 2","Large Indoor","Large Mixed-Light Tier 1","Large Mixed-Light Tier 2")) {
 //mhart 180411 user story 5353 new doc types				
 			need_propertyDiagram = true;
 			need_detailPremises = true;	
@@ -170,7 +171,7 @@ try{
 			need_wastePlan = true;
 			need_pestPlan = true;
 			need_lightDiagram = true;		}
-		if(matches(AInfo["License Type"],"Specialty Cottage Outdoor","Specialty Outdoor","Small Outdoor","Medium Outdoor","Nursery")) {
+		if(matches(AInfo["License Type"],"Specialty Cottage Outdoor","Specialty Outdoor","Small Outdoor","Medium Outdoor","Nursery","Large Outdoor")) {
 //mhart 180411 user story 5353 new doc types		
 			need_propertyDiagram = true;
 			need_detailPremises = true;
@@ -443,7 +444,6 @@ try{
 		arrReqdDocs_Own = new Array();
 		
 	//these documents are always required
-		//arrReqdDocs_Own.push(governmentIssuedID); Removed 7007
 		//lwacht : 180322: story ????: only require fingerprint doc when live scan is available
 		var liveScanNotActive = lookup("LIVESCAN_NOT_AVAILABLE","LIVESCAN_NOT_AVAILABLE");
 		//aa.sendMail(sysFromEmail, debugEmail, "", "INFO ONLY: getReqdDocs: " + startDate, "capId: " + capId + ": " + br + liveScanNotActive);
