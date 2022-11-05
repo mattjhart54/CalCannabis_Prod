@@ -16,10 +16,21 @@ try {
 		if (result.getSuccess())
 			logDebug("Child application successfully linked");
 		else
-			logDebug("Could not link applications");		
-//run the License Report and send approval email
+			logDebug("Could not link applications");
+
+// Run the Scientific Checklist Reort		
 		var appAltId = capId.getCustomID();
 		var licAltId = plId.getCustomID();
+//		runReportAttach(capId,"Scientific Review Checklist","altId",licAltId);
+		var scriptName = "asyncRunScientificChecklist";
+		var envParameters = aa.util.newHashMap();
+		envParameters.put("saCap",licAltId);
+		envParameters.put("licCap",licAltId); 
+		envParameters.put("reportName","Scientific Review Checklist"); 
+		envParameters.put("currentUserID",currentUserID);
+		aa.runAsyncScript(scriptName, envParameters);		
+		
+//run the License Report and send approval email
 		var scriptName = "asyncRunOfficialLicenseRpt";
 		var envParameters = aa.util.newHashMap();
 		envParameters.put("licType", licType);
@@ -40,15 +51,6 @@ try {
 		envParameters.put("fromEmail",sysFromEmail);
 		aa.runAsyncScript(scriptName, envParameters);
 
-//Run Scientific Checklist report
-		var scriptName = "asyncRunScientificChecklist";
-		var envParameters = aa.util.newHashMap();
-		envParameters.put("saCap",appAltId);
-		envParameters.put("licCap",licAltId); 
-		envParameters.put("reportName","Scientific Review Checklist"); 
-		envParameters.put("currentUserID",currentUserID);
-		aa.runAsyncScript(scriptName, envParameters);	
-		
 //notify processor that converion request has been paid and new license issued		
 		wf = aa.workflow.getTaskItemByCapID(capId,null).getOutput();
 		for(x in wf) {
