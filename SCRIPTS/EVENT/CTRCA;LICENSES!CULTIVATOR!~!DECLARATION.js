@@ -28,8 +28,11 @@ try{
 	var scriptName = "asyncRunInvoiceParamsRpt";
 	var envParameters = aa.util.newHashMap();
 	envParameters.put("licCap",capId.getCustomID()); 
+	envParameters.put("licType",""); 
 	envParameters.put("invNbr", invNbr);
+	envParameters.put("feeAmount",0);
 	envParameters.put("currentUserID",currentUserID);
+	envParameters.put("templateName","LCA_GENERAL_NOTIFICATION");
 	aa.runAsyncScript(scriptName, envParameters);
 
 	
