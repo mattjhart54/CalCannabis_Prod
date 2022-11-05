@@ -43,16 +43,21 @@ function getMasterScriptText(vScriptName) {
 }
 try{
 //---------------------------------------
-//	aa.env.setValue("licCap", "CCL19-0000253-R01");
-//	aa.env.setValue("currentUserID", "MHART");
-//  aa.env.setValue("capId", "DUB20-00000-000T9");
-//	aa.env.setValue("invNbr",2015);
+/*	aa.env.setValue("licCap", "LCR22-0000002");
+	aa.env.setValue("currentUserID", "MHART");
+	aa.env.setValue("invNbr",1626);
+	aa.env.setValue("feeAmount",90227);
+	aa.env.setValue("licType","Large Indoor");
+	aa.env.setValue("templateName","LIC_CC_CCR_APPROVED");
+*/
 	var licCap = "" + aa.env.getValue("licCap");
-//	var capID = "" + aa.env.getValue("capId");
-	var invNbr = "" + aa.env.getValue("invNbr");	
+	var licType = "" + aa.env.getValue("licType");	
+	var invNbr = "" + aa.env.getValue("invNbr");
+	var feeAmount = "" + aa.env.getValue("feeAmount");
 	var currentUserID = "" + aa.env.getValue("currentUserID");
+	var templateName = "" + aa.env.getValue("templateName")
 	var reportName = "CDFA_INVOICE_PARAMS";
-	var fromEmail = "noreply@cannabis.ca.gov"
+	var fromEmail = "calcannabislicensing@cdfa.ca.gov"
 	var br = "<BR>";
 	var eTxt = "";
 	var sDate = new Date();
@@ -107,8 +112,10 @@ try{
 		addParameter(eParams, "$$altID$$", tmpID.getCustomID());
 		addParameter(eParams, "$$contactFirstName$$", priContact.capContact.firstName);
 		addParameter(eParams, "$$contactLastName$$", priContact.capContact.lastName);
+		addParameter(eParams, "$$licType$$", licType);
+		addParameter(eParams, "$$feeAmount$$", feeAmount);
 		var priEmail = ""+priContact.capContact.getEmail();
-		sendApprovalNotification(fromEmail,priEmail,"","LCA_GENERAL_NOTIFICATION",eParams, rFiles,tmpID);
+		sendApprovalNotification(fromEmail,priEmail,"",templateName,eParams, rFiles,tmpID);
 	}else{
 		logDebug("An error occurred retrieving the contactObj for " + contactType + ": " + priContact);
 	}
@@ -120,7 +127,7 @@ try{
 } catch(err){
 	logDebug("An error has occurred in asyncRunInvoiceParamsRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("noreply@cannabis.ca.gov", "jshear@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunInvoiceParamsRpt: ",  tmpID + br + "altId: " + licCap + br +  eTxt);
+	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "jshear@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunInvoiceParamsRpt: ",  tmpID + br + "altId: " + licCap + br +  eTxt);
 }
  function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
 {
