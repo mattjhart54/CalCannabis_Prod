@@ -1,4 +1,15 @@
 try {
+	//7332 - Update appName with License Type Change
+	var appName = cap.getSpecialText();
+	var issuedType = AInfo['License Issued Type'];
+	var cultType = AInfo['Cultivator Type'];
+	var licType =  AInfo['License Type'];
+	var removeText = issuedType + " " + cultType;
+	var curLicType = String(appName).replace(removeText,"");
+	if (curLicType != licType){
+		editAppName(issuedType + " " + cultType + " - " + licType);
+		addToCat(capId);
+	}
 	if(LAKEANDSTREAMBEDALTERATION.length>0) {
 		var tblLSA = loadASITable("LAKE AND STREAMBED ALTERATION");
 		var addRow = false;
