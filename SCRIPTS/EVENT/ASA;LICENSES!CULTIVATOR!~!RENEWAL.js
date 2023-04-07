@@ -31,7 +31,7 @@ try{
 	//2. Associate partial cap with parent CAP.
 		var result = aa.cap.createRenewalCap(parentCapId, partialCapId, true);
 		if (result.getSuccess()){
-	//3. Copy key information from parent license to partial cap
+	//3. Copy key information from parent license to partial cap; 
 			pInfo = new Array;
 			loadAppSpecific(pInfo,parentCapId); 
 			editAppSpecific("License Number",parentAltId);
@@ -50,70 +50,56 @@ try{
 			if(expDate) {
 				editAppSpecific("Expiration Date", tmpExpDate);
 			}
-		//4. Assess Renewal Fee
-			voidRemoveAllFees();
-			licType = pInfo["License Type"];
-			var feeDesc = licType + " - Renewal Fee";
-			var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
-			if(thisFee){
-				feeSeqNbr = updateFee(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y", "N");
-
-				if(licType.substring(0,5) == "Large") {
-					lType = lookup("LIC_CC_LICENSE_TYPE", licType);
-				if(!matches(lType,"", null, undefined)){
-						licTbl = lType.split(";");
-						var base = parseInt(licTbl[3]);
-						feeDesc = licType + " - Per 2,000 sq ft over " + maskTheMoneyNumber(base);
-						logDebug("feeDesc " + feeDesc);
-						thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
-						var sqft = pInfo["Canopy SF"];
-						logDebug("SQ FT " + sqft + " Base " + base);
-						qty = (parseInt(sqft) - base) / 2000;
-						logDebug("qty " + parseInt(qty));
-						if(qty > 0){		
-							if(thisFee){	
-								updateFee_Rev(thisFee.feeCode,"LIC_CC_REN", "FINAL", parseInt(qty), "Y", "N");
-							}else{
-								aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: WTUA:Licenses/Cultivation/License/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
-								logDebug("An error occurred retrieving fee item: " + feeDesc);
-							}
-						}	
-					}
-				}
-			}else{
-				aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: WTUA:Licenses/Cultivation/License/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
-				logDebug("An error occurred retrieving fee item: " + feeDesc);
-			}
-			if(tmpDate < curDate) {
-				var feeDesc = pInfo["License Type"] + " - Late Fee";
-				var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
-				if(thisFee){
-					updateFee(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y", "N");
-					}else{
-					aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ASA:Licenses/Cultivation/Licnese/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
-					logDebug("An error occurred retrieving fee item: " + feeDesc);
-				}
-			}
-		//5. Set B1PERMIT.B1_ACCESS_BY_ACA to "N" for partial CAP to not allow that it is searched by ACA user.
+			//4. Set B1PERMIT.B1_ACCESS_BY_ACA to "N" for partial CAP to not allow that it is searched by ACA user.
 	//		aa.cap.updateAccessByACA(partialCapId, "N");
 		}else{
 			aa.print("ERROR: Associate partial cap with parent CAP. " + result.getErrorMessage());
 		}
-	}else{
-		//Check to see if late fee is needed after ACA review.  Used for records saved before expiration and submitted after expiration.
+	}
+	//5. Assess Fees during creation and Review, if they were removed.
+		voidRemoveAllFees();
+		licType = getAppSpecific("License Type",parentCapId)
+		var feeDesc = licType + " - Renewal Fee";
+		var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
+		if(thisFee){
+			updateFee(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y", "N");
+			if(licType.substring(0,5) == "Large") {
+				lType = lookup("LIC_CC_LICENSE_TYPE", licType);
+				if(!matches(lType,"", null, undefined)){
+					licTbl = lType.split(";");
+					var base = parseInt(licTbl[3]);
+					feeDesc = licType + " - Per 2,000 sq ft over " + maskTheMoneyNumber(base);
+					logDebug("feeDesc " + feeDesc);
+					thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
+					var sqft = pInfo["Canopy SF"];
+					logDebug("SQ FT " + sqft + " Base " + base);
+					qty = (parseInt(sqft) - base) / 2000;
+					logDebug("qty " + parseInt(qty));
+					if(qty > 0){		
+						if(thisFee){	
+							updateFee_Rev(thisFee.feeCode,"LIC_CC_REN", "FINAL", parseInt(qty), "Y", "N");
+						}else{
+							aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: WTUA:Licenses/Cultivation/License/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
+							logDebug("An error occurred retrieving fee item: " + feeDesc);
+						}
+					}	
+				}
+			}
+			
+		}else{
+			aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: WTUA:Licenses/Cultivation/License/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
+			logDebug("An error occurred retrieving fee item: " + feeDesc);
+		}
 		if(tmpDate < curDate) {
-			var feeDesc = getAppSpecific("License Type",parentCapId) + " - Late Fee";
+			var feeDesc = licType + " - Late Fee";
 			var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
 			if(thisFee){
-				if (!feeExists(thisFee.feeCode)){
-					updateFee(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y", "N");
-				}
-				}else{
+				updateFee(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y", "N");
+			}else{
 				aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ASA:Licenses/Cultivation/Licnese/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
 				logDebug("An error occurred retrieving fee item: " + feeDesc);
 			}
 		}
-	}
 } catch(err){
 	logDebug("An error has occurred in ASA:LICENSES/CULTIVATOR/* /RENEWAL: Update AltId: " + err.message);
 	logDebug(err.stack);
@@ -192,3 +178,4 @@ function getIncompleteCapId() {
 		return null;
 	}
 }
+
