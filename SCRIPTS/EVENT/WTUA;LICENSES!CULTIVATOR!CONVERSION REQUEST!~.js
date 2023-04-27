@@ -136,8 +136,10 @@ try {
 			licFeeAmt = licFeeAmt + feeAmount(overFeeCode,"NEW");
 		}	
 		logDebug("pFeeAmt " + pFeeAmt + " licFeeAmt " + licFeeAmt);
-		if(tFeeAmt > 0 && tFeeAmt < licFeeAmt) {
-			addFee("LIC_CCR_CRD","LIC_CC_CONVERSION", "FINAL", tFeeAmt.toFixed(2), "N");
+		if(tFeeAmt < licFeeAmt) {
+			if(tFeeAmt > 0) {
+				addFee("LIC_CCR_CRD","LIC_CC_CONVERSION", "FINAL", tFeeAmt.toFixed(2), "N");
+			}
 			licFeeAmt = licFeeAmt + feeAmount("LIC_CCR_CRD","NEW");
 			licFeeAmt =licFeeAmt.toFixed(2);
 			licFeeAmt = "$" + Number(licFeeAmt);
