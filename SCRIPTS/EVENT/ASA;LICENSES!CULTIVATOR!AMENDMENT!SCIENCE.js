@@ -63,12 +63,13 @@ try {
 		useAppSpecificGroupName = true; 
 		var powerOther = getAppSpecific("POWER SOURCE.Other",parentId);
 		editAppSpecific("POWER SOURCE.Other",powerOther);
-		useAppSpecificGroupName = false;
+		useAppSpecificGroupName = false;	
 		editAppSpecific("Other Update",powerOther);
 		editAppSpecific("Other Source Description",PInfo["Other Source Description"]);
 	editAppSpecific("Medium Validation",PInfo["Medium Validation"]);
 	editAppSpecific("Premises Diagram Review Status",PInfo["Premises Diagram Review Status"]);
 	editAppSpecific("Administrative hold area", PInfo["Administrative hold area"]);
+	editAppSpecific("Administrative hold area-NEW", PInfo["Administrative hold area"]);
 	editAppSpecific("Aggregate square footage of noncontiguous canopy", PInfo["Aggregate square footage of noncontiguous canopy"]);
 	editAppSpecific("Cannabis Waste Area", PInfo["Cannabis Waste Area"]);
 	editAppSpecific("Canopy area included", PInfo["Canopy area included"]);
@@ -82,6 +83,7 @@ try {
 	editAppSpecific("Does the square footage match the license type selected", PInfo["Does the square footage match the license type selected"]);
 	editAppSpecific("Harvest storage area", PInfo["Harvest storage area"]);
 	editAppSpecific("Immature Plant Area SF", PInfo["Immature Plant Area SF"]);
+	editAppSpecific("Trade sample(s)", PInfo["Trade sample(s)"]);
 	editAppSpecific("Immature plant area(s) (if applicable)", PInfo["Immature plant area(s) (if applicable)"]);
 	editAppSpecific("Packaging area", PInfo["Packaging area"]);
 	editAppSpecific("Pesticide and agricultural chemical storage area", PInfo["Pesticide and agricultural chemical storage area"]);
@@ -89,6 +91,7 @@ try {
 	editAppSpecific("Cannabis Waste Area-P", PInfo["Cannabis Waste Area-P"]);
 	editAppSpecific("Common Use Area(s)-P", PInfo["Common Use Area(s)-P"]);
 	editAppSpecific("Composting Area-P", PInfo["Composting Area-P"]);
+	editAppSpecific("Trade sample(s)-P", PInfo["Trade sample(s)-P"]);
 	editAppSpecific("Designated shared area(s)-P", PInfo["Designated shared area(s)-P"]);
 	editAppSpecific("Harvest Storage Area-P", PInfo["Harvest Storage Area-P"]);
 	editAppSpecific("Packaging Area-P", PInfo["Packaging Area-P"]);
@@ -96,6 +99,7 @@ try {
 	editAppSpecific("Immature canopy square footage-N", PInfo["Immature canopy square footage-N"]);
 	editAppSpecific("Immature Plant Area-N", PInfo["Immature Plant Area-N"]);
 	editAppSpecific("Seed Production Area-N", PInfo["Seed Production Area-N"]);
+	editAppSpecific("Trade sample(s)-N", PInfo["Trade sample(s)-N"]);
 	editAppSpecific("Research and Development Area-N", PInfo["Research and Development Area-N"]);
 	editAppSpecific("Pesticide and Agricultural Chemical Storage Area-N", PInfo["Pesticide and Agricultural Chemical Storage Area-N"]);
 	editAppSpecific("Composting Area-N", PInfo["Composting Area-N"]);
@@ -120,8 +124,10 @@ try {
 	editAppSpecific("Total volume of water storage on site", PInfo["Total volume of water storage on site"]);
 	editAppSpecific("Water Distribution Lines?", PInfo["Water Distribution Lines?"]);
 	editAppSpecific("Does the diagram contain highlighting?", PInfo["Does the diagram contain highlighting?"]);
+	editAppSpecific("Does the diagram contain highlighting?-NEW", PInfo["Does the diagram contain highlighting?"]);
 	editAppSpecific("Is the diagram to scale?", PInfo["Is the diagram to scale?"]);
 	editAppSpecific("Premises is Contiguous?", PInfo["Premises is Contiguous?"]);
+	editAppSpecific("Residence (if applicable)?", PInfo["Residence (if applicable)?"]);
 	editAppSpecific("Lighting Diagram Review Status", PInfo["Lighting Diagram Review Status"]);
 	editAppSpecific("Location of All Lights in Canopy", PInfo["Location of All Lights in Canopy"]);
 	editAppSpecific("Max Wattage of Each Light", PInfo["Max Wattage of Each Light"]);
@@ -156,7 +162,7 @@ try {
 	editAppSpecific("Self-Haul to a Recycling Center That Meets Regulations Requirements-NEW", PInfo["Self-Haul to a Recycling Center That Meets Regulations Requirements"]);
 	editAppSpecific("Reintroduction of cannabis waste back into Agricultural operations", PInfo["Reintroduction of cannabis waste back into Agricultural operations"]);
 	editAppSpecific("Reintroduction of cannabis waste back into Agricultural operations-NEW", PInfo["Reintroduction of cannabis waste back into Agricultural operations"]);
-	useAppSpecificGroupName = true;
+	useAppSpecificGroupName = true; 
 	var wasteOther = getAppSpecific("WASTE MANAGEMENT.Other",parentId);
 	editAppSpecific("WASTE MANAGEMENT.Other", wasteOther);
 	useAppSpecificGroupName = false;
