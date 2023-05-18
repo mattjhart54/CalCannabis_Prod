@@ -29,7 +29,6 @@ try {
 	vCurrExpDate = vLicenseObj.b1ExpDate;
 	vLicenseObj.setExpiration(dateAddMonths(null,12));
 	vLicenseObj.setStatus("Active");
-	updateAppStatus("Active", "Updated on completion of conversion record " + crId.getCustomID());
 	
 //create child histroical record from the primary license record
 //before updating the primary license record from the conversion record	
@@ -60,7 +59,36 @@ try {
 	
 // Update the Record Number	
 	altId = capId.getCustomID();
-	var newAltId = altId + "-HIST";
+	histId = String(altId) + "-HIST";
+	convIds = getChildren("Licenses/Cultivator/Conversion Request/NA",capId);
+	cIdLen = 0;
+	if(convIds){
+		if(!matches(convIds,null,undefined,"")){
+			for (jj in convIds){
+				thisRecord = convIds[jj];
+				cIds = getChildren("Licenses/Cultivator/License/License",thisRecord);
+				if(cIds){
+					if(!matches(cIds,null,undefined,"")){
+						var count = cIds.filter(function(value) {
+							return value.getCustomID().slice(0,18) === histId;
+						}).length;
+						cIdLen += count;
+					}
+				}
+			}
+		}
+	}				
+	if(cIdLen == 0){
+		hisNbr = "00" + 1;
+	}else{
+		if(cIdLen <= 9) {
+			hisNbr = cIdLen + 1;
+			hisNbr = "00" +  hisNbr;
+		}else {
+			hisNbr = "0" + (cIdLen + 1);
+		}
+	}	
+	var newAltId = altId + "-HIST" + hisNbr;
 	var updAltId = aa.cap.updateCapAltID(histCapId,newAltId);
 	if(!updAltId.getSuccess()){
 		logDebug("Error updating Alt Id: " + newAltId + ":: " +updAltId.getErrorMessage());
