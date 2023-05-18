@@ -12,7 +12,7 @@ try {
 		
 //error messages
 	var licTypeMessage = "Neither the DRP or Legal Business Name match the Primary record’s DRP or Legal Business Name. If a change has occurred, you must first submit a <a href=" + '"https://cannabis.ca.gov/wp-content/uploads/sites/2/2021/12/DCC-LIC-027-Notifications-and-Requests-to-Modify-a-License.pdf"'+" target="+'"_blank"'+">Notification and Request Form (DCC-LIC-027)</a>" + " to request a modification to the license record before you can proceed with a conversion request." + br;
-	var lightTypeMessage = "The lighting type does not match the primary record lighting type of " + lightType + ". The lighting type refers to Indoor, Outdoor, Mixed-light Tier 1, or Mixed-light Tier 2." + br;
+	var lightTypeMessage = "The proposed lighting type does not match the primary record lighting type of " + lightType + ". The lighting type refers to Indoor, Outdoor, Mixed-light Tier 1, or Mixed-light Tier 2." + br;
 	errorMessage = "";
 		
 	var c = aa.people.getCapContactByCapID(plId).getOutput();
@@ -226,8 +226,8 @@ try{
 			}
 		}
 	}*/
-	//6893 DRP custom fields must match DRP contact on License
-	/*var drpContact = getContactByType("Designated Responsible Party",parentCapId);
+//7309 DRP custom fields must match DRP contact on License
+	var drpContact = getContactByType("Designated Responsible Party",plId);
 	if(drpContact){
 		var drpFirst = drpContact.getFirstName();
 		var drpLast =  drpContact.getLastName();
@@ -237,9 +237,9 @@ try{
 			showMessage = true;
 			comment("DRP does not match License Record.")
 		}
-	}*/
+	}
 }catch(err){
 	logDebug("An error has occurred in ASIUB:LICENSES/CULTIVATOR/CONVERSION REQUEST/NA: Water Source Reviews: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in ASIUB:LICENSES/CULTIVATOR/*/APPLICATION: Water Source Reviews: "+ startDate, capId + br+ err.message+ br+ err.stack);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in ASIUB:LICENSES/CULTIVATOR/CONVERSION REQUEST/NA: Water Source Reviews: "+ startDate, capId + br+ err.message+ br+ err.stack);
 }

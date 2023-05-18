@@ -62,8 +62,14 @@ try{
 						vLicenseObj.setExpiration(dateAdd(vNewExpDate,0));
 		// Set license record expiration and status to active
 						vLicenseObj.setStatus("Active");
-						if (aa.cap.getCap(licId).getOutput().getCapStatus() != "Inactive"){
-							updateAppStatus("Active","License Renewed",licId);
+						vCapStatus = aa.cap.getCap(licId).getOutput().getCapStatus();
+						savedCapStatus = getAppSpecific("Saved License Status",licId);
+						if (savedCapStatus == "Suspended"){
+							updateAppStatus("Suspended","License Renewed",licId);
+						}else {
+							if (vCapStatus != "Inactive"){
+								updateAppStatus("Active","License Renewed",licId);
+							}
 						}
 		// Update the Cultivation Type on the license record
 						if(AInfo["Designation Change"] == "Yes") {
@@ -95,6 +101,41 @@ try{
 								addASITable("FINANCIAL INTEREST HOLDER",finTable,licId);
 							}
 						}
+		// Update Electricity Usage Table
+						if (typeof(ELECTRICITYUSAGE) == "object"){
+							if(ELECTRICITYUSAGE.length > 0){
+								elecTable = new Array();
+								for(jj in ELECTRICITYUSAGE){
+									var elecNewRow = ELECTRICITYUSAGE[jj];
+									elecRow = new Array();
+									elecRow["Reporting Year"] = "" + elecNewRow["Reporting Year"];
+									elecRow["Usage Type"] = "" + elecNewRow["Usage Type"];
+									elecRow["Type of Off Grid Renewable Source"] = "" + elecNewRow["Type of Off Grid Renewable Source"];
+									elecRow["Type of Other Source"] = "" + elecNewRow["Type of Other Source"];
+									elecRow["Other Source description"] = "" + elecNewRow["Other Source description"];
+									elecRow["Name of Utility Provider"] = "" + elecNewRow["Name of Utility Provider"];
+									elecRow["Total Electricity Supplied (kWh)"] = "" + elecNewRow["Total Electricity Supplied (kWh)"];
+									elecRow["Total Electricity Supplied by Zero Net Energy Renewable (kWh)"] = "" + elecNewRow["Total Electricity Supplied by Zero Net Energy Renewable (kWh)"];
+									elecRow["GGEI (lbs CO2e/kWh)"] = "" + elecNewRow["GGEI (lbs CO2e/kWh)"];
+									elecTable.push(elecRow);
+								}
+								addASITable("ELECTRICITY USAGE",elecTable,licId);	
+							}
+						}
+		// Update AVERAGE WEIGHTED GGEI Table
+						if (typeof(AVERAGEWEIGHTEDGGEI) == "object"){
+							if(AVERAGEWEIGHTEDGGEI.length > 0){
+								weigtedTable = new Array();
+								for(pp in AVERAGEWEIGHTEDGGEI){
+									var weightedNewRow = AVERAGEWEIGHTEDGGEI[pp];
+									weigtedRow = new Array();
+									weigtedRow["Reporting year"] = "" + weightedNewRow["Reporting year"];
+									weigtedRow["Average Weighted GGEI"] = "" + weightedNewRow["Average Weighted GGEI"];
+									weigtedTable.push(weigtedRow);
+								}
+								addASITable("AVERAGE WEIGHTED GGEI",weigtedTable,licId);
+							}
+						}				
 		//Set renewal to complete, used to prevent more than one renewal record for the same cycle
 						renewalCapProject = getRenewalCapByParentCapIDForIncomplete(licId);
 						if (renewalCapProject != null) {
@@ -159,38 +200,41 @@ try{
 					// Add record to the CAT set
 						addToCat(licId);
 					//	7088: Create License Case Record for all Renewals when a Science Amendment associated to the License Parent Record has not been submitted prior to submission of a Provisional Renewal for that corresponding renewal year
-
-						var scienceArr = getChildren("Licenses/Cultivator/Amendment/Science",licId);
-						var issueDate = getAppSpecific("Valid From Date",licId);
-						var approvedRen = false;
-						var licCaseExclusion = false;
-						if (scienceArr) {
-							if (scienceArr.length > 0) {
-								for (x in scienceArr){
-									var scienceCap = scienceArr[x];
-									if (getAppSpecific("Associated Renewal",scienceCap) == "Yes"){
-										var correspondingYear = getAppSpecific("Renewal Year",scienceCap)
-										logDebug("expYear: " + expYear);
-										if (String(correspondingYear) == String(expYear)){
-											var saAppStatus = aa.cap.getCap(scienceCap).getOutput().getCapStatus();
-											var workflowResult = aa.workflow.getTasks(scienceCap);
-											if (workflowResult.getSuccess()){
-												wfObj = workflowResult.getOutput();		
-												for (i in wfObj) {
-													fTask = wfObj[i];
-													var status = fTask.getDisposition();
-													var taskDesc = fTask.getTaskDescription();
-													if((status != null && taskDesc != null) && (taskDesc == "Science Amendment Review" && status != "Physical Modification Approved")){
-														licCaseExclusion = true;
+						if (getAppSpecific("License Issued Type", licId) == "Provisional"){
+							var scienceArr = getChildren("Licenses/Cultivator/Amendment/Science",licId);
+							var issueDate = getAppSpecific("Valid From Date",licId);
+							var approvedRen = false;
+							var licCaseExclusion = false;
+							if (scienceArr) {
+								if (scienceArr.length > 0) {
+									for (x in scienceArr){
+										var scienceCap = scienceArr[x];
+										if (getAppSpecific("Associated Renewal",scienceCap) == "Yes"){
+											var correspondingYear = getAppSpecific("Renewal Year",scienceCap)
+											logDebug("expYear: " + expYear);
+											if (String(correspondingYear) == String(expYear)){
+												var saAppStatus = aa.cap.getCap(scienceCap).getOutput().getCapStatus();
+												var workflowResult = aa.workflow.getTasks(scienceCap);
+												if (workflowResult.getSuccess()){
+													wfObj = workflowResult.getOutput();		
+													for (i in wfObj) {
+														fTask = wfObj[i];
+														var status = fTask.getDisposition();
+														var taskDesc = fTask.getTaskDescription();
+														if((status != null && taskDesc != null) && (taskDesc == "Science Amendment Review" && status != "Physical Modification Approved")){
+															licCaseExclusion = true;
+														}
 													}
+												}else{
+													logDebug("**ERROR: Failed to get workflow object: "+wfObj );
 												}
-											}else{
-												logDebug("**ERROR: Failed to get workflow object: "+wfObj );
 											}
 										}
 									}
 								}
 							}
+						}else{
+							licCaseExclusion = true;
 						}
 						if (!licCaseExclusion){
 							var licCaseId = createChild("Licenses","Cultivator","License Case","NA","",licId);
