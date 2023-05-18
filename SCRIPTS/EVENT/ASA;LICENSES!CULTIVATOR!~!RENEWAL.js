@@ -178,4 +178,3 @@ function getIncompleteCapId() {
 		return null;
 	}
 }
-
