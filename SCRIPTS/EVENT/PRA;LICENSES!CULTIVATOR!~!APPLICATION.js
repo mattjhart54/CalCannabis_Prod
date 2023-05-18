@@ -1,4 +1,3 @@
-
 // mhart 100918 Story 5738 and 5739 Changes to generate correct approval letter based on CAP status
 try{
 	if((balanceDue<=0 && matches(capStatus, "License Issued", "Provisional License Issued")) || AInfo['Deferral Approved'] == "CHECKED"){
