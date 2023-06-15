@@ -7,7 +7,7 @@
 | Client  : N/A
 | Action# : N/A
 |
-| Notes   :  Checks the values of first/last name against reference contacts with corresponding email
+| Notes   : 
 |
 /------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------/
@@ -74,50 +74,49 @@ function getScriptText(vScriptName, servProvCode, useProductScripts) {
 }
 
 var cap = aa.env.getValue("CapModel");
-loadASITables4ACA_corrected();
 
 // page flow custom code begin
 try{
+
+	var noRows = false;
+	var asiTables = loadASITables4ACAasArray();
 	
-	var capId = cap.getCapID();
-	var elecUsageValue = false;
-	var avgWeightTable = false;
-	
-	if (typeof(ELECTRICITYUSAGE) == "object") {
-		if(ELECTRICITYUSAGE.length > 0){
-			elecUsageValue = true;
+	//Verify the Electricity Usage Table has data
+	if(asiTables["ELECTRICITY USAGE"]){
+		if(asiTables["ELECTRICITY USAGE"].length<1){
+			noRows = true;
 		}
+		if(matches(asiTables["ELECTRICITY USAGE"][0]["Usage Type"], null, "", undefined)) {
+			noRows = true;
+		}
+	}else{
+		noRows = true;
 	}
 	
-	if (typeof(AVERAGEWEIGHTEDGGEI) == "object") {
-		if(AVERAGEWEIGHTEDGGEI.length > 0){
-			avgWeightTable = true;
+	//Verify the AVERAGE WEIGHTED GGEI has data
+	if(asiTables["AVERAGE WEIGHTED GGEI"]){
+		if(asiTables["AVERAGE WEIGHTED GGEI"].length<1){
+			noRows = true;
 		}
+		if(matches(asiTables["AVERAGE WEIGHTED GGEI"][0]["Average Weighted GGEI"], null, "", undefined)) {
+			noRows = true;
+		}
+	}else{
+		noRows = true;
 	}
-	
-	if (!elecUsageValue || !avgWeightTable){
+
+	if(noRows) {
 		cancel = true;
 		showMessage = true;
-		comment("The 'Electricity Usage' and 'Average Weighted GGEI' Tables must contain Values");
+		comment("The 'ELECTRICITY USAGE' and 'AVERAGE WEIGHTED GGEI' tables requires at least one row.");
 	}
 
 }catch (err) {
-    logDebug("A JavaScript Error occurred: ACA_BEFORE_REN_ELECTRICITY_USAGE_TABLE: " + err.message);
+    logDebug("A JavaScript Error occurred: ACA_BEFORE_REN_ELECTRICITY_USAGE_TABLE: Validate table: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in  ACA_BEFORE_REN_ELECTRICITY_USAGE_TABLE:: Main Loop: " + startDate, "capId: " + capId + br + err.message + br + err.stack + br + currEnv);
+	aa.sendMail(sysFromEmail, debugEmail, "", "An error has occurred in  ACA_BEFORE_REN_ELECTRICITY_USAGE_TABLE: Validate table: "+ startDate, publicUserID + br + capId + br + err.message+ br + err.stack);
 }
 
-// page flow custom code end
-function getCapIdStatusClass(inCapId){
-    var inCapScriptModel = aa.cap.getCap(inCapId).getOutput();
-    var retClass = null;
-    if(inCapScriptModel){
-        var tempCapModel = inCapScriptModel.getCapModel();
-        retClass = tempCapModel.getCapClass();
-    }
-   
-    return retClass;
-}
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========END=Main=Loop================>
@@ -143,3 +142,4 @@ else {
 /*------------------------------------------------------------------------------------------------------/
 | <===========External Functions (used by Action entries)
 /------------------------------------------------------------------------------------------------------*/
+
