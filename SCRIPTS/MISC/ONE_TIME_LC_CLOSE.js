@@ -1,9 +1,9 @@
 /*------------------------------------------------------------------------------------------------------/
-| Program: ONE_TIME_BATCH_POP_MAX_AMT_WATER
+| Program: ONE_TIME_License_Close
 | Client:  CDFA_CalCannabis
 | Version 1.0 - Base Version. 
 |
-| One Time Batch Script to set "Maximum amount of water to be diverted for cannabis cultivation" with '0' value
+| One Time Batch Script to set close License Cases
 /------------------------------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------------------------------/
@@ -112,7 +112,7 @@ function mainProcess(){
     {
         logMessage("ERROR", "ERROR: Getting Records, reason is: " + typeResult.getErrorType() + ":" + typeResult.getErrorMessage());
     }
-    var editArray = new Array();
+    var recCnt = 0;
     for (x in vCapList) {
         capId = aa.cap.getCapID(vCapList[x].getCapID().getID1(),vCapList[x].getCapID().getID2(),vCapList[x].getCapID().getID3()).getOutput();
         var altID = capId.getCustomID();
@@ -132,13 +132,26 @@ function mainProcess(){
         var caseDesc = getAppSpecific("Case Description",capId);
         if (openedBy == "Science - Annual" && caseDesc == "Annual Renewal Missing Science Amendment"){
             if (appStatus != "Closed"){
-                updateAppStatus("Closed");
+				recCnt = recCnt + 1;
+                updateAppStatusT("Closed");
             }
         }
     }
-    logDebug("Number of Records Edited: " + editArray.length);
-    logDebug("Record IDs: " + editArray);
+    logDebug("Number of Records Edited: " + recCnt);
+//    logDebug("Record IDs: " + editArray);
 }
 /*------------------------------------------------------------------------------------------------------/
 | <===========Internal Functions and Classes (Used by this script)
 /------------------------------------------------------------------------------------------------------*/
+function updateAppStatusT(stat,cmt) // optional cap id
+{
+	var itemCap = capId;
+	if (arguments.length == 3) 
+		itemCap = arguments[2]; // use cap ID specified in args
+
+	var updateStatusResult = aa.cap.updateAppStatus(itemCap, "APPLICATION", stat, sysDate, cmt, systemUserObj);
+	if (updateStatusResult.getSuccess())
+		logDebug("Updated application " + capId.getCustomID() + " status to " + stat + " successfully.");
+	else
+		logDebug("**ERROR: application status update to " + stat + " was unsuccessful.  The reason is "  + updateStatusResult.getErrorType() + ":" + updateStatusResult.getErrorMessage());
+}
