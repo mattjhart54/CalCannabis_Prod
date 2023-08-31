@@ -131,15 +131,16 @@ try {
 			}
 			else {			
 				if (AInfo["License Issued Type"] == "Provisional"){
-					var approvalLetter = "Provisional Renewal Approval";
+					var approvalLetter = "";
 					var emailTemplate = "LCA_RENEWAL_APPROVAL";
 				}else{
 					var approvalLetter = "";
 					var emailTemplate = "LCA_ANNUAL_RENEWAL_APPROVAL";
 				}
 				var scriptName = "asyncRunOfficialLicenseRpt";
-					var envParameters = aa.util.newHashMap();
-				envParameters.put("licType", "");
+				var licType = getAppSpecific("License Type",capId);
+				var envParameters = aa.util.newHashMap();
+				envParameters.put("licType", licType);
 				envParameters.put("appCap",altId);
 				envParameters.put("licCap",licAltId); 
 				envParameters.put("reportName","Official License Certificate");
