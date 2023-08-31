@@ -153,15 +153,16 @@ try{
 				
 		//Run Official License Certificate and Annual/Provisional Renewal Approval Email and Set the DRP		
 						if (AInfo["License Issued Type"] == "Provisional"){
-							var approvalLetter = "Provisional Renewal Approval";
+							var approvalLetter = "";
 							var emailTemplate = "LCA_RENEWAL_APPROVAL";
 						}else{
 							var approvalLetter = "";
 							var emailTemplate = "LCA_ANNUAL_RENEWAL_APPROVAL";
 						}
 						var scriptName = "asyncRunOfficialLicenseRpt";
+						var licType = getAppSpecific("License Type",capId);
 						var envParameters = aa.util.newHashMap();
-						envParameters.put("licType", "");
+						envParameters.put("licType",licType);
 						envParameters.put("appCap",altId);
 						envParameters.put("licCap",licAltId); 
 						envParameters.put("reportName","Official License Certificate");
@@ -207,6 +208,11 @@ try{
 		}else{
 			updateAppStatus("Deferral Paid", "Updated via PPB:LICENSES/CULTIVATOR/*/Renewal.");
 		}
+	}
+//Send email notification for NSF payment
+	var dishonoredPayment = verifyFeePayment("LIC_NSF", PaymentDate);
+	if (dishonoredPayment){
+		email("Payments@cannabis.ca.gov", "noreply@cannabis.ca.gov", "Dishonored Payment Fee paid on " + capId.getCustomID(), "This serves as notice that a payment has been made on record " + capId.getCustomID() + " that includes a dishonored payment fee.") 
 	}
 }catch(err){
 	logDebug("An error has occurred in PPA:LICENSES/CULTIVATOR/*/Renewal: Renewal Fees Paid: " + err.message);
