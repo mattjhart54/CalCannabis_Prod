@@ -48,12 +48,13 @@ try{
 	aa.env.setValue("currentUserID", "ADMIN");
 	aa.env.setValue("reportName", "Official License Certificate");
 	aa.env.setValue("contType", "Designated Responsible Party");
-	aa.env.setValue("fromEmail","calcannabislicensing@cdfa.ca.gov");
+	aa.env.setValue("fromEmail","noreply@cannabis.ca.gov");
 */
 	var reportName = "" + aa.env.getValue("reportName");
 	var recNum = "" + aa.env.getValue("recNum");
 	var currentUserID = "" + aa.env.getValue("currentUserID");
 	var contType = "" + aa.env.getValue("contType");
+	var fromEmail = "" + aa.env.getValue("fromEmail");
 	var br = "<BR>";
 	var eTxt = "";
 	var sDate = new Date();
@@ -121,7 +122,7 @@ try{
 		}
 		addParameter(eParams, "$$date$$", noticeDate);
 		var priEmail = ""+priContact.capContact.getEmail();
-		sendApprovalNotification(sysFromEmail,priEmail,"",notification,eParams, rFiles,licCapId);
+		sendApprovalNotification(fromEmail,priEmail,"",notification,eParams, rFiles,licCapId);
 		var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
 		if(!matches(priChannel, "",null,"undefined", false)){
 			if(priChannel.indexOf("Postal") > -1 ){
@@ -143,7 +144,7 @@ try{
 } catch(err){
 	logDebug("An error has occurred in asyncRunBalanceDueRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("noreply@cannabis.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunBalanceDueRpt: ",  licCapId + br + "altId: " + recNum + br + eTxt);
+	aa.sendMail("noreply@cannabis.ca.gov", debugEmail, "", "AN ERROR HAS OCCURRED IN asyncRunBalanceDueRpt: ",  licCapId + br + "altId: " + recNum + br + eTxt);
 }
  function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
 {
