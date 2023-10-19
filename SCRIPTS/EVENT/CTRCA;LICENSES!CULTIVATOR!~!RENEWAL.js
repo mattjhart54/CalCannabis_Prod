@@ -34,7 +34,9 @@ try{
 	pInfo = new Array;
 	loadAppSpecific(pInfo,vLicenseID); 
 	updateWorkDesc(pInfo["Legal Business Name"]);
-// Add condition effective in thirty days if Late Fee not paid	
+
+//Apply Fees
+	var fees = false;
 	b1ExpResult = aa.expiration.getLicensesByCapID(vLicenseID);
 	var curDate = new Date();
 	if (b1ExpResult.getSuccess()) {
@@ -45,13 +47,94 @@ try{
 			curDateFormat = curDate.getMonth() + 1 + "/" + curDate.getDate() + "/" + curDate.getFullYear();
 			var tmpDate = new Date(tmpExpDate);
 			curDate = new Date(curDateFormat);
-	
+			var expDateChange = AInfo["License Expiration Date Change"] == "Yes";
+			var newExpDateStr = AInfo["New Expiration Date"];
+			if (expDateChange){
+		        if (newExpDateStr) {
+		            // Convert the custom field value to a Date object
+		            var newExpDate = new Date(newExpDateStr);
+
+		            // Calculate the time difference in milliseconds
+		            var timeDiff = newExpDate.getTime() - tmpDate.getTime();
+
+		            // Calculate the number of days
+		            var daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+				}
+			}
+			if(!publicUser){
+			    voidRemoveAllFees();
+			    if(AInfo["License Type Change"] == "Yes"){
+			        licType = AInfo["New License Type"];
+			    }else{
+			        licType = getAppSpecific("License Type",vLicenseID);
+			    }
+			    var expDateChange = AInfo["License Expiration Date Change"] == "Yes";
+		            var newExpDateStr = AInfo["New Expiration Date"];
+			    if (expDateChange && newExpDateStr){
+			       	var feeDesc = licType + " - Renewal Fee with Date Change";
+			       	var feeSchedule = "LIC_CC_REN_EXP";
+					var feeQty = daysDiff;
+				}else{
+					var feeDesc = licType + " - Renewal Fee";
+					var feeSchedule = "LIC_CC_REN";
+					var feeQty = 1;
+				}
+			    var thisFee = getFeeDefByDesc(feeSchedule, feeDesc);
+			    if(thisFee){
+			        updateFee(thisFee.feeCode,feeSchedule, "FINAL", feeQty, "Y", "N");
+				fees = true;
+				if(licType.substring(0,5) == "Large") {
+			            lType = lookup("LIC_CC_LICENSE_TYPE", licType);
+			            if(!matches(lType,"", null, undefined)){
+			                licTbl = lType.split(";");
+			                var base = parseInt(licTbl[3]);
+			                feeDescE = licType + " - Per 2,000 sq ft over " + maskTheMoneyNumber(base) + " with Date Change";
+			                feeDescR = licType + " - Per 2,000 sq ft over " + maskTheMoneyNumber(base);
+			                logDebug("feeDesc " + feeDescR + " " + feeDescE);
+			                var sqft = getAppSpecific("Canopy SF",vLicenseID);
+			                logDebug("SQ FT " + sqft + " Base " + base);
+
+			               if (newExpDateStr){
+						qty = (parseInt(sqft) - base) / 2000;
+						thisFee = getFeeDefByDesc("LIC_CC_REN", feeDescR);
+						logDebug("Fee Calc" +thisFee.formula);
+						feeAmt = ((thisFee.formula*parseInt(qty))/365)*feeQty;
+						logDebug("FeeAmt " + feeAmt);
+						thisFee = getFeeDefByDesc(feeSchedule, feeDescE);
+						if(feeAmt > 0){        
+			                   		updateFee_Rev(thisFee.feeCode,feeSchedule, "FINAL", feeAmt, "Y", "N");
+						}
+			                }else{
+						thisFee = getFeeDefByDesc(feeSchedule, feeDescR);
+			                        qty = (parseInt(sqft) - base) / 2000;
+						logDebug("qty " + parseInt(qty));
+						if(qty > 0){           
+			                        	updateFee_Rev(thisFee.feeCode,feeSchedule, "FINAL", parseInt(qty), "Y", "N");
+						}
+			                } 
+			            }
+			        }
+			        
+			    }else{
+			        aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: WTUA:Licenses/Cultivation/License/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
+			        logDebug("An error occurred retrieving fee item: " + feeDesc);
+			    }
+			}
 			if(tmpDate < curDate) {
-				var feeDesc = AInfo["License Type"] + " - Late Fee";
-				var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
+				if (newExpDateStr){
+                		var feeDesc = AInfo["License Type"] + " - Late Fee with Date Change";
+                		var feeSchedule = "LIC_CC_REN_EXP";
+                		var feeQty = 1;
+		            }else{
+		                var feeDesc = AInfo["License Type"] + " - Late Fee";
+		                var feeSchedule = "LIC_CC_REN";
+		                var feeQty = 1;
+		            }
+				var thisFee = getFeeDefByDesc(feeSchedule, feeDesc);
 				if(thisFee){
 					if (!feeExists(thisFee.feeCode,"NEW")){
-						updateFee(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y", "N");
+						updateFee(thisFee.feeCode,feeSchedule, "FINAL", 1, "Y", "N");
+						fees = true;					
 					}
 				}else{
 					aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ASA:Licenses/Cultivation/Licnese/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
@@ -63,17 +146,32 @@ try{
 	
 // Set status and deactivate workflow if fees are due
 	
-	if(balanceDue > 0) {
+	if(balanceDue > 0 || fees) {
 		updateAppStatus("Renewal Fee Due"," ");
 		deactivateActiveTasks();
+		fees = true;
 	}
 // Invoice all fees if cash payment selected at submission in ACA
-	var feeDesc = AInfo["License Type"] + " - Renewal Fee";
-	var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
+	if(AInfo["License Type Change"] == "Yes"){
+		licType = AInfo["New License Type"];
+	}else{
+		licType = AInfo["License Type"];
+	}
+	if (newExpDateStr){
+       		var feeDesc = licType + " - Renewal Fee with Date Change";
+        	var feeSchedule = "LIC_CC_REN_EXP";
+      		var feeQty = daysDiff;
+	}else{
+        	var feeDesc = licType + " - Renewal Fee";
+        	var feeSchedule = "LIC_CC_REN";
+        	var feeQty = 1;
+   	}
+	var thisFee = getFeeDefByDesc(feeSchedule, feeDesc);
 	if(thisFee){
 		var hasFee = feeExists(thisFee.feeCode,"NEW");
 		if(hasFee) {
 			var invNbr = invoiceAllFees();
+			fees = true;
 			updateAppStatus("Renewal Fee Due","Licensee chose Cash Option at checkout");
 			deactivateTask("Annual Renewal Review");
 			deactivateTask("Provisional Renewal Review");
@@ -84,7 +182,8 @@ try{
 	}
 // Check License Cases to see if renewal can be fast tracked
 	var event = "CTRCA";
-	fastTrack = renewalProcess(newAltId, event, hasFee);
+	logDebug("has Fee " + fees + "event " + event);
+	fastTrack = renewalProcess(newAltId, event, fees);
 
 //  No fast track. Send renewal submitted email notification to DRP
 	if(fastTrack =='No'){
