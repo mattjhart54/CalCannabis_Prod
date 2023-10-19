@@ -1,5 +1,6 @@
-function renewalProcess(rAltId, event, hasFee){	
+function renewalProcess(rAltId, event, fees){	
 	var fastTrack = 'Yes';
+	var caseReview = false;
 	if(event == 'WTUA') {
 		var licenseId = AInfo["License Number"];
 		var licId = aa.cap.getCapID(licenseId);
@@ -12,7 +13,6 @@ function renewalProcess(rAltId, event, hasFee){
 		childIds  = getChildren("Licenses/Cultivator/License Case/*",licId);
 		holdId = capId;
 		capId = licId;
-		var caseReview = false;
 		if(appHasCondition("Owner History","Applied","DOJ LiveScan Match",null))
 			caseReview = true;
 		if(appHasCondition("Notice","Applied","Local Non-Compliance",null))
@@ -34,7 +34,7 @@ function renewalProcess(rAltId, event, hasFee){
 		capId = holdId;
 	}
 // Process renewal
-	if((matches(event, "CTRCA","PPA","PRA") && !caseReview && !hasFee) || event == "WTUA") {	
+	if((matches(event, "CTRCA","PPA","PRA") && !caseReview && !fees) || event == "WTUA") {	
 		var renewalCapProject;
 		var vExpDate;
 		var vNewExpDate;
@@ -50,26 +50,56 @@ function renewalProcess(rAltId, event, hasFee){
 	// Extend license expiration by 1 year
 			vNewExpDate = new Date(vExpDate.getFullYear() + 1, vExpDate.getMonth(), vExpDate.getDate());
 	// Update license expiration date
-			logDebug("Updating Expiration Date to: " + vNewExpDate);
-			vLicenseObj.setExpiration(dateAdd(vNewExpDate,0));
-	// Set license record expiration and status to active
+			if (AInfo['License Expiration Date Change'] == "Yes" && !matches(AInfo['New Expiration Date'],null,undefined,"")){
+					newExpDate = new Date(AInfo['New Expiration Date']);
+					logDebug("Updating Expiration Date to: " + newExpDate);
+					vLicenseObj.setExpiration(dateAdd(newExpDate,0));
+					editAppSpecific("Expiration Date Changed","CHECKED",licId);
+					editAppSpecific("Date Expiration Date Changed",fileDate,licId);
+			}else{
+				logDebug("Updating Expiration Date to: " + vNewExpDate);
+				vLicenseObj.setExpiration(dateAdd(vNewExpDate,0));
+			}
+	// Set license record expiration and status
 			vLicenseObj.setStatus("Active");
 			vCapStatus = aa.cap.getCap(licId).getOutput().getCapStatus();	
 			savedCapStatus = getAppSpecific("Saved License Status",licId);
+			limitedOp = AInfo['Limited Operation'] == "Yes";
+			if(limitedOp){
+				if(appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice","Notice",licId)){
+					editCapConditionStatus("Application Condition","Suspension Lift Notice","Condition Met","Not Applied",licId);
+				}
+			}
 			if (savedCapStatus == "Suspended"){
 				updateAppStatus("Suspended","License Renewed",licId);
+				if(limitedOp){
+					if(!appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice","Notice",licId)){
+ 		 				addStdCondition("Application Condition","Suspension Lift Notice".licId);
+ 		 			}
+ 		 		}
 			}else {
 				if (vCapStatus != "Inactive"){
 					updateAppStatus("Active","License Renewed",licId);
 				}
 			}
+	// Update Canopy Size on the license record
+			if(AInfo['License Change'] == "Yes"){
+				editAppSpecific("License Type",AInfo["New License Type"],licId);
+				editAppSpecific("Aggregate square footage of noncontiguous canopy",AInfo["Aggragate Canopy Square Footage"],licId);
+				editAppSpecific("Canopy Plant Count",AInfo["Canopy Plant Count"],licId);
+				var licType = AInfo["New License Type"];
+			}else{
+				var licType = AInfo["License Type"];
+			}
 	// Update the Cultivation Type on the license record
 			if(AInfo["Designation Change"] == "Yes") {
 				editAppSpecific("Cultivator Type",AInfo["Designation Type"],licId);
-				editAppName(AInfo["License Issued Type"] + " " + AInfo["Designation Type"] + " - " + AInfo["License Type"],licId);
+				var cultType = AInfo["Designation Type"];
 			}else{
-				editAppName(AInfo["License Issued Type"] + " " + AInfo["Cultivator Type"] + " - " + AInfo["License Type"],licId);
+				var cultType = AInfo["Cultivator Type"];
 			}
+			editAppName(AInfo["License Issued Type"] + " " + cultType + " - " + licType,licId);
+			
 	// Update Financial Interest Table
 			if (typeof(FINANCIALINTERESTHOLDERNEW) == "object"){
 				if(FINANCIALINTERESTHOLDERNEW.length > 0){
@@ -172,7 +202,6 @@ function renewalProcess(rAltId, event, hasFee){
 					var emailTemplate = "LCA_ANNUAL_RENEWAL_APPROVAL";
 				}
 				var scriptName = "asyncRunOfficialLicenseRpt";
-				var licType = getAppSpecific("License Type",capId);
 				var envParameters = aa.util.newHashMap();
 				envParameters.put("licType",licType);
 				envParameters.put("appCap",altId);
