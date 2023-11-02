@@ -48,28 +48,38 @@ function renewalProcessLC() {
 							}
 							// Set license record expiration and status to active
 							vLicenseObj.setStatus("Active");
-							if (aa.cap.getCap(parentCapId).getOutput().getCapStatus() != "Inactive"){
-								updateAppStatus("Active","License Renewed",parentCapId);
-							}
+							vCapStatus = aa.cap.getCap(parentCapId).getOutput().getCapStatus();	
+							savedCapStatus = getAppSpecific("Saved License Status",parentCapId);
 							limitedOp = AInfo['Limited Operation'] == "Yes";
 							if(limitedOp){
-								if(appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice","Notice",parentCapId)){
-									editCapConditionStatus("Application Condition","Suspension Lift Notice","Condition Met","Not Applied",parentCapId);
+								editAppSpecific("Limited Operations","Yes",parentCapId);
+								if (vCapStatus == "Suspended" || savedCapStatus == "Suspended"){
+									if(!appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice",null,parentCapId)){
+				 		 				addStdCondition("Application Condition","Suspension Lift Notice",parentCapId);
+				 		 			}
+				 		 		}else{
+				 		 			updateAppStatus("Limited Operations","License Renewed",licId);
+									if(appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice",null,parentCapId)){
+										editCapConditionStatus("Application Condition","Suspension Lift Notice","Condition Met","Not Applied","",parentCapId);
+									}
+								}
+							}else{
+								if(appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice",null,parentCapId)){
+									editCapConditionStatus("Application Condition","Suspension Lift Notice","Condition Met","Not Applied","",parentCapId);
 								}
 							}
-							savedCapStatus = getAppSpecific("Saved License Status",parentCapId);
-							if (savedCapStatus == "Suspended"){
+							if (vCapStatus == "Suspended" || savedCapStatus == "Suspended"){
 								updateAppStatus("Suspended","License Renewed",parentCapId);
-								if(limitedOp){
-									if(!appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice","Notice",parentCapId)){
-				 		 				addStdCondition("Application Condition","Suspension Lift Notice".parentCapId);
-				 		 			}
-				 		 		}
+							}else {
+								if (vCapStatus != "Inactive" && !limitedOp){
+									updateAppStatus("Active","License Renewed",parentCapId);
+								}
 							}
 							// Update Canopy Size on the license record
 							if(getAppSpecific("License Change",renCapId) == "Yes"){
 								editAppSpecific("License Type",getAppSpecific("New License Type",renCapId),parentCapId);
 								editAppSpecific("Aggregate square footage of noncontiguous canopy",getAppSpecific("Aggragate Canopy Square Footage",renCapId),parentCapId);
+								editAppSpecific("Canopy SF",getAppSpecific("Aggragate Canopy Square Footage",renCapId),parentCapId);
 								editAppSpecific("Canopy Plant Count",getAppSpecific("Canopy Plant Count",renCapId),parentCapId);
 								var licType = getAppSpecific("New License Type",renCapId);
 							}else{
@@ -106,8 +116,8 @@ function renewalProcessLC() {
 										finRow["FEIN"] = finNewRow["FEIN"];
 										finTable.push(finRow);
 									}
-									removeASITable("FINANCIAL INTEREST HOLDER",vLicenseID);
-									addASITable("FINANCIAL INTEREST HOLDER",finTable,vLicenseID);
+									removeASITable("FINANCIAL INTEREST HOLDER",parentCapId);
+									addASITable("FINANCIAL INTEREST HOLDER",finTable,parentCapId);
 								}
 							}
 							// Update Electricity Usage Table
@@ -128,7 +138,7 @@ function renewalProcessLC() {
 										elecRow["GGEI (lbs CO2e/kWh)"] = "" + elecNewRow["GGEI (lbs CO2e/kWh)"];
 										elecTable.push(elecRow);
 									}
-									addASITable("ELECTRICITY USAGE",elecTable,vLicenseID);	
+									addASITable("ELECTRICITY USAGE",elecTable,parentCapId);	
 								}
 							}
 							// Update AVERAGE WEIGHTED GGEI Table
@@ -142,9 +152,29 @@ function renewalProcessLC() {
 										weigtedRow["Average Weighted GGEI"] = "" + weightedNewRow["Average Weighted GGEI"];
 										weigtedTable.push(weigtedRow);
 									}
-									addASITable("AVERAGE WEIGHTED GGEI",weigtedTable,vLicenseID);
+									addASITable("AVERAGE WEIGHTED GGEI",weigtedTable,parentCapId);
 								}
-							}				
+							}
+							// Story 7700: Update License Renewal History table upon license
+							var LICENSERENEWALHISTORY = new Array();
+							var histRow = new Array();
+				
+							var renYear = vNewExpDate.getFullYear();
+							var expDateForamatted = dateFormatted(vNewExpDate.getMonth(), vNewExpDate.getDate(), vNewExpDate.getFullYear(), "MM/DD/YYYY");
+				
+							var transferPermitID = new asiTableValObj("LICENSE RENEWAL HISTORY", parentCapId, "N");
+							histRow["Renewal Year"] = "" + String(renYear);
+							histRow["License Expiration"] = "" + String(expDateForamatted);
+							histRow["License Status"] = "" + vCapStatus;
+							histRow["Limited Operation"] = "" + AInfo['Limited Operation'];
+							histRow["License Type"] = "" + String(licType); 
+							histRow["Canopy Square Feet"] = "" + (getAppSpecific("Canopy SF",parentCapId) || "");
+							histRow["Canopy Plant Count"] = "" + (getAppSpecific("Canopy Plant Count",parentCapId) || "");
+							histRow["Canopy Square Footage Limit"] = "" + (getAppSpecific("Canopy SF Limit",parentCapId) || "");
+							
+							LICENSERENEWALHISTORY.push(histRow);
+							addASITable("LICENSE RENEWAL HISTORY", LICENSERENEWALHISTORY, parentCapId);	
+							
 							//Set renewal to complete, used to prevent more than one renewal record for the same cycle
 							renewalCapProject.setStatus("Complete");
 							renewalCapProject.setRelationShip("R");  // move to related records
@@ -220,13 +250,29 @@ function renewalProcessLC() {
 									}
 								}
 							}
+							// 7694: On Renewal record when License Change Size, update open SA
+							if (AInfo['License Change'] == "Yes" || AInfo["Designation Change"] == "Yes"){
+								var scienceArr = getChildren("Licenses/Cultivator/Amendment/Science",parentCapId);
+								if (scienceArr) {
+									if (scienceArr.length > 0) {
+										for (x in scienceArr){
+											var scienceCap = scienceArr[x];
+											var saAppStatus = aa.cap.getCap(scienceCap).getOutput().getCapStatus();
+											if (!matches(saAppStatus,"Transition Amendment Approved", "Amendment Rejected", "Amendment Approved")){
+												editAppSpecific("License Type",licType,scienceCap);
+												editAppName(AInfo["License Issued Type"] + " " + cultType + " - " + licType,scienceCap);
+											}
+										}
+									}
+								}
+							}
 							// Add record to the CAT set
 							addToCat(parentCapId);
 						}
 					}
 				}
 			}
-		}else {
+		} else {
 			fastTrack = false;
 		}
 }
