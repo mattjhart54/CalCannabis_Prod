@@ -66,19 +66,26 @@ function renewalProcess(rAltId, event, fees){
 			savedCapStatus = getAppSpecific("Saved License Status",licId);
 			limitedOp = AInfo['Limited Operation'] == "Yes";
 			if(limitedOp){
-				if(appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice","Notice",licId)){
-					editCapConditionStatus("Application Condition","Suspension Lift Notice","Condition Met","Not Applied",licId);
+				editAppSpecific("Limited Operations","Yes",licId);
+				if (vCapStatus == "Suspended" || savedCapStatus == "Suspended"){
+					if(!appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice",null,licId)){
+ 		 				addStdCondition("Application Condition","Suspension Lift Notice",licId);
+ 		 			}
+ 		 		}else{
+ 		 			updateAppStatus("Limited Operations","License Renewed",licId);
+					if(appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice",null,licId)){
+						editCapConditionStatus("Application Condition","Suspension Lift Notice","Condition Met","Not Applied","",licId);
+					}
+				}
+			}else{
+				if(appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice",null,licId)){
+					editCapConditionStatus("Application Condition","Suspension Lift Notice","Condition Met","Not Applied","",licId);
 				}
 			}
-			if (savedCapStatus == "Suspended"){
+			if (vCapStatus == "Suspended" || savedCapStatus == "Suspended"){
 				updateAppStatus("Suspended","License Renewed",licId);
-				if(limitedOp){
-					if(!appHasCondition_rev("Application Condition","Applied","Suspension Lift Notice","Notice",licId)){
- 		 				addStdCondition("Application Condition","Suspension Lift Notice".licId);
- 		 			}
- 		 		}
 			}else {
-				if (vCapStatus != "Inactive"){
+				if (vCapStatus != "Inactive" && !limitedOp){
 					updateAppStatus("Active","License Renewed",licId);
 				}
 			}
@@ -86,13 +93,14 @@ function renewalProcess(rAltId, event, fees){
 			if(AInfo['License Change'] == "Yes"){
 				editAppSpecific("License Type",AInfo["New License Type"],licId);
 				editAppSpecific("Aggregate square footage of noncontiguous canopy",AInfo["Aggragate Canopy Square Footage"],licId);
+				editAppSpecific("Canopy SF",AInfo["Aggragate Canopy Square Footage"],licId);
 				editAppSpecific("Canopy Plant Count",AInfo["Canopy Plant Count"],licId);
 				var licType = AInfo["New License Type"];
 			}else{
 				var licType = AInfo["License Type"];
 			}
 	// Update the Cultivation Type on the license record
-			if(AInfo["Designation Change"] == "Yes") {
+			if(AInfo["Designation Change"] == "Yes") {   
 				editAppSpecific("Cultivator Type",AInfo["Designation Type"],licId);
 				var cultType = AInfo["Designation Type"];
 			}else{
@@ -159,7 +167,26 @@ function renewalProcess(rAltId, event, fees){
 					}
 					addASITable("AVERAGE WEIGHTED GGEI",weigtedTable,licId);
 				}
-			}	
+			}
+	// Story 7700: Update License Renewal History table upon license
+			var LICENSERENEWALHISTORY = new Array();
+			var histRow = new Array();
+
+			var renYear = vNewExpDate.getFullYear();
+			var expDateForamatted = dateFormatted(vNewExpDate.getMonth(), vNewExpDate.getDate(), vNewExpDate.getFullYear(), "MM/DD/YYYY");
+
+			var transferPermitID = new asiTableValObj("LICENSE RENEWAL HISTORY", licId, "N");
+			histRow["Renewal Year"] = "" + String(renYear);
+			histRow["License Expiration"] = "" + String(expDateForamatted);
+			histRow["License Status"] = "" + vCapStatus;
+			histRow["Limited Operation"] = "" + AInfo['Limited Operation'];
+			histRow["License Type"] = "" + String(licType); 
+			histRow["Canopy Square Feet"] = "" + (getAppSpecific("Canopy SF",licId) || "");
+			histRow["Canopy Plant Count"] = "" + (getAppSpecific("Canopy Plant Count",licId) || "");
+			histRow["Canopy Square Footage Limit"] = "" + (getAppSpecific("Canopy SF Limit",licId) || "");
+			
+			LICENSERENEWALHISTORY.push(histRow);
+			addASITable("LICENSE RENEWAL HISTORY", LICENSERENEWALHISTORY, licId);	
 				
 	//Set renewal to complete, used to prevent more than one renewal record for the same cycle
 			renewalCapProject = getRenewalCapByParentCapIDForIncomplete(licId);
@@ -174,7 +201,7 @@ function renewalProcess(rAltId, event, fees){
 			}else{
 				closeTask("Annual Renewal Review","Approved","Renewal Fast Tracked","");
 			}
-			editAppSpecific("Fast Track","CHECKED");	
+			editAppSpecific("Fast Track","CHECKED",capId);	
 	//Run Official License Certificate and Annual/Provisional Renewal Approval Email and Set the DRP		
 			if(AInfo["Deferral Approved"] == "CHECKED"){
 				var scriptName = "asyncDeferralApprovedRenewal";
@@ -251,41 +278,52 @@ function renewalProcess(rAltId, event, fees){
 		// Add record to the CAT set
 			addToCat(licId);
 		// 7088: Create License Case Record for all Renewals when a Science Amendment associated to the License Parent Record has not been submitted prior to submission of a Provisional Renewal for that corresponding renewal year
-			if (getAppSpecific("License Issued Type", licId) == "Provisional"){
+			if (AInfo['License Change'] == "Yes" || AInfo["Designation Change"] == "Yes" || getAppSpecific("License Issued Type", licId) == "Provisional"){
 				var scienceArr = getChildren("Licenses/Cultivator/Amendment/Science",licId);
-				var issueDate = getAppSpecific("Valid From Date",licId);
-				var approvedRen = false;
-				var licCaseExclusion = false;
 				if (scienceArr) {
 					if (scienceArr.length > 0) {
 						for (x in scienceArr){
 							var scienceCap = scienceArr[x];
-							if (getAppSpecific("Associated Renewal",scienceCap) == "Yes"){
-								var correspondingYear = getAppSpecific("Renewal Year",scienceCap)
-								logDebug("expYear: " + expYear);
-								if (String(correspondingYear) == String(expYear)){
-									var saAppStatus = aa.cap.getCap(scienceCap).getOutput().getCapStatus();
-									var workflowResult = aa.workflow.getTasks(scienceCap);
-									if (workflowResult.getSuccess()){
-										wfObj = workflowResult.getOutput();		
-										for (i in wfObj) {
-											fTask = wfObj[i];
-											var status = fTask.getDisposition();
-											var taskDesc = fTask.getTaskDescription();
-											if((status != null && taskDesc != null) && (taskDesc == "Science Amendment Review" && status != "Physical Modification Approved")){
-												licCaseExclusion = true;
+							var saAppStatus = aa.cap.getCap(scienceCap).getOutput().getCapStatus();
+							if (!matches(saAppStatus,"Transition Amendment Approved", "Amendment Rejected", "Amendment Approved")){
+								if(AInfo['License Change'] == "Yes" || AInfo["Designation Change"] == "Yes"){
+									editAppSpecific("License Type",licType,scienceCap);
+									editAppName(AInfo["License Issued Type"] + " " + cultType + " - " + licType,scienceCap);
+								}
+							}
+							if (getAppSpecific("License Issued Type", licId) == "Provisional"){
+								if (getAppSpecific("Associated Renewal",scienceCap) == "Yes"){
+									var correspondingYear = getAppSpecific("Renewal Year",scienceCap)
+									logDebug("expYear: " + expYear);
+									if (String(correspondingYear) == String(expYear)){
+										var licCaseExclusion = false;
+										var workflowResult = aa.workflow.getTasks(scienceCap);
+										if (workflowResult.getSuccess()){
+											wfObj = workflowResult.getOutput();		
+											for (i in wfObj) {
+												fTask = wfObj[i];
+												var status = fTask.getDisposition();
+												var taskDesc = fTask.getTaskDescription();
+												if((status != null && taskDesc != null) && (taskDesc == "Science Amendment Review" && status != "Physical Modification Approved")){
+													licCaseExclusion = true;
+												}
 											}
+										}else{
+											logDebug("**ERROR: Failed to get workflow object: "+wfObj );
 										}
-									}else{
-										logDebug("**ERROR: Failed to get workflow object: "+wfObj );
 									}
 								}
+							}else{
+								licCaseExclusion = true;
 							}
 						}
 					}
 				}
 			}else{
-				licCaseExclusion = true;
+				if (getAppSpecific("License Issued Type", licId) != "Provisional"){
+					licCaseExclusion = true;
+				}
+
 			}
 			if (!licCaseExclusion){
 				var licCaseId = createChild("Licenses","Cultivator","License Case","NA","",licId);
