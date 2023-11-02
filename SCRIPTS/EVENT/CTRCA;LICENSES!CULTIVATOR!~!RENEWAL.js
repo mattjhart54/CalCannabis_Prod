@@ -63,10 +63,12 @@ try{
 			}
 			if(!publicUser){
 			    voidRemoveAllFees();
-			    if(AInfo["License Type Change"] == "Yes"){
+			    if(AInfo["License Change"] == "Yes"){
 			        licType = AInfo["New License Type"];
+			        var sqft = getAppSpecific("Aggragate Canopy Square Footage");
 			    }else{
 			        licType = getAppSpecific("License Type",vLicenseID);
+			        var sqft = getAppSpecific("Canopy SF",vLicenseID);
 			    }
 			    var expDateChange = AInfo["License Expiration Date Change"] == "Yes";
 		            var newExpDateStr = AInfo["New Expiration Date"];
@@ -91,7 +93,6 @@ try{
 			                feeDescE = licType + " - Per 2,000 sq ft over " + maskTheMoneyNumber(base) + " with Date Change";
 			                feeDescR = licType + " - Per 2,000 sq ft over " + maskTheMoneyNumber(base);
 			                logDebug("feeDesc " + feeDescR + " " + feeDescE);
-			                var sqft = getAppSpecific("Canopy SF",vLicenseID);
 			                logDebug("SQ FT " + sqft + " Base " + base);
 
 			               if (newExpDateStr){
@@ -100,9 +101,9 @@ try{
 						logDebug("Fee Calc" +thisFee.formula);
 						feeAmt = ((thisFee.formula*parseInt(qty))/365)*feeQty;
 						logDebug("FeeAmt " + feeAmt);
-						thisFee = getFeeDefByDesc(feeSchedule, feeDescE);
+						thisFee = getFeeDefByDesc("LIC_CC_REN_EXP", feeDescE);
 						if(feeAmt > 0){        
-			                   		updateFee_Rev(thisFee.feeCode,feeSchedule, "FINAL", feeAmt, "Y", "N");
+			                   		updateFee_Rev(thisFee.feeCode,"LIC_CC_REN_EXP", "FINAL", feeAmt, "Y", "N");
 						}
 			                }else{
 						thisFee = getFeeDefByDesc(feeSchedule, feeDescR);
@@ -152,7 +153,7 @@ try{
 		fees = true;
 	}
 // Invoice all fees if cash payment selected at submission in ACA
-	if(AInfo["License Type Change"] == "Yes"){
+	if(AInfo["License Change"] == "Yes"){
 		licType = AInfo["New License Type"];
 	}else{
 		licType = AInfo["License Type"];
