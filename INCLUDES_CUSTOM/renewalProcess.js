@@ -173,7 +173,7 @@ function renewalProcess(rAltId, event, fees){
 			var histRow = new Array();
 
 			var renYear = vNewExpDate.getFullYear();
-			var expDateForamatted = dateFormatted(vNewExpDate.getMonth(), vNewExpDate.getDate(), vNewExpDate.getFullYear(), "MM/DD/YYYY");
+			var expDateForamatted = dateFormatted(vNewExpDate.getMonth()+1, vNewExpDate.getDate(), vNewExpDate.getFullYear(), "MM/DD/YYYY");
 
 			var transferPermitID = new asiTableValObj("LICENSE RENEWAL HISTORY", licId, "N");
 			histRow["Renewal Year"] = "" + String(renYear);
@@ -220,8 +220,11 @@ function renewalProcess(rAltId, event, fees){
 				envParameters.put("contType","Designated Responsible Party");
 				envParameters.put("fromEmail",sysFromEmail);
 				aa.runAsyncScript(scriptName, envParameters);
-			}else {		
-				if (AInfo["License Issued Type"] == "Provisional"){
+			}else {	
+				if (AInfo['Limited Operation'] == "Yes"){
+					var approvalLetter = "";
+					var emailTemplate = "LCA_LIMITED_OP_RENEWAL_APPROVAL";
+				}else if (AInfo["License Issued Type"] == "Provisional"){
 					var approvalLetter = "";
 					var emailTemplate = "LCA_RENEWAL_APPROVAL";
 				}else{
