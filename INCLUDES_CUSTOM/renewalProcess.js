@@ -293,6 +293,11 @@ function renewalProcess(rAltId, event, fees){
 									editAppSpecific("License Type",licType,scienceCap);
 									editAppName(AInfo["License Issued Type"] + " " + cultType + " - " + licType,scienceCap);
 								}
+								if(AInfo['License Change'] == "Yes") {
+									editAppSpecific("Aggregate square footage of noncontiguous canopy",AInfo["Aggragate Canopy Square Footage"],scienceCap);
+									editAppSpecific("Canopy SF-NEW",AInfo["Aggragate Canopy Square Footage"],scienceCap);
+									editAppSpecific("Canopy Plant Count-NEW",AInfo["Canopy Plant Count"],scienceCap);
+								}
 							}
 							if (getAppSpecific("License Issued Type", licId) == "Provisional"){
 								if (getAppSpecific("Associated Renewal",scienceCap) == "Yes"){
