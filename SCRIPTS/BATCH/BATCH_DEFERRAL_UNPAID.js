@@ -152,6 +152,7 @@ function mainProcess() {
 try{
 	var capFilterType = 0;
 	var capFilterStatus = 0;
+	var capFilterBalance = 0;
 	var capCount = 0;
  	var capResult = aa.cap.getCapIDsByAppSpecificInfoDateRange(asiGroup, asiField, dFromDate, dToDate);
 	if (capResult.getSuccess()) {
@@ -169,13 +170,14 @@ try{
 			timeExpired = true ;
 			break; 
 		}
-    	capId = myCaps[myCapsXX].getCapID();
+    		capId = myCaps[myCapsXX].getCapID();
    		//capId = getCapIdByIDs(thisCapId.getID1(), thisCapId.getID2(), thisCapId.getID3()); 
 		altId = capId.getCustomID();
 		if (!capId) {
 			logDebug("Could not get Cap ID");
 			continue;
 		}
+
 		cap = aa.cap.getCap(capId).getOutput();		
 		appTypeResult = cap.getCapType();	
 		appTypeString = appTypeResult.toString();	
@@ -188,6 +190,19 @@ try{
 			capFilterStatus++
 			continue;
 		}
+		var capDetailObjResult = aa.cap.getCapDetail(capId);        
+		if (!capDetailObjResult.getSuccess()){
+			logDebug("Could not get record detail: " + altId);
+		 	 continue;
+		}else{
+		 	 capDetail = capDetailObjResult.getOutput();
+		  	var balanceDue = capDetail.getBalance();
+		  	if(balanceDue<=0){
+		      		logDebug("Skipping record " + altId + " due to balance due: " + balanceDue);
+		      		capFilterBalance++;
+		      		continue;
+		  	}
+		}
 		capCount++;
 		logDebug("----Processing record " + altId + br);
 		
@@ -195,11 +210,12 @@ try{
 			updateAppStatus(newAppStatus, "set by " + batchJobName +  " batch");
 		}
 		if(!appHasCondition("Application Condition","Applied","Application Hold",null)){
-				addStdCondition("Application Condition","Application Hold");
+			addStdCondition("Application Condition","Application Hold");
 		}
 	}
  	logDebug("Total CAPS qualified : " + myCaps.length);
  	logDebug("Ignored due to CAP Status: " + capFilterStatus);
+ 	logDebug("Ignored due to CAP Balance: " + capFilterBalance);
  	logDebug("Total CAPS processed: " + capCount);
 
 }catch (err){
