@@ -30,6 +30,7 @@ sysDate = aa.date.getCurrentDate();
 batchJobResult = aa.batchJob.getJobID()
 batchJobName = "" + aa.env.getValue("BatchJobName");
 wfObjArray = null;
+var systemUserObj = aa.person.getUser("ADMIN").getOutput();
 
 eval(getMasterScriptText("INCLUDES_ACCELA_FUNCTIONS"));
 eval(getScriptText("INCLUDES_BATCH"));
@@ -276,6 +277,12 @@ try{
 			logDebug("     " +"skipping, due to application status of " + capStatus)
 			continue;
 		}
+		// Filter Historical Records
+		if (altId.indexOf("-HIST") > -1){
+			capFilterType++;
+			logDebug("     " +"skipping, Historical Record Types");
+			continue;
+		}
 		// done filtering, so increase the record count to include this record.
 		capCount++;
 	// Actions start here:
@@ -341,29 +348,42 @@ try{
 				var renewalCap = aa.cap.getCap(renCapId).getOutput();
 				var renAltId = String(renewalCap.getCapID().getCustomID());;
 				logDebug("renCapId: " + renCapId + " renAltId: " + renAltId);
-				if (!renCapId.toString().contains("EST")){
-					var feeDesc = getAppSpecific("License Type",renCapId) + " - Late Fee";
-					var thisFee = getFeeDefByDesc("LIC_CC_REN", feeDesc);
-					if(thisFee){
-						holdId = capId;
-						capId = renCapId;
-						AInfo = new Array();
-						loadAppSpecific(AInfo);	
-						if (!feeExists(thisFee.feeCode)){
-	//						updateFee(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y", "N");
-							addFeeT(thisFee.feeCode,"LIC_CC_REN", "FINAL", 1, "Y",capId);
-							invoiceFee(thisFee.feeCode,"FINAL");
-							if(AInfo["Waive Late Fee"] == "CHECKED") {
-								voidRemoveFeesByDesc(feeDesc);
-							}
-							if (!matches(rptName,null,undefined,"")){
-								rptName.push("Balance Due Report");
-							}
+				if(getAppSpecific("Limited Operation",renCapId) != "Yes") {
+					if (!renCapId.toString().contains("EST")){
+						if(getAppSpecific("License Change",renCapId) == "Yes"){
+						    licType = getAppSpecific("New License Type",renCapId);
+						}else{
+						    licType = getAppSpecific("License Type",renCapId);
 						}
-						capId = holdId;
-					}else{
-						aa.sendMail(sysFromEmail, debugEmail, "", "A JavaScript Error occurred: ASA:Licenses/Cultivation/Licnese/Renewal: Add Fees: " + startDate, "fee description: " + feeDesc + br + "capId: " + capId + br + currEnv);
-						logDebug("An error occurred retrieving fee item: " + feeDesc);
+						var newExpDateStr = getAppSpecific("New Expiration Date",renCapId);
+						if (newExpDateStr){
+							var feeDesc = licType + " - Late Fee with Date Change";
+							var feeSchedule = "LIC_CC_REN_EXP";
+						}else{
+							var feeDesc = licType + " - Late Fee";
+							var feeSchedule = "LIC_CC_REN";
+						}
+						var thisFee = getFeeDefByDesc(feeSchedule, feeDesc);
+						if(thisFee){
+							holdId = capId;
+							capId = renCapId;
+							AInfo = new Array();
+							loadAppSpecific(AInfo);	
+							if (!feeExists(thisFee.feeCode)){
+	//							updateFee(thisFee.feeCode,feeSchedule, "FINAL", 1, "Y", "N");
+								addFeeT(thisFee.feeCode,feeSchedule, "FINAL", 1, "Y",capId);
+								invoiceFee(thisFee.feeCode,"FINAL");
+								if(AInfo["Waive Late Fee"] == "CHECKED") {
+									voidRemoveFeesByDesc(feeDesc);
+								}
+								if (!matches(rptName,null,undefined,"")){
+									rptName.push("Balance Due Report");
+								}
+							}
+							capId = holdId;
+						}else{
+							logDebug("An error occurred retrieving fee item: " + feeDesc);
+						}
 					}
 				}
 			}
