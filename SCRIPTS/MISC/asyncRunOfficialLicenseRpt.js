@@ -52,7 +52,7 @@ try{
 	aa.env.setValue("approvalLetter", "");
 	aa.env.setValue("emailTemplate", "LCA_APPROVED_FOR_PROVISIONAL_RENEWAL");
 	aa.env.setValue("reason", "becasue");
-	aa.env.setValue("fromEmail","calcannabislicensing@cdfa.ca.gov");
+	aa.env.setValue("fromEmail","noreply@cannabis.ca.gov");
 */
 	var reportName = "" + aa.env.getValue("reportName");
 	var appCap = "" + aa.env.getValue("appCap");
@@ -90,6 +90,7 @@ try{
 	eTxt+="reportName: " + typeof(reportName) + br;
 	var parameters = aa.util.newHashMap(); 
 	parameters.put("altId",licCap);
+	parameters.put("appId",appCap);
 	report.setReportParameters(parameters);
 	var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
 	if(permit.getOutput().booleanValue()) { 
@@ -131,17 +132,15 @@ try{
 		eTxt+="reportName: " + reportName + br;
 		eTxt+="reportName: " + typeof(reportName) + br;
 		var parameters = aa.util.newHashMap(); 
-		parameters.put("p1value",appCap);
-		parameters.put("p2value","Designated Responsible Party");
-		parameters.put("p3value","Mailing");
+		parameters.put("altId",appCap);
+//		parameters.put("p2value","Designated Responsible Party");
+//		parameters.put("p3value","Mailing");
 		report.setReportParameters(parameters);
 		var permit = aa.reportManager.hasPermission(reportName,currentUserID); 
 		eTxt+="Has Permission: " + permit.getOutput().booleanValue() + br;
 		if(permit.getOutput().booleanValue()) { 
 			var reportResult = aa.reportManager.getReportResult(report); 
 			eTxt+="Get Report: " + reportResult.getOutput() + br;
-			eTxt+="appCap: " + appCap +br;
-//			etxt+="Report: " + report + br;
 			if(reportResult) {
 				reportOutput = reportResult.getOutput();
 				var reportFile=aa.reportManager.storeReportToDisk(reportOutput);
@@ -180,7 +179,7 @@ try{
 } catch(err){
 	logDebug("An error has occurred in asyncRunOfficialLicenseRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunOfficialLicenseRpt: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + licCap + br + eTxt + br + reportResult.getErrorType() + ":" +reportResult.getErrorMessage());
+	aa.sendMail("noreply@cannabis.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunOfficialLicenseRpt: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + licCap + br + eTxt);
 }
  function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
 {
