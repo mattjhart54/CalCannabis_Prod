@@ -83,8 +83,6 @@ try {
 		var pStatus = pCap.getCapStatus();
 		b1ExpResult = aa.expiration.getLicensesByCapID(parentCapId);
 		var curDate = new Date();
-		var curDateFormat = curDate.getMonth() + 1 + "/" + curDate.getDate() + "/" + curDate.getFullYear();
-		curDate = new Date(curDateFormat);
 		if (b1ExpResult.getSuccess()) {
 			this.b1Exp = b1ExpResult.getOutput();
 			expDate = this.b1Exp.getExpDate();
@@ -123,12 +121,12 @@ try {
 		if (newExpDateStr) {
 		// Calculate the number of days to new expiration date
 			var newExpDate = new Date(newExpDateStr);
-			var timeDiff = newExpDate.getTime() - expDate.getTime();
+			var timeDiff = newExpDate.getTime() - curDate.getTime();
 			daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 			
 		// Calculate the number of days from current date to expiration date				
 		//	curDate = new Date();
-			var validFromDiff = curDate.getTime() - fromDate.getTime();
+			var validFromDiff = expDate.getTime() - curDate.getTime();
 			daysFromDiff = Math.floor(validFromDiff / (1000 * 60 * 60 * 24));
 
 	// Get last renewal fee
@@ -163,7 +161,7 @@ try {
 			var feeQty = daysDiff;
 			var thisFee = getFeeDefByDesc(feeSchedule, feeDesc);
 			if(AInfo["Limited Operation"] == "Yes")
-				feeAmt = (thisFee.formula*.2);
+				feeAmt = ((thisFee.formula*feeQty)*.2);
 			else 
 				feeAmt = (thisFee.formula*feeQty);
 			if(newLicType.substring(0,5) == "Large") {
@@ -191,7 +189,7 @@ try {
 			editAppSpecific4ACA("New Base Fee", newFee);
 			editAppSpecific4ACA("Net Due/Refund",newBalance);
 			if(newBalance > 0) {
-				var feeDesc = licType + " - License Fee with Date Change";
+				var feeDesc = newLicType + " - License Fee with Date Change";
 				var feeSchedule = "LIC_CC_EXP";
 				var thisFee = getFeeDefByDesc(feeSchedule, feeDesc);
 				updateFee(thisFee.feeCode,feeSchedule, "FINAL", newBalance, "Y", "N");
