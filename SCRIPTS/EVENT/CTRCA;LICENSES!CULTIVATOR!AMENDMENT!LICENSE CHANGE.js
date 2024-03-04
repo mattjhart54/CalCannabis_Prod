@@ -35,8 +35,11 @@ try{
 			logDebug("Error updating Alt ID: " +resAltId.getErrorMessage());
 		}
 	}
-/*
+// Add Contacts
+	copyContactsByType_rev(parentCapId,capId,"Designated Responsible Party");
+	copyContactsByType_rev(parentCapId,capId,"Business");
 // Invoice fees if fees are only assessed
+	var feeDue = false;
 	var invNbr = 0;
 	var feeAmount = 0;
 	var feeSeq = 0;
@@ -59,14 +62,13 @@ try{
 			var invoiceResult_L = aa.finance.createInvoice(capId, vFeeSeqArray, vPaymentPeriodArray);
 			if (!invoiceResult_L.getSuccess())
 				logDebug("**ERROR: Invoicing the fee items was not successful. Reason: " + invoiceResult_L.getErrorMessage());
+			else
+				feeDue = true;
 		}
 	}
-*/
 //get fee details
 //retrieve a list of invoices by capID
 	logDebug("Checking invoices")
-	var invNbr = 0;
-	var feeAmount = 0;
 	var iListResult = aa.finance.getInvoiceByCapID(capId,null);
 	if (iListResult.getSuccess()) {
 		var iList = iListResult.getOutput();			
@@ -83,9 +85,12 @@ try{
 	
 	logDebug("Invoice Number Found: " + invNbr);
 	logDebug("Fee Amount: " + feeAmount);
-
+	if(AInfo['License Change'] == "Yes")
+		licType = AInfo["New License Type"];
+	else
+		licType = AInfo["License Type"];
 //If no balance Due Update License Record
-	if (balanceDue <= 0){
+	if (!feeDue){
 	// Update License Expiration Date
 		var vNewExpDate = new Date(AInfo['New Expiration Date']);
 		logDebug("Updating Expiration Date to: " + vNewExpDate);
@@ -127,7 +132,6 @@ try{
 			editAppSpecific("License Type",AInfo["New License Type"],parentCapId);
 			editAppSpecific("Canopy SF",AInfo["Aggragate Canopy Square Footage"],parentCapId);
 			editAppSpecific("Canopy Plant Count",AInfo["Canopy Plant Count"],parentCapId);
-			var licType = AInfo["New License Type"];
 			var cultType = AInfo["Cultivator Type"];
 			editAppName(AInfo["License Issued Type"] + " " + cultType + " - " + licType,parentCapId);	
 		}
@@ -154,9 +158,10 @@ try{
 	
 	
 	//Run Official License Certificate 
-		var scriptName = "asyncRunOfficialLicenseRpt";
+		var scriptName = "asyncRunOfficialLicenseRptForAmendment";
 		var envParameters = aa.util.newHashMap();
 		var feeNotification = "LCA_CLC_FEE_PAID";
+		var refundAmount = 0;
 		if (AInfo["Net Due/Refund"] < 0){
 			renArray = getChildren("Licenses/Cultivator/*/Renewal",parentCapId);
 			if (renArray && renArray.length > 0) {
@@ -171,14 +176,14 @@ try{
 				}
 			 }
 			feeNotification = "LCA_CLC_NO_FEE";
+			refundAmount = AInfo["Net Due/Refund"];
 		}
 		envParameters.put("reportName","Official License Certificate");
-		envParameters.put("appCap",capId.getCustomID());
+		envParameters.put("appCap",newAltId);
 		envParameters.put("licCap",pAltId);
 		envParameters.put("licType",licType);
-		envParameters.put("approvalLetter", "");
 		envParameters.put("emailTemplate", feeNotification);
-		envParameters.put("reason", "");
+		envParameters.put("refundAmount", Math.abs(refundAmount));
 		envParameters.put("currentUserID",currentUserID);
 		envParameters.put("contType","Designated Responsible Party");
 		envParameters.put("fromEmail",sysFromEmail);
@@ -210,7 +215,7 @@ try{
 		}
 	}
 //Send Invoice Params Rpt Notification
-	if (balanceDue > 0){
+	if (feeDue){
 		var scriptName = "asyncRunInvoiceParamsRpt";
 		var envParameters = aa.util.newHashMap();
 		var feeNotification = "LCA_CLC_FEE_DUE";
