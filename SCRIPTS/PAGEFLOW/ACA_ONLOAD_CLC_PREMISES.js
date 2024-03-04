@@ -169,15 +169,17 @@ try{
 			if(priContact){
 				//Story 6577 SA - Resolve ACA Save and Resume Later contact issue - Adding DRP
 				priContact.people.setContactSeqNumber(null); // reset in order to avoid capContactNotFoundException on submittal
-				priContact.people.setContactType("Designated Responsible Party");	
-				cap.setApplicantModel(priContact.capContact);
+				priContact.people.setContactType("Designated Responsible Party");
 				aa.env.setValue("CapModel",cap);
+				cap.setApplicantModel(priContact.capContact);
 			}
+   
 			b1ExpResult = aa.expiration.getLicensesByCapID(parentCapId);
 			if (b1ExpResult.getSuccess()) {
 				this.b1Exp = b1ExpResult.getOutput();
 				expDate = this.b1Exp.getExpDate();	
 				if(expDate) {
+					expDate = fixDate(expDate);
 					tmpExpDate = expDate.getMonth() + "/" + expDate.getDayOfMonth() + "/" + expDate.getYear();
 					editAppSpecific4ACA("Expiration Date", tmpExpDate);
 				}
