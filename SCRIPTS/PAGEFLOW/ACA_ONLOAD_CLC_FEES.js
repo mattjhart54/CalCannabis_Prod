@@ -110,7 +110,7 @@ try {
 	
 	if(AInfo["License Change"] == "Yes"){
 		var newLicType = AInfo["New License Type"];
-		var newSqft = getAppSpecific("Aggragate Canopy Square Footage");
+		var newSqft = AInfo["Aggragate Canopy Square Footage"];
 	} 
 	else {
 		var newLicType = getAppSpecific("License Type",parentCapId);
