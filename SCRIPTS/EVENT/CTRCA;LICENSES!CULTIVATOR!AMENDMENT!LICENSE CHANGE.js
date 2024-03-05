@@ -85,10 +85,11 @@ try{
 	
 	logDebug("Invoice Number Found: " + invNbr);
 	logDebug("Fee Amount: " + feeAmount);
-	if(AInfo['License Change'] == "Yes")
+	if(AInfo['License Change'] == "Yes"){
 		licType = AInfo["New License Type"];
-	else
+	}else{
 		licType = AInfo["License Type"];
+	}
 //If no balance Due Update License Record
 	if (!feeDue){
 	// Update License Expiration Date
