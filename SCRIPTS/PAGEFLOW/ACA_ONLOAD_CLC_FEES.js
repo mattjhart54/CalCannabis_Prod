@@ -110,7 +110,7 @@ try {
 	
 	if(AInfo["License Change"] == "Yes"){
 		var newLicType = AInfo["New License Type"];
-		var newSqft = getAppSpecific("Aggragate Canopy Square Footage");
+		var newSqft = AInfo["Aggragate Canopy Square Footage"];
 	} 
 	else {
 		var newLicType = getAppSpecific("License Type",parentCapId);
@@ -143,7 +143,7 @@ try {
 				feeDescR = licType + " - Per 2,000 sq ft over " + maskTheMoneyNumber(base);
 				qty = (parseInt(sqft) - base) / 2000;
 				thisFee = getFeeDefByDesc("LIC_CC_REN", feeDescR);
-				lastOverFee = thisFee.formula * qty;
+				lastOverFee = thisFee.formula * parseInt(qty);
 			}
 		}
 		if(AInfo["Limited Operations"] == "Yes") 
@@ -171,7 +171,7 @@ try {
 				var base = parseInt(licTbl[3] -1);
 				feeDesc = newLicType + " - Per 2,000 sq ft over " + maskTheMoneyNumber(base) + " with Date Change";
 				qty = (parseInt(newSqft) - base) / 2000;
-				thisFee = getFeeDefByDesc("LIC_CC_REN_EXP", feeDesc);
+				thisFee = getFeeDefByDesc("LIC_CC_EXP", feeDesc);
 				if(AInfo["Limited Operation"] != "Yes") {
 					overFeeAmt = ((thisFee.formula*parseInt(qty))/365)*feeQty;
 				}else {
