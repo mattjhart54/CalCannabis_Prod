@@ -173,7 +173,7 @@ try {
 				qty = (parseInt(newSqft) - base) / 2000;
 				thisFee = getFeeDefByDesc("LIC_CC_EXP", feeDesc);
 				if(AInfo["Limited Operation"] != "Yes") {
-					overFeeAmt = ((thisFee.formula*parse(qty))/365)*feeQty;
+					overFeeAmt = ((thisFee.formula*parseInt(qty))/365)*feeQty;
 				}else {
 					overFeeAmt = (((thisFee.formula*parseInt(qty))/365)*feeQty)*.2;
 				}			
