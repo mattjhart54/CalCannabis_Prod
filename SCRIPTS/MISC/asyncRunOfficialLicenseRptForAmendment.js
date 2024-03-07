@@ -109,6 +109,8 @@ try{
 		eTxt+="No permission to report: "+ reportName + " for user: " + currentUserID;
 	}
 
+//	Switch tmpID back to child from parent license for notifications
+	tmpID = aa.cap.getCapID(appCap).getOutput();
 	var priContact = getContactObj(tmpID,contType);
 	if(priContact){
 		var eParams = aa.util.newHashtable(); 
