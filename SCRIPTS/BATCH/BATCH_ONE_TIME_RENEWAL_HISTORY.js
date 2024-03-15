@@ -129,47 +129,51 @@ try{
 
 	for (x in vCapList) {
 		capCount++;
-		capId = aa.cap.getCapID(vCapList[x].getCapID().getID1(),vCapList[x].getCapID().getID2(),vCapList[x].getCapID().getID3()).getOutput();
-		logDebug(capId.getCustomID());
+		capId = getApplication(vCapList[x]);
+		altId = capId.getCustomID();
+		if (String(altId.substr(0,3)) == "CCL"){
+			if (altId.indexOf("-HIST") < 0){
 	
-		var LICENSERENEWALHISTORY = new Array();
-		var toRow = new Array();
-			vLicenseObj = new licenseObject(null, capId);
-			expDate = vLicenseObj.b1ExpDate;
-		var expDateObj = new Date(expDate);
-		var renYear = expDateObj.getFullYear();
-		var licType = getAppSpecific("License Type",capId);
-		var licTypeResult = lookup("LIC_CC_LICENSE_TYPE", licType);
-
-		var licTypeArray = licTypeResult.split(";");
-		var plantLimit = licTypeArray[2];
-		var canopyLimit = licTypeArray[0];
-		var canopySqFtLimit = ""
-
-
-		if(plantLimit*1 > 0) {
-				canopySqFtLimit = canopyLimit + " or " + plantLimit + " plants";
-		}else {
-				canopySqFtLimit = canopyLimit;
+				var LICENSERENEWALHISTORY = new Array();
+				var toRow = new Array();
+					vLicenseObj = new licenseObject(null, capId);
+					expDate = vLicenseObj.b1ExpDate;
+				var expDateObj = new Date(expDate);
+				var renYear = expDateObj.getFullYear();
+				var licType = getAppSpecific("License Type",capId);
+				var licTypeResult = lookup("LIC_CC_LICENSE_TYPE", licType);
+		
+				var licTypeArray = licTypeResult.split(";");
+				var plantLimit = licTypeArray[2];
+				var canopyLimit = licTypeArray[0];
+				var canopySqFtLimit = ""
+		
+		
+				if(plantLimit*1 > 0) {
+						canopySqFtLimit = canopyLimit + " or " + plantLimit + " plants";
+				}else {
+						canopySqFtLimit = canopyLimit;
+				}
+		
+		
+			
+				var transferPermitID = new asiTableValObj("LICENSE RENEWAL HISTORY", capId, "N");
+				toRow["Renewal Year"] = "" + String(renYear);
+				toRow["License Expiration"] = "" + String(expDate);
+				toRow["License Status"] = "Active";
+				toRow["Limited Operation"] = "No";
+				toRow["License Type"] = "" + licType; 
+				toRow["Canopy Square Feet"] = "" + (getAppSpecific("Canopy SF",capId) || ""); 
+				toRow["Canopy Plant Count"] = "" + (getAppSpecific("Canopy Plant Count",capId) || ""); 
+				toRow["Canopy Square Footage Limit"] = "" + canopySqFtLimit; 
+				LICENSERENEWALHISTORY.push(toRow);
+				addASITable("LICENSE RENEWAL HISTORY", LICENSERENEWALHISTORY, capId);
+		
+		
+				editAppSpecific("Limited Operations","No",capId);
+				editAppSpecific("Original License Type",licType,capId);
+			}
 		}
-
-
-	
-		var transferPermitID = new asiTableValObj("LICENSE RENEWAL HISTORY", capId, "N");
-		toRow["Renewal Year"] = "" + String(renYear);
-		toRow["License Expiration"] = "" + String(expDate);
-		toRow["License Status"] = "Active";
-		toRow["Limited Operation"] = "No";
-		toRow["License Type"] = "" + licType; 
-		toRow["Canopy Square Feet"] = "" + (getAppSpecific("Canopy SF",capId) || ""); 
-		toRow["Canopy Plant Count"] = "" + (getAppSpecific("Canopy Plant Count",capId) || ""); 
-		toRow["Canopy Square Footage Limit"] = "" + canopySqFtLimit; 
-		LICENSERENEWALHISTORY.push(toRow);
-		addASITable("LICENSE RENEWAL HISTORY", LICENSERENEWALHISTORY, capId);
-
-
-		editAppSpecific("Limited Operations","No",capId);
-		editAppSpecific("Original License Type",licType,capId);
 	}
 				
 			
