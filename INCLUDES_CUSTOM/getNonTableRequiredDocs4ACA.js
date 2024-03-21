@@ -9,7 +9,7 @@ function getNonTableRequiredDocs4ACA() {
     //Global requirements cross discipline
     var isConversionRequest                    = appMatch("Licenses/Cultivator/Conversion Request/NA");
 	var isRenewal			                   = appMatch("Licenses/*/License/Renewal");
- 
+ 	var isLicenseChange			               = appMatch("Licenses/Cultivator/Amendment/License Change");
 
     /*------------------------------------------------------------------------------------------------------/
     | Load up Standard Requirements : NEEDS REVIEW, map variable to standard condition
@@ -24,10 +24,15 @@ function getNonTableRequiredDocs4ACA() {
 	var electricityUsgae							= "Electricity Usage";
 	var waterLakeStream								= "Water - Lake and Streambed Alteration Document";
 	var waterQuality								= "Water - Water Quality Protection Permit";
-
+	//spatel CLS 7710 for LPA Updates:
+	var LPA_signaturePage							= "Business - Labor Peace Agreement Signature Page";
+	var LPA_notarizedStatement						= "Business - Labor Peace Agreement Notarized Statement";
+	
 
 	//Remove all conditions first
 	removeAllCapConditions();
+	AInfo = [];
+	loadAppSpecific4ACA(AInfo);
 	
 	//Global documentation requirements
 
@@ -40,14 +45,24 @@ function getNonTableRequiredDocs4ACA() {
 		requirementArray.push(waterLakeStream);
 		requirementArray.push(waterQuality);
     }
-	
-	if (isRenewal) {
-		AInfo = [];
-		loadAppSpecific4ACA(AInfo);
+
+    if (isRenewal) {
 		if(AInfo["License Change"] == "Yes") {
 			requirementArray.push(premisesDiagram);
 		}
+		if (AInfo["Number of Employees"] == "10+ employees and has entered into a labor peace agreement") {
+			requirementArray.push(LPA_signaturePage);
+		}
+		if (AInfo["Number of Employees"] == "10+ employees and has not yet entered into a labor peace agreement" || AInfo["Number of Employees"] == "0-9 employees - not yet required to enter into a labor peace agreement") {
+			requirementArray.push(LPA_notarizedStatement);
+		}
     }
+
+    if(isLicenseChange){
+		if (AInfo['License Change'] == "Yes"){
+			requirementArray.push(premisesDiagram);
+		}
+	}
 
     return requirementArray;
 
