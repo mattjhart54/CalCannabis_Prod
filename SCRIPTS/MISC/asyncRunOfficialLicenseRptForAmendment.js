@@ -108,12 +108,15 @@ try{
 		logDebug("No permission to report: "+ reportName + " for user: " + currentUserID);
 		eTxt+="No permission to report: "+ reportName + " for user: " + currentUserID;
 	}
-
+	
 //	Switch tmpID back to child from parent license for notifications
-	tmpID = aa.cap.getCapID(appCap).getOutput();
+	tmpID = aa.cap.getCapID(appCap).getOutput(); 
 	var priContact = getContactObj(tmpID,contType);
 	if(priContact){
 		var eParams = aa.util.newHashtable(); 
+		var acaSite = getACABaseUrl();   
+		addParameter(eParams, "$$acaURL$$", acaSite);
+		
 		addParameter(eParams, "$$altID$$", tmpID.getCustomID());
 		addParameter(eParams, "$$contactFirstName$$", priContact.capContact.firstName);
 		addParameter(eParams, "$$contactLastName$$", priContact.capContact.lastName);

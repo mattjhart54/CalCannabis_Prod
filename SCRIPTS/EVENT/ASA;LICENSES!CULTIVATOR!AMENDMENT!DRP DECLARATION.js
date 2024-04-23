@@ -85,6 +85,9 @@ try {
 		}else{
 			var fmtPhone = "";
 		}
+		var acaSite = getACABaseUrl();   
+		addParameter(eParams, "$$acaURL$$", acaSite);
+		
 		addParameter(eParams, "$$altId$$", newAltId);
 		addParameter(eParams, "$$contactPhone1$$", fmtPhone);
 		addParameter(eParams, "$$contactFirstName$$", priContact.capContact.firstName);
@@ -111,6 +114,6 @@ try {
 		}
 	}
 }catch(err){
-	logDebug("An error has occurred in ASA:LICENSES/CULTIVATOR/AMENDMENT/ADMINISTRATIVE: " + err.message);
+	logDebug("An error has occurred in ASA:LICENSES/CULTIVATOR/AMENDMENT/DRP Declaration: " + err.message);
 	logDebug(err.stack);
 }

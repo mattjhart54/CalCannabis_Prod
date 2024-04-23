@@ -50,7 +50,7 @@ try{
 	//aa.env.setValue("reportName", "Approval Letter and License Fee Invoice");
 	//aa.env.setValue("contType", "Designated Responsible Party");
 	//aa.env.setValue("addressType", "Mailing");
-	//aa.env.setValue("fromEmail","calcannabislicensing@cdfa.ca.gov")
+	//aa.env.setValue("fromEmail","noreply@cannabis.ca.gov")
 	var reportName = "" + aa.env.getValue("reportName");
 	var licCap = "" + aa.env.getValue("licCap");
 //	var invNbr = "" + aa.env.getValue("invNbr");	
@@ -123,6 +123,9 @@ logDebug("invNbr " + invNbr);
 	var priContact = getContactObj(tmpID,contType);
 	if(priContact){
 		var eParams = aa.util.newHashtable(); 
+		var acaSite = getACABaseUrl();   
+		addParameter(eParams, "$$acaURL$$", acaSite);
+		
 		addParameter(eParams, "$$altID$$", tmpID.getCustomID());
 		addParameter(eParams, "$$contactFirstName$$", priContact.capContact.firstName);
 		addParameter(eParams, "$$contactLastName$$", priContact.capContact.lastName);
@@ -154,7 +157,7 @@ logDebug("invNbr " + invNbr);
 } catch(err){
 	logDebug("An error has occurred in asyncRunSubmittedApplicRpt: " + err.message);
 	logDebug(err.stack);
-	aa.sendMail("calcannabislicensing@cdfa.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunSubmittedApplicRpt: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + licCap + br + "avpre6" + br + eTxt);
+	aa.sendMail("noreply@cannabis.ca.gov", "mhart@trustvip.com", "", "AN ERROR HAS OCCURRED IN asyncRunSubmittedApplicRpt: ",  tmpID + br +"elapsed time: " + eTime + " seconds. " + br + "altId: " + licCap + br + "avpre6" + br + eTxt);
 }
  function sendApprovalNotification(emailFrom,emailTo,emailCC,templateName,params,reportFile)
 {
