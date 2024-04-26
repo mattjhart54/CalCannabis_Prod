@@ -8,7 +8,10 @@ try {
 			if(isTaskStatus("Final Review","Approved for Annual License")) {
 				annualLic = true;
 			}
-			var licCapId = createLicenseBySubtype("Active","License",false);
+			var licCapId = getParent();
+			if(matches(licCapId,null,undefined,"")) {
+				licCapId = createLicenseBySubtype("Active","License",false);
+			}
 			if(licCapId){
 				var currCapId = capId;
 				var arrChild = getChildren("Licenses/Cultivator/*/Owner Application");
