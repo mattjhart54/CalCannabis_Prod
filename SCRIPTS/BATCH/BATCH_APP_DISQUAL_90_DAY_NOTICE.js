@@ -259,6 +259,9 @@ try{
 							var defStatus = defCap.getCapStatus();
 							logDebug("defStatus: " + defStatus + " Record: " + defArray[ii].getCustomID());
 							if (defStatus == "Pending"){
+								var acaSite = getACABaseUrl();   
+								addParameter(eParams, "$$acaRecordURL$$", acaSite);	
+								
 								addParameter(eParams,"$$altID$$",defArray[ii].getCustomID());
 								addParameter(eParams,"$$contactLastName$$",thisContact["lastName"]);
 								addParameter(eParams,"$$expDays$$",String(lookAheadDays));
