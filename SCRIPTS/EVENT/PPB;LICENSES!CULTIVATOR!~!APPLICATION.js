@@ -1,12 +1,17 @@
 try {
 	//MJH 082719 Story 6162,6163 - Updated script to create License record type License/Cultivator/License/License, set the record Id prefix to CCL, 
-	//                             update new custom fields Cultivator Type and License Issued Type and to include Cultivator type in the application name.
-		if(balanceDue<=ppPaymentAmount  && isTaskActive("Application Disposition")){
+	//update new custom fields Cultivator Type and License Issued Type and to include Cultivator type in the application name.
+		// JS 01312023 7315 - Need to get PaymentTotalPaidAmount for Deferral Approved Script Since Mater Script is not run
+		var PaymentTotalPaidAmount  = ppPaymentAmount;
+		if((balanceDue<=PaymentTotalPaidAmount  && isTaskActive("Application Disposition")) || (AInfo['Deferral Approved'] == "CHECKED" && isTaskActive("Application Disposition"))){
 			var annualLic = false;
 			if(isTaskStatus("Final Review","Approved for Annual License")) {
 				annualLic = true;
 			}
-			var licCapId = createLicenseBySubtype("Active","License",false);
+			var licCapId = getParent();
+			if(matches(licCapId,null,undefined,"")) {
+				licCapId = createLicenseBySubtype("Active","License",false);
+			}
 			if(licCapId){
 				var currCapId = capId;
 				var arrChild = getChildren("Licenses/Cultivator/*/Owner Application");
@@ -77,7 +82,7 @@ try {
 				if (appTypeArray[2] != "Temporary") {
 					addToCat(licCapId); //send active license to CAT
 				}
-	
+				
 	// Story 7776: Update LPA data from Application to License
 				useAppSpecificGroupName = true;
 				tmpInfo = new Array();
@@ -90,7 +95,7 @@ try {
 					editAppSpecific("LABOR PEACE AGREEMENT.Expiration Date",tmpInfo["LABOR PEACE AGREEMENT.Expiration Date"],licCapId);
 				}
 				useAppSpecificGroupName = false;
-				
+	
 			}else{
 				logDebug("Error creating License record: " + licCapId);
 			}
@@ -141,5 +146,49 @@ try {
 		logDebug("An error has occurred in PRB:LICENSES/CULTIVATOR/*/APPLICATION: License Issuance: " + err.message);
 		logDebug(err.stack);
 	}
+	
 	//mhart 082719 Story 6162 and 6163 end
+	
+	//lwacht 171112
+	//user cannot over or under pay
+	/* lwacht 171207 not doing
+	try{
+		var amtFee = 0;
+		var amtPaid = 0;
+		var ttlFee = 0;
+		var feeSeq_L = new Array(); 
+		var paymentPeriod_L = new Array(); 
+		var invoiceResult_L = false;
+		var retVal = false;
+		var feeResult = aa.finance.getFeeItemByCapID(capId);
+		if (feeResult.getSuccess()) {
+			var feeArray = feeResult.getOutput();
+			for (var f in feeArray) {
+				var thisFeeObj = feeArray[f];
+				if (thisFeeObj.getFeeitemStatus() == "INVOICED") {
+					amtFee += thisFeeObj.getFee();
+					var pfResult = aa.finance.getPaymentFeeItems(capId, null);
+					if (pfResult.getSuccess()) {
+						var pfObj = pfResult.getOutput();
+						for (ij in pfObj){
+							if (thisFeeObj.getFeeSeqNbr() == pfObj[ij].getFeeSeqNbr()){
+								amtPaid += pfObj[ij].getFeeAllocation();
+							}
+						}
+					}
+				}
+			}
+			ttlFee = amtFee - amtPaid;
+			//logDebug("ttlFee: " + ttlFee) 
+			if(parseFloat(ttlFee)!= parseFloat(PaymentTotalPaidAmount)){
+				//showMessage = true;
+				//cancel = true;
+				//comment("Amount applied ($" + parseFloat(PaymentTotalPaidAmount).toFixed(2) +") is not equal to the balance due of $" + ttlFee.toFixed(2) + ".");
+			}
+		}
+	}catch(err){
+		logDebug("An error has occurred in PRB:LICENSES/CULTIVATOR/* /APPLICATION: License Issuance: " + err.message);
+		logDebug(err.stack);
+	}
+	*/
 	
