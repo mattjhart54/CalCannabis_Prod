@@ -3,7 +3,7 @@ try {
 	//update new custom fields Cultivator Type and License Issued Type and to include Cultivator type in the application name.
 		// JS 01312023 7315 - Need to get PaymentTotalPaidAmount for Deferral Approved Script Since Mater Script is not run
 		var PaymentTotalPaidAmount  = aa.env.getValue("PaymentTotalPaidAmount");
-		if((balanceDue<=PaymentTotalPaidAmount  && isTaskActive("Application Disposition")) || AInfo['Deferral Approved'] == "CHECKED"){
+		if((balanceDue<=PaymentTotalPaidAmount  && isTaskActive("Application Disposition")) || (AInfo['Deferral Approved'] == "CHECKED" && isTaskActive("Application Disposition"))){
 			var annualLic = false;
 			if(isTaskStatus("Final Review","Approved for Annual License")) {
 				annualLic = true;
@@ -146,49 +146,3 @@ try {
 		logDebug("An error has occurred in PRB:LICENSES/CULTIVATOR/*/APPLICATION: License Issuance: " + err.message);
 		logDebug(err.stack);
 	}
-	
-	//mhart 082719 Story 6162 and 6163 end
-	
-	//lwacht 171112
-	//user cannot over or under pay
-	/* lwacht 171207 not doing
-	try{
-		var amtFee = 0;
-		var amtPaid = 0;
-		var ttlFee = 0;
-		var feeSeq_L = new Array(); 
-		var paymentPeriod_L = new Array(); 
-		var invoiceResult_L = false;
-		var retVal = false;
-		var feeResult = aa.finance.getFeeItemByCapID(capId);
-		if (feeResult.getSuccess()) {
-			var feeArray = feeResult.getOutput();
-			for (var f in feeArray) {
-				var thisFeeObj = feeArray[f];
-				if (thisFeeObj.getFeeitemStatus() == "INVOICED") {
-					amtFee += thisFeeObj.getFee();
-					var pfResult = aa.finance.getPaymentFeeItems(capId, null);
-					if (pfResult.getSuccess()) {
-						var pfObj = pfResult.getOutput();
-						for (ij in pfObj){
-							if (thisFeeObj.getFeeSeqNbr() == pfObj[ij].getFeeSeqNbr()){
-								amtPaid += pfObj[ij].getFeeAllocation();
-							}
-						}
-					}
-				}
-			}
-			ttlFee = amtFee - amtPaid;
-			//logDebug("ttlFee: " + ttlFee) 
-			if(parseFloat(ttlFee)!= parseFloat(PaymentTotalPaidAmount)){
-				//showMessage = true;
-				//cancel = true;
-				//comment("Amount applied ($" + parseFloat(PaymentTotalPaidAmount).toFixed(2) +") is not equal to the balance due of $" + ttlFee.toFixed(2) + ".");
-			}
-		}
-	}catch(err){
-		logDebug("An error has occurred in PRB:LICENSES/CULTIVATOR/* /APPLICATION: License Issuance: " + err.message);
-		logDebug(err.stack);
-	}
-	*/
-	
