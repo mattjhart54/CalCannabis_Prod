@@ -29,7 +29,10 @@ function updateLicCase(licNbr, capId) {
 		logDebug("Updated amendment record AltId to " + newAltId + ".");
 	else 
 		logDebug("Error renaming amendment record " + capId);
-	
+
+	if(!appHasCondition_rev("License Notice","Applied","Active License Case","Notice",parentId)) {	
+		addStdCondition("License Notice", "Active License Case", parentId);
+	}
 			
 // Copy the Designated resposible Party contact from the License Record to the Case record
 	copyContactsByType_rev(parentId,capId,"Designated Responsible Party");
