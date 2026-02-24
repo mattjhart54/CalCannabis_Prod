@@ -68,7 +68,7 @@ logDebug("Batch job ID not found " + batchJobResult.getErrorMessage());
 |
 /------------------------------------------------------------------------------------------------------*/
 /* test parameters
-aa.env.setValue("lookAheadDays", "-2");
+aa.env.setValue("lookAheadDays", "-1");
 aa.env.setValue("emailAddress", "mhart@trustvip.com");
 aa.env.setValue("emailTemplate","LCA_GENERAL_NOTIFICATION");
 aa.env.setValue("sendEmailToContactTypes", "Designated Responsible Party");
@@ -184,11 +184,24 @@ function mainProcess() {
 					if (exists(thisContact["contactType"],conTypeArray)){
 						contactFound = true;
 						var conEmail = true;
+						var ccEmail = "";
 						priContact = getContactObj(capId,thisContact["contactType"]);
 						logDebug("Processing record " + altId); 
 						var priChannel =  lookup("CONTACT_PREFERRED_CHANNEL",""+ priContact.capContact.getPreferredChannel());
 						if(!matches(priChannel,null,"",undefined)){
 							if(priChannel.indexOf("Email") >-1){
+								if(thisContact["contactType"] == "Designated Responsible Party") {
+									pId = getParent("Licenses/Cultivator/License/License",capId);
+									if(!matches(pId,null,"",undefined)) {
+										var licArray = getContactArray(pId);
+										for (licCon in licArray) {
+											licCntct = licArray[licCon];
+											if (matches(licCntct["contactType"], "Owner", "Informed Recipient", "Agent for Service of Process" )){
+												ccEmail = ccEmail + licCntct["email"] + ";";
+											}
+										}
+									}
+								}
 								var fromEmail = "noreply@cannabis.ca.gov";
 								var eParams = aa.util.newHashtable(); 
 								var acaSite = getACABaseUrl();   
@@ -200,7 +213,7 @@ function mainProcess() {
 								var priEmail = ""+priContact.capContact.getEmail();
 								logDebug(" Sending receipt to " + priContact.capContact.getEmail());
 								emailCnt++;
-								sendApprovalNotification(fromEmail,priEmail,"","LCA_GENERAL_NOTIFICATION",eParams, rFiles,capId);
+								sendApprovalNotification(fromEmail,priEmail,ccEmail,"LCA_GENERAL_NOTIFICATION",eParams, rFiles,capId);
 							}
 							else {
 								logDebug("DRP preference is postal, receipt not emailed");
